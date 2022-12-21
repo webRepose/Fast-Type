@@ -133,10 +133,11 @@ ul a p {
   margin: 10px 0 0 14px;
 }
 
+.menuMobile {
+  display: none;
+}
+
 @media (max-width: 1760px) {
-  .activeThemeIcon {
-    background: var(--theme-icon) 50% 10% no-repeat;
-  }
   .accountIcon {
     width: 40px;
     height: 40px;
@@ -162,6 +163,9 @@ ul a p {
   }
 }
 @media (max-width: 1600px) {
+  .activeThemeIcon {
+    background: var(--theme-icon) 50% 10% no-repeat;
+  }
   .menu {
     padding: 30px 15px 0 15px;
     border-radius: 0 var(--radius15) var(--radius15) 0;
@@ -235,77 +239,15 @@ ul a p {
 }
 @media (max-width: 1279px) {
   .menu {
-    width: 60px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  .menu a {
-    display: block;
-  }
-  .menu a svg {
-    display: block;
-    margin: 0 auto;
-  }
-  .menu ul a {
-    font-size: 10px !important;
-  }
-  .menu ul a p {
-    margin-left: 0;
-    text-align: center;
-    top: 0;
-    margin-top: 5px;
-    font-size: 9px;
-  }
-  .menu .activeThemeIcon {
-    background: var(--theme-iconMin) 50% 10% no-repeat;
-  }
-  .menu .menuTheme {
-    height: 25px;
-  }
-  .menu .logo h2 {
-    display: none;
-  }
-  .menu .active, .menu .navBarActive {
-    padding: 9px 0px 3px 0px !important;
-  }
-  .menu .lang p {
-    display: none;
-  }
-  .menu .translateIcon {
-    display: block;
-    margin: 0 auto;
-  }
-  .menu .accountName {
-    display: none;
-  }
-  .menu .menuThemeActive {
-    width: 100%;
-  }
-  .menu .menuThemeDisabled {
-    display: none;
-  }
-  .menu .navBar {
-    margin-top: 10px;
-  }
-  .menu .langChange {
+    width: 150px;
     padding-left: 10px;
     padding-right: 10px;
-    position: relative;
-    width: 90px;
-    left: 60px;
-    top: -50px;
   }
-  .menu .langChange li {
-    font-size: 9px !important;
-  }
-  .menu .account {
-    left: 15px;
+  .logo h2 {
+    font-size: 20px;
+    margin-left: 10px;
   }
 }
-.menuMobile {
-  display: none;
-}
-
 @media (max-width: 912px) {
   .logo {
     align-items: center;
@@ -334,9 +276,12 @@ ul a p {
     position: absolute;
     display: none;
     top: 65px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .langChange li {
-    font-size: 18px !important;
+    font-size: var(--font24) !important;
+    margin-bottom: 10px;
   }
   .account {
     position: static;
@@ -408,6 +353,16 @@ ul a p {
 @media (max-width: 479px) {
   .navBar ul li:last-child {
     display: none;
+  }
+  footer {
+    height: 60px;
+  }
+  .navBar ul a p {
+    font-size: 12px;
+  }
+  .navBar ul a svg {
+    width: 25px;
+    height: 25px;
   }
 }
 @media (max-width: 430px) {

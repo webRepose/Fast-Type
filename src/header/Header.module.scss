@@ -137,11 +137,11 @@ ul {
     margin: 10px 0 0 14px;
 }
 
+.menuMobile {
+    display: none;
+}
 
 @media (max-width: 1760px) {
-    .activeThemeIcon {
-        background: var(--theme-icon) 50% 10% no-repeat;
-    }
     .accountIcon {
         width: 40px;
         height: 40px;
@@ -174,6 +174,9 @@ ul {
 }
 
 @media (max-width: 1600px) {
+    .activeThemeIcon {
+        background: var(--theme-icon) 50% 10% no-repeat;
+    }
     .menu {
         padding: 30px 15px 0 15px;
         border-radius: 0 var(--radius15) var(--radius15) 0;
@@ -252,91 +255,101 @@ ul {
     }
 }
 
+// @media (max-width: 1279px) {
+//     .menu {
+//         width: 60px;
+//         padding-left: 5px;
+//         padding-right: 5px;
+//         a {
+//             display: block;
+//             svg {
+//                 display: block;
+//                 margin: 0 auto;
+//             }
+//         }
+
+//         ul a {
+//             font-size: 10px !important;
+//         }
+
+//         ul a p {
+//             margin-left: 0;
+//             text-align: center;
+//             top: 0;
+//             margin-top: 5px;
+//             font-size: 9px;
+//         }
+        
+//         .activeThemeIcon {
+//             background: var(--theme-iconMin) 50% 10% no-repeat;
+//         }
+
+//         .menuTheme {
+//             height: 25px;
+//         }
+
+//         .logo h2 {
+//             display: none;
+//         }
+
+//         .active, .navBarActive {
+//             padding: 9px 0px 3px 0px !important;
+//         }
+
+//         .lang p{
+//             display: none;
+//         }
+//         .translateIcon {
+//             display: block;
+//             margin: 0 auto;
+//         }
+
+//         .accountName {
+//             display: none;
+//         }
+//         .menuThemeActive {
+//             width: 100%;
+//         }
+
+//         .menuThemeDisabled {
+//             display: none;
+//         }
+
+//         .navBar {
+//             margin-top: 10px;
+//         }
+
+//         .langChange {
+//             padding-left: 10px;
+//             padding-right: 10px;
+//             position: relative;
+//             width: 90px;
+//             left: 60px;
+//             top: -50px;
+
+//             li {
+//                 font-size: 9px !important;
+//             }
+//         }
+
+//         .account {
+//             left: 15px;
+//         }
+//     }
+// }
+
 @media (max-width: 1279px) {
     .menu {
-        width: 60px;
-        padding-left: 5px;
-        padding-right: 5px;
-        a {
-            display: block;
-            svg {
-                display: block;
-                margin: 0 auto;
-            }
-        }
-
-        ul a {
-            font-size: 10px !important;
-        }
-
-        ul a p {
-            margin-left: 0;
-            text-align: center;
-            top: 0;
-            margin-top: 5px;
-            font-size: 9px;
-        }
-        
-        .activeThemeIcon {
-            background: var(--theme-iconMin) 50% 10% no-repeat;
-        }
-
-        .menuTheme {
-            height: 25px;
-        }
-
-        .logo h2 {
-            display: none;
-        }
-
-        .active, .navBarActive {
-            padding: 9px 0px 3px 0px !important;
-        }
-
-        .lang p{
-            display: none;
-        }
-        .translateIcon {
-            display: block;
-            margin: 0 auto;
-        }
-
-        .accountName {
-            display: none;
-        }
-        .menuThemeActive {
-            width: 100%;
-        }
-
-        .menuThemeDisabled {
-            display: none;
-        }
-
-        .navBar {
-            margin-top: 10px;
-        }
-
-        .langChange {
-            padding-left: 10px;
-            padding-right: 10px;
-            position: relative;
-            width: 90px;
-            left: 60px;
-            top: -50px;
-
-            li {
-                font-size: 9px !important;
-            }
-        }
-
-        .account {
-            left: 15px;
+        width: 150px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .logo {
+        h2 {
+            font-size: 20px;
+            margin-left: 10px;
         }
     }
-}
-
-.menuMobile {
-    display: none;
 }
 
 @media (max-width: 912px) {
@@ -369,8 +382,11 @@ ul {
         position: absolute;
         display: none;
         top: 65px;
+        padding-left: 5px;
+        padding-right: 5px;
         li {
-            font-size: 18px !important;
+            font-size: var(--font24) !important;
+            margin-bottom: 10px;
         }
     }
 
@@ -450,6 +466,20 @@ ul {
 @media (max-width: 479px) {
     .navBar ul li:last-child {
         display: none;
+    }
+
+    footer {
+        height: 60px;
+    }
+
+    .navBar {
+        ul a p {
+            font-size: 12px;
+        }
+        ul a svg {
+            width: 25px;
+            height: 25px;
+        }
     }
 }
 

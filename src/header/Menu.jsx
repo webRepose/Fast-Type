@@ -8,7 +8,7 @@ const Menu = () => {
         <nav className={Style.navBar}>
         <ul>
         <li>
-            <NavLink  title={t('Home')} to="/" className={Style.navBarActive}>
+            <NavLink title={t('Home')} to="/" className={Style.navBarActive}>
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
                 <path d="M15.654,27H7.75A1.794,1.794,0,0,1,6,25.25V7.75A1.794,1.794,0,0,1,7.75,6h7.9ZM13.9,25.25V7.75H7.75v17.5ZM17.4,15.6V6H25.25A1.794,1.794,0,0,1,27,7.75V15.6Zm1.75-1.75h6.1V7.75h-6.1ZM17.4,27V17.346H27v7.9A1.794,1.794,0,0,1,25.25,27Zm1.75-1.75h6.1V19.1h-6.1ZM13.9,16.5ZM19.154,13.846ZM19.154,19.1Z" transform="translate(-6 -6)" fill="#33d74b"/>
             </svg>
