@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+
+html.dark {
+    --aside-color:#2C2D31;
+    --body-color: #242627;
+    --text-color: #f2f2f2;
+    --border-color: #707070;
+    --active-color: #35373B;
+    --ThemeButton-color: #5161F9;
+    --theme-icon: url(/src/components/icons/dark_mode.svg);
+    --theme-iconMin: url(/src/components/icons/dark_modeMin.svg);
+}
+
+html.light {
+    --aside-color:#2C2D31;
+    --body-color: #242627;
+    --text-color: #f2f2f2;
+    --border-color: #707070;
+    --active-color: #35373B;
+    --ThemeButton-color: #5161F9;
+    --theme-icon: url(/src/components/icons/light_mode.svg);
+    --theme-iconMin: url(/src/components/icons/light_modeMin.svg);
+}
+
+:root {
+    --radius10: 10px;
+    --radius15: 15px;
+    --radius20: 20px;
+    --radius25: 25px;
+    --font24: 24px;
+    --font21: 21px;
+    --font18: 18px;
+    --font17: 17px;
+    --font15: 15px; 
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+button {
+    color: var(--text-color);
+    font-size: var(--font21);
+    cursor: pointer;
+}
+
+main {
+    margin-left: 244px;
+}
+
+.active {
+    border-radius: var(--radius15);
+    background-color: var(--active-color);
+    padding: 12px 14px 6px 14px;
+}
+.block {
+    display: block;
+}
+.none {
+    display: none;
+}
+
+
+    

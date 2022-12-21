@@ -1,0 +1,35 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --aside-color:#2C2D31;
+    --body-color: #242627;
+    --text-color: #f2f2f2;
+    --border-color: #707070;
+    --active-color: #35373B;
+    --ThemeButton-color: #5161F9;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --aside-color:#2C2D31;
+    --body-color: #242627;
+    --text-color: #f2f2f2;
+    --border-color: #707070;
+    --active-color: #35373B;
+    --ThemeButton-color: #5161F9;
+  }
+}
+@media (max-width: 1279px) {
+  main {
+    margin-left: 60px !important;
+  }
+}
+@media (max-width: 1600px) {
+  main {
+    margin-left: 180px;
+  }
+}
+@media (max-width: 780px) {
+  main {
+    margin-left: 0 !important;
+  }
+}/*# sourceMappingURL=adapt.css.map */

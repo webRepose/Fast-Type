@@ -1,0 +1,9 @@
+footer {
+    display: none;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-radius: var(--radius15) var(--radius15) 0 0;
+    background-color: var(--aside-color);
+}
