@@ -4,10 +4,10 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 if(window.localStorage.getItem('i18nextLng') === null) {
-    if(navigator.language == 'ru' ||'ru-Ru'){
-        window.localStorage.setItem('i18nextLng', 'ru')
+    if(navigator.language === 'ru' ||'ru-Ru'){
+        window.localStorage.setItem('i18nextLng', 'ru');
     } else {
-        window.localStorage.setItem('i18nextLng', 'en')
+        window.localStorage.setItem('i18nextLng', 'en');
     }
 }
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({

@@ -5,6 +5,7 @@ html.dark {
   --border-color: #707070;
   --active-color: #35373B;
   --ThemeButton-color: #5161F9;
+  --startButton-color: #33D74B;
   --theme-icon: url(/src/components/icons/dark_mode.svg);
   --theme-iconMin: url(/src/components/icons/dark_modeMin.svg);
 }
@@ -16,6 +17,7 @@ html.light {
   --border-color: #707070;
   --active-color: #35373B;
   --ThemeButton-color: #5161F9;
+  --startButton-color: #33D74B;
   --theme-icon: url(/src/components/icons/light_mode.svg);
   --theme-iconMin: url(/src/components/icons/light_modeMin.svg);
 }

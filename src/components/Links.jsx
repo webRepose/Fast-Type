@@ -14,7 +14,7 @@ function Links() {
       <Routes>
         <Route path="/" element={<Header/>}>
         <Route index element={<Home/>}></Route>
-        <Route path="text" element={<Text/>}></Route>
+        <Route path='text' element={<Text/>}></Route>
         <Route path="code" element={<Code/>}></Route>
         <Route path="symbols" element={<Symbols/>}></Route>
         <Route path="capcha" element={<Capcha/>}></Route>

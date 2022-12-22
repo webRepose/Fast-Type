@@ -1,4 +1,5 @@
 function Capcha() {
+    document.title = 'capcha';
     return (
         <>
         <main>

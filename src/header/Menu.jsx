@@ -8,7 +8,7 @@ const Menu = () => {
         <nav className={Style.navBar}>
         <ul>
         <li>
-            <NavLink title={t('Home')} to="/" className={Style.navBarActive}>
+            <NavLink title={t('Home')} to='/' className={Style.navBarActive}>
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
                 <path d="M15.654,27H7.75A1.794,1.794,0,0,1,6,25.25V7.75A1.794,1.794,0,0,1,7.75,6h7.9ZM13.9,25.25V7.75H7.75v17.5ZM17.4,15.6V6H25.25A1.794,1.794,0,0,1,27,7.75V15.6Zm1.75-1.75h6.1V7.75h-6.1ZM17.4,27V17.346H27v7.9A1.794,1.794,0,0,1,25.25,27Zm1.75-1.75h6.1V19.1h-6.1ZM13.9,16.5ZM19.154,13.846ZM19.154,19.1Z" transform="translate(-6 -6)" fill="#33d74b"/>
             </svg>
@@ -16,7 +16,7 @@ const Menu = () => {
             </NavLink>
         </li>
         <li>
-            <NavLink title={t('Text')} to="/text" className={Style.navBarActive}>
+            <NavLink title={t('Text')} to='/text' className={Style.navBarActive}>
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
                 <path d="M8.2,18.828H9.775V16.859H8.2Zm0,3.938h9.45V20.8H8.2Zm11.025,0H20.8V20.8H19.225ZM11.35,18.828H20.8V16.859H11.35ZM5.575,29a1.385,1.385,0,0,1-1.1-.591A2.141,2.141,0,0,1,4,27.031V9.969a2.141,2.141,0,0,1,.472-1.378A1.385,1.385,0,0,1,5.575,8h17.85a1.385,1.385,0,0,1,1.1.591A2.141,2.141,0,0,1,25,9.969V27.031a2.141,2.141,0,0,1-.472,1.378,1.385,1.385,0,0,1-1.1.591Zm0-1.969h17.85V9.969H5.575Zm0,0v0Z" transform="translate(-4 -8)" fill="#33d74b"/>
             </svg>

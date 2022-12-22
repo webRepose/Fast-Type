@@ -1,0 +1,113 @@
+.homeWelcome {
+  width: 100%;
+  background-color: var(--active-color);
+  border-radius: var(--radius15);
+  margin-bottom: 20px;
+  padding: var(--paddingHome);
+}
+.homeWelcome h2 {
+  text-align: center;
+  font-size: var(--font24);
+  margin-bottom: 10px;
+}
+.homeWelcome h3 {
+  text-align: center;
+  font-size: var(--font21);
+  margin-bottom: 10px;
+}
+
+.homeTest {
+  margin: 0 auto;
+  width: 60%;
+  background-color: var(--active-color);
+  border-radius: var(--radius15);
+  padding: var(--paddingHome);
+  margin-bottom: 20px;
+}
+.homeTest h3 {
+  text-align: center;
+  font-size: var(--font21);
+  margin-bottom: 24px;
+}
+.homeTestStart {
+  padding: 10px 88px;
+  border-radius: var(--radius25);
+  background-color: var(--startButton-color);
+  border: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.homeStats {
+  width: 100%;
+  background-color: var(--active-color);
+  border-radius: var(--radius15);
+  padding: var(--paddingHome);
+}
+.homeStatsBlock {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.homeStatsBlock p {
+  margin-top: 5px;
+  text-align: center;
+  font-size: var(--font21);
+}
+.homeStatsSub {
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+.homeStatsSub:hover {
+  opacity: 0.8;
+  transform: translateY(-10px);
+}
+.homeStatsImg {
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius15);
+  background-color: antiquewhite;
+}
+.homeStatsImg img {
+  position: relative;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media (max-width: 1760px) {
+  .homeStatsBlock p, .homeTest h3, .homeWelcome h3 {
+    font-size: var(--font17);
+  }
+  .homeWelcome h2 {
+    font-size: var(--font21);
+  }
+}
+@media (max-width: 1600px) {
+  :root {
+    --paddingHome:20px 20px !important;
+  }
+}
+@media (max-width: 1366px) {
+  .homeStatsBlock p, .homeTest h3, .homeWelcome h3 {
+    font-size: var(--font15);
+  }
+  .homeWelcome h2 {
+    font-size: var(--font18);
+  }
+}
+@media (max-width: 1110px) {
+  .homeStatsBlock {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .homeStatsSub {
+    margin-top: 15px;
+  }
+}/*# sourceMappingURL=Home.module.css.map */
