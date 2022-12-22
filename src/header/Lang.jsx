@@ -37,11 +37,11 @@ const Lang = () => {
         <ul ref={langRefUl} className={langClass.join(' ')}>
             <li onClick={()=>{
                 setLang(false)
-                changeLanguage("en")
+                changeLanguage("en-EN")
             }}>English</li>
             <li onClick={()=>{
                 setLang(false)
-                changeLanguage("ru")
+                changeLanguage("ru-RU")
             }}>Русский</li>
         </ul>
         </>
