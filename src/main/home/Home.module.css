@@ -16,6 +16,10 @@
   margin-bottom: 10px;
 }
 
+#courses {
+  display: none;
+}
+
 .homeTest {
   margin: 0 auto;
   width: 90%;
@@ -30,7 +34,7 @@
   margin-bottom: 24px;
 }
 .homeTestStart {
-  padding: 10px 88px;
+  padding: 10px 44px;
   border-radius: var(--radius25);
   background-color: var(--startButton-color);
   border: 0;
@@ -47,8 +51,10 @@
 .homeStatsBlock {
   width: 900px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-gap: 16px;
+  gap: 16px;
 }
 .homeStatsBlock p {
   margin-top: 5px;
@@ -93,21 +99,48 @@
   :root {
     --paddingHome:20px 20px !important;
   }
-}
-@media (max-width: 1366px) {
-  .homeStatsBlock p, .homeTest h3, .homeWelcome h3 {
-    font-size: var(--font15);
+  .homeStatsImg {
+    width: 130px;
+    height: 130px;
   }
-  .homeWelcome h2 {
-    font-size: var(--font18);
+  .homeStatsImg img {
+    width: 110px;
+  }
+  .homeStatsBlock {
+    width: 720px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+  .homeStatsSub {
+    width: 130px;
   }
 }
 @media (max-width: 1110px) {
   .homeStatsBlock {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
   }
   .homeStatsSub {
     margin-top: 15px;
+  }
+}
+@media (max-width: 480px) {
+  #courses {
+    display: block;
+  }
+  .homeStats {
+    padding: 15px 10px;
+  }
+  .homeStatsBlock {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .homeStatsSub {
+    width: 160px;
+  }
+  .homeStatsImg {
+    width: 160px;
+    height: 160px;
+  }
+  .homeStatsImg img {
+    width: auto;
   }
 }/*# sourceMappingURL=Home.module.css.map */

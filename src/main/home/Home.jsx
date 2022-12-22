@@ -1,63 +1,71 @@
 import Style from "./Home.module.css"
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 function Home() {
-    document.title = '228';
+    const [t] = useTranslation();
+    document.title = 'Fast Type';
     return (
         <>
         <main>
             <section className={Style.homeWelcome}>
-                <h2>Добро пожаловать на Fast type</h2>
-                <h3>Здесь вы можете  тренировать слепую печать и улучшать скорость вашего набора.</h3>
+                <h2>{t('H-Welcome')}</h2>
+                <h3>{t('H-Traning')}</h3>
             </section>
             <section className={Style.homeTest}>
-                <h3>Пройдите тест набора слов что бы мы смогли определить ваш уровень</h3>
-                <button className={Style.homeTestStart}>Пройти</button>
+                <h3>{t('H-Test')}</h3>
+                <button title={t('H-Pass')} className={Style.homeTestStart}>{t('H-Pass')}</button>
             </section>
             <section className={Style.homeStats}>
                 <div className={Style.homeStatsBlock}>
-                    <div className={Style.homeStatsSub} title='Statistics'>
+                    <div className={Style.homeStatsSub} title={t('H-Stat')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#5161F9'}}>
-                                <img src='./img/stats.svg' alt="statistic"/>
+                                <img src='./img/stats.svg' alt={t('H-Stat')}/>
                             </div>
-                        <p>Statistics</p>
+                        <p>{t('H-Stat')}</p>
                         </Link>
                     </div>
-                    <div className={Style.homeStatsSub} title='History'>
+                    <div className={Style.homeStatsSub} title={t('H-Hist')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#33D74B'}}>
-                                <img src='./img/history.svg' alt="history"/>
+                                <img src='./img/history.svg' alt={t('H-Hist')}/>
                             </div>
-                        <p>History</p>
+                        <p>{t('H-Hist')}</p>
                         </Link>
                     </div>
-                    <div className={Style.homeStatsSub} title='Work on errors'>
+                    <div className={Style.homeStatsSub} title={t('H-Work')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#EDC4B0'}}>
-                                <img src='./img/work.svg' alt="work on errors"/>
+                                <img src='./img/work.svg' alt={t('H-Work')}/>
                             </div>
-                        <p>Work on errors</p>
+                        <p>{t('H-Work')}</p>
                         </Link>
                     </div>
-                    <div className={Style.homeStatsSub} title='Guids'>
+                    <div className={Style.homeStatsSub} title={t('H-Guid')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#4B33E7'}}>
-                                <img src='./img/guid.svg' alt="guids"/>
+                                <img src='./img/guid.svg' alt={t('H-Guid')}/>
                             </div>
-                        <p>Guids</p>
+                        <p>{t('H-Guid')}</p>
                         </Link>
                     </div>
-                    <div className={Style.homeStatsSub} title='Help'>
+                    <div className={Style.homeStatsSub} title={t('H-Help')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#9888D2'}}>
-                                <img src='./img/what.svg' alt="Help" />
+                                <img src='./img/what.svg' alt={t('H-Help')}/>
                             </div>
-                        <p>Help</p>
+                        <p>{t('H-Help')}</p>
                         </Link>
                     </div>
-                    {/* <div className={Style.homeStatsSub}>
-                        
-                    </div> */}
+
+                    <div id={Style.courses} className={Style.homeStatsSub} title={t('Courses')}>
+                        <Link to='/'>
+                            <div className={Style.homeStatsImg} style={{backgroundColor: '#652F6B'}}>
+                                <img src='./img/course.svg' alt={t('Courses')}/>
+                            </div>
+                        <p>{t('Courses')}</p>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

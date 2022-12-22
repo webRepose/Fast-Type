@@ -36,4 +36,9 @@ html.light {
   main {
     margin-left: 0 !important;
   }
+}
+@media (max-width: 480px) {
+  main {
+    padding: 15px 0px 0 0px;
+  }
 }/*# sourceMappingURL=adapt.css.map */

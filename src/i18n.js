@@ -4,7 +4,7 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 if(window.localStorage.getItem('i18nextLng') === null) {
-    if(navigator.language === 'ru' ||'ru-Ru'){
+    if(navigator.language === 'ru-RU' || 'ru' || 'be-BE' || 'be'){
         window.localStorage.setItem('i18nextLng', 'ru');
     } else {
         window.localStorage.setItem('i18nextLng', 'en');

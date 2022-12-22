@@ -5,5 +5,14 @@
     "Code": "Code",
     "Capcha": "Capcha",
     "Symbols": "Symbols",
-    "Courses": "Courses"
+    "Courses": "Courses",
+    "H-Welcome":"Welcome to Fast Type!",
+    "H-Traning":"Here you can practice touch typing and improve your typing speed.",
+    "H-Test":"Take the test so we can determine your level",
+    "H-Pass":"Pass the test",
+    "H-Stat":"Statistics",
+    "H-Hist":"History",
+    "H-Work":"Work on errors",
+    "H-Guid":"Guids",
+    "H-Help":"Help"
 }
