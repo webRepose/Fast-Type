@@ -278,6 +278,7 @@ ul a p {
     top: 65px;
     padding-left: 5px;
     padding-right: 5px;
+    background-color: var(--aside-color);
   }
   .langChange li {
     font-size: var(--font24) !important;
