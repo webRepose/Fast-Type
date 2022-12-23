@@ -8,12 +8,14 @@
 :root {
   --radius10: 10px;
   --radius15: 15px;
+  --radius17: 17px;
   --radius20: 20px;
   --radius25: 25px;
   --font24: 24px;
   --font21: 21px;
   --font18: 18px;
   --font17: 17px;
+  --font16: 16px;
   --font15: 15px;
   --paddingHome: 38px 20px;
 }
@@ -78,4 +80,26 @@ main {
 
 .none {
   display: none;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.Start {
+  padding: 10px 88px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 25px;
+  background-color: var(--startButton-color);
+}
+
+@media (max-width: 770px) {
+  .Start {
+    margin: 0 auto;
+    display: block;
+    margin-top: 45px;
+    font-size: var(--font16) !important;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -321,7 +321,8 @@ ul a p {
   }
   .navBar {
     margin-top: 0;
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
   }
   .navBar ul {
     display: flex;
@@ -351,12 +352,20 @@ ul a p {
     border-radius: 0 0 var(--radius15) var(--radius15);
   }
 }
+@media (max-width: 620px) {
+  .navBar {
+    width: 90%;
+  }
+}
 @media (max-width: 479px) {
   .navBar ul li:last-child {
     display: none;
   }
   footer {
     height: 60px;
+  }
+  .navBar {
+    width: 100%;
   }
   .navBar ul a p {
     font-size: 12px;

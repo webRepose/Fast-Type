@@ -1,0 +1,132 @@
+.choiceParams {
+    width: 100%;
+    padding: var(--paddingHome);
+    border-radius: var(--radius15);
+    background-color: var(--active-color);
+    margin-bottom: 20px;
+    h3 {
+        font-size: var(--font24);
+        font-weight: bold;
+    }
+}
+
+.params {
+    width: 100%;
+    padding: var(--paddingHome);
+    border-radius: var(--radius15);
+    background-color: var(--active-color);
+    &Block {
+        font-size: var(--font21);
+    }
+
+    &Sub {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .paramsSelect {
+        padding: 10px 30px;
+        background-color: var(--body-color);
+        outline: none;
+        border: 0;
+        border-radius: var(--radius15);
+        color: var(--text-color);
+        font-size: var(--font21);
+        margin-left: 28px;
+        &::before {
+            content: '';
+            width: 2px;
+            height: 2px;
+            font-size: 10px;
+            background-color: red;
+        }
+    }
+
+    &Text {
+        padding: 10px 0px;
+        width: 325px;
+        border-radius: var(--radius17);
+        background-color: var(--aside-color);
+
+        p {
+            padding-left: 30px;
+        }
+    }
+
+
+    ul {
+        display: none;
+    }
+
+    li {
+        padding: 10px 30px;
+        background-color: var(--body-color);
+        margin-left: 10px;
+        border-radius: var(--radius15);
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1760px) {
+    .choiceParams h3 {
+        font-size: var(--font21);
+    }
+
+    .paramsText {
+        width: 255px;
+    
+    }
+    .paramsSelect {
+        font-size: var(--font17);
+    }
+    .paramsBlock {
+        font-size: var(--font17);
+    }
+}
+
+@media (max-width: 1366px) {
+    .params button {
+        font-size: var(--font15);
+    }
+    .paramsBlock {
+        font-size: var(--font15);
+    }
+    .paramsSub {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 770px) {
+    .paramsBlock {
+        font-size: var(--font18);
+
+        li {
+            font-size: var(--font16) !important;
+        }
+    }
+    .paramsSub {
+        display: block;
+        margin-bottom: 15px;
+
+        .paramsSelect {
+            margin: 0 auto;
+            display: block;
+            margin-top: 15px;
+            font-size: var(--font16) !important;
+            margin-bottom: 10px;
+            width: 65%;
+        }
+    }
+    
+    .paramsText {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .params ul {
+        justify-content: center;
+    }
+    .paramsText p {
+        padding-left: 0;
+        text-align: center;
+    }
+}
