@@ -15,15 +15,17 @@
   padding: var(--paddingHome);
   border-radius: var(--radius15);
   background-color: var(--active-color);
+  display: flex;
 }
 .paramsBlock {
   font-size: var(--font21);
+  width: 90%;
 }
 .paramsSub {
   display: flex;
   margin-bottom: 20px;
 }
-.params .paramsSelect {
+.paramsSelect {
   padding: 10px 30px;
   background-color: var(--body-color);
   outline: none;
@@ -32,13 +34,6 @@
   color: var(--text-color);
   font-size: var(--font21);
   margin-left: 28px;
-}
-.params .paramsSelect::before {
-  content: "";
-  width: 2px;
-  height: 2px;
-  font-size: 10px;
-  background-color: red;
 }
 .paramsText {
   padding: 10px 0px;
@@ -51,11 +46,12 @@
 }
 .params ul {
   display: none;
+  border-radius: 25px;
+  background-color: var(--body-color);
 }
-.params li {
+.params ul li {
   padding: 10px 30px;
   background-color: var(--body-color);
-  margin-left: 10px;
   border-radius: var(--radius15);
   cursor: pointer;
 }
@@ -64,14 +60,17 @@
   .choiceParams h3 {
     font-size: var(--font21);
   }
-  .paramsText {
-    width: 255px;
-  }
   .paramsSelect {
     font-size: var(--font17);
   }
   .paramsBlock {
     font-size: var(--font17);
+  }
+}
+@media (max-width: 1650px) {
+  .paramsChoice {
+    width: 50%;
+    margin-left: auto;
   }
 }
 @media (max-width: 1366px) {
@@ -85,12 +84,56 @@
     margin-bottom: 10px;
   }
 }
-@media (max-width: 770px) {
+@media (max-width: 1179px) {
+  .paramsChoice {
+    width: 30%;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 1000px) {
+  .paramsChoice {
+    width: 20%;
+  }
+  .params ul li {
+    padding: 10px 15px;
+    margin: 0 0 5px 5px;
+  }
+}
+@media (max-width: 800px) {
   .paramsBlock {
     font-size: var(--font18);
+    width: 100%;
   }
   .paramsBlock li {
     font-size: var(--font16) !important;
+  }
+  .params ul {
+    background-color: #2e2e2e;
+  }
+  .paramsChoice {
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    background-color: #2e2e2e;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 25px;
+    margin: auto;
+  }
+  .paramsChoice button {
+    background-color: var(--active-color);
+    margin: 0 auto;
+    border: 0;
+    border-radius: 15px;
+    padding: 10px 44px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: block;
   }
   .paramsSub {
     display: block;
@@ -102,17 +145,27 @@
     margin-top: 15px;
     font-size: var(--font16) !important;
     margin-bottom: 10px;
-    width: 65%;
+    width: 45%;
   }
   .paramsText {
     margin: 0 auto;
-    width: 90%;
+    width: 70%;
   }
   .params ul {
     justify-content: center;
+    top: 10%;
+    position: relative;
   }
   .paramsText p {
     padding-left: 0;
     text-align: center;
+  }
+}
+@media (max-width: 580px) {
+  .paramsText {
+    width: 90%;
+  }
+  .paramsSelect {
+    width: 65% !important;
   }
 }/*# sourceMappingURL=Text.module.css.map */

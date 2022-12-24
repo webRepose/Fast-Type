@@ -75,12 +75,14 @@ main {
 .block {
     display: block;
 }
+
 .none {
     display: none;
 }
 
 .flex {
     display: flex !important;
+    flex-wrap: wrap;
 } 
 
 .Start {
@@ -92,11 +94,25 @@ main {
     background-color: var(--startButton-color);
 }
 
-@media (max-width: 770px) {
+.blockText {
+    text-align: center;
+    display: none;
+    margin-top: 30px;
+}
+
+
+@media (max-width: 800px) {
     .Start {
         margin: 0 auto;
         display: block;
         margin-top: 45px;
         font-size: var(--font16) !important;
+    }
+    .flex {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .blockText {
+        display: block;
     }
 }
