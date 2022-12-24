@@ -84,7 +84,7 @@ function Text() {
             document.removeEventListener('mousedown', handler)
         }
     })
-    
+
     return (
         <>
         <main>
@@ -178,7 +178,8 @@ function Text() {
                     </div>
                     <button className='Start'>{t('T-start')}</button>
                 </div>
-                <div ref={refKlavaUl}  className={ourKlavaClass.join(' ')}>
+                <div className={ourKlavaClass.join(' ')}>
+                    <div ref={refKlavaUl} className={Style.paramsChoiceMobile}>
                     <p style={{fontWeight: 'bold'}} className={klavaClassText}>{t('T-klava')}</p>
                     <p style={{fontWeight: 'bold'}} className={langeClassText}>{t('T-lang')}</p>
                     <p style={{fontWeight: 'bold'}} className={modeClassText}>{t('T-mode')}</p>
@@ -254,6 +255,7 @@ function Text() {
                                 setTime(false)
                                 setWords(false)
                         }} className={klavaClassText}>{t('T-close')}</button>
+                    </div>
                 </div>
             </section>
         </main>  
