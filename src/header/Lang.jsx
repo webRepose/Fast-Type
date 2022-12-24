@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import {useEffect, useRef, useState } from "react";
 
 const Lang = () => {
+    const htmlDOM = document.querySelector('html')
+    htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))
     const [t, i18n] = useTranslation();
     function changeLanguage(language) {
         i18n.changeLanguage(language);
@@ -38,10 +40,12 @@ const Lang = () => {
             <li onClick={()=>{
                 setLang(false)
                 changeLanguage("en")
+                htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))
             }}>English</li>
             <li onClick={()=>{
                 setLang(false)
                 changeLanguage("ru")
+                htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))
             }}>Русский</li>
         </ul>
         </>

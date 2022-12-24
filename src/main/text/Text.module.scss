@@ -35,6 +35,26 @@
         color: var(--text-color);
         font-size: var(--font21);
         margin-left: 28px;
+        transition: all 0.3s ease;
+        &:hover {
+            opacity: 0.7;
+            // &::after {
+            //     border-left: 5px solid transparent;
+            //     border-right: 5px solid transparent;
+            //     border-top: 5px solid;
+            // }   
+        }
+        &::after {
+            content: '';
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid;
+            height: 0;
+            position: relative;
+            top: 17px;
+            left: 10px;
+            width: 0;             
+        }
     }
 
     &Text {
@@ -71,6 +91,9 @@
 
     .paramsSelect {
         font-size: var(--font17);
+        &::after {
+            top: 13px;
+        }
     }
     .paramsBlock {
         font-size: var(--font17);
@@ -131,7 +154,7 @@
     }
 
     .paramsChoice {
-        width: 80%;
+        width: 50%;
         height: 100%;
         position: fixed;
         // background-color: var(--body-color);
@@ -176,7 +199,6 @@
     .params ul {
         justify-content: center;
         top: 10%;
-        // transform: translateY(-10%);
         position: relative;
     }
     .paramsText p {
@@ -191,5 +213,9 @@
     }
     .paramsSelect {
         width: 65% !important;
+    }
+
+    .paramsChoice {
+        width: 80%;
     }
 }

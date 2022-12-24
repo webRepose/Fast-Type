@@ -34,6 +34,21 @@
   color: var(--text-color);
   font-size: var(--font21);
   margin-left: 28px;
+  transition: all 0.3s ease;
+}
+.paramsSelect:hover {
+  opacity: 0.7;
+}
+.paramsSelect::after {
+  content: "";
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid;
+  height: 0;
+  position: relative;
+  top: 17px;
+  left: 10px;
+  width: 0;
 }
 .paramsText {
   padding: 10px 0px;
@@ -62,6 +77,9 @@
   }
   .paramsSelect {
     font-size: var(--font17);
+  }
+  .paramsSelect::after {
+    top: 13px;
   }
   .paramsBlock {
     font-size: var(--font17);
@@ -113,7 +131,7 @@
     background-color: #2e2e2e;
   }
   .paramsChoice {
-    width: 80%;
+    width: 50%;
     height: 100%;
     position: fixed;
     background-color: #2e2e2e;
@@ -167,5 +185,8 @@
   }
   .paramsSelect {
     width: 65% !important;
+  }
+  .paramsChoice {
+    width: 80%;
   }
 }/*# sourceMappingURL=Text.module.css.map */
