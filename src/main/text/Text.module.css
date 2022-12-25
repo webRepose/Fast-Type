@@ -27,11 +27,11 @@
 }
 .paramsSelect {
   padding: 10px 30px;
-  background-color: var(--body-color);
+  background-color: var(--choiceButton-color);
   outline: none;
   border: 0;
   border-radius: var(--radius15);
-  color: var(--text-color);
+  color: var(--textT-color);
   font-size: var(--font21);
   margin-left: 28px;
   transition: all 0.3s ease;
@@ -50,26 +50,41 @@
   left: 10px;
   width: 0;
 }
+.params button {
+  color: var(--textT-color);
+}
+.paramsChoice {
+  width: 50%;
+  margin-left: auto;
+}
 .paramsText {
   padding: 10px 0px;
   width: 325px;
   border-radius: var(--radius17);
-  background-color: var(--aside-color);
+  background-color: var(--choiceText-color);
 }
 .paramsText p {
   padding-left: 30px;
 }
 .params ul {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: none;
   border-radius: var(--radius25);
 }
 .params ul li {
   padding: 10px 30px;
   margin: 0 0 5px 5px;
-  background-color: var(--body-color);
+  background-color: var(--choiceButton-color);
   border-radius: var(--radius15);
   cursor: pointer;
+  color: var(--textT-color);
+  transition: all 0.3 ease;
   font-size: var(--font21);
+}
+.params ul li:hover {
+  opacity: 0.9;
 }
 
 @media (max-width: 1760px) {
@@ -96,36 +111,27 @@
   }
 }
 @media (max-width: 1366px) {
-  .params button {
-    font-size: var(--font15);
-  }
-  .paramsBlock {
+  .params button, .paramsBlock, .params ul li {
     font-size: var(--font15);
   }
   .paramsSub {
     margin-bottom: 10px;
   }
-  .params ul li {
-    font-size: var(--font15);
-  }
   .paramsChoice {
     width: 35%;
+  }
+  .params ul {
+    max-height: 250px;
   }
 }
 @media (max-width: 1179px) {
   .paramsChoice {
     width: 30%;
-    max-height: 300px;
-    overflow-y: auto;
-    overflow-x: hidden;
   }
 }
 @media (max-width: 1070px) {
   .paramsChoice {
     width: 20%;
-  }
-  .params ul li {
-    font-size: var(--font21);
   }
 }
 @media (max-width: 1000px) {
@@ -142,11 +148,15 @@
     font-size: var(--font18);
     width: 100%;
   }
-  .paramsBlock li {
-    font-size: var(--font16) !important;
-  }
   .params ul {
     background-color: #2e2e2e;
+    max-height: 130px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 80%;
+  }
+  .params li {
+    font-size: var(--font21) !important;
   }
   .paramsChoice {
     width: 100%;
@@ -163,6 +173,16 @@
     border-radius: var(--radius25);
     margin: auto;
   }
+  .paramsChoice button {
+    background-color: var(--ThemeButton-color);
+    margin: 0 auto;
+    border: 0;
+    border-radius: var(--radius15);
+    padding: 10px 44px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+  }
   .paramsChoiceMobile {
     width: 80%;
     height: 250px;
@@ -175,21 +195,11 @@
     bottom: 0;
     right: 0;
   }
-  .paramsChoice button {
-    background-color: var(--ThemeButton-color);
-    margin: 0 auto;
-    border: 0;
-    border-radius: var(--radius15);
-    padding: 10px 44px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: block;
-  }
   .paramsSub {
     display: block;
     margin-bottom: 15px;
   }
-  .paramsSub .paramsSelect {
+  .paramsSelect {
     margin: 0 auto;
     display: block;
     margin-top: 15px;
@@ -197,16 +207,12 @@
     margin-bottom: 10px;
     width: 45%;
   }
-  .paramsSub .paramsSelect::after {
+  .paramsSelect::after {
     top: 15px;
   }
   .paramsText {
     margin: 0 auto;
     width: 70%;
-  }
-  .params ul {
-    justify-content: center;
-    margin-top: 20px;
   }
   .paramsText p {
     padding-left: 0;
@@ -215,12 +221,20 @@
 }
 @media (max-width: 580px) {
   .paramsText {
-    width: 90%;
+    width: 100%;
   }
   .paramsSelect {
     width: 65% !important;
   }
   .paramsChoiceMobile {
     height: 280px;
+  }
+}
+@media (max-width: 380px) {
+  .params ul {
+    margin-top: 30px;
+  }
+  .params ul li {
+    font-size: var(--font15) !important;
   }
 }/*# sourceMappingURL=Text.module.css.map */

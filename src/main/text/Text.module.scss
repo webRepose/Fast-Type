@@ -28,11 +28,11 @@
 
     &Select {
         padding: 10px 30px;
-        background-color: var(--body-color);
+        background-color: var(--choiceButton-color) ;
         outline: none;
         border: 0;
         border-radius: var(--radius15);
-        color: var(--text-color);
+        color: var(--textT-color);
         font-size: var(--font21);
         margin-left: 28px;
         transition: all 0.3s ease;
@@ -57,11 +57,20 @@
         }
     }
 
+    button {
+        color: var(--textT-color);
+    }
+
+    &Choice {
+        width: 50%;
+        margin-left: auto;
+     }
+
     &Text {
         padding: 10px 0px;
         width: 325px;
         border-radius: var(--radius17);
-        background-color: var(--aside-color);
+        background-color: var(--choiceText-color);
 
         p {
             padding-left: 30px;
@@ -70,15 +79,23 @@
 
 
     ul {
+        max-height: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
         display: none;
         border-radius: var(--radius25);
         li {
             padding: 10px 30px;
             margin: 0 0 5px 5px;
-            background-color: var(--body-color);
+            background-color: var(--choiceButton-color);
             border-radius: var(--radius15);
             cursor: pointer;
+            color: var(--textT-color);
+            transition: all 0.3 ease;
             font-size: var(--font21);
+            &:hover {
+                opacity: 0.9;
+            }
         }
     }
 
@@ -89,18 +106,22 @@
     .choiceParams h3 {
         font-size: var(--font21);
     }
-
-    .paramsSelect {
-        font-size: var(--font17);
-        &::after {
-            top: 13px;
+    
+    .params {
+        &Select {
+            font-size: var(--font17);
+            &::after {
+                top: 13px;
+            }   
         }
-    }
-    .paramsBlock {
-        font-size: var(--font17);
-    }
-    .params ul li {
-        font-size: var(--font18);
+
+        &Block {
+            font-size: var(--font17);
+        }
+
+        ul li {
+            font-size: var(--font18);
+        }
     }
 }
 
@@ -113,30 +134,25 @@
 }
 
 @media (max-width: 1366px) {
-    .params button {
-        font-size: var(--font15);
-    }
-    .paramsBlock {
-        font-size: var(--font15);
-    }
-    .paramsSub {
-        margin-bottom: 10px;
-    }
-    .params ul li {
-        font-size: var(--font15);
-    }
-
-    .paramsChoice {
-        width: 35%;
+    .params {
+        button, &Block , ul li {
+            font-size: var(--font15);
+        }
+        &Sub {
+            margin-bottom: 10px;
+        }
+        &Choice {
+            width: 35%;
+        }
+        ul {
+            max-height: 250px;
+        }
     }
 }
 
 @media (max-width: 1179px) {
     .paramsChoice {
         width: 30%;
-        max-height: 300px;
-        overflow-y: auto;
-        overflow-x: hidden;
     }
 }
 
@@ -144,50 +160,66 @@
     .paramsChoice {
         width: 20%;
     }
-    .params ul li {
-        font-size: var(--font21);
-    }
 }
 
 @media (max-width: 1000px) {
-    .paramsChoice {
-        width: 20%;
-    }
-    .params ul li {
-        padding: 10px 15px;
-        margin: 0 0 5px 5px;
+    .params {
+        &Choice {
+            width: 20%;
+        }
+        ul li {
+            padding: 10px 15px;
+            margin: 0 0 5px 5px; 
+        }
     }
 }    
 
 @media (max-width: 800px) {
-    .paramsBlock {
-        font-size: var(--font18);
-        width: 100%;
+    .params {
+        &Block {
+            font-size: var(--font18);
+            width: 100%;
+        }
+
+        ul {
+            background-color: #2e2e2e;
+            max-height: 130px;
+            justify-content: center;
+            margin-top: 20px;
+            width: 80%;
+        }
 
         li {
-            font-size: var(--font16) !important;
+            font-size: var(--font21) !important; 
         }
-    }
 
-    .params ul {
-        background-color: #2e2e2e;
-    }
+        &Choice {
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            position: fixed;
+            backdrop-filter: blur(10px);
+            display: none;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            border-radius: var(--radius25);
+            margin: auto;
+            
+            button {
+                background-color: var(--ThemeButton-color);
+                margin: 0 auto;
+                border: 0;
+                border-radius: var(--radius15);
+                padding: 10px 44px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                display: block;
+            }
+        }
 
-    .paramsChoice {
-        width: 100%;
-        height: 100%;
-        max-height: 100%;
-        position: fixed;
-        backdrop-filter: blur(10px);
-        display: none;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        border-radius: var(--radius25);
-        margin: auto;
-
-        &Mobile {
+        &ChoiceMobile {
             width: 80%;
             height: 250px;
             margin: auto;
@@ -200,22 +232,12 @@
             right: 0;
         }
 
-        button {
-            background-color: var(--ThemeButton-color);
-            margin: 0 auto;
-            border: 0;
-            border-radius: var(--radius15);
-            padding: 10px 44px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+        &Sub {
             display: block;
+            margin-bottom: 15px;
         }
-    }
-    .paramsSub {
-        display: block;
-        margin-bottom: 15px;
 
-        .paramsSelect {
+        &Select {
             margin: 0 auto;
             display: block;
             margin-top: 15px;
@@ -226,30 +248,37 @@
                 top: 15px;
             }
         }
-    }
-    
-    .paramsText {
-        margin: 0 auto;
-        width: 70%;
-    }
-    .params ul {
-        justify-content: center;
-        margin-top: 20px;
-    }
-    .paramsText p {
-        padding-left: 0;
-        text-align: center;
+
+        &Text {
+            margin: 0 auto;
+            width: 70%;
+            p {
+                padding-left: 0;
+                text-align: center;
+            }
+        }
     }
 }
 
 @media (max-width: 580px) {
-    .paramsText {
-        width: 90%;
+    .params {
+        &Text {
+            width: 100%;
+        }
+        &Select {
+            width: 65% !important;
+        }
+        &ChoiceMobile {
+            height: 280px;
+        }
     }
-    .paramsSelect {
-        width: 65% !important;
-    }
-    .paramsChoiceMobile {
-        height: 280px;
+}
+
+@media (max-width: 380px) {
+    .params ul {
+        margin-top: 30px;
+        li {
+            font-size: var(--font15) !important;
+        }
     }
 }

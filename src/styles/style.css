@@ -110,7 +110,7 @@ main {
     font-size: var(--font16) !important;
   }
   .flex {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
   .blockText {

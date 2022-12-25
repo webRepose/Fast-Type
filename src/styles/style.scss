@@ -100,11 +100,6 @@ main {
     margin-top: 30px;
 }
 
-// .ban {
-//     position: absolute;
-//     height: 0;
-// }
-
 @media (max-width: 800px) {
     .Start {
         margin: 0 auto;
@@ -113,7 +108,7 @@ main {
         font-size: var(--font16) !important;
     }
     .flex {
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
     }
     .blockText {
