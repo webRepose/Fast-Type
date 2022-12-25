@@ -7,10 +7,4 @@ footer {
   z-index: 100;
   border-radius: var(--radius15) var(--radius15) 0 0;
   background-color: var(--aside-color);
-}
-
-@media (max-width: 479px) {
-  footer {
-    height: 60px;
-  }
 }/*# sourceMappingURL=Footer.module.css.map */

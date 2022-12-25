@@ -78,7 +78,6 @@ main {
 
 .grid {
     display: grid;
-    place-items: center;
 }
 
 .none {
@@ -118,5 +117,8 @@ main {
     }
     .blockText {
         display: block;
+    }
+    .grid {
+        place-items: center;
     }
 }

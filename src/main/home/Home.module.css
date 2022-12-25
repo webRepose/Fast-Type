@@ -1,6 +1,6 @@
 .homeWelcome {
   width: 100%;
-  background-color: var(--active-color);
+  background-color: var(--block-color);
   border-radius: var(--radius15);
   margin-bottom: 20px;
   padding: var(--paddingHome);
@@ -23,7 +23,7 @@
 .homeTest {
   margin: 0 auto;
   width: 90%;
-  background-color: var(--active-color);
+  background-color: var(--block-color);
   border-radius: var(--radius15);
   padding: var(--paddingHome);
   margin-bottom: 20px;
@@ -45,7 +45,7 @@
 
 .homeStats {
   width: 100%;
-  background-color: var(--active-color);
+  background-color: var(--block-color);
   border-radius: var(--radius15);
   padding: var(--paddingHome);
 }

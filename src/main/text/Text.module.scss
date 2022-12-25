@@ -2,7 +2,7 @@
     width: 100%;
     padding: var(--paddingHome);
     border-radius: var(--radius15);
-    background-color: var(--active-color);
+    background-color: var(--block-color);
     margin-bottom: 20px;
     h3 {
         font-size: var(--font24);
@@ -14,7 +14,7 @@
     width: 100%;
     padding: var(--paddingHome);
     border-radius: var(--radius15);
-    background-color: var(--active-color);
+    background-color: var(--block-color);
     display: flex;
     &Block {
         font-size: var(--font21);
@@ -182,7 +182,7 @@
         }
 
         ul {
-            background-color: #2e2e2e;
+            background-color: var(--chageText-color);
             max-height: 130px;
             justify-content: center;
             margin-top: 20px;
@@ -221,7 +221,7 @@
 
         &ChoiceMobile {
             width: 80%;
-            background-color: #2e2e2e;
+            background-color: var(--chageText-color);
             border-radius: var(--radius25);
         }
 

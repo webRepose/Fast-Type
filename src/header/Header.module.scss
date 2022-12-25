@@ -108,9 +108,9 @@ ul {
     margin-top: 10px;
     padding: 12px 14px 6px 14px;
     border-radius: var(--radius15);
-    background-color: var(--active-color);
+    background-color: var(--langUl-color);
     li {
-        background-color: var(--aside-color);
+        background-color: var(--langUl-color);
         border-radius: var(--radius10);
         padding: 5px 10px;
         margin-bottom: 10px;
@@ -131,7 +131,7 @@ ul {
     border-radius: 50%;
     width: 45px;
     height: 45px;
-    background-color: aliceblue;
+    background-color: var(--account-color);
 }
 .accountName {
     margin: 10px 0 0 14px;
@@ -301,7 +301,6 @@ ul {
         top: 65px;
         padding-left: 5px;
         padding-right: 5px;
-        background-color: var(--aside-color);
         li {
             font-size: var(--font24) !important;
             margin-bottom: 10px;
@@ -335,7 +334,7 @@ ul {
         width: 100%;
     }
     .active, .navBarActive {
-        padding: 13px 14px 6px 14px !important;
+        padding: 15px 14px 13px 14px !important;
     }
     footer {
         display: flex !important;

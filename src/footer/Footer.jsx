@@ -4,7 +4,7 @@ import Fcss from './Footer.module.css';
 const Footer = ()=>{
     return (
         <>
-        <footer className={Fcss.menuMobile}>
+        <footer style={/iPhone|iPad|iPod/i.test(navigator.userAgent) ? {height:'80px'} : {height:'70px'}} className={Fcss.menuMobile}>
             <Menu/>
         </footer>
         </>
