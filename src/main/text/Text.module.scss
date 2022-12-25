@@ -221,15 +221,8 @@
 
         &ChoiceMobile {
             width: 80%;
-            height: 250px;
-            margin: auto;
             background-color: #2e2e2e;
             border-radius: var(--radius25);
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
         }
 
         &Sub {
@@ -267,9 +260,6 @@
         }
         &Select {
             width: 65% !important;
-        }
-        &ChoiceMobile {
-            height: 280px;
         }
     }
 }

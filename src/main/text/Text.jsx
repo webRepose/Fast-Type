@@ -28,7 +28,7 @@ function Text() {
     const langeClass = lange ?  'flex' : '';
     const langeClassText = lange ?  'blockText' : 'none';
 
-    const klavaClassAbsolute = klava || lange || mode || time || words ?  'block' : '';
+    const klavaClassAbsolute = klava || lange || mode || time || words ?  'grid' : '';
     const klavaClass = klava ?  'flex' : '';
     const klavaClassText = klava ?  'blockText' : 'none';
 

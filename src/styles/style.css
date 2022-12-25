@@ -78,6 +78,11 @@ main {
   display: block;
 }
 
+.grid {
+  display: grid;
+  place-items: center;
+}
+
 .none {
   display: none;
 }

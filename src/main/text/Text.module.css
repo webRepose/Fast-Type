@@ -185,15 +185,8 @@
   }
   .paramsChoiceMobile {
     width: 80%;
-    height: 250px;
-    margin: auto;
     background-color: #2e2e2e;
     border-radius: var(--radius25);
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
   }
   .paramsSub {
     display: block;
@@ -225,9 +218,6 @@
   }
   .paramsSelect {
     width: 65% !important;
-  }
-  .paramsChoiceMobile {
-    height: 280px;
   }
 }
 @media (max-width: 380px) {
