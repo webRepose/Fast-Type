@@ -301,7 +301,9 @@ ul {
         top: 65px;
         padding-left: 5px;
         padding-right: 5px;
+        background-color: var(--langUlMob-color);
         li {
+            background-color: var(--langUlMob-color);
             font-size: var(--font24) !important;
             margin-bottom: 10px;
         }

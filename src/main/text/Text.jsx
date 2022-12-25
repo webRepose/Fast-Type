@@ -98,7 +98,11 @@ function Text() {
                         <p>{t('T-klava')}</p>
                         </div>
                         <div>
-                        <button ref={refKlavaBtn} className={Style.paramsSelect} onClick={()=>{
+                        <button
+                        title={t('Ttitle-klava')} 
+                        ref={refKlavaBtn} 
+                        className={Style.paramsSelect} 
+                        onClick={()=>{
                         setKlava(prev => !prev)
                         setLange(false)
                         setMode(false)
@@ -113,6 +117,7 @@ function Text() {
                         <p>{t('T-lang')}</p>
                         </div>
                         <button
+                        title={t('Ttitle-lang')}
                         ref={refLangeBtn}
                         onClick={()=>{
                             setLange(prev => !prev)
@@ -129,7 +134,8 @@ function Text() {
                         <div className={Style.paramsText}>
                         <p>{t('T-mode')}</p>
                         </div>
-                        <button 
+                        <button
+                            title={t('Ttitle-mode')} 
                             ref={refModeBtn}
                             onClick={()=>{
                             setMode(prev => !prev)
@@ -147,6 +153,7 @@ function Text() {
                         <p>{t('T-time')}</p>
                         </div>
                         <button
+                            title={t('Ttitle-time')}
                             ref={refTimeBtn}
                             onClick={()=>{
                             setTime(prev => !prev)
@@ -164,6 +171,7 @@ function Text() {
                         <p>{t('T-words')}</p>
                         </div>
                         <button
+                            title={t('Ttitle-words')}
                             ref={refWordsBtn}
                             onClick={()=>{
                             setWords(prev => !prev)
@@ -176,7 +184,7 @@ function Text() {
                             {window.localStorage.getItem('mode-words') + ' ' + t('T-counWord')}
                         </button>
                     </div>
-                    <button className='Start'>{t('T-start')}</button>
+                    <button title={t('Ttitle-start')} className='Start'>{t('T-start')}</button>
                 </div>
                 <div className={ourKlavaClass.join(' ')}>
                     <div ref={refKlavaUl} className={Style.paramsChoiceMobile}>
@@ -186,64 +194,64 @@ function Text() {
                     <p style={{fontWeight: 'bold'}} className={timeClassText}>{t('T-time')}</p>
                     <p style={{fontWeight: 'bold'}} className={wordsClassText}>{t('T-words')}</p>
                 <ul className={klavaClass}>
-                            <li onClick={()=>{
+                            <li title="Colemak" onClick={()=>{
                                 setKlava(false)
                                 window.localStorage.setItem('klava', 'Colemak');
                             }}>Colemak</li>
-                            <li onClick={()=>{
+                            <li title="Work-man" onClick={()=>{
                                 setKlava(false)
                                 window.localStorage.setItem('klava', 'Work-man');
                             }}>Work-man</li>
-                            <li onClick={()=>{
+                            <li title="Qwerty" onClick={()=>{
                                 setKlava(false)
                                 window.localStorage.setItem('klava', 'Qwerty');
                             }}>Qwerty</li>
                         </ul>
                 <ul className={langeClass}>
-                            <li onClick={()=>{
+                            <li title="Русский" onClick={()=>{
                                 setLange(false)
                                 window.localStorage.setItem('lange','Русский')
                             }}>Русский</li>
-                            <li onClick={()=>{
+                            <li title="English" onClick={()=>{
                                 setLange(false)
                                 window.localStorage.setItem('lange','English')
                             }}>English</li>
-                            <li>France</li>
+                            <li title="France">France</li>
                         </ul>
                 <ul className={modeClass}>
-                            <li onClick={()=>{
+                            <li title={t('T-onTime')} onClick={()=>{
                                 setMode(false)
                                 window.localStorage.setItem('mode', 't-time')
                             }}>{t('T-onTime')}</li>
-                            <li onClick={()=>{
+                            <li title={t('T-onWords')} onClick={()=>{
                                 setMode(false)
                                 window.localStorage.setItem('mode','t-word')
                             }}>{t('T-onWords')}</li>
                         </ul>
                 <ul className={timeClass}>
-                            <li onClick={()=>{
+                            <li title="1:00" onClick={()=>{
                                 setTime(false)
                                 window.localStorage.setItem('mode-time','1:00')
                             }}>1:00</li>
-                            <li onClick={()=>{
+                            <li title="3:00" onClick={()=>{
                                 setTime(false)
                                 window.localStorage.setItem('mode-time','3:00')
                             }}>3:00</li>
-                            <li onClick={()=>{
+                            <li title="5:00" onClick={()=>{
                                 setTime(false)
                                 window.localStorage.setItem('mode-time','5:00')
                             }}>5:00</li>
                         </ul>
                 <ul className={wordsClass}>
-                            <li onClick={()=>{
+                            <li title={50 + ' ' + t('T-counWord')} onClick={()=>{
                                 setWords(false)
                                 window.localStorage.setItem('mode-words','50')
                             }}>50 {t('T-counWord')}</li>
-                            <li onClick={()=>{
+                            <li title={70 + ' ' + t('T-counWord')} onClick={()=>{
                                 setWords(false)
                                 window.localStorage.setItem('mode-words','70')
                             }}>70 {t('T-counWord')}</li>
-                            <li onClick={()=>{
+                            <li title={100 + ' ' + t('T-counWord')} onClick={()=>{
                                 setWords(false)
                                 window.localStorage.setItem('mode-words','100')
                             }}>100 {' '} {t('T-counWord')}</li>

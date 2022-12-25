@@ -28,7 +28,7 @@ const Lang = () => {
 
     return (
         <>
-        <button className={Style.lang} ref={langRefButton} onClick={()=>{
+        <button title={t('changLang')} className={Style.lang} ref={langRefButton} onClick={()=>{
             setLang(prev => !prev)
         }}>
         <svg className={Style.translateIcon} xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
@@ -37,12 +37,12 @@ const Lang = () => {
         <p>{t('English')}</p>
         </button>
         <ul ref={langRefUl} className={langClass.join(' ')}>
-            <li onClick={()=>{
+            <li title='English' onClick={()=>{
                 setLang(false)
                 changeLanguage("en")
                 htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))
             }}>English</li>
-            <li onClick={()=>{
+            <li title='Русский' onClick={()=>{
                 setLang(false)
                 changeLanguage("ru")
                 htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))

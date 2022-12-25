@@ -6,6 +6,7 @@
     "Capcha": "Capcha",
     "Symbols": "Symbols",
     "Courses": "Courses",
+    "changLang": "Change language",
 
     "H-Welcome":"Welcome to Fast Type!",
     "H-Traning":"Here you can practice touch typing and improve your typing speed.",
@@ -28,5 +29,12 @@
     "T-onTime":"For a while",
     "T-onWords":"On the number of words",
     "T-counWord":"Words",
-    "T-close":"Close"
+    "T-close":"Close",
+
+    "Ttitle-mode":"Change the mode",
+    "Ttitle-lang":"Change the input language",
+    "Ttitle-time":"Change the input time",
+    "Ttitle-words":"Change the number of words",
+    "Ttitle-klava":"Change the keyboard layout",
+    "Ttitle-start":"Start"
 }
