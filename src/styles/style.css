@@ -78,49 +78,8 @@ main {
   display: block;
 }
 
-.grid {
-  display: grid;
-}
-
-.none {
-  display: none;
-}
-
-.flex {
-  display: flex !important;
-  flex-wrap: wrap;
-}
-
-.Start {
-  padding: 10px 88px;
-  margin: 0 auto;
-  margin-top: 10px;
-  border: 0;
-  border-radius: 25px;
-  background-color: var(--startButton-color);
-}
-
-.blockText {
-  text-align: center;
-  display: none;
-  margin-top: 30px;
-}
-
-@media (max-width: 800px) {
-  .Start {
-    margin: 0 auto;
-    display: block;
-    margin-top: 45px;
-    font-size: var(--font16) !important;
-  }
-  .flex {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .blockText {
-    display: block;
-  }
-  .grid {
-    place-items: center;
+@media (max-width: 1600px) {
+  :root {
+    --paddingHome:20px 20px !important;
   }
 }/*# sourceMappingURL=style.css.map */

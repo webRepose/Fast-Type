@@ -1,18 +1,5 @@
 import { Routes, Route} from "react-router-dom";
-// import { Suspense } from "react";
-// import Home from '../main/home/Home';
-// import Text from '../main/text/Text';
-// import Code from '../main/code/Code';
-// import Capcha from '../main/capcha/Capcha';
-// import Symbols from '../main/symbols/Symbols';
-// import Courses from '../main/courses/Courses';
-// import NF404 from '../main/NF404/404';
-// import Header from "../header/Header";
-// import Type from "../main/text/type/type";
-// import Preloader from "./Preloader";
-
-import React, { Suspense, lazy } from 'react';
-
+import React, { lazy } from 'react';
 const Home = lazy(() => import('../main/home/Home'));
 const Text = lazy(() => import('../main/text/Text'));
 const Code = lazy(() => import('../main/code/Code'));
@@ -26,7 +13,6 @@ const Type = lazy(() => import('../main/text/type/type'));
 function Links() {
     return (
         <>
-        <Suspense fallback = {<div>Загрузка</div>}>
         <Routes>
         <Route path="/" element={<Header/>}>
         <Route index element={<Home/>}></Route>
@@ -39,7 +25,6 @@ function Links() {
         <Route path="*" element={<NF404/>}></Route>
         </Route>
       </Routes>
-        </Suspense>
         </>
     );
   }

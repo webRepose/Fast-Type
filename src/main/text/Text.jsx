@@ -12,26 +12,26 @@ function Text() {
     const [time, setTime] = useState(false);
     const [words, setWords] = useState(false);
 
-    const visibleWords = window.localStorage.getItem('mode') !== 't-time' ?  'flex' : 'none';
+    const visibleWords = window.localStorage.getItem('mode') !== 't-time' ?  Style.flex : Style.none;
     const classVisibleWords = [Style.paramsSub, visibleWords]
-    const visibleMin = window.localStorage.getItem('mode') === 't-time' ?  'flex' : 'none';
+    const visibleMin = window.localStorage.getItem('mode') === 't-time' ?  Style.flex : Style.none;
     const classVisibleMin = [Style.paramsSub, visibleMin]
 
-    const timeClass = time ?  'flex' : '';
-    const timeClassText = time ?  'blockText' : 'none';
+    const timeClass = time ?  Style.flex : '';
+    const timeClassText = time ?  Style.blockText : Style.none;
 
-    const wordsClass = words ?  'flex' : '';
-    const wordsClassText = words ?  'blockText' : 'none';
+    const wordsClass = words ?  Style.flex : '';
+    const wordsClassText = words ?  Style.blockText : Style.none;
 
-    const modeClass = mode ?  'flex' : '';
-    const modeClassText = mode ?  'blockText' : 'none';
+    const modeClass = mode ?  Style.flex : '';
+    const modeClassText = mode ?  Style.blockText : Style.none;
 
-    const langeClass = lange ?  'flex' : '';
-    const langeClassText = lange ?  'blockText' : 'none';
+    const langeClass = lange ?  Style.flex : '';
+    const langeClassText = lange ?  Style.blockText : Style.none;
 
-    const klavaClassAbsolute = klava || lange || mode || time || words ?  'grid' : '';
-    const klavaClass = klava ?  'flex' : '';
-    const klavaClassText = klava ?  'blockText' : 'none';
+    const klavaClassAbsolute = klava || lange || mode || time || words ?  Style.grid : '';
+    const klavaClass = klava ?  Style.flex : '';
+    const klavaClassText = klava ?  Style.blockText : Style.none;
 
     const ourKlavaClass = [Style.paramsChoice, klavaClassAbsolute]
     if(klava || lange || mode || time || words) {
@@ -205,7 +205,7 @@ function Text() {
                             {window.localStorage.getItem('mode-words') + ' ' + t('T-counWord')}
                         </button>
                     </div>
-                    <Link to='./type'><button title={t('Ttitle-start')} className='Start'>{t('T-start')}</button></Link>
+                    <Link to='./type'><button title={t('Ttitle-start')} className={Style.Start}>{t('T-start')}</button></Link>
                 </div>
                 <div className={ourKlavaClass.join(' ')}>
                     <div ref={refKlavaUl} className={Style.paramsChoiceMobile}>
@@ -275,7 +275,7 @@ function Text() {
                             <li title={100 + ' ' + t('T-counWord')} onClick={()=>{
                                 setWords(false)
                                 window.localStorage.setItem('mode-words','100')
-                            }}>100 {' '} {t('T-counWord')}</li>
+                            }}>100 {t('T-counWord')}</li>
                         </ul>
                         <button onClick={()=>{
                                 setKlava(false)

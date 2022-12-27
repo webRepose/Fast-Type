@@ -1,3 +1,31 @@
+.grid {
+    display: grid !important;
+}
+
+.none {
+    display: none !important;
+}
+
+.flex {
+    display: flex !important;
+    flex-wrap: wrap;
+} 
+
+.Start {
+    padding: 10px 88px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 25px;
+    background-color: var(--startButton-color);
+}
+
+.blockText {
+    text-align: center;
+    display: none;
+    margin-top: 30px;
+}
+
 .choiceParams {
     width: 100%;
     padding: var(--paddingHome);
@@ -68,7 +96,7 @@
 
     &Text {
         padding: 10px 0px;
-        width: 325px;
+        width: 345px;
         border-radius: var(--radius17);
         background-color: var(--choiceText-color);
 
@@ -195,6 +223,27 @@
 }    
 
 @media (max-width: 800px) {
+    .Start {
+        margin: 0 auto;
+        display: block;
+        margin-top: 45px;
+        font-size: var(--font16) !important;
+    }
+    .flex {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .blockText {
+        display: block;
+    }
+    .grid {
+        place-items: center !important;
+    }
+
+    .none {
+        display: none;
+    }
+
     .params {
         &Block {
             font-size: var(--font18);
@@ -235,7 +284,7 @@
                 padding: 10px 44px;
                 margin-top: 20px;
                 margin-bottom: 20px;
-                display: block;
+                display: block !important;
             }
         }
 
