@@ -3,7 +3,7 @@
     transform: rotate(0deg);
   }
   0% {
-    transform: rotate(300deg);
+    transform: rotate(1000deg);
   }
 }
 @keyframes preloadere {
@@ -11,7 +11,7 @@
     transform: rotate(0deg);
   }
   0% {
-    transform: rotate(300deg);
+    transform: rotate(1000deg);
   }
 }
 .preloader {
@@ -36,6 +36,6 @@
   border-radius: 50%;
   border-top: 10px solid blueviolet;
   -webkit-animation: 1s preloadere alternate infinite ease-out;
-  animation: 1s preloadere alternate infinite ease-out;
+  animation: 4s preloadere alternate infinite ease-out;
   margin-bottom: 40px;
 }/*# sourceMappingURL=Preloader.module.css.map */
