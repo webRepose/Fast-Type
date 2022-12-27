@@ -20,7 +20,7 @@ function Home() {
                     <div className={Style.homeStatsSub} title={t('H-Stat')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#5161F9'}}>
-                                <img src='./img/stats.svg' alt={t('H-Stat')}/>
+                                <img src='./img/home/stats.webp' alt={t('H-Stat')}/>
                             </div>
                         <p>{t('H-Stat')}</p>
                         </Link>
@@ -28,7 +28,7 @@ function Home() {
                     <div className={Style.homeStatsSub} title={t('H-Hist')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#33D74B'}}>
-                                <img src='./img/history.svg' alt={t('H-Hist')}/>
+                                <img src='./img/home/history.webp' alt={t('H-Hist')}/>
                             </div>
                         <p>{t('H-Hist')}</p>
                         </Link>
@@ -36,7 +36,7 @@ function Home() {
                     <div className={Style.homeStatsSub} title={t('H-Work')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#EDC4B0'}}>
-                                <img src='./img/work.svg' alt={t('H-Work')}/>
+                                <img src='./img/home/work.webp' alt={t('H-Work')}/>
                             </div>
                         <p>{t('H-Work')}</p>
                         </Link>
@@ -44,7 +44,7 @@ function Home() {
                     <div className={Style.homeStatsSub} title={t('H-Guid')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#4B33E7'}}>
-                                <img src='./img/guid.svg' alt={t('H-Guid')}/>
+                                <img src='./img/home/guid.webp' alt={t('H-Guid')}/>
                             </div>
                         <p>{t('H-Guid')}</p>
                         </Link>
@@ -52,7 +52,7 @@ function Home() {
                     <div className={Style.homeStatsSub} title={t('H-Help')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#9888D2'}}>
-                                <img src='./img/what.svg' alt={t('H-Help')}/>
+                                <img src='./img/home/what.webp' alt={t('H-Help')}/>
                             </div>
                         <p>{t('H-Help')}</p>
                         </Link>
@@ -61,7 +61,7 @@ function Home() {
                     <div id={Style.courses} className={Style.homeStatsSub} title={t('Courses')}>
                         <Link to='/'>
                             <div className={Style.homeStatsImg} style={{backgroundColor: '#652F6B'}}>
-                                <img src='./img/course.svg' alt={t('Courses')}/>
+                                <img src='./img/home/course.webp' alt={t('Courses')}/>
                             </div>
                         <p>{t('Courses')}</p>
                         </Link>

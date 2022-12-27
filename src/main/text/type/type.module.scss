@@ -1,0 +1,59 @@
+.choiceParams {
+    width: 100%;
+    padding: var(--paddingHome);
+    border-radius: var(--radius15);
+    background-color: var(--block-color);
+    margin-bottom: 20px;
+    h3 {
+        font-size: var(--font24);
+        font-weight: bold;
+    }
+}
+
+.inputBlock {
+    display: block;
+    margin: 0 auto;
+    cursor: text;
+    max-width: 1200px;
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.inputText {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+ max-width: 1200px;
+ font-size: 28px;
+ font-weight: 400;
+ opacity: 0.7;
+ word-spacing: 8px;
+ overflow: hidden;
+ cursor: text;
+ font-family: sans-serif;
+}
+
+.inputArea {
+    position: absolute;
+    padding: 0;
+    top: 20px;
+    margin: 0;
+    resize: none;
+    border: 0;
+    outline: 0;
+    width: 96%;
+    height: 97%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-size: 28px;
+    font-weight: 400;
+    word-spacing: 8px;
+    font-family: sans-serif;
+    color: white;
+    background-color: transparent;
+}

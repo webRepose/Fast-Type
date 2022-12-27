@@ -14,8 +14,8 @@ html.dark {
   --choiceButton-color: #6300F1;
   --choiceText-color: #303030;
   --account-color: #f6f6f6;
-  --theme-icon: url(/src/components/icons/dark_mode.svg);
-  --theme-iconMin: url(/src/components/icons/dark_modeMin.svg);
+  --theme-icon: url(/public/img/theme/dark_mode.svg);
+  --theme-iconMin: url(/public/img/theme/dark_modeMin.svg);
 }
 
 html.light {
@@ -34,8 +34,8 @@ html.light {
   --choiceButton-color: #9652f7;
   --choiceText-color: #ede9e9;
   --account-color: #2E2E2E;
-  --theme-icon: url(/src/components/icons/light_mode.svg);
-  --theme-iconMin: url(/src/components/icons/light_modeMin.svg);
+  --theme-icon: url(/public/img/theme/light_mode.svg);
+  --theme-iconMin: url(/public/img/theme/light_modeMin.svg);
 }
 
 @media (max-width: 1279px) {

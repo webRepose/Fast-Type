@@ -8,6 +8,8 @@ import Courses from '../main/courses/Courses';
 import NF404 from '../main/NF404/404';
 import Header from "../header/Header";
 
+import Type from "../main/text/type/type";
+
 function Links() {
     return (
         <>
@@ -15,6 +17,7 @@ function Links() {
         <Route path="/" element={<Header/>}>
         <Route index element={<Home/>}></Route>
         <Route path='text' element={<Text/>}></Route>
+        <Route path='text/type' element={<Type/>}></Route>
         <Route path="code" element={<Code/>}></Route>
         <Route path="symbols" element={<Symbols/>}></Route>
         <Route path="capcha" element={<Capcha/>}></Route>

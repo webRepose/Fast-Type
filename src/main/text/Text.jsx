@@ -1,6 +1,7 @@
 import Style from "./Text.module.css"
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
 
 function Text() {
     const [t] = useTranslation();
@@ -93,9 +94,13 @@ function Text() {
             </section>
             <section className={Style.params}>
                 <div className={Style.paramsBlock}>
+                    {/* klava */}
                     <div className={Style.paramsSub}>
                         <div className={Style.paramsText}>
+                            <div className={Style.paramsTextSub}>
+                            <img width='21px' height='21px' src="./img/text/keyboard.svg" alt="keyboard" />
                         <p>{t('T-klava')}</p>
+                            </div>
                         </div>
                         <div>
                         <button
@@ -112,9 +117,13 @@ function Text() {
                         </button>
                         </div>
                     </div>
+                    {/* lang */}
                     <div className={Style.paramsSub}>
                         <div className={Style.paramsText}>
+                            <div className={Style.paramsTextSub}>
+                            <img width='21px' height='21px' src="./img/text/language.svg" alt="language" />
                         <p>{t('T-lang')}</p>
+                            </div>
                         </div>
                         <button
                         title={t('Ttitle-lang')}
@@ -130,9 +139,13 @@ function Text() {
                             {window.localStorage.getItem('lange')}
                         </button>
                     </div>
+                    {/* mode */}
                     <div className={Style.paramsSub}>
                         <div className={Style.paramsText}>
+                            <div className={Style.paramsTextSub}>
+                            <img width='21px' height='21px' src="./img/text/mode.svg" alt="mode" />
                         <p>{t('T-mode')}</p>
+                            </div>
                         </div>
                         <button
                             title={t('Ttitle-mode')} 
@@ -148,9 +161,13 @@ function Text() {
                             {window.localStorage.getItem('mode') === 't-time' ?  t('T-onTime') : t('T-onWords')}
                         </button>
                     </div>
+                    {/* on time */}
                     <div className={classVisibleMin.join(' ')}>
                         <div className={Style.paramsText}>
+                            <div className={Style.paramsTextSub}>
+                            <img width='21px' height='21px' src="./img/text/timer.svg" alt="time" />
                         <p>{t('T-time')}</p>
+                            </div>
                         </div>
                         <button
                             title={t('Ttitle-time')}
@@ -166,9 +183,13 @@ function Text() {
                             {window.localStorage.getItem('mode-time')}
                         </button>
                     </div>
+                        {/* on words */}
                         <div className={classVisibleWords.join(' ')}>
                         <div className={Style.paramsText}>
-                        <p>{t('T-words')}</p>
+                            <div className={Style.paramsTextSub}>
+                            <img width='21px' height='21px' src="./img/text/view_list.svg" alt="words" />
+                           <p>{t('T-words')}</p>
+                            </div>
                         </div>
                         <button
                             title={t('Ttitle-words')}
@@ -184,7 +205,7 @@ function Text() {
                             {window.localStorage.getItem('mode-words') + ' ' + t('T-counWord')}
                         </button>
                     </div>
-                    <button title={t('Ttitle-start')} className='Start'>{t('T-start')}</button>
+                    <Link to='./type'><button title={t('Ttitle-start')} className='Start'>{t('T-start')}</button></Link>
                 </div>
                 <div className={ourKlavaClass.join(' ')}>
                     <div ref={refKlavaUl} className={Style.paramsChoiceMobile}>
