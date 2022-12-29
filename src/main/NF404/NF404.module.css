@@ -18,7 +18,7 @@
   background: linear-gradient(#e66465, #9198e5);
   color: var(--textT-color);
   border: 0;
-  padding: 6px 30px;
+  padding: 12px 30px;
   border-radius: 15px;
   display: block;
   margin: 0 auto;
@@ -37,4 +37,10 @@
   width: 150px;
   height: auto;
   margin-top: 100px;
+}
+
+@media (max-width: 800px) {
+  .notFound button {
+    padding: 16px 40px;
+  }
 }/*# sourceMappingURL=NF404.module.css.map */

@@ -10,68 +10,144 @@
   font-weight: bold;
 }
 
+.inputMain {
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  width: calc(70vw - 100px);
+  margin: 0 auto;
+}
+
 .inputBlock {
-  height: 200px;
+  height: auto;
   display: block;
   margin: 0 auto;
   cursor: text;
   position: relative;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  width: calc(90vw - 150px);
+  width: calc(70vw - 150px);
 }
 
 .inputText {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: absolute;
   font-weight: 400;
   opacity: 0.7;
-  font-size: 1.64vw;
-  overflow: hidden;
-  cursor: text;
+  font-size: 1.44vw;
   font-family: sans-serif;
-  text-align: justify;
+  word-break: break-all;
+  width: 100%;
 }
 
 .inputArea {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  resize: none;
-  border: 0;
-  outline: 0;
-  width: calc(90vw - 150px);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 1.64vw;
-  font-weight: 400;
-  font-family: sans-serif;
-  color: white;
-  background-color: transparent;
-}
-
-.inputArea2 {
-  position: relative;
+  position: absolute;
+  top: 0;
   z-index: 10;
   padding: 0;
   margin: 0;
   resize: none;
   border: 0;
+  height: 100%;
   outline: 0;
+  white-space: normal;
   text-justify: inter-word;
-  width: calc(90vw - 150px);
+  width: 100%;
+  word-break: break-all;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 1.64vw;
+  font-size: 1.44vw;
   font-weight: 400;
   font-family: sans-serif;
   color: white;
   background-color: transparent;
+}
+
+.klava {
+  width: 39.792vw;
+  height: 14.063vw;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.klavaLine {
+  display: flex;
+}
+.klavaLine p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.302vw;
+  display: flex;
+}
+.klavaLine p span {
+  margin-top: -5px;
+  margin-left: 5px;
+}
+.klavaBtn {
+  position: relative;
+  width: 2.5vw;
+  background-color: rebeccapurple;
+  margin: 2px;
+  height: 2.66vw;
+  border-radius: 8px;
+}
+.klavaBackspace {
+  position: relative;
+  width: 4.167vw;
+  background-color: rebeccapurple;
+  margin: 2px;
+  height: 2.66vw;
+  border-radius: 8px;
+}
+.klavaBackspace p {
+  font-size: 0.729vw;
+}
+.klavaEntCap {
+  position: relative;
+  width: 4.688vw;
+  background-color: rebeccapurple;
+  margin: 2px;
+  height: 2.66vw;
+  border-radius: 8px;
+}
+.klavaEntCap p {
+  font-size: 0.729vw;
+}
+.klavaShift {
+  position: relative;
+  width: 6.042vw;
+  height: 2.66vw;
+  background-color: rebeccapurple;
+  margin: 2px;
+  border-radius: 8px;
+}
+.klavaShift p {
+  font-size: 0.729vw;
+}
+.klavaSpace {
+  position: relative;
+  width: 13.021vw;
+  height: 2.66vw;
+  margin: 0 auto;
+  background-color: rebeccapurple;
+  border-radius: 8px;
+}
+
+@media (max-width: 800px) {
+  .inputArea, .inputText, .inputBlock {
+    font-size: 3vw;
+    width: calc(80vw - 150px);
+  }
+  .inputMain {
+    width: calc(80vw - 100px);
+  }
+}
+@media (max-width: 480px) {
+  .inputArea, .inputText, .inputBlock {
+    font-size: 5vw;
+    width: calc(110vw - 150px);
+  }
+  .inputMain {
+    width: calc(110vw - 100px);
+  }
 }/*# sourceMappingURL=type.module.css.map */

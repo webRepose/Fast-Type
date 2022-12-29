@@ -6,7 +6,7 @@
     left: 0;
     background-color: var(--aside-color);
     border-radius: 0 var(--radius25) var(--radius25) 0;
-    padding: 30px 31px 0 24px;
+    padding: 50px 31px 0 24px;
 }
 
 .activeThemeIcon {
@@ -178,7 +178,7 @@ ul {
         background: var(--theme-icon) 50% 10% no-repeat;
     }
     .menu {
-        padding: 30px 15px 0 15px;
+        padding: 40px 15px 0 15px;
         border-radius: 0 var(--radius15) var(--radius15) 0;
         width: 180px;
     }
@@ -243,10 +243,6 @@ ul {
 }
 
 @media (max-width: 1280px) {
-    .menu {
-        padding-top: 20px;
-    }
-
     .account {
         bottom: 20px;
     }

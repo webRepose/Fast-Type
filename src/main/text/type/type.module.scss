@@ -10,83 +10,191 @@
     }
 }
 
+.inputMain {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    width: calc(70vw - 100px);
+    margin: 0 auto;
+}
+
 .inputBlock {
-    height: 200px;
-    // display: flex;
+    height: auto;
     display: block;
-    // align-items: center;
-    // justify-content: center;
     margin: 0 auto;
     cursor: text;
-    // max-width: 1200px;
     position: relative;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    width: calc(90vw - 150px);
+    width: calc(70vw - 150px);
 }
 
 .inputText {
-    // text-align: justify;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-     -ms-user-select: none;
-         user-select: none;
-//  max-width: 1200px;
- position: absolute;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//      -ms-user-select: none;
+//          user-select: none;
  font-weight: 400;
  opacity: 0.7;
- font-size: 1.64vw;
- overflow: hidden;
- cursor: text;
+ font-size: 1.44vw;
+//  overflow: hidden;
+//  white-space: normal;
+//  cursor: text;
  font-family: sans-serif;
- text-align: justify;
-//  width: 90%;
-// width: calc(90vw - 150px);
+//  text-justify: inter-word;
+//  width: calc(70vw - 150px);
+//  word-wrap: break-word;
+
+word-break: break-all; width:100%;
+
+//  word-break: break-word;
+//       white-space: pre-line;
+//       overflow-wrap: break-word;
+//       -ms-word-break: break-word;
+//       word-break: break-word;
+//       -ms-hyphens: auto;
+//       -moz-hyphens: auto;
+//       -webkit-hyphens: auto;
+//       hyphens: auto;
+
+//       overflow-wrap: break-word;
+// word-wrap: break-word;
+
+// -ms-word-break: break-all;
+// /* This is the dangerous one in WebKit, as it breaks things wherever */
+// word-break: break-all;
+// /* Instead use this non-standard one: */
+// word-break: break-word;
+
+// /* Adds a hyphen where the word breaks, if supported (No Blink) */
+// -ms-hyphens: auto;
+// -moz-hyphens: auto;
+// -webkit-hyphens: auto;
+// hyphens: auto;
 }
 
 .inputArea {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    resize: none;
-    border: 0;
-    outline: 0;
-    // text-align: justify;
-    width: calc(90vw - 150px);
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    font-size: 1.64vw;
-    font-weight: 400;
-    // word-spacing: normal;
-    // white-space: pre;
-    font-family: sans-serif;
-    color: white;
-    background-color: transparent;
-}
-
-.inputArea2 {
-    position: relative;
+    position: absolute;
+    top: 0;
     z-index: 10;
     padding: 0;
     margin: 0;
     resize: none;
     border: 0;
+    height: 100%;
     outline: 0;
-    // text-align: justify;
+    white-space: normal;
     text-justify: inter-word;
-    width: calc(90vw - 150px);
+    // width: calc(70vw - 150px);
+    width: 100%;
+    word-break: break-all;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    font-size: 1.64vw;
+    font-size: 1.44vw;
     font-weight: 400;
-    // word-spacing: normal;
-    // white-space: pre;
     font-family: sans-serif;
     color: white;
     background-color: transparent;
 }
 
+.klava {
+    width: 39.792vw;
+    height: 14.063vw;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    // flex-wrap: wrap;
+    // display: flex;
+
+    &Line {
+        display: flex;
+
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.302vw;
+            display: flex;
+
+            span {
+                margin-top: -5px;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    &Btn {
+        position: relative;
+        width: 2.500vw;
+        background-color: rebeccapurple;
+        margin: 2px;
+        height: 2.66vw;
+        border-radius: 8px;
+    }
+
+    &Backspace {
+        position: relative;
+        width: 4.167vw;
+        background-color: rebeccapurple;
+        margin: 2px;
+        height: 2.66vw;
+        border-radius: 8px;
+        p {
+            font-size: 0.729vw;
+        }
+    }
+
+    &EntCap {
+        position: relative;
+        width: 4.688vw;
+        background-color: rebeccapurple;
+        margin: 2px;
+        height: 2.66vw;
+        border-radius: 8px;
+
+        p {
+            font-size: 0.729vw;
+        }
+    }
+    &Shift {
+        position: relative;
+        width: 6.042vw;
+        height: 2.66vw;
+        background-color: rebeccapurple;
+        margin: 2px;
+        border-radius: 8px;
+        p {
+            font-size: 0.729vw;
+        }
+    }
+    &Space {
+        position: relative;
+        width: 13.021vw;
+        height: 2.66vw;
+        margin: 0 auto;
+        background-color: rebeccapurple;
+        border-radius: 8px;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .inputArea, .inputText, .inputBlock {
+        font-size: 3vw;
+        width: calc(80vw - 150px);
+    }
+    .inputMain {
+        width: calc(80vw - 100px);
+    }
+}
+
+@media (max-width: 480px) {
+    .inputArea, .inputText, .inputBlock {
+        font-size: 5vw;
+        width: calc(110vw - 150px);
+    }
+    .inputMain {
+        width: calc(110vw - 100px);
+    }
+}
