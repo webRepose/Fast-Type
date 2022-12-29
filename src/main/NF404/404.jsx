@@ -10,7 +10,7 @@ function NF404() {
             <h2>{t('NF-lost')}</h2>
             </section>
             <section className={Style.notFound}>
-                <img src="./img/404/404.png" alt="" />
+                <img src="../img/404/404.webp" alt="" />
                 <p>{t('NF-find')}</p>
                 <Link to='/'>
                     <button title={t('NF-gohome')}>
