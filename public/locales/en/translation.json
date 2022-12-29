@@ -36,5 +36,10 @@
     "Ttitle-time":"Change the input time",
     "Ttitle-words":"Change the number of words",
     "Ttitle-klava":"Change the keyboard layout",
-    "Ttitle-start":"Start"
+    "Ttitle-start":"Start",
+
+    "NF-lost":"You're lost in space",
+    "NF-find":"We couldn't find the page are looking for..",
+    "NF-home":"Back home",
+    "NF-gohome":"Go home!"
 }

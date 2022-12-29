@@ -5,16 +5,12 @@ import App from './App';
 import './i18n';
 import './styles/style.css';
 import './styles/adapt.css';
-import { Suspense } from 'react';
-import Preloader from './components/Preloader/Preloader';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Suspense fallback={<Preloader/>}>
     <App/>
-    </Suspense>
     </BrowserRouter>
   </React.StrictMode>
 );

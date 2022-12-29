@@ -276,7 +276,7 @@
   }
   .paramsTextSub img {
     margin-left: 0;
-    margin-top: 2px;
+    margin-top: 1px;
   }
 }
 @media (max-width: 580px) {

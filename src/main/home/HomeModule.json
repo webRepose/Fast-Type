@@ -1,0 +1,37 @@
+[
+    {
+        "img_src":"./img/home/stats.webp",
+        "img_backColor":"stats-back",
+        "text_translate": "H-Stat"
+    },
+
+    {
+        "img_src":"./img/home/history.webp",
+        "img_backColor":"history-back",
+        "text_translate": "H-Hist"
+    },
+
+    {
+        "img_src":"./img/home/work.webp",
+        "img_backColor":"work-back",
+        "text_translate": "H-Work"
+    },
+
+    {
+        "img_src":"./img/home/guid.webp",
+        "img_backColor":"guid-back",
+        "text_translate": "H-Guid"
+    },
+
+    {
+        "img_src":"./img/home/what.webp",
+        "img_backColor":"help-back",
+        "text_translate": "H-Help"
+    },
+
+    {
+        "img_src":"./img/home/course.webp",
+        "img_backColor":"courses-back",
+        "text_translate": "Courses"
+    }
+]

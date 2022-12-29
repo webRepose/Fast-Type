@@ -9,7 +9,7 @@
   .preloader {
     width: 100vw;
     height: 100vh;
-    background-color: #2E2E2E;
+    background-color: var( --body-color);
 
     h2 {
         color: var(--text-color);
@@ -30,5 +30,11 @@
         -webkit-animation: 1s preloadere alternate infinite ease-out;
         animation: 4s preloadere alternate infinite ease-out;
         margin-bottom: 40px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .preloaderPlace {
+      top: 40%;
     }
   }

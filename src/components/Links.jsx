@@ -1,5 +1,6 @@
 import { Routes, Route} from "react-router-dom";
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
+import Preloader from "./Preloader/Preloader";
 const Home = lazy(() => import('../main/home/Home'));
 const Text = lazy(() => import('../main/text/Text'));
 const Code = lazy(() => import('../main/code/Code'));
@@ -10,19 +11,20 @@ const NF404 = lazy(() => import('../main/NF404/404'));
 const Header = lazy(() => import('../header/Header'));
 const Type = lazy(() => import('../main/text/type/type'));
 
+
 function Links() {
     return (
         <>
         <Routes>
-        <Route path="/" element={<Header/>}>
-        <Route index element={<Home/>}></Route>
-        <Route path='text' element={<Text/>}></Route>
-        <Route path='text/type' element={<Type/>}></Route>
-        <Route path="code" element={<Code/>}></Route>
-        <Route path="symbols" element={<Symbols/>}></Route>
-        <Route path="capcha" element={<Capcha/>}></Route>
-        <Route path="courses" element={<Courses/>}></Route>
-        <Route path="*" element={<NF404/>}></Route>
+        <Route path="/" element={<Suspense fallback={<Preloader/>}><Header/></Suspense>}>
+        <Route index element={<Suspense fallback={<Preloader/>}><Home/></Suspense>}></Route>
+        <Route path='text' element={<Suspense fallback={<Preloader/>}><Text/></Suspense>}></Route>
+        <Route path='text/type' element={<Suspense fallback={<Preloader/>}><Type/></Suspense>}></Route>
+        <Route path="code" element={<Suspense fallback={<Preloader/>}><Code/></Suspense>}></Route>
+        <Route path="symbols" element={<Suspense fallback={<Preloader/>}><Symbols/></Suspense>}></Route>
+        <Route path="capcha" element={<Suspense fallback={<Preloader/>}><Capcha/></Suspense>}></Route>
+        <Route path="courses" element={<Suspense fallback={<Preloader/>}><Courses/></Suspense>}></Route>
+        <Route path="*" element={<Suspense fallback={<Preloader/>}><NF404/></Suspense>}></Route>
         </Route>
       </Routes>
         </>
