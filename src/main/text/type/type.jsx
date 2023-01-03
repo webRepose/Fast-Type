@@ -4,6 +4,7 @@ import TypeKlava from './KlavaFourLine.json';
 import KlavaThird from './KlavaThirdLine.json';
 import KlavaSecond from './KlavaSecondLine.json'
 import KlavaFirst from './KlavaFirstLine.json'
+import { useRef } from "react";
 
 function Type() {
 
@@ -273,13 +274,15 @@ function Type() {
 //         }
 //     }
 
-const inputArea = document.querySelector('.'+Style.inputArea);
+// const inputArea = document.querySelector('.'+Style.inputArea);
+
+const ine = useRef()
 
 
 function backSpace() {
-    let backFun = inputArea.value;
+    let backFun = ine.current.value;
     backFun = backFun.substr(0,backFun.length - 1);
-    inputArea.value = backFun;
+    ine.current.value = backFun;
 } 
 
 
@@ -322,7 +325,7 @@ const [t] = useTranslation();
             <div className={Style.inputMain}>
             <div className={Style.inputBlock}>
                 <p className={Style.inputText}>{text}</p>
-                <textarea onInput={inputCheck} autoFocus className={Style.inputArea} formvalidate='formNoValidate' spellCheck="false" onPaste={()=>{return false}} autoComplete="off"></textarea>
+                <textarea ref={ine} onInput={inputCheck} autoFocus className={Style.inputArea} formvalidate='formNoValidate' spellCheck="false" onPaste={()=>{return false}} autoComplete="off"></textarea>
             </div>
             </div>
             <div className={Style.klava}>
