@@ -52,11 +52,12 @@ html.light {
 @media (max-width: 912px) {
   main {
     margin-left: 0 !important;
+    padding: 15px 0px 0 0px;
   }
 }
 
-@media (max-width: 480px) {
-  main {
-      padding: 15px 0px 0 0px;
-  }
-}
+// @media (max-width: 480px) {
+//   main {
+//       padding: 15px 0px 0 0px;
+//   }
+// }

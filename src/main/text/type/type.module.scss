@@ -28,47 +28,17 @@
 }
 
 .inputText {
-//     -webkit-user-select: none;
-//     -moz-user-select: none;
-//      -ms-user-select: none;
-//          user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
  font-weight: 400;
  opacity: 0.7;
  font-size: 1.44vw;
-//  overflow: hidden;
-//  white-space: normal;
-//  cursor: text;
+ cursor: text;
  font-family: sans-serif;
-//  text-justify: inter-word;
-//  width: calc(70vw - 150px);
-//  word-wrap: break-word;
-
-word-break: break-all; width:100%;
-
-//  word-break: break-word;
-//       white-space: pre-line;
-//       overflow-wrap: break-word;
-//       -ms-word-break: break-word;
-//       word-break: break-word;
-//       -ms-hyphens: auto;
-//       -moz-hyphens: auto;
-//       -webkit-hyphens: auto;
-//       hyphens: auto;
-
-//       overflow-wrap: break-word;
-// word-wrap: break-word;
-
-// -ms-word-break: break-all;
-// /* This is the dangerous one in WebKit, as it breaks things wherever */
-// word-break: break-all;
-// /* Instead use this non-standard one: */
-// word-break: break-word;
-
-// /* Adds a hyphen where the word breaks, if supported (No Blink) */
-// -ms-hyphens: auto;
-// -moz-hyphens: auto;
-// -webkit-hyphens: auto;
-// hyphens: auto;
+ word-break: break-all; 
+ width:100%;
 }
 
 .inputArea {
@@ -81,9 +51,6 @@ word-break: break-all; width:100%;
     border: 0;
     height: 100%;
     outline: 0;
-    white-space: normal;
-    text-justify: inter-word;
-    // width: calc(70vw - 150px);
     width: 100%;
     word-break: break-all;
     -webkit-user-select: none;
@@ -103,8 +70,11 @@ word-break: break-all; width:100%;
     display: block;
     margin: 0 auto;
     margin-top: 50px;
-    // flex-wrap: wrap;
-    // display: flex;
+
+    &Space {
+        width: 13.021vw;
+        margin: 0 auto !important;
+    }
 
     &Line {
         display: flex;
@@ -117,84 +87,42 @@ word-break: break-all; width:100%;
             font-size: 1.302vw;
             display: flex;
 
-            span {
-                margin-top: -5px;
-                margin-left: 5px;
+            sup {
+                margin-top: -0.260vw;
+                margin-left: 0.260vw;
             }
         }
-    }
 
-    &Btn {
-        position: relative;
-        width: 2.500vw;
-        background-color: rebeccapurple;
-        margin: 2px;
-        height: 2.66vw;
-        border-radius: 8px;
-    }
-
-    &Backspace {
-        position: relative;
-        width: 4.167vw;
-        background-color: rebeccapurple;
-        margin: 2px;
-        height: 2.66vw;
-        border-radius: 8px;
-        p {
-            font-size: 0.729vw;
+        div {
+            position: relative;
+            background-color: rebeccapurple;
+            margin: 2px;
+            border-radius: 8px;
+            height: 2.66vw;
         }
     }
-
-    &EntCap {
-        position: relative;
-        width: 4.688vw;
-        background-color: rebeccapurple;
-        margin: 2px;
-        height: 2.66vw;
-        border-radius: 8px;
-
-        p {
-            font-size: 0.729vw;
-        }
-    }
-    &Shift {
-        position: relative;
-        width: 6.042vw;
-        height: 2.66vw;
-        background-color: rebeccapurple;
-        margin: 2px;
-        border-radius: 8px;
-        p {
-            font-size: 0.729vw;
-        }
-    }
-    &Space {
-        position: relative;
-        width: 13.021vw;
-        height: 2.66vw;
-        margin: 0 auto;
-        background-color: rebeccapurple;
-        border-radius: 8px;
-    }
-
 }
 
 @media (max-width: 800px) {
     .inputArea, .inputText, .inputBlock {
-        font-size: 3vw;
-        width: calc(80vw - 150px);
+        font-size: 4vw;
+        width: 100%;
     }
     .inputMain {
-        width: calc(80vw - 100px);
+        width: 100%;
+    }
+
+    .klava {
+        width: 80vw;
+        height: 50vw;
     }
 }
 
 @media (max-width: 480px) {
     .inputArea, .inputText, .inputBlock {
-        font-size: 5vw;
-        width: calc(110vw - 150px);
+        font-size: 6vw;
     }
     .inputMain {
-        width: calc(110vw - 100px);
+        padding: 10px;
     }
 }

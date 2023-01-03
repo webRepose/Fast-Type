@@ -1,0 +1,64 @@
+[
+    {
+        "klavaOne": "T-shift",
+        "stBtn":"Shift"
+    },
+
+    {
+        "klavaOne": "T-z",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-x",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-c",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-v",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-b",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-n",
+        "stBtn":"Btn"
+    },
+    
+    {
+        "klavaOne": "T-m",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-,",
+        "klavaTwo": "T-<",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-.",
+        "klavaTwo": "T->",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-/",
+        "klavaTwo": "T-?",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-shift",
+        "stBtn":"Shift"
+    }
+]

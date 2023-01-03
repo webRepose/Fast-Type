@@ -65,7 +65,7 @@ button {
 
 main {
   margin-left: 244px;
-  padding: 30px 31px 0 24px;
+  padding: 30px 24px 0 24px;
 }
 
 .active {
@@ -105,4 +105,53 @@ main {
 
 .help-back {
   background-color: #9888D2;
+}
+
+.Btn {
+  width: 2.5vw;
+}
+
+.Backspace {
+  width: 4.167vw;
+}
+.Backspace p {
+  font-size: 0.729vw !important;
+}
+
+.EntCap {
+  width: 4.688vw;
+}
+.EntCap p {
+  font-size: 0.729vw !important;
+}
+
+.Shift {
+  width: 6.042vw;
+}
+.Shift p {
+  font-size: 0.729vw !important;
+}
+
+@media (max-width: 800px) {
+  .Btn {
+    width: 5.5vw;
+  }
+  .Backspace {
+    width: 6.167vw;
+  }
+  .Backspace p {
+    font-size: 0.729vw !important;
+  }
+  .EntCap {
+    width: 4.688vw;
+  }
+  .EntCap p {
+    font-size: 0.729vw !important;
+  }
+  .Shift {
+    width: 6.042vw;
+  }
+  .Shift p {
+    font-size: 0.729vw !important;
+  }
 }/*# sourceMappingURL=style.css.map */
