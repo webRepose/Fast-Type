@@ -273,7 +273,7 @@ function Type() {
 //         }
 //     }
 
-const inputArea = document.querySelector('.type_inputArea__Rnpfe');
+const inputArea = document.querySelector('.'+Style.inputArea);
 
 
 function backSpace() {
