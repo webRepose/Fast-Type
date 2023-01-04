@@ -276,7 +276,9 @@ function Type() {
 
 
 const inputArea = useRef()
-const inputText = useRef()
+// const inputText = useRef()
+
+let inputText = ''
 
 
 const textsRu = [
@@ -288,13 +290,13 @@ const textsRu = [
 const textsKeyRu = [textsRu[0].split(''),textsRu[1].split(''),textsRu[2].split(''),];
     
 let textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
-inputText.current = textInput[0];
+inputText = textInput[0];
 if(textInput === textsRu[0]) {
-    inputText.current = textsRu[0];
+    inputText = textsRu[0];
 } else if(textInput === textsRu[1]) {
-    inputText.current = textsRu[1];
+    inputText = textsRu[1];
 } else if(textInput === textsRu[2]) {
-    inputText.current = textsRu[2];
+    inputText = textsRu[2];
 }
 
 function backSpace() {
@@ -316,16 +318,16 @@ const inputBackspace = (event) => {
     }
 }
 
-console.log(inputText.current[0])
+// console.log(inputText.current[0])
 
 
 let simbolsCount = 0;
 let errorCount = 0;
 let i = 0;
 const inputCheck = (event)=> {
-    if(inputText.current[i] === event.nativeEvent.data) {
+    if(inputText[i] === event.nativeEvent.data) {
         i++
-            if(inputText.current[i] === event.nativeEvent.data) {
+            if(inputText[i] === event.nativeEvent.data) {
                 simbolsCount++;
                 console.log('simbols'+ simbolsCount)
 
@@ -338,7 +340,7 @@ const inputCheck = (event)=> {
         console.log('errors'+ errorCount)
 
         // console.log(inputText.current[0])
-        console.log('над '+ inputText.current[i])
+        console.log('над '+ inputText[i])
 
         // console.log('ввод i ид ' +  inputText.current[i])
         console.log( 'наж ' +event.nativeEvent.data)
@@ -381,7 +383,7 @@ const [t] = useTranslation();
         <section className={Style.choiceParams}>
             <div className={Style.inputMain}>
             <div className={Style.inputBlock}>
-                <p ref={inputText} className={Style.inputText}>{inputText.current}</p>
+                <p className={Style.inputText}>{inputText}</p>
                 <textarea ref={inputArea} onKeyDown={inputBackspace} onInput={inputCheck} autoFocus className={Style.inputArea} formvalidate='formNoValidate' spellCheck="false" onPaste={()=>{return false}} autoComplete="off"></textarea>
             </div>
             </div>
