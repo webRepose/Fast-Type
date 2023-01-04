@@ -332,8 +332,10 @@ const inputCheck = (event)=> {
         errorCount++;
         console.log('errors'+ errorCount)
 
-        alert( 'над ' +inputText[i])
-        alert('наж ' +event.nativeEvent.data)
+        console.log( 'над ' +inputText[i])
+        console.log('наж ' +event.nativeEvent.data)
+        // alert( 'над ' +inputText[i])
+        // alert('наж ' +event.nativeEvent.data)
     }
 }
 
@@ -374,7 +376,7 @@ const [t] = useTranslation();
             <div className={Style.inputMain}>
             <div className={Style.inputBlock}>
                 <p className={Style.inputText}>{inputText}</p>
-                <textarea ref={inputArea} onKeyDown={inputBackspace} onInput={inputCheck} autoFocus className={Style.inputArea} formvalidate='formNoValidate' spellCheck="false" onPaste={()=>{return false}} autoComplete="off"></textarea>
+                <textarea ref={inputArea} onKeyDown={inputBackspace} onChange={inputCheck} autoFocus className={Style.inputArea} formvalidate='formNoValidate' spellCheck="false" onPaste={()=>{return false}} autoComplete="off"></textarea>
             </div>
             </div>
             <div className={Style.klava}>
