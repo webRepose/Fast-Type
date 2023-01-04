@@ -306,7 +306,7 @@ function backSpace() {
 
 let wordsCount = 0;
 const inputBackspace = (event) => {
-    if(event.keyCode === 8) {
+    if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) {
         event.preventDefault();
         return false;
     }
@@ -334,8 +334,8 @@ const inputCheck = (event)=> {
 
         console.log( 'над ' + inputText[i])
         console.log('наж ' + event.nativeEvent.data)
-        // alert( 'над ' +inputText[i])
-        // alert('наж ' +event.nativeEvent.data)
+        alert( 'над ' +inputText[i])
+        alert('наж ' +event.nativeEvent.data)
     }
 }
 
@@ -343,7 +343,6 @@ const getTime = (time) => time.toString().padStart(2, '0');
 
 const mode = window.localStorage.getItem('mode');
 const modeTime = window.localStorage.getItem('mode-time');
-// const modeWords = window.localStorage.getItem('mode-words');
 
 const [timer, setTimer] = useState(
     modeTime === '1:00' ? 1*60 : 1*60 || 
@@ -352,17 +351,6 @@ const [timer, setTimer] = useState(
 let minutes = getTime(Math.floor(timer / 60));
 let seconds = getTime(timer - minutes * 60);
 
-// if(mode === 't-time') {
-//     if(modeTime === '1:00') {
-//         minutes = 1
-//     } else if(modeTime === '3:00') {
-//         minutes = 3
-//     } else if(modeTime === '5:00') {
-//         minutes = 5
-//     }
-// } else {
-//     console.log(5)
-// }
 
 const [t] = useTranslation();
 
@@ -376,15 +364,17 @@ const [t] = useTranslation();
             <div className={Style.inputMain}>
             <div className={Style.inputBlock}>
                 <p className={Style.inputText}>{inputText}</p>
-                <textarea ref={inputArea}
+                <textarea 
+                ref={inputArea}
                 onKeyDown={inputBackspace}
                 onChange={inputCheck}
                 autoFocus
                 className={Style.inputArea}
                 formNoValidate
                 spellCheck="false"
-                onPaste={()=>{return false}}
-                autoComplete="off"></textarea>
+                onPaste={(e)=>{e.preventDefault()}}
+                autoComplete="none">
+                </textarea>
             </div>
             </div>
             <div className={Style.klava}>
