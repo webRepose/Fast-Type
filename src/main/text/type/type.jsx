@@ -276,8 +276,6 @@ function Type() {
 
 
 const inputArea = useRef()
-// const inputText = useRef()
-
 let inputText = ''
 
 
@@ -314,12 +312,9 @@ const inputBackspace = (event) => {
     }
     if(event.key === ' ' || event.key === '-' ) {
         wordsCount++;
-        console.log('words' +wordsCount)
+        console.log('words' + wordsCount)
     }
 }
-
-// console.log(inputText.current[0])
-
 
 let simbolsCount = 0;
 let errorCount = 0;
@@ -330,8 +325,6 @@ const inputCheck = (event)=> {
             if(inputText[i] === event.nativeEvent.data) {
                 simbolsCount++;
                 console.log('simbols'+ simbolsCount)
-
-                // console.log( 'ТО ЧТо нажали' +event.nativeEvent.data)
             }
     }
     else {
@@ -339,11 +332,8 @@ const inputCheck = (event)=> {
         errorCount++;
         console.log('errors'+ errorCount)
 
-        // console.log(inputText.current[0])
-        console.log('над '+ inputText[i])
-
-        // console.log('ввод i ид ' +  inputText.current[i])
-        console.log( 'наж ' +event.nativeEvent.data)
+        alert( 'над ' +inputText[i])
+        alert('наж ' +event.nativeEvent.data)
     }
 }
 
