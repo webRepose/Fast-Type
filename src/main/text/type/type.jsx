@@ -321,19 +321,20 @@ console.log(inputText.current[0])
 
 let simbolsCount = 0;
 let errorCount = 0;
-let i = -1;
+let i = 0;
 const inputCheck = (event)=> {
-    if(inputText.current[i+=1] === event.nativeEvent.data) {
+    if(inputText.current[i] === event.nativeEvent.data) {
+        i++
             if(inputText.current[i] === event.nativeEvent.data) {
                 simbolsCount++;
                 console.log('simbols'+ simbolsCount)
-                
+
                 console.log('ввод i ид ' +  inputText.current[i])
                 console.log( 'ТО ЧТо нажали' +event.nativeEvent.data)
             }
     }
     else {
-        i--
+        // i--
         setTimeout(backSpace, 0);
         errorCount++;
         console.log('errors'+ errorCount)
