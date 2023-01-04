@@ -48,6 +48,11 @@ html.light {
     margin-left: 180px;
   }
 }
+@media (max-width: 1440px) {
+  main {
+    padding: 20px 10px 0px 10px;
+  }
+}
 @media (max-width: 912px) {
   main {
     margin-left: 0 !important;

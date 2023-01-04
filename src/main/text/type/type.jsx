@@ -4,7 +4,7 @@ import TypeKlava from './KlavaFourLine.json';
 import KlavaThird from './KlavaThirdLine.json';
 import KlavaSecond from './KlavaSecondLine.json'
 import KlavaFirst from './KlavaFirstLine.json'
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function Type() {
 
@@ -274,44 +274,92 @@ function Type() {
 //         }
 //     }
 
-// const inputArea = document.querySelector('.'+Style.inputArea);
 
-const ine = useRef()
+const inputArea = useRef()
+const inputText = useRef()
 
+
+const textsRu = [
+    'Разнообразный и богатый опыт консультация с профессионалами из IT обеспечивает широкому кругу специалистов участие в формировании системы обучения кадров, соответствующей насущным потребностям! С другой стороны консультация с профессионалами из IT создаёт предпосылки качественно новых шагов для системы масштабного изменения ряда параметров. Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствующей насущным потребностям? Таким образом, выбранный нами инновационный путь позволяет оценить значение системы масштабного изменения ряда параметров? Дорогие друзья, выбранный нами инновационный путь играет важную роль в формировании модели развития! Значимость этих проблем настолько очевидна, что реализация намеченного плана развития в значительной степени обуславливает создание системы обучения кадров, соответствующей насущным потребностям. Практический опыт показывает, что сложившаяся структура организации обеспечивает широкому кругу специалистов участие в формировании дальнейших направлений развития проекта. Таким образом, социально-экономическое развитие обеспечивает актуальность существующих финансовых и административных условий? Задача организации, в особенности же консультация с профессионалами из IT влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. Повседневная практика показывает, что повышение уровня гражданского сознания позволяет выполнить важнейшие задания по разработке направлений прогрессивного развития. Равным образом начало повседневной работы по формированию позиции обеспечивает актуальность системы масштабного изменения ряда параметров. Разнообразный и богатый опыт выбранный нами инновационный путь позволяет выполнить важнейшие задания по разработке новых предложений! Повседневная практика показывает, что рамки и место обучения кадров обеспечивает актуальность системы обучения кадров, соответствующей насущным потребностям. Таким образом, выбранный нами инновационный путь обеспечивает актуальность позиций, занимаемых участниками в отношении поставленных задач. Не следует, однако, забывать о том, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы масштабного изменения ряда параметров? С другой стороны курс на социально-ориентированный национальный проект играет важную роль в формировании системы масштабного изменения ряда параметров? Практический опыт показывает, что выбранный нами инновационный путь позволяет оценить значение модели...',
+    'Если клиент очень умный, он сможет добиться желаемого результата. Пусть дело решается гибкостью и подобием истины, которую',
+    'Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Что пустился это коварный они он то ве',
+];
+    
+const textsKeyRu = [textsRu[0].split(''),textsRu[1].split(''),textsRu[2].split(''),];
+    
+let textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
+inputText.current = textInput[0];
+if(textInput === textsRu[0]) {
+    inputText.current = textsRu[0];
+} else if(textInput === textsRu[1]) {
+    inputText.current = textsRu[1];
+} else if(textInput === textsRu[2]) {
+    inputText.current = textsRu[2];
+}
 
 function backSpace() {
-    let backFun = ine.current.value;
+    let backFun = inputArea.current.value;
     backFun = backFun.substr(0,backFun.length - 1);
-    ine.current.value = backFun;
+    inputArea.current.value = backFun;
 } 
 
 
-const text = 'Е'
-
-
-const inputCheck = (event)=> {
-    if(event.nativeEvent.data === null) {
+let wordsCount = 0;
+const inputBackspace = (event) => {
+    if(event.keyCode === 8) {
         event.preventDefault();
         return false;
     }
-
-    // if(event.keyCode == 8) {
-    //     event.preventDefault();
-    //     return false;
-    // }
-
-    console.log(event)
-
-    console.log(event.nativeEvent.data)
-
-    if(text.valueOf() === event.nativeEvent.data) {
-        console.log('ban')
+    if(event.key === ' ' || event.key === '-' ) {
+        wordsCount++;
+        console.log('words' +wordsCount)
     }
-    else {
-        setTimeout(backSpace, 0); 
-    } 
 }
 
+
+let simbolsCount = 0;
+let errorCount = 0;
+let i = -1;
+const inputCheck = (event)=> {
+    console.log(inputText.current[i])
+    if(inputText.current[i+=1] === event.nativeEvent.data) {
+            if(inputText.current[i] === event.nativeEvent.data) {
+                simbolsCount++;
+                console.log('simbols'+ simbolsCount)
+            }
+    }
+    else {
+        i--
+        setTimeout(backSpace, 0);
+        errorCount++;
+        console.log('errors'+ errorCount) 
+    }
+}
+
+const getTime = (time) => time.toString().padStart(2, '0');
+
+const mode = window.localStorage.getItem('mode');
+const modeTime = window.localStorage.getItem('mode-time');
+// const modeWords = window.localStorage.getItem('mode-words');
+
+const [timer, setTimer] = useState(
+    modeTime === '1:00' ? 1*60 : 1*60 || 
+    modeTime === '3:00' ? 3*60 : 1*60 || 
+    modeTime === '5:00' ? 5*60 : 1*60);
+let minutes = getTime(Math.floor(timer / 60));
+let seconds = getTime(timer - minutes * 60);
+
+// if(mode === 't-time') {
+//     if(modeTime === '1:00') {
+//         minutes = 1
+//     } else if(modeTime === '3:00') {
+//         minutes = 3
+//     } else if(modeTime === '5:00') {
+//         minutes = 5
+//     }
+// } else {
+//     console.log(5)
+// }
 
 const [t] = useTranslation();
 
@@ -324,8 +372,8 @@ const [t] = useTranslation();
         <section className={Style.choiceParams}>
             <div className={Style.inputMain}>
             <div className={Style.inputBlock}>
-                <p className={Style.inputText}>{text}</p>
-                <textarea ref={ine} onInput={inputCheck} autoFocus className={Style.inputArea} formvalidate='formNoValidate' spellCheck="false" onPaste={()=>{return false}} autoComplete="off"></textarea>
+                <p ref={inputText} className={Style.inputText}>{inputText.current}</p>
+                <textarea ref={inputArea} onKeyDown={inputBackspace} onInput={inputCheck} autoFocus className={Style.inputArea} formvalidate='formNoValidate' spellCheck="false" onPaste={()=>{return false}} autoComplete="off"></textarea>
             </div>
             </div>
             <div className={Style.klava}>
@@ -360,6 +408,17 @@ const [t] = useTranslation();
                 <div className={Style.klavaLine}>
                 <div className={Style.klavaSpace}></div>
                 </div>
+            </div>
+            <button title="Сменить текст" onClick={()=>{console.log(5)}} className={Style.changeText}>Сменить текст</button>
+            <div title="Скрыть таймер" className={Style.timer}>
+                <p>{minutes}</p>
+                <p>:</p>
+                <p>{seconds}</p>
+            </div>
+            <div className={Style.countAll}>
+                <div>dasd</div>
+                <div>dasd</div>
+                <div>dasdaa</div>
             </div>
         </section>    
         </main>

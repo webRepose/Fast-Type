@@ -98,6 +98,50 @@
   height: 2.66vw;
 }
 
+.changeText {
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+  border: 0;
+  padding: 5px 44px;
+  background-color: var(--startButton-color);
+  margin-top: 50px;
+  transition: all 0.3s ease;
+  font-size: 21px;
+}
+.changeText:hover {
+  opacity: 0.8;
+}
+
+.timer {
+  display: flex;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+}
+.timer:hover {
+  cursor: pointer;
+}
+.timer p {
+  margin-right: 3px;
+  font-size: 24px;
+}
+
+.countAll {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.countAll div {
+  padding: 5px 30px;
+  border-radius: 15px;
+  font-size: 21px;
+  background-color: rebeccapurple;
+}
+
 @media (max-width: 800px) {
   .inputArea, .inputText, .inputBlock {
     font-size: 4vw;
@@ -107,8 +151,7 @@
     width: 100%;
   }
   .klava {
-    width: 80vw;
-    height: 50vw;
+    display: none;
   }
 }
 @media (max-width: 480px) {
