@@ -328,7 +328,7 @@ const inputCheck = (event)=> {
                 simbolsCount++;
                 console.log('simbols'+ simbolsCount)
             }
-            console.log(inputText.current[0])
+            console.log(inputText.current[i])
             console.log(event.nativeEvent.data)
     }
     else {
@@ -336,7 +336,7 @@ const inputCheck = (event)=> {
         setTimeout(backSpace, 0);
         errorCount++;
         console.log('errors'+ errorCount)
-        console.log(inputText.current[0]) 
+        console.log(inputText.current[i])
         console.log(event.nativeEvent.data)
     }
 }
