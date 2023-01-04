@@ -316,7 +316,7 @@ const inputBackspace = (event) => {
     }
 }
 
-console.log(inputText.current)
+console.log(inputText.current[0])
 
 
 let simbolsCount = 0;
@@ -328,14 +328,16 @@ const inputCheck = (event)=> {
                 simbolsCount++;
                 console.log('simbols'+ simbolsCount)
             }
-            console.log(inputText.current[i])
+            console.log(inputText.current[0])
+            console.log(event.nativeEvent.data)
     }
     else {
         i--
         setTimeout(backSpace, 0);
         errorCount++;
         console.log('errors'+ errorCount)
-        console.log(inputText.current[i]) 
+        console.log(inputText.current[0]) 
+        console.log(event.nativeEvent.data)
     }
 }
 
