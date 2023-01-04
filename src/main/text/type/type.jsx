@@ -329,18 +329,19 @@ const inputCheck = (event)=> {
                 simbolsCount++;
                 console.log('simbols'+ simbolsCount)
 
-                console.log('ввод i ид ' +  inputText.current[i])
-                console.log( 'ТО ЧТо нажали' +event.nativeEvent.data)
+                // console.log( 'ТО ЧТо нажали' +event.nativeEvent.data)
             }
     }
     else {
-        // i--
         setTimeout(backSpace, 0);
         errorCount++;
         console.log('errors'+ errorCount)
 
-        console.log('ввод i ид ' +  inputText.current[i])
-        console.log( 'ТО ЧТо нажали' +event.nativeEvent.data)
+        // console.log(inputText.current[0])
+        console.log('над '+ inputText.current[i])
+
+        // console.log('ввод i ид ' +  inputText.current[i])
+        console.log( 'наж ' +event.nativeEvent.data)
     }
 }
 
