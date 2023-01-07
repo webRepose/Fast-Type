@@ -266,15 +266,19 @@
   .partTwo .closeAll {
     position: static;
     display: flex;
-    width: 111px;
+    width: 141px;
     justify-content: space-between;
     margin: 0 auto;
     margin-top: 30px;
   }
   .partTwo .closeBlock {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     border-radius: 10px;
+  }
+  .partTwo .closeBlock img {
+    width: 35px;
+    height: 35px;
   }
   .partTwo .closeBlock:last-child {
     margin-right: 0;
