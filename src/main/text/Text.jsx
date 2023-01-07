@@ -43,7 +43,7 @@ function Text() {
        window.localStorage.setItem('klava', 'Qwerty');
     }
     if(window.localStorage.getItem('mode-time') === null) {
-        window.localStorage.setItem('mode-time', '1:00');
+        window.localStorage.setItem('mode-time', '60');
     }
     if(window.localStorage.getItem('mode-words') === null) {
         window.localStorage.setItem('mode-words', '50');
@@ -231,11 +231,11 @@ function Text() {
                 <ul className={langeClass}>
                             <li title="Русский" onClick={()=>{
                                 setLange(false)
-                                window.localStorage.setItem('lange','Русский')
+                                window.localStorage.setItem('lange','ru')
                             }}>Русский</li>
                             <li title="English" onClick={()=>{
                                 setLange(false)
-                                window.localStorage.setItem('lange','English')
+                                window.localStorage.setItem('lange','en-US')
                             }}>English</li>
                             <li title="France">France</li>
                         </ul>
@@ -252,15 +252,15 @@ function Text() {
                 <ul className={timeClass}>
                             <li title="1:00" onClick={()=>{
                                 setTime(false)
-                                window.localStorage.setItem('mode-time','1:00')
+                                window.localStorage.setItem('mode-time','60')
                             }}>1:00</li>
                             <li title="3:00" onClick={()=>{
                                 setTime(false)
-                                window.localStorage.setItem('mode-time','3:00')
+                                window.localStorage.setItem('mode-time','180')
                             }}>3:00</li>
                             <li title="5:00" onClick={()=>{
                                 setTime(false)
-                                window.localStorage.setItem('mode-time','5:00')
+                                window.localStorage.setItem('mode-time','300')
                             }}>5:00</li>
                         </ul>
                 <ul className={wordsClass}>

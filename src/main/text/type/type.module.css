@@ -10,10 +10,52 @@
   font-weight: bold;
 }
 
+.part {
+  display: flex;
+}
+.partFirst {
+  width: 93.5%;
+}
+.partTwo {
+  width: 6.5%;
+  position: relative;
+}
+.partTwo .closeAll {
+  position: absolute;
+  top: 37%;
+}
+.partTwo .closeBlock {
+  cursor: pointer;
+  width: 2.7vw;
+  height: 2.7vw;
+  border-radius: 0.781vw;
+  background-color: var(--choiceButton-color);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  transition: all 0.3s ease;
+}
+.partTwo .closeBlock:hover {
+  opacity: 0.8;
+  transform: translateX(-7px);
+}
+.partTwo .closeBlock img {
+  width: 1.563vw;
+  height: 1.563vw;
+}
+.partTwo .closeBlock:nth-child(2) {
+  background-color: #652F6B;
+}
+.partTwo .closeBlock:nth-child(3) {
+  background-color: #9888D2;
+}
+
 .inputMain {
   padding: 20px;
   border: 1px solid var(--border-color);
-  border-radius: 20px;
+  border-radius: var(--radius20);
   width: calc(70vw - 100px);
   margin: 0 auto;
 }
@@ -60,8 +102,8 @@
   font-size: 1.44vw;
   font-weight: 400;
   font-family: sans-serif;
-  color: white;
   background-color: transparent;
+  color: var(--text-color);
 }
 
 .klava {
@@ -92,57 +134,175 @@
 }
 .klavaLine div {
   position: relative;
-  background-color: rebeccapurple;
+  background-color: var(--ThemeButton-color);
   margin: 2px;
   border-radius: 8px;
   height: 2.66vw;
+  color: var(--textT-color);
 }
 
 .changeText {
   display: block;
   margin: 0 auto;
-  border-radius: 25px;
+  border-radius: var(--radius25);
   border: 0;
-  padding: 5px 44px;
+  padding: 10px 44px;
   background-color: var(--startButton-color);
   margin-top: 50px;
   transition: all 0.3s ease;
-  font-size: 21px;
+  font-size: var(--font21);
+  color: var(--textT-color);
 }
 .changeText:hover {
   opacity: 0.8;
+  transform: translateY(-5px);
 }
 
 .timer {
   display: flex;
-  width: 100px;
+  width: 120px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 10px;
 }
-.timer:hover {
-  cursor: pointer;
-}
-.timer p {
+.timer samp {
   margin-right: 3px;
-  font-size: 24px;
+  font-size: 1.44vw;
+  display: flex;
+}
+.timer samp img {
+  width: 1.34vw;
+  height: 1.34vw;
+  position: relative;
+  top: 0.146vw;
+  left: -5px;
 }
 
 .countAll {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 600px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .countAll div {
-  padding: 5px 30px;
-  border-radius: 15px;
-  font-size: 21px;
-  background-color: rebeccapurple;
+  padding: 7px 30px;
+  border-radius: var(--radius15);
+  font-size: var(--font21);
+  background-color: var(--body-color);
+  display: flex;
+}
+.countAll div img {
+  width: var(--font21);
+  height: var(--font21);
+  position: relative;
+  top: 5px;
+  margin-right: 7px;
+}
+.countAll div p {
+  margin-left: 7px;
 }
 
+@media (max-width: 1760px) {
+  .choiceParams h3 {
+    font-size: var(--font21);
+  }
+}
+@media (max-width: 1366px) {
+  .inputMain {
+    padding: 15px;
+  }
+  .timer {
+    width: 90px;
+  }
+  .timer samp {
+    font-size: var(--font18);
+  }
+  .timer samp img {
+    width: var(--font18);
+    height: var(--font18);
+    top: 0.116vw;
+  }
+  .partFirst {
+    width: 96.5%;
+  }
+  .partTwo {
+    width: 3.5%;
+  }
+  .countAll div {
+    font-size: var(--font18);
+  }
+  .countAll div img {
+    width: var(--font18);
+    height: var(--font18);
+    top: 4px;
+  }
+}
+@media (max-width: 912px) {
+  .partTwo {
+    width: 5.5%;
+  }
+  .partTwo .closeBlock {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .partTwo .closeBlock img {
+    width: 20px;
+    height: 20px;
+  }
+}
 @media (max-width: 800px) {
+  .part {
+    display: block;
+  }
+  .partFirst {
+    width: 100%;
+  }
+  .partTwo {
+    position: static;
+    width: 100%;
+  }
+  .partTwo .closeAll {
+    position: static;
+    display: flex;
+    width: 111px;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .partTwo .closeBlock {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+  }
+  .partTwo .closeBlock:last-child {
+    margin-right: 0;
+  }
+  .partTwo .closeBlock:nth-child(1) {
+    display: none;
+  }
+  .partTwo .closeBlock:hover {
+    transform: translate(0);
+  }
+  .part .timer {
+    width: 90px;
+  }
+  .part .timer samp {
+    font-size: var(--font21);
+  }
+  .part .timer samp img {
+    width: var(--font21);
+    height: var(--font21);
+  }
+  .part .countAll div {
+    font-size: var(--font21);
+  }
+  .part .countAll div img {
+    width: var(--font21);
+    height: var(--font21);
+    top: 4px;
+  }
   .inputArea, .inputText, .inputBlock {
     font-size: 4vw;
     width: 100%;
@@ -154,9 +314,22 @@
     display: none;
   }
 }
+@media (max-width: 630px) {
+  .countAll {
+    display: block;
+    width: 80%;
+  }
+  .countAll div {
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  .changeText {
+    margin-top: 30px;
+  }
+}
 @media (max-width: 480px) {
   .inputArea, .inputText, .inputBlock {
-    font-size: 6vw;
+    font-size: 5vw;
   }
   .inputMain {
     padding: 10px;
