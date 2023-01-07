@@ -42,7 +42,6 @@ useEffect(()=>{
         'Таким образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации соответствующий условий активизации.'
 ];
 
-setTextInputs(textsRu[Math.floor(Math.random()*textsRu.length)]);
 let textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
 
 
