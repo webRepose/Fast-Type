@@ -170,9 +170,10 @@ const inputCheck = (event)=> {
     }
 
     if(inputText[i-1] !== undefined || null) {
-        // console.log(inputText[i-1])
+        // alert(inputText[i-1])
         if(/Android/i.test(navigator.userAgent)) {
             inputText[i-1] = ''
+                    alert(inputText[i+1])
         }
     }
     if(inputText[i] === event.nativeEvent.data) {
