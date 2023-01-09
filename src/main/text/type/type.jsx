@@ -172,8 +172,9 @@ const inputCheck = (event)=> {
     if(inputText[i-1] !== undefined || null) {
         // alert(inputText[i-1])
         if(/Android/i.test(navigator.userAgent)) {
-            inputText[i-1] = ''
-                    alert(inputText[i+1])
+            // inputText[i-1] = ''
+            alert(inputText[i+1])
+            alert(inputText[i])
         }
     }
     if(inputText[i] === event.nativeEvent.data) {
