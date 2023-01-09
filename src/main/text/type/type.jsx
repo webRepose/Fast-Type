@@ -5,13 +5,13 @@ import Klava from "./Klava";
 
 const Type = () => {
 if(window.localStorage.getItem('mode-time') === null || undefined) {
-    window.localStorage.setItem('mode-time', 60)
+    window.localStorage.setItem('mode-time', 60);
 } if(window.localStorage.getItem('mode') === null || undefined) {
-    window.localStorage.setItem('mode', 't-time')
+    window.localStorage.setItem('mode', 't-time');
 } if(window.localStorage.getItem('klava') === null || undefined) {
-    window.localStorage.setItem('klava', 'Qwerty')
+    window.localStorage.setItem('klava', 'Qwerty');
 } if(window.localStorage.getItem('lange') === null || undefined) {
-    window.localStorage.setItem('lange', 'en-US')
+    window.localStorage.setItem('lange', 'en-US');
 }
 
 const [words, setWords] = useState(0);
@@ -19,15 +19,18 @@ const [simbols, setSimbols] = useState(0);
 const [errorCount, setErrorCount] = useState(0);
 const [klava, setKlava] = useState(true);
 const [timerVisible, setTimerVisible] = useState(true);
-const [allResVsisible, setAllResVisible] = useState(true)
+const [allResVsisible, setAllResVisible] = useState(true);
 
-const [changeTextNew, setChangeTextNew] = useState(false)
+const [changeTextNew, setChangeTextNew] = useState(false);
 const inputArea = useRef();
 let [inputText, setInputText] = useState('');
 let [textInputs, setTextInputs] = useState();
 
-// const [counterClearArea , setCounterClearArea] = useState(0)
+// const [counterClearArea , setCounterClearArea] = useState(0);
 
+const t = [
+'Таким образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации соответствующий условий активизации.'
+];
 
 
 useEffect(()=>{
@@ -38,13 +41,11 @@ useEffect(()=>{
         'Повседневная практика показывает, что рамки и место обучения кадров влечет за собой процесс внедрения и модернизации систем массового участия.',
         'Товарищи! постоянный количественный рост и сфера нашей активности играет важную роль в формировании соответствующий условий активизации.',
         'Товарищи! сложившаяся структура организации требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.',
-        'Не следует, однако забывать, что реализация намеченных плановых заданий способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.',
+        'Не следует, однако забывать, что реализация намеченных плановых заданий способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных.',
         'Таким образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации соответствующий условий активизации.'
 ];
 
 let textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
-
-
 setInputText(textInput[0]);
 if(textInput === textsRu[0]) {
     setInputText(textsRu[0]);
@@ -61,6 +62,7 @@ if(textInput === textsRu[0]) {
 } else if(textInput === textsRu[6]) {
     setInputText(textsRu[6]);
 }
+
 
 // if(changeTextNew === false) {
 //     inputArea.current.value = ''
@@ -81,11 +83,11 @@ const sec = getTime(time - min * 60);
 useEffect(()=>{
     const interval = setInterval(()=>{
         isType && 
-        setTime((time) => (time >= 1 ? time -1 : 0))
+        setTime((time) => (time >= 1 ? time -1 : 0));
     } ,1000);
 
     return () => {
-        clearInterval(interval)
+        clearInterval(interval);
     }
 },[isType]);
 
@@ -118,13 +120,13 @@ useEffect(()=>{
                 symbols: simbols,
                 errors: errorCount,
                 timesNow: offsetNow,
-                times: offset 
+                times: offset
         };
             historyArray.push(historyData);
             window.localStorage.setItem('HistoryData', JSON.stringify(historyArray));
     }
     
-}, [errorCount, simbols, time, words])
+}, [errorCount, simbols, time, words]);
 
 const backSpace = () => {
     let backFun = inputArea.current.value;
@@ -164,20 +166,38 @@ const inputBackspace = (event) => {
 const [i, setI] = useState(0);
 const inputCheck = (event)=> {
     if(event.target.value.length === 1) {
-        setIsType(prev => prev = true)
+        setIsType(prev => prev = true);
     }
 
+    if(inputText[i-1] !== undefined || null) {
+        // console.log(inputText[i-1])
+        if(/Android/i.test(navigator.userAgent)) {
+            inputText[i-1] = ''
+        }
+    }
     if(inputText[i] === event.nativeEvent.data) {
-        setI(prev => prev+1)
-        setSimbols(prev => prev+1)
+        setI(prev => prev+1);
+        setSimbols(prev => prev+1);
         if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
-            setWords(prev => prev+1)
+            setWords(prev => prev+1);
         }
     }
     else {
         setTimeout(backSpace, 0);
-        setErrorCount(prev => prev+1)
+        setErrorCount(prev => prev+1);
     }
+
+    // console.log(inputArea.current.value)
+    // console.log(inputText[i+1])
+    // // console.log(t[0])
+    // console.log()
+
+    // if(event.target.value.length === 3) {
+    //     console.log('молодец вам бан!')
+    //     inputArea.current.value = ''
+    //     setInputText(t[0]);
+    //     setTextInputs(t[Math.floor(Math.random()*t.length)]);
+    // }
 }
 
     return (

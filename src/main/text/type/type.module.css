@@ -29,7 +29,7 @@
   width: 2.7vw;
   height: 2.7vw;
   border-radius: 0.781vw;
-  background-color: var(--choiceButton-color);
+  background: linear-gradient(#5534cc, #883c91, #403468);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -44,12 +44,6 @@
 .partTwo .closeBlock img {
   width: 1.563vw;
   height: 1.563vw;
-}
-.partTwo .closeBlock:nth-child(2) {
-  background-color: #652F6B;
-}
-.partTwo .closeBlock:nth-child(3) {
-  background-color: #9888D2;
 }
 
 .inputMain {
@@ -135,7 +129,7 @@
 .klavaLine div {
   position: relative;
   background-color: var(--ThemeButton-color);
-  margin: 2px;
+  margin: 1.7px;
   border-radius: 8px;
   height: 2.66vw;
   color: var(--textT-color);

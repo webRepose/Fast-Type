@@ -29,7 +29,7 @@
             width: 2.700vw;
             height: 2.700vw;
             border-radius: 0.781vw;
-            background-color: var(--choiceButton-color);
+            background: linear-gradient(#5534cc, #883c91, #403468);
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -46,12 +46,12 @@
                 height: 1.563vw;
             }
 
-            &:nth-child(2) {
-                background-color: #652F6B;
-            }
-            &:nth-child(3) {
-                background-color: #9888D2;
-            }
+            // &:nth-child(2) {
+            //     background: linear-gradient(#652F6B, rgb(184, 49, 49), #652F6B);
+            // }
+            // &:nth-child(3) {
+            //     background: linear-gradient(#9888D2, #8f5496, #7d68ca);
+            // }
         }
     }
 }
@@ -142,7 +142,7 @@
         div {
             position: relative;
             background-color: var(--ThemeButton-color);
-            margin: 2px;
+            margin: 1.7px;
             border-radius: 8px;
             height: 2.66vw;
             color: var(--textT-color);
