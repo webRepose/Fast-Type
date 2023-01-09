@@ -45,23 +45,27 @@ useEffect(()=>{
         'Таким образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации соответствующий условий активизации.'
 ];
 
+
 let textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
-setInputText(textInput[0]);
-if(textInput === textsRu[0]) {
+setInputText(textInput.split(''));
+if(textInput === textsRu[0].split('')) {
     setInputText(textsRu[0]);
-} else if(textInput === textsRu[1]) {
+} else if(textInput === textsRu[1].split('')) {
     setInputText(textsRu[1]);
-} else if(textInput === textsRu[2]) {
+} else if(textInput === textsRu[2].split('')) {
     setInputText(textsRu[2]);
-} else if(textInput === textsRu[3]) {
+} else if(textInput === textsRu[3].split('')) {
     setInputText(textsRu[3]);
-} else if(textInput === textsRu[4]) {
+} else if(textInput === textsRu[4].split('')) {
     setInputText(textsRu[4]);
-} else if(textInput === textsRu[5]) {
+} else if(textInput === textsRu[5].split('')) {
     setInputText(textsRu[5]);
-} else if(textInput === textsRu[6]) {
+} else if(textInput === textsRu[6].split('')) {
     setInputText(textsRu[6]);
 }
+
+
+// console.log(textInput)
 
 
 // if(changeTextNew === false) {
