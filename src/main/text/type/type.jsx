@@ -175,6 +175,7 @@ const inputCheck = (event)=> {
             // inputText[i-1] = ''
             alert(inputText[i+1])
             alert(inputText[i])
+            alert(event.nativeEvent.data)
         }
     }
     if(inputText[i] === event.nativeEvent.data) {
