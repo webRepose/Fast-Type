@@ -175,7 +175,7 @@ const inputCheck = (event)=> {
             // inputText[i-1] = ''
             // alert(event.nativeEvent.data[i-2])
             // alert(event.nativeEvent.data[i-1] = '')
-            alert(event.nativeEvent.data[i-1] = '')
+            alert(event.nativeEvent.data[i-1].value)
             // alert(inputText[i+1])
             // alert(inputText[i])
             // alert(event.nativeEvent.data)
