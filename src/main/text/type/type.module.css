@@ -50,7 +50,7 @@
   padding: 20px;
   border: 1px solid var(--border-color);
   border-radius: var(--radius20);
-  width: calc(70vw - 100px);
+  width: calc(75vw - 100px);
   margin: 0 auto;
 }
 
@@ -60,7 +60,7 @@
   margin: 0 auto;
   cursor: text;
   position: relative;
-  width: calc(70vw - 150px);
+  width: calc(75vw - 150px);
 }
 
 .inputText {
@@ -70,7 +70,7 @@
   user-select: none;
   font-weight: 400;
   opacity: 0.7;
-  font-size: 1.44vw;
+  font-size: 1.24vw;
   cursor: text;
   font-family: sans-serif;
   word-break: break-all;
@@ -93,7 +93,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 1.44vw;
+  font-size: 1.24vw;
   font-weight: 400;
   font-family: sans-serif;
   background-color: transparent;
@@ -102,7 +102,6 @@
 
 .klava {
   width: 39.792vw;
-  height: 14.063vw;
   display: block;
   margin: 0 auto;
   margin-top: 50px;
@@ -119,7 +118,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.302vw;
+  font-size: 1.102vw;
   display: flex;
 }
 .klavaLine p sup {
@@ -131,7 +130,7 @@
   background-color: var(--ThemeButton-color);
   margin: 1.7px;
   border-radius: 8px;
-  height: 2.66vw;
+  height: 2.36vw;
   color: var(--textT-color);
 }
 
@@ -161,12 +160,12 @@
 }
 .timer samp {
   margin-right: 3px;
-  font-size: 1.44vw;
+  font-size: 1.24vw;
   display: flex;
 }
 .timer samp img {
-  width: 1.34vw;
-  height: 1.34vw;
+  width: 1.14vw;
+  height: 1.14vw;
   position: relative;
   top: 0.146vw;
   left: -5px;
