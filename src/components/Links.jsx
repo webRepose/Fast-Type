@@ -10,6 +10,7 @@ const Courses = lazy(() => import('../main/courses/Courses'));
 const NF404 = lazy(() => import('../main/NF404/404'));
 const Header = lazy(() => import('../header/Header'));
 const Type = lazy(() => import('../main/text/type/type'));
+const ResultShare = lazy(()=> import('../main/text/type/ResultShare'))
 
 
 function Links() {
@@ -25,6 +26,7 @@ function Links() {
         <Route path="capcha" element={<Suspense fallback={<Preloader/>}><Capcha/></Suspense>}></Route>
         <Route path="courses" element={<Suspense fallback={<Preloader/>}><Courses/></Suspense>}></Route>
         <Route path="*" element={<Suspense fallback={<Preloader/>}><NF404/></Suspense>}></Route>
+        <Route path="result" element={<Suspense fallback={<Preloader/>}><ResultShare/></Suspense>}></Route>
         </Route>
       </Routes>
         </>

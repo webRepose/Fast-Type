@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Style from "./type.module.css";
+import Style from '../type.module.css'
 import TypeKlava from './KlavaFourLine.json';
 import KlavaThird from './KlavaThirdLine.json';
 import KlavaSecond from './KlavaSecondLine.json';

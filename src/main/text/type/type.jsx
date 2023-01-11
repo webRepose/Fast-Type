@@ -1,8 +1,51 @@
 import { useTranslation } from "react-i18next";
 import Style from "./type.module.css";
 import {useEffect, useRef, useState} from "react";
-import Klava from "./Klava";
+import Klava from "./Klava/Klava";
 import { Link } from "react-router-dom";
+
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton,
+    EmailIcon,
+    FacebookIcon,
+    FacebookMessengerIcon,
+    HatenaIcon,
+    InstapaperIcon,
+    LineIcon,
+    LinkedinIcon,
+    LivejournalIcon,
+    MailruIcon,
+    OKIcon,
+    PinterestIcon,
+    PocketIcon,
+    RedditIcon,
+    TelegramIcon,
+    TumblrIcon,
+    TwitterIcon,
+    ViberIcon,
+    VKIcon,
+    WeiboIcon,
+    WhatsappIcon,
+    WorkplaceIcon
+  } from "react-share";
 
 const Type = () => {
 const [t] = useTranslation();
@@ -296,6 +339,16 @@ const inputCheck = (event)=> {
                         </Link>
                         </button>
                         </div>
+                        <VKShareButton 
+                        title={'Мои результаты набора текста'} 
+                        url={`https://fast-type-red.vercel.app/result?
+                        words=${words}&&
+                        errors=${errorCount}&&
+                        symbols=${simbols}&&
+                        time=${localStorage.getItem('mode-time')}
+                        &&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`}>
+                            <VKIcon round={true} size={40}></VKIcon>
+                        </VKShareButton>
                     </div>
                 </div>
             }
