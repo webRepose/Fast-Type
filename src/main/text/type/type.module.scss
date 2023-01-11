@@ -57,6 +57,59 @@
     margin: 0 auto;
 }
 
+.inputBlur {
+    position: fixed;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+
+    &Modals {
+        width: 500px;
+        height: 400px;
+        border-radius: 25px;
+        border: 0;
+        background: linear-gradient(#5534cc, #883c91, #403468);
+        opacity: 0.9;
+        margin: auto;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        h3 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 30px !important;
+        }
+
+        &Buttons {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            margin-top: 30px;
+            p {
+                font-size: 15px;
+                margin-top: 5px;
+            }
+    
+            button {
+                background: transparent;
+                border: 0;
+            }
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+}
+
 .inputBlock {
     height: auto;
     display: block;
@@ -265,9 +318,13 @@
             }
         }
     } 
+
+    .inputBlurModals {
+        width: 70.25vw;
+    }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 820px) {
     .part {
         display: block;
         &First {
@@ -355,6 +412,12 @@
             justify-content: center;
         }
     }
+
+    .inputBlurModalsButtons {
+        p {
+            display: none;
+        }
+    }
     
     .changeText {
         margin-top: 30px;
@@ -363,6 +426,10 @@
 
 
 @media (max-width: 480px) {
+    .inputBlurModals {
+        width: 90.25vw;
+    }
+
     .inputArea, .inputText, .inputBlock {
         font-size: 5vw;
     }
