@@ -10,7 +10,7 @@ const Courses = lazy(() => import('../main/courses/Courses'));
 const NF404 = lazy(() => import('../main/NF404/404'));
 const Header = lazy(() => import('../header/Header'));
 const Type = lazy(() => import('../main/text/type/type'));
-const ResultShare = lazy(()=> import('../main/text/type/ResultShare'))
+const ResultShare = lazy(()=> import('../main/text/type/ResultShare/ResultShare'))
 
 
 function Links() {

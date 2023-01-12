@@ -3,7 +3,6 @@ import Style from "./type.module.css";
 import {useEffect, useRef, useState} from "react";
 import Klava from "./Klava/Klava";
 import { Link } from "react-router-dom";
-
 import {
     EmailShareButton,
     FacebookShareButton,
@@ -48,6 +47,14 @@ import {
   } from "react-share";
 
 const Type = () => {
+      const shareMob = () => {
+        navigator.share({
+            text: 'Hello',
+            url: 'http://localhost:3000/text/type',
+            title: 'ban'
+        })
+      }
+
 const [t] = useTranslation();
 if(window.localStorage.getItem('mode-time') === null || undefined) {
     window.localStorage.setItem('mode-time', 60);
@@ -61,6 +68,7 @@ if(window.localStorage.getItem('mode-time') === null || undefined) {
 
 const inputArea = useRef();
 const inputBlock = useRef();
+const [share, setShare] = useState(false)
 const [isType, setIsType] = useState(false);
 const [words, setWords] = useState(0);
 const [simbols, setSimbols] = useState(0);
@@ -270,7 +278,7 @@ const inputCheck = (event)=> {
             }
             <button title="Сменить текст" onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>Сменить текст</button>
             {timerVisible &&
-                    <div className={Style.timer}>
+                    <div onClick={shareMob} className={Style.timer}>
                         <samp><img src="../img/text-type/timer.svg" alt="words"/>{min + ':' + sec}</samp>
                     </div>
             }
@@ -299,6 +307,8 @@ const inputCheck = (event)=> {
            {time ? '' : 
                 <div className={Style.inputBlur}>
                     <div className={Style.inputBlurModals}>
+                        {share ? '' :  
+                        <>
                         <h3>Ваши результаты!</h3>
                         <h2>За {localStorage.getItem('mode-time') / 60} минут вы набрали:</h2>
                         <h2>Слов: {words}</h2>
@@ -330,25 +340,22 @@ const inputCheck = (event)=> {
                             <p>Повторить</p>
                         </a>
                         </button>
-                        <button>
-                        <Link title={'Поделиться'} to='/' className={Style.navBarActive}>
+                        <button title={'Поделиться'} onClick={()=>{setShare(prev => !prev)}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 36.05 40">
                         <path d="M36.35,44a5.719,5.719,0,0,1-5.7-5.7,5.388,5.388,0,0,1,.075-.825,4.477,4.477,0,0,1,.225-.875L15.8,27.8a5.713,5.713,0,0,1-1.85,1.375,5.171,5.171,0,0,1-2.25.525,5.488,5.488,0,0,1-4.025-1.675,5.7,5.7,0,0,1,0-8.075,5.691,5.691,0,0,1,6.225-1.2,6.036,6.036,0,0,1,1.9,1.3l15.15-8.7a3.484,3.484,0,0,1-.225-.8,5.181,5.181,0,0,1-.075-.85,5.464,5.464,0,0,1,1.675-4.05A5.688,5.688,0,0,1,42.05,9.7a5.53,5.53,0,0,1-1.65,4.025A5.464,5.464,0,0,1,36.35,15.4a6.707,6.707,0,0,1-2.225-.375A4.269,4.269,0,0,1,32.3,13.8L17.15,22.2a9.239,9.239,0,0,1,.175.925A6.39,6.39,0,0,1,17.4,24a4.081,4.081,0,0,1-.075.75q-.075.4-.175.8l15.15,8.6a5.949,5.949,0,0,1,1.75-1.125,5.837,5.837,0,0,1,2.3-.425,5.71,5.71,0,0,1,4.05,9.725A5.464,5.464,0,0,1,36.35,44Zm0-31.6a2.648,2.648,0,0,0,2.7-2.7,2.7,2.7,0,1,0-5.4,0,2.648,2.648,0,0,0,2.7,2.7ZM11.7,26.7a2.7,2.7,0,1,0,0-5.4,2.7,2.7,0,1,0,0,5.4ZM36.35,41a2.648,2.648,0,1,0-1.925-.775A2.614,2.614,0,0,0,36.35,41ZM36.35,9.7ZM11.7,24ZM36.35,38.3Z" transform="translate(-6 -4)" fill="#33d74b"/>
                         </svg>
                             <p>Поделиться</p>
-                        </Link>
                         </button>
                         </div>
-                        <VKShareButton 
-                        title={'Мои результаты набора текста'} 
-                        url={`https://fast-type-red.vercel.app/result?
-                        words=${words}&&
-                        errors=${errorCount}&&
-                        symbols=${simbols}&&
-                        time=${localStorage.getItem('mode-time')}
-                        &&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`}>
-                            <VKIcon round={true} size={40}></VKIcon>
-                        </VKShareButton>
+                        </>
+                        }
+                            {share ?             
+                            <VKShareButton 
+                                    title={'Мои результаты набора текста, Попробуй ты!'} 
+                                    url={`https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`}>                        
+                                    <VKIcon round={true} size={40}></VKIcon>
+                            </VKShareButton> : ''
+                            }
                     </div>
                 </div>
             }
