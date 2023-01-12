@@ -48,7 +48,7 @@ import {
 
 const Type = () => {
       const shareMob = () => {
-        if(/Android/&&/Iphone/i.test(navigator.userAgent)) {
+        if(/Android/||/Iphone/i.test(navigator.userAgent)) {
             navigator.share({
                 text: 'Hello',
                 url: 'http://localhost:3000/text/type',
