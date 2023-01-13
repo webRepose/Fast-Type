@@ -47,21 +47,19 @@ import {
   } from "react-share";
 
 const Type = () => {
-      const shareMob = () => {
-        if(/Android/||/Iphone/i.test(navigator.userAgent)) {
-            navigator.share({
-                text: 'Hello',
-                url: 'http://localhost:3000/text/type',
-                title: 'ban'
-            })
-        } else {
-            setShare(prev => !prev)
-        }
-}
+    const [t] = useTranslation();
+    const shareMob = () => {
+        navigator.share({
+            text: t('TI-myRes'),
+            url: `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
+            title: t('TI-myRes')
+        })
+    }
 
-
-
-const [t] = useTranslation();
+    const sharePc = ()=>{
+        setShare(prev => !prev)
+    }
+document.title = t('TI-title')
 if(window.localStorage.getItem('mode-time') === null || undefined) {
     window.localStorage.setItem('mode-time', 60);
 } if(window.localStorage.getItem('mode') === null || undefined) {
@@ -144,9 +142,9 @@ useEffect(()=>{
     if(time === 0) {
         let historyMode;
         if(window.localStorage.getItem('mode') === 't-time'){
-            historyMode = 'Ввод на время';
+            historyMode = t('TI-inTime');
         } else if(window.localStorage.getItem('mode') === 't-words') {
-            historyMode = 'Ввод текста';
+            historyMode = t('TI-inWords');
         }
         let offset = new Date().toLocaleDateString();
         let offsetNow = new Date().toLocaleTimeString();
@@ -178,7 +176,7 @@ useEffect(()=>{
             document.querySelector('html').style.overflow = 'hidden';
     }
     
-}, [errorCount, simbols, time, words]);
+}, [errorCount, simbols, time, words, t]);
 
 const backSpace = () => {
     let backFun = inputArea.current.value;
@@ -258,7 +256,7 @@ const inputCheck = (event)=> {
         <>
         <main>
         <section className={Style.choiceParams}>
-            <h3>Набирайте текст</h3>
+            <h3>{t('TI-tyText')}</h3>
         </section>
         <section className={Style.choiceParams}>
            <div className={Style.part}>
@@ -282,7 +280,7 @@ const inputCheck = (event)=> {
             {klava &&
             <Klava/>
             }
-            <button title="Сменить текст" onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>Сменить текст</button>
+            <button title={t('TI-changeText')} onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>{t('TI-changeText')}</button>
             {timerVisible &&
                     <div className={Style.timer}>
                         <samp><img src="../img/text-type/timer.svg" alt="words"/>{min + ':' + sec}</samp>
@@ -290,22 +288,22 @@ const inputCheck = (event)=> {
             }
             {allResVsisible &&
                         <div className={Style.countAll}>
-                        <div><img src="../img/text-type/chat.svg" alt="words"/>{words} <p>Слов</p></div>
-                        <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>Символов</p></div>
-                        <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>Ошибок</p></div>
+                        <div><img src="../img/text-type/chat.svg" alt="words"/>{words} <p>{t('T-counWord')}</p></div>
+                        <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>{t('TR-sym')}</p></div>
+                        <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>{t('TR-err')}</p></div>
                     </div>
             }
             </div>
             <div className={Style.partTwo}>
                 <div className={Style.closeAll}>
-                <div onClick={()=>{setKlava(prev => !prev)}} title={klava ? 'Cкрыть клавиатуру' : 'Показать клавиатуру'} className={Style.closeBlock}>
-                    {klava ? <img src="../img/text-type/keyboard_off.svg" alt="Клавиатура"/> : <img src="../img/text-type/keyboard.svg" alt="Клавиатура" />}
+                <div onClick={()=>{setKlava(prev => !prev)}} title={klava ? t('TI-hideKlava') : t('TI-showKlava')} className={Style.closeBlock}>
+                    {klava ? <img src="../img/text-type/keyboard_off.svg" alt={t('TI-hideKlava')}/> : <img src="../img/text-type/keyboard.svg" alt={t('TI-showKlava')}/>}
                 </div>
-                <div onClick={()=>{setTimerVisible(prev => !prev)}} title={timerVisible ? 'Скрыть таймер' : 'Показать таймер'} className={Style.closeBlock}>
-                    {timerVisible ? <img src="../img/text-type/timer_off.svg" alt="Таймер" /> : <img src="../img/text-type/timer.svg" alt="Таймер" />}
+                <div onClick={()=>{setTimerVisible(prev => !prev)}} title={timerVisible ? t('TI-hideTimer') : t('TI-showTimer')} className={Style.closeBlock}>
+                    {timerVisible ? <img src="../img/text-type/timer_off.svg" alt={t('TI-hideTimer')} /> : <img src="../img/text-type/timer.svg" alt={t('TI-showTimer')} />}
                 </div>
-                <div onClick={()=>{setAllResVisible(prev => !prev)}} title={allResVsisible ? 'Скрыть ошибки/символы/слова' : 'Показать ошибки/символы/слова'} className={Style.closeBlock}>
-                    {allResVsisible ? <img src="../img/text-type/category_off.svg" alt="ошибки/символы/слова"/> : <img src="../img/text-type/category.svg" alt="ошибки/символы/слова"/>}
+                <div onClick={()=>{setAllResVisible(prev => !prev)}} title={allResVsisible ? t('TI-hideCateg') : t('TI-showCateg')} className={Style.closeBlock}>
+                    {allResVsisible ? <img src="../img/text-type/category_off.svg" alt={t('TI-hideCateg')}/> : <img src="../img/text-type/category.svg" alt={t('TI-showCateg')}/>}
                 </div> 
                 </div>
             </div>
@@ -315,12 +313,12 @@ const inputCheck = (event)=> {
                     <div className={Style.inputBlurModals}>
                         {share ? '' :  
                         <>
-                        <h3>Ваши результаты!</h3>
-                        <h2>За {localStorage.getItem('mode-time') / 60} минут вы набрали:</h2>
-                        <h2>Слов: {words}</h2>
-                        <h2>Символов: {simbols}</h2>
-                        <h2>Ошибок: {errorCount}</h2>
-                        <h2>Правильных символов  {simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}%</h2>
+                        <h3>{t('TI-yoRes')}</h3>
+                        <h2>{t('TR-for')} {localStorage.getItem('mode-time') / 60} {t('TR-min')} {t('TI-yoType')}</h2>
+                        <h2>{t('T-counWord')}: {words}</h2>
+                        <h2>{t('TR-sym')}: {simbols}</h2>
+                        <h2>{t('TR-err')}: {errorCount}</h2>
+                        <h2>{t('TR-right')} {simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}%</h2>
                         <div className={Style.inputBlurModalsButtons}>
                         <button>
                         <Link title={t('Home')} to='/' className={Style.navBarActive}>
@@ -339,25 +337,25 @@ const inputCheck = (event)=> {
                         </Link>
                         </button>
                         <button>
-                        <a title={'Повторить'} href='/text/type' className={Style.navBarActive}>
+                        <a title={t('TI-rep')} href='/text/type' className={Style.navBarActive}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32.05 37">
                         <path d="M22.55,41.9A15.315,15.315,0,0,1,12.2,36.85,15.386,15.386,0,0,1,8,26.05,15.442,15.442,0,0,1,9.775,18.8a14.891,14.891,0,0,1,4.975-5.55L16.9,15.4a11.475,11.475,0,0,0-4.35,4.525A12.716,12.716,0,0,0,11,26.05a12.469,12.469,0,0,0,3.3,8.65,12.643,12.643,0,0,0,8.25,4.2Zm3,0v-3a12.743,12.743,0,0,0,8.25-4.225,12.486,12.486,0,0,0,3.25-8.625,12.89,12.89,0,0,0-13-13h-1l3,3L23.9,18.2l-6.65-6.65L23.9,4.9l2.15,2.15-3,3h1A15.4,15.4,0,0,1,35.4,14.725,15.466,15.466,0,0,1,40.05,26.05a15.436,15.436,0,0,1-4.175,10.8A15.223,15.223,0,0,1,25.55,41.9Z" transform="translate(-8 -4.9)" fill="#33d74b"/>
                         </svg>
-                            <p>Повторить</p>
+                            <p>{t('TI-rep')}</p>
                         </a>
                         </button>
-                        <button title={'Поделиться'} onClick={shareMob}>
+                        <button title={t('TI-share')} onClick={/Android|iPad|iPhone/i.test(navigator.userAgent) ? shareMob : sharePc}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 36.05 40">
                         <path d="M36.35,44a5.719,5.719,0,0,1-5.7-5.7,5.388,5.388,0,0,1,.075-.825,4.477,4.477,0,0,1,.225-.875L15.8,27.8a5.713,5.713,0,0,1-1.85,1.375,5.171,5.171,0,0,1-2.25.525,5.488,5.488,0,0,1-4.025-1.675,5.7,5.7,0,0,1,0-8.075,5.691,5.691,0,0,1,6.225-1.2,6.036,6.036,0,0,1,1.9,1.3l15.15-8.7a3.484,3.484,0,0,1-.225-.8,5.181,5.181,0,0,1-.075-.85,5.464,5.464,0,0,1,1.675-4.05A5.688,5.688,0,0,1,42.05,9.7a5.53,5.53,0,0,1-1.65,4.025A5.464,5.464,0,0,1,36.35,15.4a6.707,6.707,0,0,1-2.225-.375A4.269,4.269,0,0,1,32.3,13.8L17.15,22.2a9.239,9.239,0,0,1,.175.925A6.39,6.39,0,0,1,17.4,24a4.081,4.081,0,0,1-.075.75q-.075.4-.175.8l15.15,8.6a5.949,5.949,0,0,1,1.75-1.125,5.837,5.837,0,0,1,2.3-.425,5.71,5.71,0,0,1,4.05,9.725A5.464,5.464,0,0,1,36.35,44Zm0-31.6a2.648,2.648,0,0,0,2.7-2.7,2.7,2.7,0,1,0-5.4,0,2.648,2.648,0,0,0,2.7,2.7ZM11.7,26.7a2.7,2.7,0,1,0,0-5.4,2.7,2.7,0,1,0,0,5.4ZM36.35,41a2.648,2.648,0,1,0-1.925-.775A2.614,2.614,0,0,0,36.35,41ZM36.35,9.7ZM11.7,24ZM36.35,38.3Z" transform="translate(-6 -4)" fill="#33d74b"/>
                         </svg>
-                            <p>Поделиться</p>
+                            <p>{t('TI-share')}</p>
                         </button>
                         </div>
                         </>
                         }
                             {share ?             
                             <VKShareButton 
-                                    title={'Мои результаты набора текста, Попробуй ты!'} 
+                                    title={t('TI-myRes')} 
                                     url={`https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`}>                        
                                     <VKIcon round={true} size={40}></VKIcon>
                             </VKShareButton> : ''

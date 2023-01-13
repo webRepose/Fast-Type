@@ -31,24 +31,24 @@
 }
 .choiceParams button:hover {
   opacity: 0.8;
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
 .center {
-  display: flex;
+  display: grid;
   margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 .center div {
-  width: 600px;
-  padding: 5px;
+  width: 90%;
   border-radius: 10px;
   padding: 10px;
   margin: 0 auto;
-  margin-top: 15px;
   color: var(--textT-color);
 }
 .center div div {
   background: var(--gradient1-color);
+  margin-top: 15px;
 }
 .center div p {
   display: flex;
@@ -62,5 +62,24 @@
 @media (max-width: 1760px) {
   .choiceParams h3 {
     font-size: var(--font21);
+  }
+}
+@media (max-width: 920px) {
+  .center div {
+    width: 100%;
+  }
+  .choiceParams button {
+    padding: 12px 50px;
+  }
+}
+@media (max-width: 600px) {
+  .center {
+    grid-template-columns: auto;
+  }
+  .center div {
+    padding: 0;
+  }
+  .center div div {
+    padding: 10px;
   }
 }/*# sourceMappingURL=ResultShare.module.css.map */
