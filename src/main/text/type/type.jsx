@@ -4,47 +4,24 @@ import {useEffect, useRef, useState} from "react";
 import Klava from "./Klava/Klava";
 import { Link } from "react-router-dom";
 import {
-    EmailShareButton,
     FacebookShareButton,
-    HatenaShareButton,
-    InstapaperShareButton,
-    LineShareButton,
     LinkedinShareButton,
-    LivejournalShareButton,
-    MailruShareButton,
-    OKShareButton,
-    PinterestShareButton,
-    PocketShareButton,
     RedditShareButton,
     TelegramShareButton,
-    TumblrShareButton,
     TwitterShareButton,
-    ViberShareButton,
     VKShareButton,
     WhatsappShareButton,
-    WorkplaceShareButton,
-    EmailIcon,
     FacebookIcon,
     FacebookMessengerIcon,
-    HatenaIcon,
-    InstapaperIcon,
-    LineIcon,
     LinkedinIcon,
-    LivejournalIcon,
-    MailruIcon,
-    OKIcon,
-    PinterestIcon,
-    PocketIcon,
     RedditIcon,
     TelegramIcon,
-    TumblrIcon,
     TwitterIcon,
-    ViberIcon,
     VKIcon,
-    WeiboIcon,
     WhatsappIcon,
-    WorkplaceIcon
+    FacebookMessengerShareButton
   } from "react-share";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 const Type = () => {
     const [t] = useTranslation();
@@ -252,6 +229,8 @@ const inputCheck = (event)=> {
     }
 }
 
+const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`
+
     return (
         <>
         <main>
@@ -353,12 +332,71 @@ const inputCheck = (event)=> {
                         </div>
                         </>
                         }
-                            {share ?             
+                            {share &&          
+                            <div className={Style.sharePc}>
+                                <h1>{t('TIS-share')}</h1>
+                                <CopyToClipboard onCopy={()=>{alert('you copied')}} text={shareRes}>
+                                <button className={Style.sharePcCopy}>
+                                <div title={t('TIS-copy')} className={Style.sharePcCopyText}>
+                                <p>{t('TIS-copy')}</p>
+                                <div className={Style.sharePcCopyLink}>
+                                <img src="../img/text-type/content_copy.svg" alt="copy"/>
+                                </div>
+                                </div>
+                            </button>
+                                </CopyToClipboard>
+                            <div className={Style.sharePcOr}>
+                                <div></div>
+                                <p>{t('TIS-or')}</p>
+                                <div></div>
+                            </div>
+                            <div className={Style.sharePcOther}>
+                                <div>
                             <VKShareButton 
                                     title={t('TI-myRes')} 
-                                    url={`https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`}>                        
-                                    <VKIcon round={true} size={40}></VKIcon>
-                            </VKShareButton> : ''
+                                    url={shareRes}>                        
+                                    <VKIcon></VKIcon>
+                            </VKShareButton>
+                            <TelegramShareButton 
+                            title={t('TI-myRes')} 
+                            url={shareRes}>
+                                <TelegramIcon></TelegramIcon>
+                            </TelegramShareButton>
+                            <WhatsappShareButton
+                             title={t('TI-myRes')} 
+                             url={shareRes}>
+                                <WhatsappIcon></WhatsappIcon>
+                            </WhatsappShareButton>
+                            <TwitterShareButton
+                            title={t('TI-myRes')} 
+                            url={shareRes}>
+                                <TwitterIcon></TwitterIcon>
+                            </TwitterShareButton>
+                                </div>
+                            <div>
+                                <FacebookShareButton
+                                title={t('TI-myRes')} 
+                                url={shareRes}>
+                                    <FacebookIcon></FacebookIcon>
+                                </FacebookShareButton>
+                                <LinkedinShareButton
+                                title={t('TI-myRes')} 
+                                url={shareRes}>
+                                <LinkedinIcon></LinkedinIcon>
+                                </LinkedinShareButton>
+                                <RedditShareButton
+                                title={t('TI-myRes')} 
+                                url={shareRes}>
+                                    <RedditIcon></RedditIcon>
+                                </RedditShareButton>
+                                <FacebookMessengerShareButton
+                                title={t('TI-myRes')} 
+                                url={shareRes}>
+                                    <FacebookMessengerIcon></FacebookMessengerIcon>
+                                </FacebookMessengerShareButton>
+                            </div>
+                            </div>
+                            </div>
                             }
                     </div>
                 </div>

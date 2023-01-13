@@ -14,7 +14,7 @@ html.dark {
   --choiceButton-color: #6300F1;
   --choiceText-color: #303030;
   --account-color: #f6f6f6;
-  --gradient1-color: linear-gradient(#5534cc, #883c91, #403468);
+  --gradient1-color: linear-gradient(45deg,#5534cc, #883c91, #403468);
   --theme-icon: url(/public/img/theme/dark_mode.svg);
   --theme-iconMin: url(/public/img/theme/dark_modeMin.svg);
 }

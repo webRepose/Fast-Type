@@ -266,6 +266,108 @@
     }
 }
 
+.sharePc {
+    margin-top: 30px;
+
+    h1 {
+        text-align: center;
+    }
+    &Copy {
+        display: block;
+        width: 80%;
+        padding: 5px;
+        border-radius: 25px;
+        background-color: var(--block-color);
+        margin: 0 auto;
+        margin-top: 30px;
+        border: 0;
+        transition: all 0.3s ease;
+    
+        &:hover {
+            transform: translateY(-5px);
+        }
+    
+        &Text {
+            display: grid;
+            grid-template-columns: auto auto;
+            place-items: center;
+        }
+    
+        &Link {
+            border-radius: 50%;
+            border: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #6157FF, #EE49FD);
+            display: grid;
+            place-items: center;
+    
+            img {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    &Or {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+
+        p {
+            padding: 0 10px;
+        }
+
+        div {
+            height: 8px;
+            background-color: var(--block-color);
+            margin-top: 9px;
+            border-radius: 15px;
+            &:first-child {
+                width: 40%;
+            }
+            &:last-child {
+                width: 40%;
+            }
+        }
+    }
+
+    &Other {
+        width: 80%;
+        height: auto;
+        background-color: var(--block-color);
+        // display: flex;
+        // flex-wrap: wrap;
+        margin: 0 auto;
+        border-radius: 25px;
+        // justify-content: space-between;
+        padding: 0px 20px 10px 20px;
+        margin-top: 10px;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button svg {
+            border-radius: 10px;
+            width: 65px;
+            height: 65px;
+        }
+
+        button {
+            padding: 5px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+
+}
+
+
 @media (max-width: 1760px) {
     .choiceParams h3 {
         font-size: var(--font21);
