@@ -180,7 +180,7 @@ const inputCheck = (event)=> {
 
         //     // event.target.value.substr(-2,event.target.value.lengяth - 1)
         // }
-        alert(event.target.value.substr(0))
+        alert(event.target.value.substr(-1))
     }
 
     if(inputText[i] === event.nativeEvent.data) {
