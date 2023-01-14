@@ -173,8 +173,9 @@ const inputCheck = (event)=> {
             alert('надо ввести ' + inputText[i+1])
             // alert(event.target.value.substr(-2,event.target.value.lengяth - 1))
             // event.target.value.substr(-2,event.target.value.lengяth - 1)
+            event.target.value = ''
 
-            alert(event.target.value)
+            alert(event.target.value = '')
 
             // event.target.value.substr(-2,event.target.value.lengяth - 1)
         }
