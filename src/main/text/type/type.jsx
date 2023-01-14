@@ -173,7 +173,8 @@ const inputCheck = (event)=> {
         if(inputText[i-1] !== undefined || null) {
             // alert(event.target.value)
             // alert(event.nativeEvent.data)
-            inputArea.current.value = event.target.value.substr(0,event.target.value.length - 1);
+            alert(event.target.value.substr(0,event.target.value.length - 1))
+            // inputArea.current.value = event.target.value.substr(0,event.target.value.length - 1);
         }
     }
 
