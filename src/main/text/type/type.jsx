@@ -165,12 +165,15 @@ const inputBackspace = (event) => {
 
 const inputCheck = (event)=> {
     if(event.target.value.length === 1) setIsType(prev => prev = true);
+
+
+    // console.log(event.target.value.substr(0,event.target.value.length - 1))
         
     if(/Android/i.test(navigator.userAgent)) {
         if(inputText[i-1] !== undefined || null) {
-            event.target.value.substr(0,event.target.value.length - 1)
-            alert(event.target.value)
-            alert(event.nativeEvent.data)
+            // alert(event.target.value)
+            // alert(event.nativeEvent.data)
+            inputArea.current.value = event.target.value.substr(0,event.target.value.length - 1);
         }
     }
 
