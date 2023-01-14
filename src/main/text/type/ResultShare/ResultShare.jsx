@@ -4,9 +4,9 @@ import Style from "./ResultShare.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const ResultShare = () => {
-    const [t] = useTranslation()
-    document.title = t('TR-res')
-    function useQuery() { 
+    const [t] = useTranslation();
+    document.title = t('TR-res');
+    const useQuery = () => { 
         const { search } = useLocation(); 
         return useMemo(() => new URLSearchParams(search), [search]); 
     }

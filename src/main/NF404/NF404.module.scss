@@ -17,16 +17,16 @@
     }
 
     button {
-        background: linear-gradient(#e66465, #9198e5);
+        background: linear-gradient(45deg,#e66465, #9198e5);
         color: var(--textT-color);
         border: 0;
         padding: 12px 30px;
-        border-radius: 15px;
+        border-radius: var(--radius15);
         display: block;
         margin: 0 auto;
         margin-top: 30px;
         margin-bottom: 100px;
-        font-size: 18px;
+        font-size: var(--font18);
         transition: all 0.3s ease;
         &:hover {
             opacity: 0.8;

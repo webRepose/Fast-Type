@@ -37,6 +37,11 @@
   display: block;
   margin: 0 auto;
   color: var(--textT-color);
+  transition: all 0.3s ease;
+}
+.homeTestStart:hover {
+  transform: translateY(-5px);
+  opacity: 0.8;
 }
 
 .homeStats {

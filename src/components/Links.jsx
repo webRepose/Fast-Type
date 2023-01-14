@@ -1,19 +1,19 @@
 import { Routes, Route} from "react-router-dom";
 import React, { lazy, Suspense } from 'react';
 import Preloader from "./Preloader/Preloader";
-const Home = lazy(() => import('../main/home/Home'));
-const Text = lazy(() => import('../main/text/Text'));
-const Code = lazy(() => import('../main/code/Code'));
-const Capcha = lazy(() => import('../main/capcha/Capcha'));
-const Symbols = lazy(() => import('../main/symbols/Symbols'));
-const Courses = lazy(() => import('../main/courses/Courses'));
-const NF404 = lazy(() => import('../main/NF404/404'));
-const Header = lazy(() => import('../header/Header'));
-const Type = lazy(() => import('../main/text/type/type'));
-const ResultShare = lazy(()=> import('../main/text/type/ResultShare/ResultShare'))
+const Home = lazy(() => import('../main/home/Home')),
+Text = lazy(() => import('../main/text/Text')),
+Code = lazy(() => import('../main/code/Code')),
+Capcha = lazy(() => import('../main/capcha/Capcha')),
+Symbols = lazy(() => import('../main/symbols/Symbols')),
+Courses = lazy(() => import('../main/courses/Courses')),
+NF404 = lazy(() => import('../main/NF404/404')),
+Header = lazy(() => import('../header/Header')),
+Type = lazy(() => import('../main/text/type/type')),
+ResultShare = lazy(()=> import('../main/text/type/ResultShare/ResultShare'));
 
 
-function Links() {
+const Links = () => {
     return (
         <>
         <Routes>

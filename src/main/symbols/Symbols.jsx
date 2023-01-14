@@ -1,10 +1,8 @@
-function Symbols() {
+const Symbols = () => {
     return (
-        <>
         <main>
         <h1>Symbols</h1>
         </main>
-        </>
     );
 };
 

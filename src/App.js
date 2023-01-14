@@ -1,7 +1,7 @@
 import Links from "./components/Links";
 import Footer from "./footer/Footer";
 
-function App() {
+const App = () => {
   return (
     <>
     <Links/>

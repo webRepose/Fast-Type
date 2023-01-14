@@ -4,12 +4,11 @@ import ImgBlock from "./BlockImg";
 import HomeModule from './HomeModule.json';
 
 
-function Home() {
+const Home = () => {
     const [t] = useTranslation();
     document.title = 'Fast Type';
     
     return (
-        <>
         <main>
             <section className={Style.homeWelcome}>
                 <h2>{t('H-Welcome')}</h2>
@@ -29,7 +28,6 @@ function Home() {
         </div>
             </section>
         </main>
-        </>
     );
 };
 

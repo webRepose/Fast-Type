@@ -1,10 +1,8 @@
-function Courses() {
+const Courses = () => {
     return (
-        <>
         <main>
         <h1>Course</h1>
         </main>
-        </>
     );
 };
 

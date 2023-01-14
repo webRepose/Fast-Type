@@ -24,46 +24,25 @@ import {
 import CopyToClipboard from "react-copy-to-clipboard";
 
 const Type = () => {
-    const [t] = useTranslation();
-    const shareMob = () => {
-        navigator.share({
-            text: t('TI-myRes'),
-            url: `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
-            title: t('TI-myRes')
-        })
-    }
-
-    const sharePc = ()=>{
-        setShare(prev => !prev)
-    }
-document.title = t('TI-title')
-if(window.localStorage.getItem('mode-time') === null || undefined) {
-    window.localStorage.setItem('mode-time', 60);
-} if(window.localStorage.getItem('mode') === null || undefined) {
-    window.localStorage.setItem('mode', 't-time');
-} if(window.localStorage.getItem('klava') === null || undefined) {
-    window.localStorage.setItem('klava', 'Qwerty');
-} if(window.localStorage.getItem('lange') === null || undefined) {
-    window.localStorage.setItem('lange', 'en-US');
-}
-
-const inputArea = useRef();
-const inputBlock = useRef();
-const [share, setShare] = useState(false)
-const [isType, setIsType] = useState(false);
-const [words, setWords] = useState(0);
-const [simbols, setSimbols] = useState(0);
-const [errorCount, setErrorCount] = useState(0);
-const [klava, setKlava] = useState(true);
-const [timerVisible, setTimerVisible] = useState(true);
-const [allResVsisible, setAllResVisible] = useState(true);
-const [changeTextNew, setChangeTextNew] = useState(false);
-const [inputText, setInputText] = useState('');
-const [textInputs, setTextInputs] = useState();
-const [countLength, setCountLenght] = useState();
-const [i, setI] = useState(0);
-const [time, setTime] = useState(window.localStorage.getItem('mode-time'));
-const [textsRu] = useState([        
+const [t] = useTranslation(),
+inputArea = useRef(),
+inputBlock = useRef(),
+blurCloseRef = useRef(),
+[share, setShare] = useState(false),
+[isType, setIsType] = useState(false),
+[words, setWords] = useState(0),
+[simbols, setSimbols] = useState(0),
+[errorCount, setErrorCount] = useState(0),
+[klava, setKlava] = useState(true),
+[timerVisible, setTimerVisible] = useState(true),
+[allResVsisible, setAllResVisible] = useState(true),
+[changeTextNew, setChangeTextNew] = useState(false),
+[inputText, setInputText] = useState(''),
+[textInputs, setTextInputs] = useState(),
+[countLength, setCountLenght] = useState(),
+[i, setI] = useState(0),
+[time, setTime] = useState(window.localStorage.getItem('mode-time')),
+[textsRu] = useState([        
     'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Значимость этих проблем настолько очевидна, что консультация с широким активом играет.',
     'Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке модели развития. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности.',
     'Повседневная практика показывает, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Товарищи! постоянное информационно-пропагандистское обеспечение нашей.',
@@ -75,6 +54,23 @@ const [textsRu] = useState([
     'В рамках спецификации современных стандартов, независимые государства обнародованы. Но постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно определяет каждого участника как способного принимать собственные решения касаемо',
     'В рамках спецификации современных стандартов, действия представителей оппозиции освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, указаны как претенденты на роль ключевых факторов! Лишь непосредственные',
 ]);
+
+    const shareMob = () => {
+        navigator.share({
+            text: t('TI-myRes'),
+            url: `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
+            title: t('TI-myRes')
+        });
+    };
+
+    const sharePc = ()=>{
+        setShare(prev => !prev);
+    };
+document.title = t('TI-title');
+if(window.localStorage.getItem('mode-time') === null || undefined) window.localStorage.setItem('mode-time', 60);
+if(window.localStorage.getItem('mode') === null || undefined) window.localStorage.setItem('mode', 't-time');
+if(window.localStorage.getItem('klava') === null || undefined) window.localStorage.setItem('klava', 'Qwerty');
+if(window.localStorage.getItem('lange') === null || undefined) window.localStorage.setItem('lange', 'en-US');
 
 
 useEffect(()=>{
@@ -88,9 +84,9 @@ if(changeTextNew === false) {
     inputArea.current.value = '';
     setSimbols(prev => prev = 0);
     setWords(prev => prev = 0);
-    setErrorCount(prev => prev =0)
+    setErrorCount(prev => prev = 0);
     setIsType(prev => prev = false);
-    setTime(window.localStorage.getItem('mode-time'));
+    setTime(prev => prev = window.localStorage.getItem('mode-time'));
 }
 
 changeTextNew && 
@@ -99,41 +95,32 @@ changeTextNew &&
 },[changeTextNew, textInputs, textsRu]);
 
 
-const getTime = (times) => times.toString().padStart(2, "0");
-const min = getTime(Math.floor(time / 60));
-const sec = getTime(time - min * 60);
+const getTime = (times) => times.toString().padStart(2, "0"),
+min = getTime(Math.floor(time / 60)),
+sec = getTime(time - min * 60);
 
 useEffect(()=>{
     const interval = setInterval(()=>{
-        isType && 
-        setTime((time) => (time >= 1 ? time -1 : 0));
+        isType && setTime((time) => (time >= 1 ? time -1 : 0));
     } ,100);
 
     return () => {
         clearInterval(interval);
-    }
+    };
 },[isType]);
 
 
 useEffect(()=>{
     if(time === 0) {
         let historyMode;
-        if(window.localStorage.getItem('mode') === 't-time'){
-            historyMode = t('TI-inTime');
-        } else if(window.localStorage.getItem('mode') === 't-words') {
-            historyMode = t('TI-inWords');
-        }
-        let offset = new Date().toLocaleDateString();
-        let offsetNow = new Date().toLocaleTimeString();
-    
-    
-        let check = JSON.parse(localStorage.getItem('HistoryData'));
+        if(window.localStorage.getItem('mode') === 't-time') historyMode = t('TI-inTime');
+        else if(window.localStorage.getItem('mode') === 't-words') historyMode = t('TI-inWords');
+        const offset = new Date().toLocaleDateString(),
+        offsetNow = new Date().toLocaleTimeString(),
+        check = JSON.parse(localStorage.getItem('HistoryData'));
         let historyArray;
-        if(check!==null) {
-            historyArray = check;
-        } else {
-            historyArray = [];
-        }
+        if(check!==null) historyArray = check;
+        else historyArray = [];
         
         let historyData =
         {
@@ -172,31 +159,13 @@ const backSpace = () => {
 // const getChar = (event) => event.nativeEvent.key;
 
 const inputBackspace = (event) => {
-    if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) {
-        event.preventDefault();
-        return false;
-    }
-
-
-    // console.log(event.nativeEvent.key)
+    if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
     // const char = getChar(event)
-    // if (event.target.value.length === 0) {
-    //     if(localStorage.getItem('lange') === 'en-US') {
-    //         if(event.nativeEvent.key !== 'CapsLock' || 'Shift' || 'Tab' || 'Control' || 'Alt' || 'Escape') {
-    //             if(en.includes(char) === false) {
-    //                 console.log('enable English please!')
-    //             }
-    //         }
-    //     }
-    // }
-}
+};
 
 const inputCheck = (event)=> {
-    if(event.target.value.length === 1) {
-        setIsType(prev => prev = true);
-    }
-
-    console.log(event)
+    if(event.target.value.length === 1) setIsType(prev => prev = true);
+        
     if(/Android/i.test(navigator.userAgent)) {
         if(inputText[i-1] !== undefined || null) {
             alert(event.target.value)
@@ -204,32 +173,39 @@ const inputCheck = (event)=> {
         }
     }
 
-
     if(inputText[i] === event.nativeEvent.data) {
         setI(prev => prev+1);
         setSimbols(prev => prev+1);
-        if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
-            setWords(prev => prev+1);
-        }
+        if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) setWords(prev => prev+1);
     }
     else {
         setTimeout(backSpace, 0);
         inputBlock.current.style.border = '1px solid red'
         setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)
         setErrorCount(prev => prev+1);
-    }
+    };
 
 
     if(event.target.value.length === countLength) {
         setI(prev => prev = 0);
         setCountLenght(prev => prev = textInput.length);
-        let textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
+        const textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
         setInputText(prev => prev = textInput);
         inputArea.current.value = '';
-    }
-}
+    };
+};
 
-const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`
+useEffect(()=>{
+const handler = (event)=>{
+    if(share) if(!blurCloseRef.current.contains(event.target)) setShare(prev => prev = false);
+};
+
+document.addEventListener('mousedown', handler);
+return ()=> document.removeEventListener('mousedown', handler);
+});
+
+
+const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
 
     return (
         <>
@@ -256,13 +232,11 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 </textarea>
             </div>
             </div>
-            {klava &&
-            <Klava/>
-            }
+            {klava && <Klava/>}
             <button title={t('TI-changeText')} onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>{t('TI-changeText')}</button>
             {timerVisible &&
                     <div className={Style.timer}>
-                        <samp><img src="../img/text-type/timer.svg" alt="words"/>{min + ':' + sec}</samp>
+                        <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {min + ':' + sec}</samp>
                     </div>
             }
             {allResVsisible &&
@@ -270,7 +244,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                         <div><img src="../img/text-type/chat.svg" alt="words"/>{words} <p>{t('T-counWord')}</p></div>
                         <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>{t('TR-sym')}</p></div>
                         <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>{t('TR-err')}</p></div>
-                    </div>
+                        </div>
             }
             </div>
             <div className={Style.partTwo}>
@@ -289,7 +263,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
            </div>
            {time ? '' : 
                 <div className={Style.inputBlur}>
-                    <div className={Style.inputBlurModals}>
+                    <div ref={blurCloseRef} className={Style.inputBlurModals}>
                         {share ? '' :  
                         <>
                         <h3>{t('TI-yoRes')}</h3>
@@ -334,8 +308,11 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                         }
                             {share &&          
                             <div className={Style.sharePc}>
+                                <button title={t('TIS-back')} onClick={()=>{setShare(prev => !prev)}} className={Style.Back}>
+                                    <img src="../img/text-type/arrow_back.svg" alt="back" />
+                                </button>
                                 <h1>{t('TIS-share')}</h1>
-                                <CopyToClipboard onCopy={()=>{alert('you copied')}} text={shareRes}>
+                                <CopyToClipboard onCopy={()=>{alert('You copied')}} text={shareRes}>
                                 <button className={Style.sharePcCopy}>
                                 <div title={t('TIS-copy')} className={Style.sharePcCopyText}>
                                 <p>{t('TIS-copy')}</p>

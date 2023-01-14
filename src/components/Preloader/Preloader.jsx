@@ -1,6 +1,6 @@
-import Style from './Preloader.module.css'
+import Style from './Preloader.module.css';
 import Logo from '../../header/Logo';
-function Preloader() {
+const Preloader = () => {
     return (
         <section className={Style.preloader}>
             <div className={Style.preloaderPlace}>
