@@ -171,11 +171,11 @@ const inputCheck = (event)=> {
         
     if(/Android/i.test(navigator.userAgent)) {
         if(inputText[i-1] !== undefined || null) {
+            alert('ввели ', event.nativeEvent.data)
+            alert('надо ввести ', inputText[i+1])
             // alert(event.target.value)
             alert(event.target.value.substr(-1,event.target.value.length - 1))
             // inputArea.current.value = event.target.value.substr(-2,event.target.value.length - 1);
-            alert('ввели ', event.nativeEvent.data)
-            alert('надо ввести ', inputText[i+1])
         }
     }
 
@@ -232,10 +232,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 autoFocus
                 className={Style.inputArea}
                 formNoValidate
-                spellCheck="false"
                 onPaste={(e)=>{e.preventDefault()}}
-                autoComplete="none"
-                
                 aria-autocomplete="both" 
                 aria-haspopup="false" 
                 autocapitalize="off" 
