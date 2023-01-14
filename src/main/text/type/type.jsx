@@ -167,12 +167,13 @@ const inputCheck = (event)=> {
     if(event.target.value.length === 1) setIsType(prev => prev = true);
 
     // console.log(event.target.value.substr(0,event.target.value.length - 1))
-        
     if(/Android/i.test(navigator.userAgent)) {
         if(inputText[i-1] !== undefined || null) {
             alert('ввели ' + event.nativeEvent.data)
             // alert(event.nativeEvent.data)
             alert('надо ввести ' + inputText[i+1])
+
+            event.target.value.substr(-0,event.target.value.length - 1)
             // alert(inputText[i+1])
             event.target.value.substr(-2,event.target.value.length - 1)
             // alert(event.target.value.substr(-1,event.target.value.length - 1))
@@ -234,12 +235,12 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 formNoValidate
                 onPaste={(e)=>{e.preventDefault()}}
                 aria-autocomplete="both" 
-                aria-haspopup="false" 
-                autocapitalize="off" 
-                autocomplete="off" 
-                autocorrect="off" 
+                // aria-haspopup="false" 
+                autoсapitalize="off" 
+                autoсomplete="off" 
+                autoсorrect="off" 
                 role="combobox" 
-                spellcheck="false" 
+                spellсheck="false" 
                 aria-label="Вводи">
                 </textarea>
             </div>
