@@ -170,7 +170,6 @@ const inputCheck = (event)=> {
     if(/Android/i.test(navigator.userAgent)) {
         if(inputText[i-1] !== undefined || null) {
             alert('ввели ' + event.nativeEvent.data)
-            // alert(event.nativeEvent.data)
             alert('надо ввести ' + inputText[i+1])
 
             event.target.value.substr(-0,event.target.value.length - 1)
@@ -232,13 +231,23 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 className={Style.inputArea}
                 formNoValidate
                 onPaste={(e)=>{e.preventDefault()}}
+
+                // aria-autocomplete="both" 
+                // aria-haspopup="false" 
+                // autoсapitalize="off" 
+                // autoсomplete="off" 
+                // autoсorrect="off" 
+                // role="combobox" 
+                // spellсheck="false" 
+                // aria-label="Вводи"
+                
                 aria-autocomplete="both" 
                 aria-haspopup="false" 
-                autoсapitalize="off" 
-                autoсomplete="off" 
-                autoсorrect="off" 
+                autocapitalize="off" 
+                autocomplete="off" 
+                autocorrect="off" 
                 role="combobox" 
-                spellсheck="false" 
+                spellcheck="false" 
                 aria-label="Вводи">
                 </textarea>
             </div>
