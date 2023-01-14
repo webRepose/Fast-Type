@@ -172,7 +172,9 @@ const inputCheck = (event)=> {
             alert('ввели ' + event.nativeEvent.data)
             alert('надо ввести ' + inputText[i+1])
             // alert(event.target.value.substr(-2,event.target.value.lengяth - 1))
-            event.target.value.substr(-2,event.target.value.lengяth - 1)
+            // event.target.value.substr(-2,event.target.value.lengяth - 1)
+
+            alert(event.target.value)
 
             // event.target.value.substr(-2,event.target.value.lengяth - 1)
         }
