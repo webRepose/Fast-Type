@@ -166,6 +166,7 @@ const inputBackspace = (event) => {
 const inputCheck = (event)=> {
     if(event.target.value.length === 1) setIsType(prev => prev = true);
 
+    event.target.value.substr(1)
     // console.log(event.target.value.substr(0,event.target.value.length - 1))
     if(/Android/i.test(navigator.userAgent)) {
         if(inputText[i-1] !== undefined || null) {
@@ -174,8 +175,8 @@ const inputCheck = (event)=> {
             // alert(event.target.value.substr(-2,event.target.value.lengяth - 1))
             // event.target.value.substr(-2,event.target.value.lengяth - 1)
             // event.target.value = ''
-            event.target.value.substr(0)
-            // alert(event.target.value.substr(1))
+            // event.target.value.substr(1)
+            alert(event.target.value.substr(1))
 
             // event.target.value.substr(-2,event.target.value.lengяth - 1)
         }
