@@ -241,13 +241,14 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 // spellсheck="false" 
                 // aria-label="Вводи"
                 
-                aria-autocomplete="both" 
+                
+                // aria-Autoomplete="both" 
                 aria-haspopup="false" 
-                autocapitalize="off" 
-                autocomplete="off" 
-                autocorrect="off" 
+                autoCapitalize="off" 
+                autoComplete="off" 
+                autoCorrect="off" 
                 role="combobox" 
-                spellcheck="false" 
+                spellCheck="false" 
                 aria-label="Вводи">
                 </textarea>
             </div>
