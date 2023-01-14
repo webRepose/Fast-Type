@@ -174,9 +174,7 @@ const inputCheck = (event)=> {
             alert('надо ввести ' + inputText[i+1])
 
             event.target.value.substr(-0,event.target.value.length - 1)
-            // alert(inputText[i+1])
             event.target.value.substr(-2,event.target.value.length - 1)
-            // alert(event.target.value.substr(-1,event.target.value.length - 1))
         }
     }
 
@@ -235,7 +233,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 formNoValidate
                 onPaste={(e)=>{e.preventDefault()}}
                 aria-autocomplete="both" 
-                // aria-haspopup="false" 
+                aria-haspopup="false" 
                 autoсapitalize="off" 
                 autoсomplete="off" 
                 autoсorrect="off" 
