@@ -168,6 +168,7 @@ const inputCheck = (event)=> {
         
     if(/Android/i.test(navigator.userAgent)) {
         if(inputText[i-1] !== undefined || null) {
+            event.target.value.substr(0,event.target.value.length - 1)
             alert(event.target.value)
             alert(event.nativeEvent.data)
         }

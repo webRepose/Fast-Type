@@ -17,16 +17,16 @@ const Text = () => {
     classVisibleWords = [Style.paramsSub, visibleWords],
     visibleMin = window.localStorage.getItem('mode') === 't-time' ?  flex : none,
     classVisibleMin = [Style.paramsSub, visibleMin],
-    timeClass = time &&  flex,
+    timeClass = time ?  flex : '',
     timeClassText = time ?  blockText : none,
-    wordsClass = words &&  flex,
+    wordsClass = words ?  flex : '',
     wordsClassText = words ?  blockText : none,
-    modeClass = mode &&  flex,
+    modeClass = mode ?  flex : '',
     modeClassText = mode ?  blockText : none,
-    langeClass = lange &&  flex,
+    langeClass = lange ?  flex : '',
     langeClassText = lange ?  blockText : none,
     klavaClassAbsolute = klava || lange || mode || time || words ?  Style.grid : '',
-    klavaClass = klava &&  flex,
+    klavaClass = klava ?  flex : '',
     klavaClassText = klava ?  blockText : none,
     ourKlavaClass = [Style.paramsChoice, klavaClassAbsolute];
     document.title = t('T-title');
@@ -115,7 +115,7 @@ const Text = () => {
                             setWords(prev => prev = false)
                         }} 
                         className={Style.paramsSelect}>
-                            {window.localStorage.getItem('lange')}
+                            {window.localStorage.getItem('lange') === 'en-US' ? 'English' : 'Русский'}
                         </button>
                     </div>
                     {/* mode */}
@@ -159,7 +159,7 @@ const Text = () => {
                             setWords(prev => prev = false)
                         }} 
                         className={Style.paramsSelect}>
-                            {window.localStorage.getItem('mode-time')}
+                            {window.localStorage.getItem('mode-time') / 60 + ':00'}
                         </button>
                     </div>
                         {/* on words */}
