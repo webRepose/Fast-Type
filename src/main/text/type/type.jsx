@@ -172,9 +172,10 @@ const inputCheck = (event)=> {
     if(/Android/i.test(navigator.userAgent)) {
         if(inputText[i-1] !== undefined || null) {
             // alert(event.target.value)
-            // alert(event.nativeEvent.data)
             // alert(event.target.value.substr(-1,event.target.value.length - 1))
             inputArea.current.value = event.target.value.substr(-1,event.target.value.length - 1);
+            alert('ввели', event.nativeEvent.data)
+            alert('надо ввести', inputText+1)
         }
     }
 
