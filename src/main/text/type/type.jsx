@@ -234,7 +234,16 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 formNoValidate
                 spellCheck="false"
                 onPaste={(e)=>{e.preventDefault()}}
-                autoComplete="none">
+                autoComplete="none"
+                
+                aria-autocomplete="both" 
+                aria-haspopup="false" 
+                autocapitalize="off" 
+                autocomplete="off" 
+                autocorrect="off" 
+                role="combobox" 
+                spellcheck="false" 
+                aria-label="Вводи">
                 </textarea>
             </div>
             </div>
