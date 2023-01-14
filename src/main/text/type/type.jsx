@@ -175,7 +175,7 @@ const inputCheck = (event)=> {
             // event.target.value.substr(-2,event.target.value.lengяth - 1)
             event.target.value = ''
 
-            alert(event.target.value = '')
+            alert(event.target.value.substr(1))
 
             // event.target.value.substr(-2,event.target.value.lengяth - 1)
         }
