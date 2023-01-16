@@ -20,9 +20,9 @@
 }
 .logo h2 {
   font-size: 30px;
-  margin-left: 17px;
+  margin-left: 10px;
   position: relative;
-  top: -3px;
+  top: -2px;
 }
 
 .menuTheme {
@@ -177,12 +177,13 @@ ul a p {
     border-radius: 0 var(--radius15) var(--radius15) 0;
     width: 180px;
   }
-  .logo svg {
-    width: 30px;
-    height: 30px;
+  .logo img {
+    width: 37px;
+    height: 37px;
   }
   .logo h2 {
     font-size: var(--font24);
+    top: 1.5px;
   }
   .menuTheme {
     margin-top: 28px;
@@ -236,9 +237,6 @@ ul a p {
   .account {
     bottom: 20px;
   }
-  .logo h2 {
-    top: -1px;
-  }
 }
 @media (max-width: 1279px) {
   .menu {
@@ -248,7 +246,6 @@ ul a p {
   }
   .logo h2 {
     font-size: 20px;
-    margin-left: 10px;
   }
 }
 @media (max-width: 912px) {
@@ -257,7 +254,7 @@ ul a p {
   }
   .logo h2 {
     font-size: var(--font21);
-    margin-left: 5px;
+    top: -1px;
   }
   .menuMobile {
     padding: 14px;

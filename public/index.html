@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Cache-Control" content="max-age=31536000">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./img/logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./img/AppleTouchIcon/apple-touch-icon-iphone-60x60.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./img/AppleTouchIcon/apple-touch-icon-ipad-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./img/AppleTouchIcon/apple-touch-icon-iphone-retina-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./img/AppleTouchIcon/apple-touch-icon-ipad-retina-152x152.png">
+  <link rel="manifest" href="./manifest.json">
   <title>Fast Type</title>
 </head>
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root">
+  <div id="root"></div>
 
-  </div>
+  <script>
+    if('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js')
+      .then(reg => console.log('nice ' + reg.scope))
+      .catch(err => console.log('not nice((' + err));
+    })
+    }
+  </script>
 </body>
 </html>
