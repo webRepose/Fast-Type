@@ -4,7 +4,7 @@ const Logo = ()=> {
     return (
         <>
             <Link to="/" className={Style.logo}>
-            <img width={'40px'} height={'40px'} src="./img/logo.png" alt="Logo"/>
+            <img width={'40px'} height={'40px'} src="../../../../../img/logo.png" alt="Logo"/>
             <h2>Fast type</h2>
             </Link>
         </>
