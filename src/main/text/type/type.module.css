@@ -10,6 +10,12 @@
   font-weight: bold;
 }
 
+.onKeyClick {
+  background: var(--gradient1-color);
+  transition: all 0.5s ease;
+  transform: translateY(-5px);
+}
+
 .part {
   display: flex;
 }

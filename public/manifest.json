@@ -5,7 +5,7 @@
     "bacground_color": "#202124",
     "display": "standalone",
     "orientation": "portrait",
-    "start_url": ".",
+    "start_url": "./",
     "icons": [
         {
           "src": "/img/Manifest/windows11/SmallTile.scale-100.png",

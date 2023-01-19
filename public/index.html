@@ -6,11 +6,14 @@
   <meta http-equiv="Cache-Control" content="max-age=31536000">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./img/logo.png" type="image/x-icon">
+  <meta name="description" content="description">
+  <meta name="theme-color" content="hsl(0, 0%, 100%)" media="(prefers-color-scheme: light)">
+  <meta http-equiv="Content-Security-Policy" content="script-src-attr 'self';base-uri 'none';form-action 'self';object-src 'none';frame-src 'self';img-src 'self' data:;manifest-src 'self';prefetch-src 'self';worker-src 'self';style-src-attr 'self' 'unsafe-inline';media-src 'self';upgrade-insecure-requests;">
   <link rel="apple-touch-icon" href="./img/AppleTouchIcon/apple-touch-icon-iphone-60x60.png">
   <link rel="apple-touch-icon" sizes="60x60" href="./img/AppleTouchIcon/apple-touch-icon-ipad-76x76.png">
   <link rel="apple-touch-icon" sizes="114x114" href="./img/AppleTouchIcon/apple-touch-icon-iphone-retina-120x120.png">
   <link rel="apple-touch-icon" sizes="144x144" href="./img/AppleTouchIcon/apple-touch-icon-ipad-retina-152x152.png">
-  <link rel="manifest" href="./manifest.json">
+  <link rel="manifest" crossorigin="use-credentials" href="%PUBLIC_URL%/manifest.json">
   <title>Fast Type</title>
 </head>
 <body>
@@ -22,7 +25,7 @@
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./service-worker.js')
       .then(reg => console.log('nice ' + reg.scope))
-      .catch(err => console.log('not nice((' + err));
+      // .catch(err => console.log('not nice((' + err));
     })
     }
   </script>

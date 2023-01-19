@@ -18,27 +18,27 @@ const Klava = () => {
         </div>
         <div className={Style.klavaLine}>
         {KlavaSecond.map((lan, i)=>(
-            <div className={`${lan['stBtn']}`} key={i}>
+            <div id={t(lan['klavaOne'])} className={`${lan['stBtn']}`} key={i}>
                 <p><sub>{t(lan['klavaOne'])}</sub><sup>{t(lan['klavaTwo'])}</sup></p>
             </div>
         ))}
         </div>
         <div className={Style.klavaLine}>
         {KlavaThird.map((lan, i)=>(
-            <div className={`${lan['stBtn']}`} key={i}>
+            <div id={t(lan['klavaOne'])}  className={`${lan['stBtn']}`} key={i}>
                 <p><sub>{t(lan['klavaOne'])} </sub><sup>{t(lan['klavaTwo'])}</sup></p>
             </div>
         ))}
         </div>
         <div className={Style.klavaLine}>
         {TypeKlava.map((lan, i)=>(
-            <div className={`${lan['stBtn']}`} key={i}>
+            <div id={t(lan['klavaOne'])}  className={`${lan['stBtn']}`} key={i}>
                 <p><sub>{t(lan['klavaOne'])}</sub> <sup>{t(lan['klavaTwo'])}</sup></p>
             </div>
         ))}
         </div>
         <div className={Style.klavaLine}>
-        <div className={Style.klavaSpace}></div>
+        <div id=" " className={Style.klavaSpace}></div>
         </div>
     </div>
     )

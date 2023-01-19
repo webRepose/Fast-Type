@@ -22,6 +22,8 @@ import {
     FacebookMessengerShareButton
   } from "react-share";
 import CopyToClipboard from "react-copy-to-clipboard";
+import localesRu from '../type/localesText/localesRU.json';
+import localesEn from '../type/localesText/localesEN.json';
 
 const Type = () => {
 const [t] = useTranslation(),
@@ -42,18 +44,10 @@ blurCloseRef = useRef(),
 [countLength, setCountLenght] = useState(),
 [i, setI] = useState(0),
 [time, setTime] = useState(window.localStorage.getItem('mode-time')),
-[textsRu] = useState([        
-    'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Значимость этих проблем настолько очевидна, что консультация с широким активом играет.',
-    'Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке модели развития. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности.',
-    'Повседневная практика показывает, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Товарищи! постоянное информационно-пропагандистское обеспечение нашей.',
-    'С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Таким образом реализация.',
-    'Товарищи! консультация с широким активом позволяет выполнять важные задания по разработке систем массового участия. Таким образом реализация намеченных плановых заданий позволяет оценить значение новых предложений. Идейные соображения высшего.',
-    'Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимы',
-    'Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусств',
-    'Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое.  Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообра',
-    'В рамках спецификации современных стандартов, независимые государства обнародованы. Но постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно определяет каждого участника как способного принимать собственные решения касаемо',
-    'В рамках спецификации современных стандартов, действия представителей оппозиции освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, указаны как претенденты на роль ключевых факторов! Лишь непосредственные',
-]);
+textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn, 
+[textsRu] = useState(
+    textLangs
+);
 
     const shareMob = () => {
         navigator.share({
@@ -161,7 +155,27 @@ const backSpace = () => {
 const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
     // const char = getChar(event)
+    console.log(event.key.toUpperCase())
+
+
+    if(document.getElementById(event.key.toUpperCase()) !== null || undefined) {
+        if((inputText[i] !== event.key) && (document.getElementById('Backspace') !== null || undefined)) {
+            document.getElementById('Backspace').classList.add(Style.onKeyClick);
+            setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClick)},400)
+            return false;
+        }
+        document.getElementById(event.key.toUpperCase()).classList.add(Style.onKeyClick);
+        setTimeout(()=>{document.getElementById(event.key.toUpperCase()).classList.remove(Style.onKeyClick)},300)
+    } 
+    else if(document.getElementById(event.key) !== null || undefined) {
+        document.getElementById(event.key).classList.add(Style.onKeyClick);
+        setTimeout(()=>{document.getElementById(event.key).classList.remove(Style.onKeyClick)},400)
+    } 
+    
 };
+
+
+
 
 const inputCheck = (event)=> {
     if(event.target.value.length === 1) setIsType(prev => prev = true);
@@ -189,6 +203,11 @@ const inputCheck = (event)=> {
         inputBlock.current.style.border = '1px solid red'
         setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)
         setErrorCount(prev => prev+1);
+
+        if(document.getElementById('Backspace') !== null || undefined) {
+        document.getElementById('Backspace').classList.add(Style.onKeyClick);
+        setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClick)},300)
+        }
     };
 
 
@@ -237,7 +256,6 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 autoCapitalize="off" 
                 autoComplete="off" 
                 autoCorrect="off" 
-                role="combobox" 
                 spellCheck="false" 
                 aria-label="Вводи">
                 </textarea>

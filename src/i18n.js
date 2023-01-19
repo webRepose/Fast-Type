@@ -11,7 +11,7 @@ if(window.localStorage.getItem('i18nextLng') === null) {
 
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
     fallbackLng: window.localStorage.getItem('i18nextLng'),
-    debug: true,
+    debug: false,
     detection: {
         order: ['queryString', 'cookie'],
         cache: ['cookie']
