@@ -205,7 +205,7 @@ const inputCheck = (event)=> {
     } else {
         if(event.target.value.length === 1) setIsTypeWords(prev => prev = true);
 
-        if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-') {
+        if(inputText[i] === event.nativeEvent.data && (event.nativeEvent.data === ' ' || event.nativeEvent.data === '-')) {
             setOurCountWords(prev => prev -1);
         }
     }
