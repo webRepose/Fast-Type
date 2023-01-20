@@ -215,7 +215,7 @@
 
 .timer {
   display: flex;
-  width: 120px;
+  width: 150px;
   margin: 0 auto;
   margin-top: 30px;
   padding: 10px;
@@ -236,12 +236,12 @@
 .countAll {
   display: flex;
   justify-content: space-between;
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   margin-top: 30px;
 }
 .countAll div {
-  padding: 7px 30px;
+  padding: 7px 25px;
   border-radius: var(--radius15);
   font-size: var(--font21);
   background-color: var(--body-color);
@@ -378,7 +378,7 @@
     padding: 15px;
   }
   .timer {
-    width: 90px;
+    width: 120px;
   }
   .timer samp {
     font-size: var(--font18);
@@ -456,9 +456,6 @@
   }
   .partTwo .closeBlock:hover {
     transform: translate(0);
-  }
-  .part .timer {
-    width: 90px;
   }
   .part .timer samp {
     font-size: var(--font21);

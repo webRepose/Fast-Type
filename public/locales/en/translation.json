@@ -29,6 +29,7 @@
     "T-onTime":"For a while",
     "T-onWords":"On the number of words",
     "T-counWord":"Words",
+    "T-counWord-min":"words",
     "T-close":"Close",
 
     "Ttitle-mode":"Change the mode",

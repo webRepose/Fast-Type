@@ -32,6 +32,7 @@ inputBlock = useRef(),
 blurCloseRef = useRef(),
 [share, setShare] = useState(false),
 [isType, setIsType] = useState(false),
+[isTypeWords, setIsTypeWords] = useState(false),
 [words, setWords] = useState(0),
 [simbols, setSimbols] = useState(0),
 [errorCount, setErrorCount] = useState(0),
@@ -45,9 +46,10 @@ blurCloseRef = useRef(),
 [i, setI] = useState(0),
 [time, setTime] = useState(window.localStorage.getItem('mode-time')),
 textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn, 
-[textsRu] = useState(
-    textLangs
-);
+[ourCountWords, setOurCountWords] = useState(localStorage.getItem('mode-words')),
+[minTimerWords, setMinTimerWords] = useState(0),
+[secTimerWords, setSecTimerWords] = useState(0),
+[textsRu] = useState(textLangs);
 
     const shareMob = () => {
         navigator.share({
@@ -80,7 +82,10 @@ if(changeTextNew === false) {
     setWords(prev => prev = 0);
     setErrorCount(prev => prev = 0);
     setIsType(prev => prev = false);
+    setIsTypeWords(prev => prev = false);
+    setSecTimerWords(prev => prev = 0);
     setTime(prev => prev = window.localStorage.getItem('mode-time'));
+    setOurCountWords(prev => prev = localStorage.getItem('mode-words'))
 }
 
 changeTextNew && 
@@ -103,9 +108,8 @@ useEffect(()=>{
     };
 },[isType]);
 
-
 useEffect(()=>{
-    if(time === 0) {
+    if(time === 0 || ourCountWords === 0) {
         let historyMode;
         if(window.localStorage.getItem('mode') === 't-time') historyMode = t('TI-inTime');
         else if(window.localStorage.getItem('mode') === 't-words') historyMode = t('TI-inWords');
@@ -134,7 +138,7 @@ useEffect(()=>{
             document.querySelector('html').style.overflow = 'hidden';
     }
     
-}, [errorCount, simbols, time, words, t]);
+}, [errorCount, simbols, time, words, t, ourCountWords]);
 
 const backSpace = () => {
     let backFun = inputArea.current.value;
@@ -143,20 +147,8 @@ const backSpace = () => {
 } 
 
 
-// const rusLower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
-// const rusUpper = rusLower.toUpperCase();
-// const enLower = 'abcdefghijklmnopqrstuvwxyz';
-// const enUpper = enLower.toUpperCase();
-// const rus = rusLower + rusUpper;
-// const en = enLower + enUpper;
-
-// const getChar = (event) => event.nativeEvent.key;
-
 const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
-    // const char = getChar(event)
-    console.log(event.key.toUpperCase())
-
 
     if(document.getElementById(event.key.toUpperCase()) !== null || undefined) {
         if((inputText[i] !== event.key) && (document.getElementById('Backspace') !== null || undefined)) {
@@ -165,33 +157,52 @@ const inputBackspace = (event) => {
             return false;
         }
         document.getElementById(event.key.toUpperCase()).classList.add(Style.onKeyClick);
-        setTimeout(()=>{document.getElementById(event.key.toUpperCase()).classList.remove(Style.onKeyClick)},300)
+        setTimeout(()=>{
+            document.getElementById(event.key.toUpperCase()).classList.remove(Style.onKeyClick)
+        },300)
     } 
     else if(document.getElementById(event.key) !== null || undefined) {
         document.getElementById(event.key).classList.add(Style.onKeyClick);
-        setTimeout(()=>{document.getElementById(event.key).classList.remove(Style.onKeyClick)},400)
+        setTimeout(()=>{
+            document.getElementById(event.key).classList.remove(Style.onKeyClick)
+        },400)
     } 
     
 };
 
 
+useEffect(()=>{
+    const intervalTimer = setInterval(()=>{
+        isTypeWords && setSecTimerWords(prev => prev + 1)
+        if(secTimerWords === 60) {
+            setSecTimerWords(prev => prev = 0);
+            setMinTimerWords(prev => prev + 1);
+        }
 
+        if(ourCountWords === 0) {
+            // clearInterval(intervalTimer)
+            setIsTypeWords(prev => prev = false)
+        }
+    }, 1000)
+
+    return () => {
+        clearInterval(intervalTimer)
+    }
+},[ourCountWords, secTimerWords, isTypeWords])
+
+
+console.log('Прошло времени :' + minTimerWords + ' : ' + secTimerWords)
 
 const inputCheck = (event)=> {
-    if(event.target.value.length === 1) setIsType(prev => prev = true);
+    if(localStorage.getItem('mode') === 't-time') {
+        if(event.target.value.length === 1) setIsType(prev => prev = true);
+    } else {
+        if(event.target.value.length === 1) setIsTypeWords(prev => prev = true);
 
-
-    // console.log(event.target.value.substr(0, event.target.value.length -1))
-    // inputArea.current.value = event.target.value.substr(0, event.target.value.length -1)
-    // console.log(event.target.value)
-
-    // if(/Android/i.test(navigator.userAgent)) {
-    //     if(inputText[i-1] !== undefined || null) {
-    //         inputArea.current.value = event.target.value.substr(0, event.target.value.length -1)
-    //         alert('ввели ' + event.nativeEvent.data)
-    //         alert('надо ввести ' + inputText[i+1])
-    //     }
-    // }
+        if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-') {
+            setOurCountWords(prev => prev -1);
+        }
+    }
 
     if(inputText[i] === event.nativeEvent.data) {
         setI(prev => prev+1);
@@ -229,9 +240,7 @@ document.addEventListener('mousedown', handler);
 return ()=> document.removeEventListener('mousedown', handler);
 });
 
-
-const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
-
+const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&timeSelf=${minTimerWords + ' : ' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
     return (
         <>
         <main>
@@ -265,12 +274,14 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
             <button title={t('TI-changeText')} onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>{t('TI-changeText')}</button>
             {timerVisible &&
                     <div className={Style.timer}>
-                        <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {min + ':' + sec}</samp>
+                        {localStorage.getItem('mode') === 't-time' 
+                        ? <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {min + ':' + sec}</samp>
+                        : <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {ourCountWords + ' ' + t('T-counWord')}</samp>}
                     </div>
             }
             {allResVsisible &&
                         <div className={Style.countAll}>
-                        <div><img src="../img/text-type/chat.svg" alt="words"/>{words} <p>{t('T-counWord')}</p></div>
+                        <div><img src="../img/text-type/chat.svg" alt="words"/>{localStorage.getItem('mode') === 't-time' ? words + t('T-counWord') : 'Время ' + minTimerWords + ' : ' + secTimerWords}</div>
                         <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>{t('TR-sym')}</p></div>
                         <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>{t('TR-err')}</p></div>
                         </div>
@@ -279,25 +290,36 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
             <div className={Style.partTwo}>
                 <div className={Style.closeAll}>
                 <div onClick={()=>{setKlava(prev => !prev)}} title={klava ? t('TI-hideKlava') : t('TI-showKlava')} className={Style.closeBlock}>
-                    {klava ? <img src="../img/text-type/keyboard_off.svg" alt={t('TI-hideKlava')}/> : <img src="../img/text-type/keyboard.svg" alt={t('TI-showKlava')}/>}
+                    {klava 
+                    ? <img src="../img/text-type/keyboard_off.svg" alt={t('TI-hideKlava')}/> 
+                    : <img src="../img/text-type/keyboard.svg" alt={t('TI-showKlava')}/>}
                 </div>
                 <div onClick={()=>{setTimerVisible(prev => !prev)}} title={timerVisible ? t('TI-hideTimer') : t('TI-showTimer')} className={Style.closeBlock}>
-                    {timerVisible ? <img src="../img/text-type/timer_off.svg" alt={t('TI-hideTimer')} /> : <img src="../img/text-type/timer.svg" alt={t('TI-showTimer')} />}
+                    {timerVisible 
+                    ? <img src="../img/text-type/timer_off.svg" alt={t('TI-hideTimer')} /> 
+                    : <img src="../img/text-type/timer.svg" alt={t('TI-showTimer')} />}
                 </div>
                 <div onClick={()=>{setAllResVisible(prev => !prev)}} title={allResVsisible ? t('TI-hideCateg') : t('TI-showCateg')} className={Style.closeBlock}>
-                    {allResVsisible ? <img src="../img/text-type/category_off.svg" alt={t('TI-hideCateg')}/> : <img src="../img/text-type/category.svg" alt={t('TI-showCateg')}/>}
+                    {allResVsisible 
+                    ? <img src="../img/text-type/category_off.svg" alt={t('TI-hideCateg')}/> 
+                    : <img src="../img/text-type/category.svg" alt={t('TI-showCateg')}/>}
                 </div> 
                 </div>
             </div>
            </div>
-           {time ? '' : 
+           {(time && ourCountWords) ? '' : 
                 <div className={Style.inputBlur}>
                     <div ref={blurCloseRef} className={Style.inputBlurModals}>
                         {share ? '' :  
                         <>
                         <h3>{t('TI-yoRes')}</h3>
-                        <h2>{t('TR-for')} {localStorage.getItem('mode-time') / 60} {t('TR-min')} {t('TI-yoType')}</h2>
-                        <h2>{t('T-counWord')}: {words}</h2>
+                        <h2>
+                        {window.localStorage.getItem('mode') === 't-time' 
+                        ? t('TR-for') + ' '  + localStorage.getItem('mode-time') / 60 + ' ' + t('TR-min') + ' ' + t('TI-yoType') 
+                        : 'Вы набрали ' + localStorage.getItem('mode-words') + ' ' + t('T-counWord-min')}</h2>
+                        <h2>{window.localStorage.getItem('mode') === 't-time' 
+                        ? t('T-counWord') + ': ' + words 
+                        : 'Прошло времени:' + minTimerWords + ' : ' + secTimerWords}</h2>
                         <h2>{t('TR-sym')}: {simbols}</h2>
                         <h2>{t('TR-err')}: {errorCount}</h2>
                         <h2>{t('TR-right')} {simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}%</h2>

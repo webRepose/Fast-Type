@@ -37,8 +37,8 @@ const Text = () => {
     if(window.localStorage.getItem('mode-words') === null) window.localStorage.setItem('mode-words', '50');
     if(window.localStorage.getItem('mode') === null) window.localStorage.setItem('mode', 't-time');
     if(window.localStorage.getItem('lange') === null) {
-        if(window.localStorage.getItem('i18nextLng') === 'ru') window.localStorage.setItem('lange', 'Русский');
-        else if(window.localStorage.getItem('i18nextLng') === 'en') window.localStorage.setItem('lange', 'English');
+        if(window.localStorage.getItem('i18nextLng') === 'ru') window.localStorage.setItem('lange', 'ru');
+        else if(window.localStorage.getItem('i18nextLng') === 'en') window.localStorage.setItem('lange', 'en-US');
     }
 
     const refKlavaBtn = useRef(),
