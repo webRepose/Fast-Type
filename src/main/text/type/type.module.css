@@ -377,9 +377,6 @@
   .inputMain {
     padding: 15px;
   }
-  .timer {
-    width: 120px;
-  }
   .timer samp {
     font-size: var(--font18);
   }

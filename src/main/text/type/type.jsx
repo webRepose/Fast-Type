@@ -76,6 +76,11 @@ setCountLenght(prev => prev = textInput.length);
 
 
 if(changeTextNew === false) {
+    if(localStorage.getItem('lange') === 'en-US' && document.getElementsByClassName(Style.onKeyClick) === true) {
+        console.log(document.getElementsByClassName('Btn').classList.remove(Style.onKeyClick))
+    }
+    // console.log(inputText[i])
+    
     setI(prev => prev = 0);
     inputArea.current.value = '';
     setSimbols(prev => prev = 0);
@@ -85,7 +90,7 @@ if(changeTextNew === false) {
     setIsTypeWords(prev => prev = false);
     setSecTimerWords(prev => prev = 0);
     setTime(prev => prev = window.localStorage.getItem('mode-time'));
-    setOurCountWords(prev => prev = localStorage.getItem('mode-words'))
+    setOurCountWords(prev => prev = localStorage.getItem('mode-words'));
 }
 
 changeTextNew && 
@@ -150,23 +155,23 @@ const backSpace = () => {
 const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
 
-    if(document.getElementById(event.key.toUpperCase()) !== null || undefined) {
-        if((inputText[i] !== event.key) && (document.getElementById('Backspace') !== null || undefined)) {
-            document.getElementById('Backspace').classList.add(Style.onKeyClick);
-            setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClick)},400)
-            return false;
-        }
-        document.getElementById(event.key.toUpperCase()).classList.add(Style.onKeyClick);
-        setTimeout(()=>{
-            document.getElementById(event.key.toUpperCase()).classList.remove(Style.onKeyClick)
-        },300)
-    } 
-    else if(document.getElementById(event.key) !== null || undefined) {
-        document.getElementById(event.key).classList.add(Style.onKeyClick);
-        setTimeout(()=>{
-            document.getElementById(event.key).classList.remove(Style.onKeyClick)
-        },400)
-    } 
+    // if(document.getElementById(event.key.toUpperCase()) !== null || undefined) {
+    //     if((inputText[i] !== event.key) && (document.getElementById('Backspace') !== null || undefined)) {
+    //         document.getElementById('Backspace').classList.add(Style.onKeyClick);
+    //         setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClick)},400)
+    //         return false;
+    //     }
+    //     document.getElementById(event.key.toUpperCase()).classList.add(Style.onKeyClick);
+    //     setTimeout(()=>{
+    //         document.getElementById(event.key.toUpperCase()).classList.remove(Style.onKeyClick)
+    //     },300)
+    // } 
+    // else if(document.getElementById(event.key) !== null || undefined) {
+    //     document.getElementById(event.key).classList.add(Style.onKeyClick);
+    //     setTimeout(()=>{
+    //         document.getElementById(event.key).classList.remove(Style.onKeyClick)
+    //     },400)
+    // } 
     
 };
 
@@ -180,7 +185,6 @@ useEffect(()=>{
         }
 
         if(ourCountWords === 0) {
-            // clearInterval(intervalTimer)
             setIsTypeWords(prev => prev = false)
         }
     }, 1000)
@@ -190,8 +194,10 @@ useEffect(()=>{
     }
 },[ourCountWords, secTimerWords, isTypeWords])
 
+if((inputText[i] !== undefined || null) && (localStorage.getItem('lange') === 'en-US')) {
+    document.getElementById(inputText[i].toUpperCase()).classList.add(Style.onKeyClick);
+}
 
-console.log('Прошло времени :' + minTimerWords + ' : ' + secTimerWords)
 
 const inputCheck = (event)=> {
     if(localStorage.getItem('mode') === 't-time') {
@@ -204,10 +210,14 @@ const inputCheck = (event)=> {
         }
     }
 
+
     if(inputText[i] === event.nativeEvent.data) {
         setI(prev => prev+1);
         setSimbols(prev => prev+1);
         if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) setWords(prev => prev+1);
+       if(localStorage.getItem('lange') === 'en-US') {
+        document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick)
+       }
     }
     else {
         setTimeout(backSpace, 0);
@@ -281,7 +291,10 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
             }
             {allResVsisible &&
                         <div className={Style.countAll}>
-                        <div><img src="../img/text-type/chat.svg" alt="words"/>{localStorage.getItem('mode') === 't-time' ? words + t('T-counWord') : 'Время ' + minTimerWords + ' : ' + secTimerWords}</div>
+                        <div><img src="../img/text-type/chat.svg" alt="words"/>
+                        {localStorage.getItem('mode') === 't-time' 
+                        ? words + t('T-counWord') 
+                        : minTimerWords + ' : ' + secTimerWords + ' ' + t('TI-TimerUp')}</div>
                         <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>{t('TR-sym')}</p></div>
                         <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>{t('TR-err')}</p></div>
                         </div>

@@ -32,7 +32,7 @@ const ResultShare = () => {
                 <p>{t('TR-for') + ' '}
                 {localStorage.getItem('mode') !== 't-word' 
             ? query.get('time') !== null && <p>{query.get('time') / 60 + t('TR-min')}</p> 
-            : query.get('timeSelf') !== null && <p>{query.get('timeSelf')}</p>}
+            : query.get('timeSelf') !== null && <p>{query.get('timeSelf') + t('TR-min')}</p>}
                 </p>
             </div>
                 </div>
