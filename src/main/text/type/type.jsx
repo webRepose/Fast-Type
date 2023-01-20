@@ -250,7 +250,7 @@ document.addEventListener('mousedown', handler);
 return ()=> document.removeEventListener('mousedown', handler);
 });
 
-const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&timeSelf=${minTimerWords + ' : ' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
+const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
     return (
         <>
         <main>
