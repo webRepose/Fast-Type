@@ -30,7 +30,7 @@ const ResultShare = () => {
                 <div><p>{t('TR-right')} {query.get('precent') !== null && <p>{query.get('precent')}%</p>}</p></div>
             <div>
                 <p>{t('TR-for') + ' '}
-                {localStorage.getItem('mode') === 't-word' 
+                {localStorage.getItem('mode') !== 't-word' 
             ? query.get('time') !== null && <p>{query.get('time') / 60 + t('TR-min')}</p> 
             : query.get('timeSelf') !== null && <p>{query.get('timeSelf')}</p>}
                 </p>
