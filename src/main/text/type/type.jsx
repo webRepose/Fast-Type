@@ -76,9 +76,9 @@ setCountLenght(prev => prev = textInput.length);
 
 
 if(changeTextNew === false) {
-    if(localStorage.getItem('lange') === 'en-US' && document.getElementsByClassName(Style.onKeyClick) === true) {
-        console.log(document.getElementsByClassName('Btn').classList.remove(Style.onKeyClick))
-    }
+    // if(localStorage.getItem('lange') === 'en-US' && document.getElementsByClassName(Style.onKeyClick) === true) {
+    //     console.log(document.getElementsByClassName('Btn').classList.remove(Style.onKeyClick))
+    // }
     // console.log(inputText[i])
     
     setI(prev => prev = 0);
@@ -154,25 +154,6 @@ const backSpace = () => {
 
 const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
-
-    // if(document.getElementById(event.key.toUpperCase()) !== null || undefined) {
-    //     if((inputText[i] !== event.key) && (document.getElementById('Backspace') !== null || undefined)) {
-    //         document.getElementById('Backspace').classList.add(Style.onKeyClick);
-    //         setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClick)},400)
-    //         return false;
-    //     }
-    //     document.getElementById(event.key.toUpperCase()).classList.add(Style.onKeyClick);
-    //     setTimeout(()=>{
-    //         document.getElementById(event.key.toUpperCase()).classList.remove(Style.onKeyClick)
-    //     },300)
-    // } 
-    // else if(document.getElementById(event.key) !== null || undefined) {
-    //     document.getElementById(event.key).classList.add(Style.onKeyClick);
-    //     setTimeout(()=>{
-    //         document.getElementById(event.key).classList.remove(Style.onKeyClick)
-    //     },400)
-    // } 
-    
 };
 
 
@@ -194,10 +175,10 @@ useEffect(()=>{
     }
 },[ourCountWords, secTimerWords, isTypeWords])
 
-if((inputText[i] !== undefined || null) && (localStorage.getItem('lange') === 'en-US')) {
-    document.getElementById(inputText[i].toUpperCase()).classList.add(Style.onKeyClick);
+setTimeout(()=>{if((inputText[i] !== undefined || null) && (localStorage.getItem('lange') === 'en-US')) {
+    klava && document.getElementById(inputText[i].toUpperCase()).classList.add(Style.onKeyClick);
 }
-
+},0)
 
 const inputCheck = (event)=> {
     if(localStorage.getItem('mode') === 't-time') {
@@ -215,8 +196,8 @@ const inputCheck = (event)=> {
         setI(prev => prev+1);
         setSimbols(prev => prev+1);
         if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) setWords(prev => prev+1);
-       if(localStorage.getItem('lange') === 'en-US') {
-        document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick)
+       if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i]) !== undefined || null)) {
+        klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
        }
     }
     else {
@@ -255,9 +236,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
         <>
         <main>
         <section className={Style.choiceParams}>
-            <h3>{t('TI-tyText')}</h3>
-        </section>
-        <section className={Style.choiceParams}>
+        <h3>{t('TI-tyText')}</h3>
            <div className={Style.part}>
             <div className={Style.partFirst}>
             <div ref={inputBlock} className={Style.inputMain}>
@@ -293,7 +272,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                         <div className={Style.countAll}>
                         <div><img src="../img/text-type/chat.svg" alt="words"/>
                         {localStorage.getItem('mode') === 't-time' 
-                        ? words + t('T-counWord') 
+                        ? words + ' ' + t('T-counWord') 
                         : minTimerWords + ' : ' + secTimerWords + ' ' + t('TI-TimerUp')}</div>
                         <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>{t('TR-sym')}</p></div>
                         <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>{t('TR-err')}</p></div>
@@ -329,10 +308,10 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                         <h2>
                         {window.localStorage.getItem('mode') === 't-time' 
                         ? t('TR-for') + ' '  + localStorage.getItem('mode-time') / 60 + ' ' + t('TR-min') + ' ' + t('TI-yoType') 
-                        : 'Вы набрали ' + localStorage.getItem('mode-words') + ' ' + t('T-counWord-min')}</h2>
+                        : t('TI-typed') + localStorage.getItem('mode-words') + ' ' + t('T-counWord-min')}</h2>
                         <h2>{window.localStorage.getItem('mode') === 't-time' 
                         ? t('T-counWord') + ': ' + words 
-                        : 'Прошло времени:' + minTimerWords + ' : ' + secTimerWords}</h2>
+                        : t('TI-laterTime') + minTimerWords + ' : ' + secTimerWords}</h2>
                         <h2>{t('TR-sym')}: {simbols}</h2>
                         <h2>{t('TR-err')}: {errorCount}</h2>
                         <h2>{t('TR-right')} {simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}%</h2>

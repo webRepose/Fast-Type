@@ -8,6 +8,7 @@
 .choiceParams h3 {
   font-size: var(--font24);
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .onKeyClick {
@@ -32,8 +33,8 @@
 }
 .partTwo .closeBlock {
   cursor: pointer;
-  width: 2.7vw;
-  height: 2.7vw;
+  width: 45px;
+  height: 45px;
   border-radius: 0.781vw;
   background: var(--gradient1-color);
   margin-bottom: 20px;
@@ -162,40 +163,6 @@
   color: var(--text-color);
 }
 
-.klava {
-  width: 39.792vw;
-  display: block;
-  margin: 0 auto;
-  margin-top: 50px;
-}
-.klavaSpace {
-  width: 13.021vw;
-  margin: 0 auto !important;
-}
-.klavaLine {
-  display: flex;
-}
-.klavaLine p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.102vw;
-  display: flex;
-}
-.klavaLine p sup {
-  margin-top: -0.26vw;
-  margin-left: 0.26vw;
-}
-.klavaLine div {
-  position: relative;
-  background-color: var(--ThemeButton-color);
-  margin: 1.7px;
-  border-radius: 8px;
-  height: 2.36vw;
-  color: var(--textT-color);
-}
-
 .changeText {
   display: block;
   margin: 0 auto;
@@ -214,23 +181,20 @@
 }
 
 .timer {
-  display: flex;
-  width: 150px;
-  margin: 0 auto;
   margin-top: 30px;
   padding: 10px;
 }
 .timer samp {
+  display: block;
+  text-align: center;
   margin-right: 3px;
   font-size: 1.24vw;
-  display: flex;
 }
 .timer samp img {
   width: 1.14vw;
   height: 1.14vw;
   position: relative;
-  top: 0.146vw;
-  left: -5px;
+  top: 0.23vw;
 }
 
 .countAll {
@@ -383,7 +347,6 @@
   .timer samp img {
     width: var(--font18);
     height: var(--font18);
-    top: 0.116vw;
   }
   .partFirst {
     width: 96.5%;
@@ -398,6 +361,9 @@
     width: var(--font18);
     height: var(--font18);
     top: 4px;
+  }
+  .changeText {
+    margin-top: 30px;
   }
 }
 @media (max-width: 912px) {
@@ -460,6 +426,7 @@
   .part .timer samp img {
     width: var(--font21);
     height: var(--font21);
+    top: 0.7vw;
   }
   .part .countAll div {
     font-size: var(--font21);
@@ -475,9 +442,6 @@
   }
   .inputMain {
     width: 100%;
-  }
-  .klava {
-    display: none;
   }
 }
 @media (max-width: 630px) {

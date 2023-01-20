@@ -61,6 +61,8 @@
     "TI-share":"Share",
     "TI-rep":"Repeat",
     "TI-TimerUp": "Timer",
+    "TI-typed":"You typed ",
+    "TI-laterTime":"Time has passed: ",
 
 
     "TR-res":"My results!",
@@ -74,7 +76,7 @@
     "TR-try":"Try",
     "TR-noTrust":"Not sure?",
     "TR-tryCourse":"Try courses",
-    
+
     "TIS-share":"Share with friends!",
     "TIS-copy":"Copy link",
     "TIS-or":"or",

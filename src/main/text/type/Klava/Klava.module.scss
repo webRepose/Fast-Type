@@ -1,0 +1,45 @@
+.klava {
+    width: 750px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    &Space {
+        width: 13.021vw;
+        margin: 0 auto !important;
+    }
+
+    &Line {
+        display: flex;
+
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: var(--font21);
+            display: flex;
+
+            sup {
+                margin-top: -0.260vw;
+                margin-left: 0.260vw;
+            }
+        }
+
+        div {
+            position: relative;
+            background-color: var(--ThemeButton-color);
+            margin: 1.7px;
+            border-radius: 8px;
+            height: 45px;
+            color: var(--textT-color);
+        }
+    }
+}
+
+
+@media (max-width: 920px) {
+    .klava {
+        display: none;
+    }
+}
