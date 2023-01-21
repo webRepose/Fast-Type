@@ -80,7 +80,17 @@ if(changeTextNew === false) {
     //     console.log(document.getElementsByClassName('Btn').classList.remove(Style.onKeyClick))
     // }
     // console.log(inputText[i])
-    
+    // setKlava(prev => prev = false);
+    // setTimeout(()=>{    
+    //     setKlava(prev => prev = true);},0)
+
+
+    // if(klava) {
+    //     if(document.querySelector('.Btn').classList.contains(Style.onKeyClick)) {
+    //         document.querySelector('.Btn').classList.remove(Style.onKeyClick)
+    //     }
+    // }
+
     setI(prev => prev = 0);
     inputArea.current.value = '';
     setSimbols(prev => prev = 0);
@@ -239,6 +249,23 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
         <h3>{t('TI-tyText')}</h3>
            <div className={Style.part}>
             <div className={Style.partFirst}>
+            {allResVsisible &&
+                        <div className={Style.countAll}>
+                        <div><img src="../img/text-type/chat.svg" alt="words"/>
+                        {localStorage.getItem('mode') === 't-time' 
+                        ? words + ' ' + t('T-counWord') 
+                        : minTimerWords + ' : ' + secTimerWords + ' ' + t('TI-TimerUp')}</div>
+                        <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>{t('TR-sym')}</p></div>
+                        <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>{t('TR-err')}</p></div>
+                        </div>
+            }
+            {timerVisible &&
+                    <div className={Style.timer}>
+                        {localStorage.getItem('mode') === 't-time' 
+                        ? <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {min + ':' + sec}</samp>
+                        : <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {ourCountWords + ' ' + t('T-counWord')}</samp>}
+                    </div>
+            }
             <div ref={inputBlock} className={Style.inputMain}>
             <div className={Style.inputBlock}>
                 <p className={Style.inputText}>{inputText}</p>
@@ -261,7 +288,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
             </div>
             {klava && <Klava/>}
             <button title={t('TI-changeText')} onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>{t('TI-changeText')}</button>
-            {timerVisible &&
+            {/* {timerVisible &&
                     <div className={Style.timer}>
                         {localStorage.getItem('mode') === 't-time' 
                         ? <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {min + ':' + sec}</samp>
@@ -277,7 +304,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                         <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>{t('TR-sym')}</p></div>
                         <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>{t('TR-err')}</p></div>
                         </div>
-            }
+            } */}
             </div>
             <div className={Style.partTwo}>
                 <div className={Style.closeAll}>
