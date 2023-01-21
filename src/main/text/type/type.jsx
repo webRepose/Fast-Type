@@ -80,9 +80,10 @@ if(changeTextNew === false) {
     //     console.log(document.getElementsByClassName('Btn').classList.remove(Style.onKeyClick))
     // }
     // console.log(inputText[i])
-    // setKlava(prev => prev = false);
-    // setTimeout(()=>{    
-    //     setKlava(prev => prev = true);},0)
+    setKlava(prev => prev = false);
+    setTimeout(()=>{    
+        setKlava(prev => prev = true);
+    },0)
 
 
     // if(klava) {
