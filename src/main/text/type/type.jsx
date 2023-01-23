@@ -76,22 +76,12 @@ setCountLenght(prev => prev = textInput.length);
 
 
 if(changeTextNew === false) {
-    // if(localStorage.getItem('lange') === 'en-US' && document.getElementsByClassName(Style.onKeyClick) === true) {
-    //     console.log(document.getElementsByClassName('Btn').classList.remove(Style.onKeyClick))
-    // }
-    // console.log(inputText[i])
     setKlava(prev => prev = false);
     setTimeout(()=>{    
         setKlava(prev => prev = true);
-    },0)
-
-
-    // if(klava) {
-    //     if(document.querySelector('.Btn').classList.contains(Style.onKeyClick)) {
-    //         document.querySelector('.Btn').classList.remove(Style.onKeyClick)
-    //     }
-    // }
-
+    },1)
+    
+    inputArea.current.focus()
     setI(prev => prev = 0);
     inputArea.current.value = '';
     setSimbols(prev => prev = 0);
@@ -123,6 +113,17 @@ useEffect(()=>{
         clearInterval(interval);
     };
 },[isType]);
+
+
+setTimeout(()=>{
+    if((inputText[i] !== undefined || null) && (localStorage.getItem('lange') === 'en-US')) {
+        if(klava && document.getElementById(inputText[i].toUpperCase())) {
+            if(document.getElementById(inputText[i].toUpperCase()).classList.contains(Style.onKeyClick) !== true && document.getElementById(inputText[i].toUpperCase())) {
+                document.getElementById(inputText[i].toUpperCase()).classList.add(Style.onKeyClick);
+            }
+        }
+    }
+}, 0)
 
 useEffect(()=>{
     if(time === 0 || ourCountWords === 0) {
@@ -186,10 +187,6 @@ useEffect(()=>{
     }
 },[ourCountWords, secTimerWords, isTypeWords])
 
-setTimeout(()=>{if((inputText[i] !== undefined || null) && (localStorage.getItem('lange') === 'en-US')) {
-    klava && document.getElementById(inputText[i].toUpperCase()).classList.add(Style.onKeyClick);
-}
-},0)
 
 const inputCheck = (event)=> {
     if(localStorage.getItem('mode') === 't-time') {
@@ -207,7 +204,8 @@ const inputCheck = (event)=> {
         setI(prev => prev+1);
         setSimbols(prev => prev+1);
         if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) setWords(prev => prev+1);
-       if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i]) !== undefined || null)) {
+        
+       if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i].toUpperCase()) !== undefined || null)) {
         klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
        }
     }
@@ -233,7 +231,7 @@ const inputCheck = (event)=> {
     };
 };
 
-useEffect(()=>{
+useEffect(()=>{    
 const handler = (event)=>{
     if(share) if(!blurCloseRef.current.contains(event.target)) setShare(prev => prev = false);
 };
@@ -289,23 +287,6 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
             </div>
             {klava && <Klava/>}
             <button title={t('TI-changeText')} onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>{t('TI-changeText')}</button>
-            {/* {timerVisible &&
-                    <div className={Style.timer}>
-                        {localStorage.getItem('mode') === 't-time' 
-                        ? <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {min + ':' + sec}</samp>
-                        : <samp><img src='../img/text-type/timer3.0.svg' alt="words"/> {ourCountWords + ' ' + t('T-counWord')}</samp>}
-                    </div>
-            }
-            {allResVsisible &&
-                        <div className={Style.countAll}>
-                        <div><img src="../img/text-type/chat.svg" alt="words"/>
-                        {localStorage.getItem('mode') === 't-time' 
-                        ? words + ' ' + t('T-counWord') 
-                        : minTimerWords + ' : ' + secTimerWords + ' ' + t('TI-TimerUp')}</div>
-                        <div> <img src="../img/text-type/type.svg" alt="words"/>{simbols} <p>{t('TR-sym')}</p></div>
-                        <div><img src="../img/text-type/problem_.svg" alt="words"/> {errorCount} <p>{t('TR-err')}</p></div>
-                        </div>
-            } */}
             </div>
             <div className={Style.partTwo}>
                 <div className={Style.closeAll}>
