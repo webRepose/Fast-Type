@@ -204,10 +204,15 @@ const inputCheck = (event)=> {
         setI(prev => prev+1);
         setSimbols(prev => prev+1);
         if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) setWords(prev => prev+1);
-        
-       if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i].toUpperCase()) !== undefined || null)) {
-        klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
-       }
+        if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i].toUpperCase()) !== undefined || null)) {
+            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+        }
+        if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i].toUpperCase()) !== undefined || null)) {
+            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+        }
+        if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i].toUpperCase()) !== undefined || null)) {
+            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+        }
     }
     else {
         setTimeout(backSpace, 0);
