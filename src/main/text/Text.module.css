@@ -26,23 +26,20 @@
   margin-top: 30px;
 }
 
-.choiceParams {
+.paramsMainBlock {
   width: 100%;
   padding: var(--paddingHome);
   border-radius: var(--radius15);
   background-color: var(--block-color);
-  margin-bottom: 20px;
 }
-.choiceParams h3 {
+.paramsMainBlock h3 {
   font-size: var(--font24);
   font-weight: bold;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .params {
-  width: 100%;
-  padding: var(--paddingHome);
-  border-radius: var(--radius15);
-  background-color: var(--block-color);
   display: flex;
 }
 .paramsBlock {
@@ -125,7 +122,7 @@
 }
 
 @media (max-width: 1760px) {
-  .choiceParams h3 {
+  .paramsMainBlock h3 {
     font-size: var(--font21);
   }
   .paramsSelect {
@@ -146,12 +143,6 @@
     font-size: var(--font18);
   }
 }
-@media (max-width: 1650px) {
-  .paramsChoice {
-    width: 50%;
-    margin-left: auto;
-  }
-}
 @media (max-width: 1366px) {
   .params button, .paramsBlock, .params ul li {
     font-size: var(--font15);
@@ -169,23 +160,18 @@
     margin-top: 0px;
   }
 }
-@media (max-width: 1179px) {
-  .paramsChoice {
-    width: 30%;
-  }
-}
-@media (max-width: 1070px) {
-  .paramsChoice {
-    width: 20%;
-  }
-}
 @media (max-width: 1000px) {
   .paramsChoice {
     width: 20%;
   }
   .params ul li {
     padding: 10px 15px;
-    margin: 0 0 5px 5px;
+    margin: 0 0 10px 10px;
+  }
+}
+@media (max-width: 912px) {
+  .paramsMainBlock h3 {
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 800px) {

@@ -35,6 +35,7 @@
 }
 
 .center {
+  display: -ms-grid;
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -74,6 +75,7 @@
 }
 @media (max-width: 600px) {
   .center {
+    -ms-grid-columns: auto;
     grid-template-columns: auto;
   }
   .center div {

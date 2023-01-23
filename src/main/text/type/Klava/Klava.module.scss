@@ -10,14 +10,20 @@
     }
 
     &Line {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 
         p {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
             font-size: var(--font21);
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
 
             sup {

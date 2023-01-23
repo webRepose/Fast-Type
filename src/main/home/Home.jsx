@@ -22,7 +22,7 @@ const Home = () => {
         <div className={Style.homeStatsBlock}>
             {
                 HomeModule.map((url, i)=>(
-                    <ImgBlock name_homeBlock={t(url['text_translate'])} back_color={url['img_backColor']} key={i} imageUrl={url["img_src"]}/>
+                    <ImgBlock linked={url['link']} name_homeBlock={t(url['text_translate'])} back_color={url['img_backColor']} key={i} imageUrl={url["img_src"]}/>
                 ))
             } 
         </div>

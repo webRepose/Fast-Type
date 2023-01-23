@@ -17,6 +17,7 @@
     }
 
     button {
+        background: -o-linear-gradient(45deg,#e66465, #9198e5);
         background: linear-gradient(45deg,#e66465, #9198e5);
         color: var(--textT-color);
         border: 0;
@@ -27,10 +28,14 @@
         margin-top: 30px;
         margin-bottom: 100px;
         font-size: var(--font18);
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
         &:hover {
             opacity: 0.8;
-            transform: translateY(-10px);
+            -webkit-transform: translateY(-10px);
+                -ms-transform: translateY(-10px);
+                    transform: translateY(-10px);
         }
     }
     

@@ -17,6 +17,8 @@
 }
 
 .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     h2 {
@@ -34,13 +36,19 @@
     width: 100%;
     height: 40px;
     cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 48px;
     background-color: var(--ThemeButton-color);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 
     &:hover {
-        transform: translateY(-5px);
+        -webkit-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+                transform: translateY(-5px);
         opacity: 0.8;
     }
 }
@@ -60,6 +68,8 @@
     border-radius: var(--radius15);
     background-color: transparent;
     padding: 12px 14px 6px 14px;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
     transition: all 0.25s ease;
 
     &:hover {
@@ -75,6 +85,8 @@ ul {
     list-style: none;
 
     a {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         font-size: var(--font21);
         p {
@@ -96,6 +108,8 @@ ul {
 
 
 .lang {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
     padding: 12px 14px 6px 14px;
@@ -129,6 +143,8 @@ ul {
 }
 
 .account {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
     bottom: 40px;
@@ -272,7 +288,9 @@ ul {
 
 @media (max-width: 912px) {
     .logo {
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         h2 {
             font-size: var(--font21);
             top: -1px;
@@ -280,6 +298,8 @@ ul {
     }
     .menuMobile {
         padding: 14px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
     .lang {
@@ -340,6 +360,8 @@ ul {
         padding: 15px 14px 13px 14px !important;
     }
     footer {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
         display: flex !important;
     }
     body {
@@ -355,8 +377,12 @@ ul {
         margin: 0 auto;
     }
     .navBar ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         li {
             width: 80px;
         }

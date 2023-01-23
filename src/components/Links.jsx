@@ -2,6 +2,7 @@ import { Routes, Route} from "react-router-dom";
 import React, { lazy, Suspense } from 'react';
 import Preloader from "./Preloader/Preloader";
 const Home = lazy(() => import('../main/home/Home')),
+History = lazy(() => import('../main/home/History/History')),
 Text = lazy(() => import('../main/text/Text')),
 Code = lazy(() => import('../main/code/Code')),
 Capcha = lazy(() => import('../main/capcha/Capcha')),
@@ -19,6 +20,7 @@ const Links = () => {
         <Routes>
         <Route path="/" element={<Suspense fallback={<Preloader/>}><Header/></Suspense>}>
         <Route index element={<Suspense fallback={<Preloader/>}><Home/></Suspense>}></Route>
+        <Route path='history' element={<Suspense fallback={<Preloader/>}><History/></Suspense>}></Route>
         <Route path='text' element={<Suspense fallback={<Preloader/>}><Text/></Suspense>}></Route>
         <Route path='text/type' element={<Suspense fallback={<Preloader/>}><Type/></Suspense>}></Route>
         <Route path="code" element={<Suspense fallback={<Preloader/>}><Code/></Suspense>}></Route>

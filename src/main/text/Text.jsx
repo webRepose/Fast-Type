@@ -68,9 +68,8 @@ const Text = () => {
 
     return (
         <main>
-            <section className={Style.choiceParams}>
-                <h3>{t('T-options')}</h3>
-            </section>
+            <section className={Style.paramsMainBlock}>
+            <h3>{t('T-options')}</h3>
             <section className={Style.params}>
                 <div className={Style.paramsBlock}>
                     {/* klava */}
@@ -266,6 +265,8 @@ const Text = () => {
                     </div>
                 </div>
             </section>
+            </section>
+            
         </main>  
     );
 };

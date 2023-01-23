@@ -7,23 +7,29 @@
     h3 {
         font-size: var(--font24);
         font-weight: bold;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
+        text-align: center;
     }
 }
 
 .onKeyClick {
     background: var(--gradient1-color);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
 }
 
 .part {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     &First {
-        width: 93.5%;
+        width: 96.5%;
     }
     &Two {
-        width: 6.5%;
         position: relative;
 
         .closeAll {
@@ -38,14 +44,25 @@
             border-radius: 0.781vw;
             background: var(--gradient1-color);
             margin-bottom: 20px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -ms-flex-line-pack: center;
+                align-content: center;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
             transition: all 0.3s ease;
             &:hover {
                 opacity: 0.8;
-                transform: translateX(-7px);
+                -webkit-transform: translateX(-7px);
+                    -ms-transform: translateX(-7px);
+                        transform: translateX(-7px);
             }
 
             img {
@@ -68,7 +85,8 @@
     position: fixed;
     left: 0;
     top: 0;
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
     width: 100%;
     height: 100%;
     z-index: 11;
@@ -93,12 +111,17 @@
             text-align: center;
             margin-top: 30px;
             font-size: 30px !important;
+            margin-bottom: 0 !important;
         }
 
         &Buttons {
             width: 80%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             margin: 0 auto;
             margin-top: 30px;
             p {
@@ -110,10 +133,14 @@
             button {
                 background: transparent;
                 border: 0;
+                -webkit-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
                 transition: all 0.3s ease;
 
                 &:hover {
-                    transform: translateY(-5px);
+                    -webkit-transform: translateY(-5px);
+                        -ms-transform: translateY(-5px);
+                            transform: translateY(-5px);
                     opacity: 0.7;
                 }
             }
@@ -180,12 +207,16 @@
     padding: 10px 44px;
     background-color: var(--startButton-color);
     margin-top: 50px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     font-size: var(--font21);
     color: var(--textT-color);
     &:hover {
         opacity: 0.8;
-        transform: translateY(-5px);
+        -webkit-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+                transform: translateY(-5px);
     }
 }
 
@@ -211,8 +242,12 @@
 
 
 .countAll {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 700px;
     margin: 0 auto;
 
@@ -221,6 +256,8 @@
         border-radius: var(--radius15);
         font-size: var(--font21);
         background-color: var(--body-color);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 
 
@@ -245,12 +282,17 @@
     border-radius: 50%;
     position: absolute;
     left: 20PX;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    background: -o-linear-gradient(45deg, #8e4a9a, #552aff);
     background: linear-gradient(45deg, #8e4a9a, #552aff);
     opacity: 0.8;
 
     &:hover {
-        transform: translateY(-3px);
+        -webkit-transform: translateY(-3px);
+            -ms-transform: translateY(-3px);
+                transform: translateY(-3px);
     }
 
     img {
@@ -277,16 +319,22 @@
         margin: 0 auto;
         margin-top: 30px;
         border: 0;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
         color: var(--textT-color);
     
         &:hover {
-            transform: translateY(-5px);
+            -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                    transform: translateY(-5px);
             opacity: 0.8;
         }
     
         &Text {
+            display: -ms-grid;
             display: grid;
+            -ms-grid-columns: auto auto;
             grid-template-columns: auto auto;
             place-items: center;
         }
@@ -296,7 +344,9 @@
             border: 0;
             width: 40px;
             height: 40px;
+            background: -o-linear-gradient(45deg, #6157FF, #EE49FD);
             background: linear-gradient(45deg, #6157FF, #EE49FD);
+            display: -ms-grid;
             display: grid;
             place-items: center;
     
@@ -308,8 +358,12 @@
     }
 
     &Or {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         margin-top: 10px;
 
         p {
@@ -340,8 +394,12 @@
         margin-top: 10px;
 
         div {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
         }
 
         button svg {
@@ -352,10 +410,14 @@
 
         button {
             padding: 5px;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
             transition: all 0.3s ease;
             margin-top: 15px;
             &:hover {
-                transform: translateY(-5px);
+                -webkit-transform: translateY(-5px);
+                    -ms-transform: translateY(-5px);
+                        transform: translateY(-5px);
                 opacity: 0.8;
             }
         }
@@ -424,7 +486,11 @@
                 height: 20px;
             }
         }
-    } 
+    }
+    
+    .choiceParams h3 {
+        margin-bottom: 30px;
+    }
 
     .inputBlurModals {
         width: 70.25vw;
@@ -443,9 +509,13 @@
 
             .closeAll {
                 position: static;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 width: 141px;
-                justify-content: space-between;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
                 margin: 0 auto;
                 margin-top: 30px;
             }
@@ -467,7 +537,9 @@
                 }
 
                 &:hover {
-                    transform: translate(0);
+                    -webkit-transform: translate(0);
+                        -ms-transform: translate(0);
+                            transform: translate(0);
                 }
             }
         }
@@ -512,7 +584,9 @@
 
         div {
             margin-bottom: 15px;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
         }
     }
 
