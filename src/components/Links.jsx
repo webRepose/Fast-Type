@@ -10,8 +10,8 @@ Symbols = lazy(() => import('../main/symbols/Symbols')),
 Courses = lazy(() => import('../main/courses/Courses')),
 NF404 = lazy(() => import('../main/NF404/404')),
 Header = lazy(() => import('../header/Header')),
-Type = lazy(() => import('../main/text/type/type')),
-ResultShare = lazy(()=> import('../main/text/type/ResultShare/ResultShare'));
+Type = lazy(() => import('../main/text/Typing/Typing')),
+ResultShare = lazy(()=> import('../main/text/Typing/ResultShare/ResultShare'));
 
 
 const Links = () => {

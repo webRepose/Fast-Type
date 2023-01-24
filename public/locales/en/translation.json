@@ -46,8 +46,6 @@
 
     "TI-title":"Typing text",
     "TI-myRes":"My typing results, You try it!",
-    "TI-inTime":"Entering text by time",
-    "TI-inWords":"Text Input",
     "TI-tyText":"Type the text",
     "TI-changeText":"Change the text",
     "TI-hideKlava":"Hide keyboard",
@@ -81,6 +79,16 @@
     "TIS-copy":"Copy link",
     "TIS-or":"or",
     "TIS-back":"Back",
+
+    "HH-clear":"Clear history",
+    "HH-confirm":"Do you really want to delete the history?",
+    "HH-tapTo":"Click to view detailed information",
+    "HH-mode":"Mode",
+    "HH-timeInput":"Input time",
+    "HH-empty":"It's empty here!",
+    "HH-tryNow":"But don't worry, it can be fixed!",
+    "HH-try":"Try",
+
 
     "T-`":"`",
     "T-~":"~",

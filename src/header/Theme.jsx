@@ -1,4 +1,4 @@
-import Style from '../header/Header.module.css';
+import Style from '../styles/Header/Header.module.css';
 const Theme = () => {
     const htmlDOM = document.querySelector('html');
     if(window.localStorage.getItem('theme') === null) {

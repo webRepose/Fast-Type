@@ -1,7 +1,8 @@
-import Style from "./Text.module.css"
+import Style from '../../styles/Text/Text.module.css';
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
+import Section from "../../components/Section/Section";
 
 const Text = () => {
     const [t] = useTranslation(),
@@ -68,7 +69,7 @@ const Text = () => {
 
     return (
         <main>
-            <section className={Style.paramsMainBlock}>
+            <Section>
             <h3>{t('T-options')}</h3>
             <section className={Style.params}>
                 <div className={Style.paramsBlock}>
@@ -265,7 +266,7 @@ const Text = () => {
                     </div>
                 </div>
             </section>
-            </section>
+            </Section>
             
         </main>  
     );

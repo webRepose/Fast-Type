@@ -1,17 +1,3 @@
-.choiceParams {
-  width: 100%;
-  padding: var(--paddingHome);
-  border-radius: var(--radius15);
-  background-color: var(--block-color);
-  margin-bottom: 20px;
-}
-.choiceParams h3 {
-  font-size: var(--font24);
-  font-weight: bold;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
 .onKeyClick {
   background: var(--gradient1-color);
   transition: all 0.5s ease;
@@ -336,11 +322,6 @@
   opacity: 0.8;
 }
 
-@media (max-width: 1760px) {
-  .choiceParams h3 {
-    font-size: var(--font21);
-  }
-}
 @media (max-width: 1366px) {
   .inputMain {
     padding: 15px;
@@ -385,9 +366,6 @@
   .partTwo .closeBlock img {
     width: 20px;
     height: 20px;
-  }
-  .choiceParams h3 {
-    margin-bottom: 30px;
   }
   .inputBlurModals {
     width: 70.25vw;
@@ -454,7 +432,7 @@
     width: 100%;
   }
 }
-@media (max-width: 630px) {
+@media (max-width: 737px) {
   .countAll {
     display: block;
     width: 80%;
@@ -463,6 +441,8 @@
     margin-bottom: 15px;
     justify-content: center;
   }
+}
+@media (max-width: 630px) {
   .inputBlurModalsButtons p {
     display: none;
   }
@@ -480,4 +460,4 @@
   .inputMain {
     padding: 10px;
   }
-}/*# sourceMappingURL=type.module.css.map */
+}/*# sourceMappingURL=Typing.module.css.map */

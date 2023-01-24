@@ -1,17 +1,3 @@
-.choiceParams {
-    width: 100%;
-    padding: var(--paddingHome);
-    border-radius: var(--radius15);
-    background-color: var(--block-color);
-    margin-bottom: 20px;
-    h3 {
-        font-size: var(--font24);
-        font-weight: bold;
-        margin-bottom: 50px;
-        text-align: center;
-    }
-}
-
 .onKeyClick {
     background: var(--gradient1-color);
     -webkit-transition: all 0.5s ease;
@@ -425,13 +411,6 @@
 
 }
 
-
-@media (max-width: 1760px) {
-    .choiceParams h3 {
-        font-size: var(--font21);
-    }
-}
-
 @media (max-width: 1366px) {
     .inputMain {
         padding: 15px;
@@ -486,10 +465,6 @@
                 height: 20px;
             }
         }
-    }
-    
-    .choiceParams h3 {
-        margin-bottom: 30px;
     }
 
     .inputBlurModals {
@@ -576,8 +551,7 @@
     }
 }
 
-
-@media (max-width: 630px) {
+@media (max-width: 737px) {
     .countAll {
         display: block;
         width: 80%;
@@ -589,7 +563,9 @@
                     justify-content: center;
         }
     }
+}
 
+@media (max-width: 630px) {
     .inputBlurModalsButtons {
         p {
             display: none;

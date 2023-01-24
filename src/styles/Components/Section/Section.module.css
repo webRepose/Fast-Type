@@ -1,0 +1,24 @@
+.Block {
+  width: 100%;
+  padding: var(--paddingHome);
+  border-radius: var(--radius15);
+  background-color: var(--block-color);
+  margin-bottom: 20px;
+}
+.Block h3 {
+  font-size: var(--font24);
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+@media (max-width: 1760px) {
+  .Block h3 {
+    font-size: var(--font21);
+  }
+}
+@media (max-width: 912px) {
+  .Block h3 {
+    margin-bottom: 30px;
+  }
+}/*# sourceMappingURL=Section.module.css.map */

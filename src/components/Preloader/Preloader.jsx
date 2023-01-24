@@ -1,5 +1,6 @@
-import Style from './Preloader.module.css';
+import Style from '../../styles/Components/Preloader/Preloader.module.css';
 import Logo from '../../header/Logo';
+
 const Preloader = () => {
     return (
         <section className={Style.preloader}>

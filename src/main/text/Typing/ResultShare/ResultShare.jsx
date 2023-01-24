@@ -1,8 +1,10 @@
 import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
-import Style from "./ResultShare.module.css";
+import Style from "../../../../styles/Text/Typing/ResultShare/ResultShare.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
+
 const ResultShare = () => {
     const [t] = useTranslation();
     document.title = t('TR-res');

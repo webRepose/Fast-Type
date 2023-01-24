@@ -1,4 +1,4 @@
-import Style from './Header.module.css';
+import Style from '../styles/Header/Header.module.css';
 import {Outlet} from "react-router-dom";
 import Menu from './Menu';
 import Lang from './Lang';

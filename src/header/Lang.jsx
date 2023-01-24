@@ -1,10 +1,10 @@
-import Style from '../header/Header.module.css';
+import Style from '../styles/Header/Header.module.css';
 import { useTranslation } from 'react-i18next';
 import {useEffect, useRef, useState } from "react";
 
 const Lang = () => {
-    const htmlDOM = document.querySelector('html')
-    htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))
+    const htmlDOM = document.querySelector('html');
+    htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'));
     const [t, i18n] = useTranslation();
     function changeLanguage(language) {
         i18n.changeLanguage(language);
@@ -12,17 +12,17 @@ const Lang = () => {
     let [lang, setLang] = useState(false);
     const changLang = lang ? 'block' : 'none';
     const langClass = [Style.langChange, changLang];
-    let langRefUl = useRef()
-    let langRefButton = useRef()
+    let langRefUl = useRef();
+    let langRefButton = useRef();
     useEffect(()=>{
         let handler = (event)=>{
         if(!langRefUl.current.contains(event.target) && !langRefButton.current.contains(event.target) ) {
-            setLang(false);
+            setLang(prev => prev = false);
         }
     }
-        document.addEventListener('mousedown', handler)
+        document.addEventListener('mousedown', handler);
         return ()=>{
-            document.removeEventListener('mousedown', handler)
+            document.removeEventListener('mousedown', handler);
         }
     })
 
@@ -38,12 +38,12 @@ const Lang = () => {
         </button>
         <ul ref={langRefUl} className={langClass.join(' ')}>
             <li title='English' onClick={()=>{
-                setLang(false)
+                setLang(prev => prev = false)
                 changeLanguage("en")
                 htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))
             }}>English</li>
             <li title='Русский' onClick={()=>{
-                setLang(false)
+                setLang(prev => prev = false)
                 changeLanguage("ru")
                 htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))
             }}>Русский</li>

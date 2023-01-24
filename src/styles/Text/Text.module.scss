@@ -27,19 +27,6 @@
 }
 
 
-.paramsMainBlock {
-    width: 100%;
-    padding: var(--paddingHome);
-    border-radius: var(--radius15);
-    background-color: var(--block-color);
-
-    h3 {
-        font-size: var(--font24);
-        font-weight: bold;
-        margin-bottom: 50px;
-        text-align: center;
-    }
-}
 .params {
     display: flex;
     &Block {
@@ -133,10 +120,7 @@
 }
 
 
-@media (max-width: 1760px) {  
-    .paramsMainBlock h3 {
-        font-size: var(--font21);
-    }  
+@media (max-width: 1760px) {    
     .params {
         &Select {
             font-size: var(--font17);
@@ -194,12 +178,6 @@
         }
     }
 } 
-
-@media (max-width: 912px) {
-    .paramsMainBlock h3 {
-        margin-bottom: 30px;
-    }
-}
 
 @media (max-width: 800px) {
     .Start {

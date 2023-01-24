@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Style from "./type.module.css";
+import Style from '../../../styles/Text/Typing/Typing.module.css';
 import {useEffect, useRef, useState} from "react";
 import Klava from "./Klava/Klava";
 import { Link } from "react-router-dom";
@@ -22,8 +22,9 @@ import {
     FacebookMessengerShareButton
   } from "react-share";
 import CopyToClipboard from "react-copy-to-clipboard";
-import localesRu from '../type/localesText/localesRU.json';
-import localesEn from '../type/localesText/localesEN.json';
+import localesRu from './localesText/localesRU.json';
+import localesEn from './localesText/localesEN.json';
+import Section from "../../../components/Section/Section";
 
 const Type = () => {
 const [t] = useTranslation(),
@@ -128,19 +129,24 @@ setTimeout(()=>{
 useEffect(()=>{
     if(time === 0 || ourCountWords === 0) {
         let historyMode;
-        if(window.localStorage.getItem('mode') === 't-time') historyMode = t('TI-inTime');
-        else if(window.localStorage.getItem('mode') === 't-words') historyMode = t('TI-inWords');
+        if(window.localStorage.getItem('mode') === 't-time') historyMode = 'Entering text by time';
+        else if(window.localStorage.getItem('mode') === 't-word') historyMode = 'Text Input';
         const offset = new Date().toLocaleDateString(),
         offsetNow = new Date().toLocaleTimeString(),
         check = JSON.parse(localStorage.getItem('HistoryData'));
         let historyArray;
-        if(check!==null) historyArray = check;
+        if(check !== null) historyArray = check;
         else historyArray = [];
         
+        let resTimer;
+        if(localStorage.getItem('mode') === 't-time') resTimer = localStorage.getItem('mode-time') / 60 + ' : 00';
+        else resTimer = minTimerWords + ' : ' + secTimerWords;
+
+        console.log(resTimer)
         let historyData =
         {
                 mode: historyMode,
-                timer: localStorage.getItem('mode-time'),
+                timer: resTimer,
                 words: words,
                 symbols: simbols,
                 errors: errorCount,
@@ -155,14 +161,13 @@ useEffect(()=>{
             document.querySelector('html').style.overflow = 'hidden';
     }
     
-}, [errorCount, simbols, time, words, t, ourCountWords]);
+}, [errorCount, simbols, time, words, t, ourCountWords, secTimerWords, minTimerWords, sec, min]);
 
 const backSpace = () => {
     let backFun = inputArea.current.value;
     backFun = backFun.substr(0,backFun.length - 1);
     inputArea.current.value = backFun;
 } 
-
 
 const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
@@ -171,19 +176,23 @@ const inputBackspace = (event) => {
 
 useEffect(()=>{
     const intervalTimer = setInterval(()=>{
-        isTypeWords && setSecTimerWords(prev => prev + 1)
-        if(secTimerWords === 60) {
-            setSecTimerWords(prev => prev = 0);
-            setMinTimerWords(prev => prev + 1);
-        }
-
-        if(ourCountWords === 0) {
-            setIsTypeWords(prev => prev = false)
+        if(isTypeWords) {
+            if(ourCountWords === 0) {
+                setIsTypeWords(prev => prev = false);
+                return false
+            }
+    
+            setSecTimerWords(prev => prev + 1);
+    
+            if(secTimerWords === 60) {
+                setSecTimerWords(prev => prev = 0);
+                setMinTimerWords(prev => prev + 1);
+            }
         }
     }, 1000)
 
     return () => {
-        clearInterval(intervalTimer)
+        clearInterval(intervalTimer);
     }
 },[ourCountWords, secTimerWords, isTypeWords])
 
@@ -215,7 +224,7 @@ const inputCheck = (event)=> {
         }
     }
     else {
-        setTimeout(backSpace, 0);
+        backSpace()
         inputBlock.current.style.border = '1px solid red'
         setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)
         setErrorCount(prev => prev+1);
@@ -249,7 +258,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
     return (
         <>
         <main>
-        <section className={Style.choiceParams}>
+        <Section>
         <h3>{t('TI-tyText')}</h3>
            <div className={Style.part}>
             <div className={Style.partFirst}>
@@ -286,7 +295,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                 autoComplete="off" 
                 autoCorrect="off" 
                 spellCheck="false" 
-                aria-label="Вводи">
+                aria-label="Input">
                 </textarea>
             </div>
             </div>
@@ -435,7 +444,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                     </div>
                 </div>
             }
-        </section>    
+        </Section>    
         </main>
         </>
     );
