@@ -60,6 +60,7 @@ textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
 [textsRu] = useState(textLangs);
 
 
+
 const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
 };
@@ -73,7 +74,16 @@ const inputCheck = (event)=> {
         if(inputText[i] === event.nativeEvent.data && (event.nativeEvent.data === ' ' || event.nativeEvent.data === '-')) {
             setOurCountWords(prev => prev -1);
         }
+    }    
+
+    if(inputArea.current.value >= 1) {
+        if(document.getElementById(inputText[i-1].toUpperCase()) !== undefined || null) {
+            if(document.getElementsByClassName(Style.onKeyClick).length >= 1) {
+                klava && document.getElementById(inputText[i-1].toUpperCase()).classList.remove(Style.onKeyClick);
+            }
+        } 
     }
+
 
     if(inputText[i] === event.nativeEvent.data) {
         if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
@@ -183,7 +193,7 @@ sec = getTime(time - min * 60);
 useEffect(()=>{
     const interval = setInterval(()=>{
         isType && setTime((time) => (time >= 1 ? time -1 : 0));
-    } ,100);
+    } ,1000);
 
     return () => {
         clearInterval(interval);
@@ -269,10 +279,6 @@ useEffect(()=>{
     }
 },[ourCountWords, secTimerWords, isTypeWords])
 
-
-if(document.getElementsByClassName(Style.onKeyClick).length >= 1) {
-    klava && document.getElementById(inputText[i-1].toUpperCase()).classList.remove(Style.onKeyClick);
-}
 
 useEffect(()=>{    
 const handler = (event)=>{
