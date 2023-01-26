@@ -1,7 +1,7 @@
 .notFoundMain {
   display: grid;
   place-items: center;
-  height: 87.5vh !important;
+  height: 80vh !important;
 }
 
 .notFound p {
@@ -19,6 +19,6 @@
 
 @media (max-width: 800px) {
   .notFoundMain {
-    height: 70vh !important;
+    height: 60vh !important;
   }
 }/*# sourceMappingURL=NF404.module.css.map */

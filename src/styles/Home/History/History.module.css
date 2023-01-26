@@ -46,7 +46,7 @@
 .historyBlockEmpty {
   display: grid;
   place-items: center;
-  height: 76vh !important;
+  height: 69vh !important;
 }
 .historyBlockEmpty h4 {
   font-size: 21px;
