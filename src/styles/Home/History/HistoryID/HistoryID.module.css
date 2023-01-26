@@ -1,0 +1,65 @@
+.hisData {
+  display: grid;
+  grid-template-columns: auto auto;
+  color: var(--textT-color);
+}
+.hisDataBlock {
+  width: 400px;
+  padding: 10px;
+  background: linear-gradient(70deg, rgb(97, 87, 255), rgb(238, 73, 253));
+  border-radius: 15px;
+  margin: 0 auto 20px auto;
+}
+.hisData h4 {
+  text-align: center;
+  font-size: 21px;
+  margin-bottom: 7px;
+  line-height: 30px;
+}
+.hisData h4 img {
+  position: relative;
+  top: 1px;
+  margin-right: 3px;
+  width: 18px;
+}
+.hisData p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.hisBlockDate {
+  margin-bottom: 15px;
+}
+.hisBlockDate h4 {
+  text-align: center;
+  font-size: 21px;
+  margin-bottom: 7px;
+}
+.hisBlockDate h4 img {
+  position: relative;
+  top: 1px;
+  margin-right: 3px;
+  width: 18px;
+}
+.hisBlockDate p {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+.hisBlockDate p span {
+  margin-left: 7px;
+  margin-right: 7px;
+  position: relative;
+  top: -1.5px;
+}
+
+@media (max-width: 1050px) {
+  .hisData {
+    grid-template-columns: auto;
+  }
+}
+@media (max-width: 480px) {
+  .hisDataBlock {
+    width: 300px;
+  }
+}/*# sourceMappingURL=HistoryID.module.css.map */

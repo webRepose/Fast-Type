@@ -18,6 +18,7 @@ html.dark {
   --gradient1-color: linear-gradient(45deg,#5534cc, #883c91, #403468);
   --theme-icon: url(/public/img/theme/dark_mode.svg);
   --theme-iconMin: url(/public/img/theme/dark_modeMin.svg);
+  --back-icon: url(/public/img/Components/Back/undo3.svg);
 }
 
 html.light {
@@ -40,6 +41,7 @@ html.light {
   --gradient1-color: linear-gradient(#a499ca, #ba84c2, #7b6da5);
   --theme-icon: url(/public/img/theme/light_mode.svg);
   --theme-iconMin: url(/public/img/theme/light_modeMin.svg);
+  --back-icon: url(/public/img/Components/Back/undo4.svg);
 }
 
 @media (max-width: 1279px) {

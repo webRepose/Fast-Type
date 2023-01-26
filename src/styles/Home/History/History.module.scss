@@ -1,27 +1,14 @@
-.clearHistory {
-    border: 0;
-    background-color: var(--startButton-color);
-    padding: 8px 40px;
-    border-radius: 25px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-
-    &:hover {
-        opacity: 0.8;
-        transform: translateY(-3px);
-    }
-}
-
 .historyBlock {
     display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
     grid-gap: 16px;
+    margin-top: 30px;
     gap: 16px;
 
 
     &Sub {
-        background-color:var(--aside-color);
+        background-color:var(--body-color);
         border-radius: 15px;
         padding: 15px;
         cursor: pointer;
@@ -36,12 +23,20 @@
             text-align: center;
             font-size: 19px;
             margin-bottom: 10px;
+            margin-top: 5px;
         }
 
         h4 {
             text-align: center;
             font-weight: 600;
             font-size: 20px;
+
+            img {
+                position: relative;
+                top: 2px;
+                margin-right: 3px;
+                width: 18px;
+            }
         }
 
         &Time {
@@ -73,13 +68,12 @@
     }
 
     button {
-        display: block;
-        margin: 0 auto;
         margin-top: 30px;
     }
 }
 
-.clearHistory {
-    display: block;
-    margin: 0 auto 20px auto;
+@media (max-width: 920px) {
+    .historyBlockEmpty button {
+        padding: 10px 60px;
+    }
 }

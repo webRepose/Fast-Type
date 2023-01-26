@@ -27,26 +27,6 @@
         font-size: var(--font21);
         margin-bottom: 24px;
     }
-
-    &Start {
-        padding: 10px 44px;
-        border-radius: var(--radius25);
-        background-color: var(--startButton-color);
-        border: 0;
-        display: block;
-        margin: 0 auto;
-        color: var(--textT-color);
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        transition: all 0.3s ease;
-
-        &:hover {
-            -webkit-transform: translateY(-5px);
-                -ms-transform: translateY(-5px);
-                    transform: translateY(-5px);
-            opacity: 0.8;
-        }
-    }
 }
 
 .homeStats {

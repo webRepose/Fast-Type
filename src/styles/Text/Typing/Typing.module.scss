@@ -14,17 +14,19 @@
     display: flex;
     &First {
         width: 96.5%;
+
+        button {
+            margin-top: 30px;
+        }
     }
     &Two {
         position: relative;
-
-        .closeAll {
-            position: absolute;
-            top: 37%;
-        }
+        display: grid;
+        place-items: center;
 
         .closeBlock {
             cursor: pointer;
+            border: 0;
             width: 45px;
             height: 45px;
             border-radius: 0.781vw;
@@ -185,29 +187,8 @@
     color: var(--text-color);
 }
 
-.changeText {
-    display: block;
-    margin: 0 auto;
-    border-radius: var(--radius25);
-    border: 0;
-    padding: 10px 44px;
-    background-color: var(--startButton-color);
-    margin-top: 50px;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    font-size: var(--font21);
-    color: var(--textT-color);
-    &:hover {
-        opacity: 0.8;
-        -webkit-transform: translateY(-5px);
-            -ms-transform: translateY(-5px);
-                transform: translateY(-5px);
-    }
-}
 
 .timer {
-    margin-top: 20px;
     padding: 10px;
     margin-bottom: 10px;
 
@@ -236,6 +217,7 @@
             justify-content: space-between;
     width: 700px;
     margin: 0 auto;
+    margin-bottom: 20px;
 
     div {
         padding: 7px 25px;
@@ -566,6 +548,9 @@
 }
 
 @media (max-width: 630px) {
+    .inputBlurModals {
+        height: 380px;
+    }
     .inputBlurModalsButtons {
         p {
             display: none;

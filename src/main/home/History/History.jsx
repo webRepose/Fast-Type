@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import Section from '../../../components/Section/Section';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import GreenButton from '../../../components/GreenButton/GreenButton';
+import Back from '../../../components/Back/Back';
 
 
 const History = () => {
@@ -26,23 +28,26 @@ const History = () => {
     return (
         <main>
             <Section>
+            <Back/>
                 <h3>{t('H-Hist')}</h3>
                 {checkHistory ? 
                 <>
-                <button onClick={clear} className={Style.clearHistory}>{t('HH-clear')}</button>
+                <GreenButton onClick={clear}>{t('HH-clear')}</GreenButton>
                 <div className={Style.historyBlock}>
                 {
                     checkHistory !== null && checkHistory.map((result, index) =>
+                    <Link key={index} to={'./'+ index}>
                     <div title={t('HH-tapTo')} key={index} className={Style.historyBlockSub}>
-                        <h4>{t('HH-mode')}</h4>
+                        <h4><img src='./img/home/History/HistoryID/modeHis.svg' alt="icon"/> {t('HH-mode')}</h4>
                         <p>{result.mode}</p>
-                        <h4>{t('HH-timeInput')}</h4>
+                        <h4><img src='./img/home/History/HistoryID/timeHis.svg' alt="icon"/> {t('HH-timeInput')}</h4>
                         <p>{result.timer + t('TR-min')}</p>
                         <div className={Style.historyBlockSubTime}>
                         <p>{result.times}</p>
                         <p>{result.timesNow}</p>
                         </div>
                     </div>
+                    </Link>
                     )
                 }
                 </div>
@@ -54,7 +59,7 @@ const History = () => {
                     <img src="./img/home/History/Empty1.png" alt='Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>' />
                     <h4>{t('HH-tryNow')}</h4>
                     <Link to='/text/type'>
-                    <button className={Style.clearHistory}>{t('HH-try')}</button>
+                    <GreenButton title={t('HH-try')}>{t('HH-try')}</GreenButton>
                     </Link>
                     </div>
                 </div>

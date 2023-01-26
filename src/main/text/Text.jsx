@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import Section from "../../components/Section/Section";
+import Back from '../../components/Back/Back';
 
 const Text = () => {
     const [t] = useTranslation(),
@@ -70,6 +71,7 @@ const Text = () => {
     return (
         <main>
             <Section>
+            <Back/>
             <h3>{t('T-options')}</h3>
             <section className={Style.params}>
                 <div className={Style.paramsBlock}>

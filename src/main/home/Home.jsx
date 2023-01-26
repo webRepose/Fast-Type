@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import ImgBlock from "./BlockImg";
 import HomeModule from './HomeModule.json';
 import Section from "../../components/Section/Section";
+import GreenButton from '../../components/GreenButton/GreenButton';
 
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
             </Section>
             <section className={Style.homeTest}>
                 <h3>{t('H-Test')}</h3>
-                <button title={t('H-Pass')} className={Style.homeTestStart}>{t('H-Pass')}</button>
+                <GreenButton title={t('H-Pass')}>{t('H-Pass')}</GreenButton>
             </section>
             <Section className={Style.homeStats}>
             <div className={Style.homeStatsBlock}>

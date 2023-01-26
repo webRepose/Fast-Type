@@ -10,15 +10,17 @@
 .partFirst {
   width: 96.5%;
 }
+.partFirst button {
+  margin-top: 30px;
+}
 .partTwo {
   position: relative;
-}
-.partTwo .closeAll {
-  position: absolute;
-  top: 37%;
+  display: grid;
+  place-items: center;
 }
 .partTwo .closeBlock {
   cursor: pointer;
+  border: 0;
   width: 45px;
   height: 45px;
   border-radius: 0.781vw;
@@ -150,25 +152,7 @@
   color: var(--text-color);
 }
 
-.changeText {
-  display: block;
-  margin: 0 auto;
-  border-radius: var(--radius25);
-  border: 0;
-  padding: 10px 44px;
-  background-color: var(--startButton-color);
-  margin-top: 50px;
-  transition: all 0.3s ease;
-  font-size: var(--font21);
-  color: var(--textT-color);
-}
-.changeText:hover {
-  opacity: 0.8;
-  transform: translateY(-5px);
-}
-
 .timer {
-  margin-top: 20px;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -190,6 +174,7 @@
   justify-content: space-between;
   width: 700px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 .countAll div {
   padding: 7px 25px;
@@ -443,6 +428,9 @@
   }
 }
 @media (max-width: 630px) {
+  .inputBlurModals {
+    height: 380px;
+  }
   .inputBlurModalsButtons p {
     display: none;
   }

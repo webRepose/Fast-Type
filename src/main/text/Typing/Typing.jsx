@@ -25,6 +25,8 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import localesRu from './localesText/localesRU.json';
 import localesEn from './localesText/localesEN.json';
 import Section from "../../../components/Section/Section";
+import GreenButton from "../../../components/GreenButton/GreenButton";
+import Back from "../../../components/Back/Back";
 
 const Type = () => {
 const [t] = useTranslation(),
@@ -139,10 +141,11 @@ useEffect(()=>{
         else historyArray = [];
         
         let resTimer;
-        if(localStorage.getItem('mode') === 't-time') resTimer = localStorage.getItem('mode-time') / 60 + ' : 00';
-        else resTimer = minTimerWords + ' : ' + secTimerWords;
+        if(localStorage.getItem('mode') === 't-time') resTimer = localStorage.getItem('mode-time') / 60 + ':00';
+        else resTimer = minTimerWords + ':' + secTimerWords;
+        const correct = simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0; 
+ 
 
-        console.log(resTimer)
         let historyData =
         {
                 mode: historyMode,
@@ -151,7 +154,8 @@ useEffect(()=>{
                 symbols: simbols,
                 errors: errorCount,
                 timesNow: offsetNow,
-                times: offset
+                times: offset,
+                correct: correct,
         };
             historyArray.push(historyData);
             window.localStorage.setItem('HistoryData', JSON.stringify(historyArray));
@@ -259,6 +263,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
         <>
         <main>
         <Section>
+        <Back/>
         <h3>{t('TI-tyText')}</h3>
            <div className={Style.part}>
             <div className={Style.partFirst}>
@@ -300,25 +305,25 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
             </div>
             </div>
             {klava && <Klava/>}
-            <button title={t('TI-changeText')} onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>{t('TI-changeText')}</button>
+            <GreenButton title={t('TI-changeText')} onClick={()=>{setChangeTextNew(prev => !prev)}} className={Style.changeText}>{t('TI-changeText')}</GreenButton>
             </div>
             <div className={Style.partTwo}>
                 <div className={Style.closeAll}>
-                <div onClick={()=>{setKlava(prev => !prev)}} title={klava ? t('TI-hideKlava') : t('TI-showKlava')} className={Style.closeBlock}>
+                <button onClick={()=>{setKlava(prev => !prev)}} title={klava ? t('TI-hideKlava') : t('TI-showKlava')} className={Style.closeBlock}>
                     {klava 
                     ? <img src="../img/text-type/keyboard_off.svg" alt={t('TI-hideKlava')}/> 
                     : <img src="../img/text-type/keyboard.svg" alt={t('TI-showKlava')}/>}
-                </div>
-                <div onClick={()=>{setTimerVisible(prev => !prev)}} title={timerVisible ? t('TI-hideTimer') : t('TI-showTimer')} className={Style.closeBlock}>
+                </button>
+                <button onClick={()=>{setTimerVisible(prev => !prev)}} title={timerVisible ? t('TI-hideTimer') : t('TI-showTimer')} className={Style.closeBlock}>
                     {timerVisible 
                     ? <img src="../img/text-type/timer_off.svg" alt={t('TI-hideTimer')} /> 
                     : <img src="../img/text-type/timer.svg" alt={t('TI-showTimer')} />}
-                </div>
-                <div onClick={()=>{setAllResVisible(prev => !prev)}} title={allResVsisible ? t('TI-hideCateg') : t('TI-showCateg')} className={Style.closeBlock}>
+                </button>
+                <button onClick={()=>{setAllResVisible(prev => !prev)}} title={allResVsisible ? t('TI-hideCateg') : t('TI-showCateg')} className={Style.closeBlock}>
                     {allResVsisible 
                     ? <img src="../img/text-type/category_off.svg" alt={t('TI-hideCateg')}/> 
                     : <img src="../img/text-type/category.svg" alt={t('TI-showCateg')}/>}
-                </div> 
+                </button> 
                 </div>
             </div>
            </div>

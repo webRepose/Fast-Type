@@ -24,20 +24,6 @@
   font-size: var(--font21);
   margin-bottom: 24px;
 }
-.homeTestStart {
-  padding: 10px 44px;
-  border-radius: var(--radius25);
-  background-color: var(--startButton-color);
-  border: 0;
-  display: block;
-  margin: 0 auto;
-  color: var(--textT-color);
-  transition: all 0.3s ease;
-}
-.homeTestStart:hover {
-  transform: translateY(-5px);
-  opacity: 0.8;
-}
 
 .homeStatsBlock {
   width: 1100px;

@@ -9,28 +9,7 @@
         text-align: center;
         font-size: 18px;
         margin-top: 40px;
-    }
-
-    button {
-        background: -o-linear-gradient(45deg,#e66465, #9198e5);
-        background: linear-gradient(45deg,#e66465, #9198e5);
-        color: var(--textT-color);
-        border: 0;
-        padding: 12px 40px;
-        border-radius: var(--radius15);
-        display: block;
-        margin: 0 auto;
-        margin-top: 30px;
-        font-size: var(--font18);
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        transition: all 0.3s ease;
-        &:hover {
-            opacity: 0.8;
-            -webkit-transform: translateY(-5px);
-                -ms-transform: translateY(-5px);
-                    transform: translateY(-5px);
-        }
+        margin-bottom: 30px;
     }
 
     img {
@@ -41,11 +20,7 @@
     }
 }
 
-@media (max-width: 800px) { 
-    .notFound button {
-        padding: 16px 40px;
-    }
-    
+@media (max-width: 800px) {     
     .notFoundMain {
         height: 70vh !important;
     }

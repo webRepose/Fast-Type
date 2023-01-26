@@ -89,6 +89,14 @@
     "HH-tryNow":"But don't worry, it can be fixed!",
     "HH-try":"Try",
 
+    
+    "HHH-title":"History details",
+    "HHH-data":"Date",
+    "HHH-correct":"Correctly",
+    "HHH-countWords":"Number of words",
+    "HHH-countSymbols":"Number of characters",
+    "HHH-countErrors":"Number of errors",
+    "HHH-forTime":"During the",
 
     "T-`":"`",
     "T-~":"~",
