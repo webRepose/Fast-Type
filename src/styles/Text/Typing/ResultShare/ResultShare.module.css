@@ -1,18 +1,8 @@
-.choiceParams {
-  width: 100%;
-  padding: var(--paddingHome);
-  border-radius: var(--radius15);
-  background-color: var(--block-color);
-  margin-bottom: 20px;
-}
-.choiceParams h3 {
-  font-size: var(--font24);
-  font-weight: bold;
-}
-.choiceParams h1 {
+h1 {
   text-align: center;
   margin-bottom: 10px;
 }
+
 .choiceParams h2 {
   text-align: center;
   margin-top: 20px;
@@ -60,11 +50,6 @@
   margin-left: 5px;
 }
 
-@media (max-width: 1760px) {
-  .choiceParams h3 {
-    font-size: var(--font21);
-  }
-}
 @media (max-width: 920px) {
   .center div {
     width: 100%;

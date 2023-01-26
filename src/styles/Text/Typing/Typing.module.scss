@@ -8,6 +8,16 @@
             transform: translateY(-5px);
 }
 
+.onKeyClickBackspace {
+    background: var(--gradient1-color);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+}
+
 .part {
     display: -webkit-box;
     display: -ms-flexbox;

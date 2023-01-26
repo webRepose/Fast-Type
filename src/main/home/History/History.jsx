@@ -8,6 +8,7 @@ import Back from '../../../components/Back/Back';
 
 
 const History = () => {
+    document.querySelector('html').style.overflow = '';
     const [t] = useTranslation();
     document.title = t('H-Hist');
 

@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Style from "../../../../styles/Text/Typing/ResultShare/ResultShare.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Section from "../../../../components/Section/Section";
 
 
 const ResultShare = () => {
@@ -17,10 +18,8 @@ const ResultShare = () => {
 
     return (
         <main>
-            <section className={Style.choiceParams}>
+            <Section>
             <h3>{t('TR-res')}</h3>
-            </section>
-            <section className={Style.choiceParams}>
             <h1>{t('TR-type')}</h1>
             <div className={Style.center}>
                 <div>
@@ -39,6 +38,7 @@ const ResultShare = () => {
             </div>
                 </div>
             </div>
+            <div className={Style.choiceParams}>
             <h2>{t('TR-canMore')}</h2>
             <Link to='/text/type'>
             <button title={t('TR-try')}>{t('TR-try')}</button>
@@ -47,7 +47,8 @@ const ResultShare = () => {
             <Link to='/'>
             <button title={t('TR-tryCourse')} style={{background: 'linear-gradient(#6157FF, #EE49FD)'}}>{t('TR-tryCourse')}</button>
             </Link>
-            </section>
+            </div>
+            </Section>
         </main>
     );
 };

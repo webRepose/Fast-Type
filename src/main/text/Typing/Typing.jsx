@@ -29,6 +29,11 @@ import GreenButton from "../../../components/GreenButton/GreenButton";
 import Back from "../../../components/Back/Back";
 
 const Type = () => {
+if(window.localStorage.getItem('mode-time') === null || undefined) window.localStorage.setItem('mode-time', 60);
+if(window.localStorage.getItem('mode') === null || undefined) window.localStorage.setItem('mode', 't-time');
+if(window.localStorage.getItem('klava') === null || undefined) window.localStorage.setItem('klava', 'Qwerty');
+if(window.localStorage.getItem('lange') === null || undefined) window.localStorage.setItem('lange', 'en-US');
+
 const [t] = useTranslation(),
 inputArea = useRef(),
 inputBlock = useRef(),
@@ -54,10 +59,62 @@ textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
 [secTimerWords, setSecTimerWords] = useState(0),
 [textsRu] = useState(textLangs);
 
+
+const inputBackspace = (event) => {
+    if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
+};
+
+const inputCheck = (event)=> {
+    if(localStorage.getItem('mode') === 't-time') {
+        if(event.target.value.length === 1) setIsType(prev => prev = true);
+    } else {
+        if(event.target.value.length === 1) setIsTypeWords(prev => prev = true);
+
+        if(inputText[i] === event.nativeEvent.data && (event.nativeEvent.data === ' ' || event.nativeEvent.data === '-')) {
+            setOurCountWords(prev => prev -1);
+        }
+    }
+
+    if(inputText[i] === event.nativeEvent.data) {
+        if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
+            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+        } 
+
+        setI(prev => prev+1);
+        setSimbols(prev => prev+1);
+        if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
+            setWords(prev => prev+1);
+        }
+    }
+    else {
+        backSpace();
+        if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
+            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+        }
+        inputBlock.current.style.border = '1px solid red'
+        setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)
+        setErrorCount(prev => prev+1);
+
+        if(document.getElementById('Backspace') !== null || undefined) {
+        document.getElementById('Backspace').classList.add(Style.onKeyClickBackspace);
+        setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClickBackspace)},300)
+        }
+    };
+
+
+    if(event.target.value.length === countLength) {
+        setI(prev => prev = 0);
+        setCountLenght(prev => prev = textInput.length);
+        const textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
+        setInputText(prev => prev = textInput);
+        inputArea.current.value = '';
+    };
+};
+
     const shareMob = () => {
         navigator.share({
             text: t('TI-myRes'),
-            url: `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
+            url: `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
             title: t('TI-myRes')
         });
     };
@@ -66,11 +123,27 @@ textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
         setShare(prev => !prev);
     };
 document.title = t('TI-title');
-if(window.localStorage.getItem('mode-time') === null || undefined) window.localStorage.setItem('mode-time', 60);
-if(window.localStorage.getItem('mode') === null || undefined) window.localStorage.setItem('mode', 't-time');
-if(window.localStorage.getItem('klava') === null || undefined) window.localStorage.setItem('klava', 'Qwerty');
-if(window.localStorage.getItem('lange') === null || undefined) window.localStorage.setItem('lange', 'en-US');
 
+
+const Restart = () => {
+    setKlava(prev => prev = false);
+    setTimeout(()=>{    
+        setKlava(prev => prev = true);
+    },1)
+    
+    document.querySelector('html').style.overflow = '';
+    inputArea.current.focus()
+    setI(prev => prev = 0);
+    inputArea.current.value = '';
+    setSimbols(prev => prev = 0);
+    setWords(prev => prev = 0);
+    setErrorCount(prev => prev = 0);
+    setIsType(prev => prev = false);
+    setIsTypeWords(prev => prev = false);
+    setSecTimerWords(prev => prev = 0);
+    setTime(prev => prev = window.localStorage.getItem('mode-time'));
+    setOurCountWords(prev => prev = localStorage.getItem('mode-words'));
+}
 
 useEffect(()=>{
 let textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
@@ -99,7 +172,7 @@ if(changeTextNew === false) {
 
 changeTextNew && 
     setTextInputs(textsRu[Math.floor(Math.random()*textsRu.length)]);
-    setChangeTextNew(false);
+    setChangeTextNew(prev => prev = false);
 },[changeTextNew, textInputs, textsRu]);
 
 
@@ -173,10 +246,6 @@ const backSpace = () => {
     inputArea.current.value = backFun;
 } 
 
-const inputBackspace = (event) => {
-    if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
-};
-
 
 useEffect(()=>{
     const intervalTimer = setInterval(()=>{
@@ -201,53 +270,9 @@ useEffect(()=>{
 },[ourCountWords, secTimerWords, isTypeWords])
 
 
-const inputCheck = (event)=> {
-    if(localStorage.getItem('mode') === 't-time') {
-        if(event.target.value.length === 1) setIsType(prev => prev = true);
-    } else {
-        if(event.target.value.length === 1) setIsTypeWords(prev => prev = true);
-
-        if(inputText[i] === event.nativeEvent.data && (event.nativeEvent.data === ' ' || event.nativeEvent.data === '-')) {
-            setOurCountWords(prev => prev -1);
-        }
-    }
-
-
-    if(inputText[i] === event.nativeEvent.data) {
-        setI(prev => prev+1);
-        setSimbols(prev => prev+1);
-        if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) setWords(prev => prev+1);
-        if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i].toUpperCase()) !== undefined || null)) {
-            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
-        }
-        if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i].toUpperCase()) !== undefined || null)) {
-            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
-        }
-        if((localStorage.getItem('lange') === 'en-US') && (document.getElementById(inputText[i].toUpperCase()) !== undefined || null)) {
-            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
-        }
-    }
-    else {
-        backSpace()
-        inputBlock.current.style.border = '1px solid red'
-        setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)
-        setErrorCount(prev => prev+1);
-
-        if(document.getElementById('Backspace') !== null || undefined) {
-        document.getElementById('Backspace').classList.add(Style.onKeyClick);
-        setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClick)},300)
-        }
-    };
-
-
-    if(event.target.value.length === countLength) {
-        setI(prev => prev = 0);
-        setCountLenght(prev => prev = textInput.length);
-        const textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
-        setInputText(prev => prev = textInput);
-        inputArea.current.value = '';
-    };
-};
+if(document.getElementsByClassName(Style.onKeyClick).length >= 1) {
+    klava && document.getElementById(inputText[i-1].toUpperCase()).classList.remove(Style.onKeyClick);
+}
 
 useEffect(()=>{    
 const handler = (event)=>{
@@ -360,13 +385,13 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
                             <p>{t('H-Hist')}</p>
                         </Link>
                         </button>
-                        <button>
-                        <a title={t('TI-rep')} href='/text/type' className={Style.navBarActive}>
+                        <button onClick={Restart}>
+                        <Link title={t('TI-rep')} className={Style.navBarActive}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32.05 37">
                         <path d="M22.55,41.9A15.315,15.315,0,0,1,12.2,36.85,15.386,15.386,0,0,1,8,26.05,15.442,15.442,0,0,1,9.775,18.8a14.891,14.891,0,0,1,4.975-5.55L16.9,15.4a11.475,11.475,0,0,0-4.35,4.525A12.716,12.716,0,0,0,11,26.05a12.469,12.469,0,0,0,3.3,8.65,12.643,12.643,0,0,0,8.25,4.2Zm3,0v-3a12.743,12.743,0,0,0,8.25-4.225,12.486,12.486,0,0,0,3.25-8.625,12.89,12.89,0,0,0-13-13h-1l3,3L23.9,18.2l-6.65-6.65L23.9,4.9l2.15,2.15-3,3h1A15.4,15.4,0,0,1,35.4,14.725,15.466,15.466,0,0,1,40.05,26.05a15.436,15.436,0,0,1-4.175,10.8A15.223,15.223,0,0,1,25.55,41.9Z" transform="translate(-8 -4.9)" fill="#33d74b"/>
                         </svg>
                             <p>{t('TI-rep')}</p>
-                        </a>
+                        </Link>
                         </button>
                         <button title={t('TI-share')} onClick={/Android|iPad|iPhone|HarmonyOS|Mobile|Table|iOS|iPod|BlackBerry|WindowsPhone/i.test(navigator.userAgent) ? shareMob : sharePc}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 36.05 40">

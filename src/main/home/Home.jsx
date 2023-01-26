@@ -9,6 +9,7 @@ import GreenButton from '../../components/GreenButton/GreenButton';
 const Home = () => {
     const [t] = useTranslation();
     document.title = 'Fast Type';
+    document.querySelector('html').style.overflow = '';
     
     return (
         <main>
