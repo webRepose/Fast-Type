@@ -52,7 +52,6 @@ const Text = () => {
     useEffect(()=>{
         let handler = (event)=>{
         if(!refKlavaUl.current.contains(event.target) &&
-        !refKlavaBtn.current.contains(event.target) && 
         !refLangeBtn.current.contains(event.target)  &&
         !refTimeBtn.current.contains(event.target)  &&
         !refWordsBtn.current.contains(event.target)  &&
@@ -62,6 +61,16 @@ const Text = () => {
             setMode(prev => prev = false);
             setTime(prev => prev = false);
             setWords(prev => prev = false);
+        }
+
+        if(refKlavaBtn === true) {
+            if(!refKlavaBtn.current.contains(event.target)) {
+                setKlava(prev => prev = false);
+                setLange(prev => prev = false);
+                setMode(prev => prev = false);
+                setTime(prev => prev = false);
+                setWords(prev => prev = false);
+            }
         }
     }
         document.addEventListener('mousedown', handler);
@@ -75,29 +84,30 @@ const Text = () => {
             <h3>{t('T-options')}</h3>
             <section className={Style.params}>
                 <div className={Style.paramsBlock}>
-                    {/* klava */}
-                    <div className={Style.paramsSub}>
-                        <div className={Style.paramsText}>
-                            <div className={Style.paramsTextSub}>
-                            <img width='21px' height='21px' src="./img/text/keyboard.svg" alt="keyboard" />
-                        <p>{t('T-klava')}</p>
-                            </div>
-                        </div>
-                        <div>
-                        <button
-                        title={t('Ttitle-klava')} 
-                        ref={refKlavaBtn} 
-                        className={Style.paramsSelect} 
-                        onClick={()=>{
-                        setKlava(prev => !prev)
-                        setLange(prev => prev = false)
-                        setMode(prev => prev = false)
-                        setTime(prev => prev = false)
-                        setWords(prev => prev = false)
-                        }}>{window.localStorage.getItem('klava')}
-                        </button>
-                        </div>
-                    </div>
+                    {window.innerWidth >= 920 ?
+                                        <div className={Style.paramsSub}>
+                                        <div className={Style.paramsText}>
+                                            <div className={Style.paramsTextSub}>
+                                            <img width='21px' height='21px' src="./img/text/keyboard.svg" alt="keyboard" />
+                                        <p>{t('T-klava')}</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                        <button
+                                        title={t('Ttitle-klava')} 
+                                        ref={refKlavaBtn} 
+                                        className={Style.paramsSelect} 
+                                        onClick={()=>{
+                                        setKlava(prev => !prev)
+                                        setLange(prev => prev = false)
+                                        setMode(prev => prev = false)
+                                        setTime(prev => prev = false)
+                                        setWords(prev => prev = false)
+                                        }}>{window.localStorage.getItem('klava')}
+                                        </button>
+                                        </div>
+                                    </div> 
+                     : '' }
                     {/* lang */}
                     <div className={Style.paramsSub}>
                         <div className={Style.paramsText}>

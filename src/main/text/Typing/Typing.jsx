@@ -30,6 +30,7 @@ import Back from "../../../components/Back/Back";
 
 const Type = () => {
 if(window.localStorage.getItem('mode-time') === null || undefined) window.localStorage.setItem('mode-time', 60);
+if(window.localStorage.getItem('mode-words') === null || undefined) window.localStorage.setItem('mode-words', 50);
 if(window.localStorage.getItem('mode') === null || undefined) window.localStorage.setItem('mode', 't-time');
 if(window.localStorage.getItem('klava') === null || undefined) window.localStorage.setItem('klava', 'Qwerty');
 if(window.localStorage.getItem('lange') === null || undefined) window.localStorage.setItem('lange', 'en-US');
@@ -60,8 +61,11 @@ textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
 [textsRu] = useState(textLangs);
 
 
-
 const inputBackspace = (event) => {
+    console.log(event.key)
+    if(event.key === inputText[0]) {
+        alert('Yes')
+    }
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
 };
 
@@ -87,7 +91,9 @@ const inputCheck = (event)=> {
 
     if(inputText[i] === event.nativeEvent.data) {
         if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
+           if(localStorage.getItem('lange') === 'en-US') {
             klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+           }
         } 
 
         setI(prev => prev+1);
@@ -99,7 +105,9 @@ const inputCheck = (event)=> {
     else {
         backSpace();
         if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
-            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+            if(localStorage.getItem('lange') === 'en-US') {
+                klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+            }
         }
         inputBlock.current.style.border = '1px solid red'
         setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)

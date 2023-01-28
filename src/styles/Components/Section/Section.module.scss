@@ -4,11 +4,23 @@
     border-radius: var(--radius15);
     background-color: var(--block-color);
     margin-bottom: 20px;
+    animation: onLoad 0.3s ease-out;
     h3 {
         font-size: var(--font24);
         font-weight: bold;
         margin-bottom: 40px;
         text-align: center;
+    }
+}
+
+@keyframes onLoad {
+    0% {
+        transform: translateY(5px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-0px);
+        opacity: 1;
     }
 }
 
