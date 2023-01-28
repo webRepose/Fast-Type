@@ -62,10 +62,7 @@ textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
 
 
 const inputBackspace = (event) => {
-    console.log(event.key)
-    if(event.key === inputText[0]) {
-        alert('Yes')
-    }
+    alert(event.key)
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
 };
 
