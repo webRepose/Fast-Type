@@ -62,7 +62,7 @@ textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
 
 
 const inputBackspace = (event) => {
-    alert(event.key)
+    // console.log(event.code)
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
 };
 
@@ -181,6 +181,7 @@ if(changeTextNew === false) {
     setIsType(prev => prev = false);
     setIsTypeWords(prev => prev = false);
     setSecTimerWords(prev => prev = 0);
+    setMinTimerWords(prev => prev = 0);
     setTime(prev => prev = window.localStorage.getItem('mode-time'));
     setOurCountWords(prev => prev = localStorage.getItem('mode-words'));
 }
