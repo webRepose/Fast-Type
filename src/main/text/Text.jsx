@@ -62,8 +62,8 @@ const Text = () => {
             setTime(prev => prev = false);
             setWords(prev => prev = false);
         }
-
-        if(refKlavaBtn === true) {
+        console.log(refKlavaBtn)
+        if(refKlavaBtn.current === true) {
             if(!refKlavaBtn.current.contains(event.target)) {
                 setKlava(prev => prev = false);
                 setLange(prev => prev = false);
@@ -84,7 +84,7 @@ const Text = () => {
             <h3>{t('T-options')}</h3>
             <section className={Style.params}>
                 <div className={Style.paramsBlock}>
-                    {window.innerWidth >= 920 ?
+                    {window.innerWidth >= 920 &&
                                         <div className={Style.paramsSub}>
                                         <div className={Style.paramsText}>
                                             <div className={Style.paramsTextSub}>
@@ -106,8 +106,8 @@ const Text = () => {
                                         }}>{window.localStorage.getItem('klava')}
                                         </button>
                                         </div>
-                                    </div> 
-                     : '' }
+                                    </div>
+                                    }
                     {/* lang */}
                     <div className={Style.paramsSub}>
                         <div className={Style.paramsText}>
@@ -228,7 +228,6 @@ const Text = () => {
                                 setLange(prev => prev = false)
                                 window.localStorage.setItem('lange','en-US')
                             }}>English</li>
-                            <li title="France">France</li>
                         </ul>
                 <ul className={modeClass}>
                             <li title={t('T-onTime')} onClick={()=>{

@@ -66,13 +66,6 @@ const inputBackspace = (event) => {
 };
 
 const inputCheck = (event)=> {
-        if(event.nativeEvent.data.length >= 2) {
-            event.nativeEvent.data[0] = ''
-            alert(event.nativeEvent.data)
-        }
-
-
-
     if(localStorage.getItem('mode') === 't-time') {
         if(event.target.value.length === 1) setIsType(prev => prev = true);
     } else {
