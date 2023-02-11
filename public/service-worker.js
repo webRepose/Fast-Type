@@ -1,10 +1,10 @@
 const CACHE_NAME = 'v1';
 const urlToCache = [
     'index.html',
-    'offline.html'
+    'offline.html',
+    'img/offline/offline.webp',
 ];
 
-// const self = this;
 // install
 self.addEventListener('install', (event)=>{
     event.waitUntil(
@@ -35,7 +35,7 @@ self.addEventListener('activate', (event)=>{
         caches.keys().then(cacheNames => Promise.all(
             cacheNames.map((cacheName)=>{
                 if(!cacheWhiteList.includes(cacheName)) {
-                    return caches.delete(cacheName)
+                    return caches.delete(cacheName);
                 }
             })
         ))

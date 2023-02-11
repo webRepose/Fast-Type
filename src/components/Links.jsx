@@ -3,6 +3,7 @@ import React, { lazy, Suspense } from 'react';
 import Preloader from "./Preloader/Preloader";
 const Home = lazy(() => import('../main/home/Home')),
 History = lazy(() => import('../main/home/History/History')),
+Guids = lazy(() => import('../main/home/Guids/Guids')),
 HistoryID = lazy(() => import('../main/home/History/HistoryID/HistoryID')),
 Text = lazy(() => import('../main/text/Text')),
 Code = lazy(() => import('../main/code/Code')),
@@ -22,6 +23,7 @@ const Links = () => {
         <Route path="/" element={<Suspense fallback={<Preloader/>}><Header/></Suspense>}>
         <Route index element={<Suspense fallback={<Preloader/>}><Home/></Suspense>}></Route>
         <Route path='history' element={<Suspense fallback={<Preloader/>}><History/></Suspense>}></Route>
+        <Route path='guids' element={<Suspense fallback={<Preloader/>}><Guids/></Suspense>}></Route>
         <Route path='history/:id' element={<Suspense fallback={<Preloader/>}><HistoryID/></Suspense>}></Route>
         <Route path='text' element={<Suspense fallback={<Preloader/>}><Text/></Suspense>}></Route>
         <Route path='text/type' element={<Suspense fallback={<Preloader/>}><Type/></Suspense>}></Route>

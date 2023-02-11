@@ -1,0 +1,34 @@
+P {
+  font-size: 18px;
+}
+
+.guidsAbout {
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--aside-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.guidsAboutSecond {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--aside-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.guidsAboutPrint {
+  margin-bottom: 15px;
+}
+
+.guidsAboutTwo {
+  text-align: start;
+  margin-bottom: 5px;
+}/*# sourceMappingURL=Guids.module.css.map */

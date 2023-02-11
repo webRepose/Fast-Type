@@ -1,6 +1,6 @@
 [
     {
-        "img_src":"./img/home/stats.webp",
+        "img_src":"./img/home/statsLight.svg",
         "img_backColor":"stats-back",
         "text_translate": "H-Stat"
     },
@@ -21,7 +21,8 @@
     {
         "img_src":"./img/home/guid.webp",
         "img_backColor":"guid-back",
-        "text_translate": "H-Guid"
+        "text_translate": "H-Guid",
+        "link":"/guids"
     },
 
     {

@@ -11,34 +11,34 @@ const Klava = () => {
         <div className={Style.klava}>
         <div className={Style.klavaLine}>
         {KlavaFirst.map((lan, i)=>(
-            <div id={t(lan['klavaOne'])} className={`${lan['stBtn']}`} key={i}>
-                <p><sub>{t(lan['klavaOne'])}</sub><sup>{t(lan['klavaTwo'])}</sup></p>
+            <div translate="no" id={t(lan['klavaOne'])} className={`${lan['stBtn']}`} key={i}>
+                <p translate="no"><sub>{t(lan['klavaOne'])}</sub><sup>{t(lan['klavaTwo'])}</sup></p>
             </div>
         ))}
         </div>
         <div className={Style.klavaLine}>
         {KlavaSecond.map((lan, i)=>(
-            <div id={t(lan['klavaOne'])} className={`${lan['stBtn']}`} key={i}>
-                <p><sub>{t(lan['klavaOne'])}</sub><sup>{t(lan['klavaTwo'])}</sup></p>
+            <div translate="no" id={t(lan['klavaOne'])} className={`${lan['stBtn']}`} key={i}>
+                <p translate="no"><sub>{t(lan['klavaOne'])}</sub><sup>{t(lan['klavaTwo'])}</sup></p>
             </div>
         ))}
         </div>
         <div className={Style.klavaLine}>
         {KlavaThird.map((lan, i)=>(
-            <div id={t(lan['klavaOne'])}  className={`${lan['stBtn']}`} key={i}>
-                <p><sub>{t(lan['klavaOne'])} </sub><sup>{t(lan['klavaTwo'])}</sup></p>
+            <div translate="no" id={t(lan['klavaOne'])}  className={`${lan['stBtn']}`} key={i}>
+                <p translate="no"><sub>{t(lan['klavaOne'])} </sub><sup>{t(lan['klavaTwo'])}</sup></p>
             </div>
         ))}
         </div>
         <div className={Style.klavaLine}>
         {TypeKlava.map((lan, i)=>(
-            <div id={t(lan['klavaOne'])}  className={`${lan['stBtn']}`} key={i}>
-                <p><sub>{t(lan['klavaOne'])}</sub> <sup>{t(lan['klavaTwo'])}</sup></p>
+            <div translate="no" id={t(lan['klavaOne'])}  className={`${lan['stBtn']}`} key={i}>
+                <p translate="no"><sub>{t(lan['klavaOne'])}</sub> <sup>{t(lan['klavaTwo'])}</sup></p>
             </div>
         ))}
         </div>
-        <div className={Style.klavaLine}>
-        <div id=" " className={Style.klavaSpace}></div>
+        <div translate="no" className={Style.klavaLine}>
+        <div translate="no" id=" " className={Style.klavaSpace}></div>
         </div>
     </div>
     )

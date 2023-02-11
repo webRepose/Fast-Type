@@ -4,25 +4,13 @@
   border-radius: var(--radius15);
   background-color: var(--block-color);
   margin-bottom: 20px;
-  -webkit-animation: onLoad 0.3s ease-out;
-          animation: onLoad 0.3s ease-out;
+  animation: onLoad 0.3s ease-out;
 }
 .Block h3 {
   font-size: var(--font24);
   font-weight: bold;
   margin-bottom: 40px;
   text-align: center;
-}
-
-@-webkit-keyframes onLoad {
-  0% {
-    transform: translateY(5px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
 }
 
 @keyframes onLoad {

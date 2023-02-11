@@ -32,6 +32,14 @@
   color: var(--textT-color);
 }
 
+@media (max-width: 1366px) {
+  .klava p {
+    font-size: 17px !important;
+  }
+  .klavaLine div {
+    height: 40px;
+  }
+}
 @media (max-width: 965px) {
   .klava {
     display: none;

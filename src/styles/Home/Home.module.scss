@@ -43,6 +43,9 @@
             margin-top: 5px;
             text-align: center;
             font-size: var(--font21);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;   
         }
     }
 

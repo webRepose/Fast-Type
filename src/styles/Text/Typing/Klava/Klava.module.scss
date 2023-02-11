@@ -43,6 +43,18 @@
     }
 }
 
+@media (max-width: 1366px) {
+    .klava {
+        p {
+            font-size: 17px !important;
+        }
+
+        &Line div {
+            height: 40px;
+        }
+    }
+}
+
 
 @media (max-width: 965px) {
     .klava {

@@ -6,6 +6,15 @@ import Section from "../../components/Section/Section";
 import Back from '../../components/Back/Back';
 
 const Text = () => {
+    if(window.localStorage.getItem('klava') === null) localStorage.klava = 'Qwerty';
+    if(window.localStorage.getItem('mode') === null) localStorage.mode = 't-time';
+    if(window.localStorage.getItem('mode-time') === null) window.localStorage.setItem('mode-time', '60');
+    if(window.localStorage.getItem('mode-words') === null) window.localStorage.setItem('mode-words', '50');
+    if(window.localStorage.getItem('lange') === null) {
+        if(window.localStorage.getItem('i18nextLng') === 'ru') localStorage.lange = 'ru';
+        else if(window.localStorage.getItem('i18nextLng') === 'en') localStorage.lange = 'en-US';
+    }
+
     const [t] = useTranslation(),
     blockText = Style.blockText,
     none = Style.none,
@@ -15,6 +24,8 @@ const Text = () => {
     [mode, setMode] = useState(false),
     [time, setTime] = useState(false),
     [words, setWords] = useState(false),
+    modeClass = mode ?  flex : '',
+    modeClassText = mode ?  blockText : none,
     visibleWords = window.localStorage.getItem('mode') !== 't-time' ?  flex : none,
     classVisibleWords = [Style.paramsSub, visibleWords],
     visibleMin = window.localStorage.getItem('mode') === 't-time' ?  flex : none,
@@ -23,8 +34,7 @@ const Text = () => {
     timeClassText = time ?  blockText : none,
     wordsClass = words ?  flex : '',
     wordsClassText = words ?  blockText : none,
-    modeClass = mode ?  flex : '',
-    modeClassText = mode ?  blockText : none,
+
     langeClass = lange ?  flex : '',
     langeClassText = lange ?  blockText : none,
     klavaClassAbsolute = klava || lange || mode || time || words ?  Style.grid : '',
@@ -34,14 +44,6 @@ const Text = () => {
     document.title = t('T-title');
     if(klava || lange || mode || time || words) document.querySelector('html').style.overflow= 'hidden';
     else document.querySelector('html').style.overflow= '';
-    if(window.localStorage.getItem('klava') === null) window.localStorage.setItem('klava', 'Qwerty');
-    if(window.localStorage.getItem('mode-time') === null) window.localStorage.setItem('mode-time', '60');
-    if(window.localStorage.getItem('mode-words') === null) window.localStorage.setItem('mode-words', '50');
-    if(window.localStorage.getItem('mode') === null) window.localStorage.setItem('mode', 't-time');
-    if(window.localStorage.getItem('lange') === null) {
-        if(window.localStorage.getItem('i18nextLng') === 'ru') window.localStorage.setItem('lange', 'ru');
-        else if(window.localStorage.getItem('i18nextLng') === 'en') window.localStorage.setItem('lange', 'en-US');
-    }
 
     const refKlavaBtn = useRef(),
     refKlavaUl = useRef(),
@@ -62,7 +64,7 @@ const Text = () => {
             setTime(prev => prev = false);
             setWords(prev => prev = false);
         }
-        console.log(refKlavaBtn)
+
         if(refKlavaBtn.current === true) {
             if(!refKlavaBtn.current.contains(event.target)) {
                 setKlava(prev => prev = false);

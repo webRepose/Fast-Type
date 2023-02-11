@@ -3,6 +3,12 @@ import Style from '../../../styles/Text/Typing/Typing.module.css';
 import {useEffect, useRef, useState} from "react";
 import Klava from "./Klava/Klava";
 import { Link } from "react-router-dom";
+import CopyToClipboard from "react-copy-to-clipboard";
+import localesRu from './localesText/localesRU.json';
+import localesEn from './localesText/localesEN.json';
+import Section from "../../../components/Section/Section";
+import GreenButton from "../../../components/GreenButton/GreenButton";
+import Back from "../../../components/Back/Back";
 import {
     FacebookShareButton,
     LinkedinShareButton,
@@ -21,12 +27,6 @@ import {
     WhatsappIcon,
     FacebookMessengerShareButton
   } from "react-share";
-import CopyToClipboard from "react-copy-to-clipboard";
-import localesRu from './localesText/localesRU.json';
-import localesEn from './localesText/localesEN.json';
-import Section from "../../../components/Section/Section";
-import GreenButton from "../../../components/GreenButton/GreenButton";
-import Back from "../../../components/Back/Back";
 
 const Type = () => {
 if(window.localStorage.getItem('mode-time') === null || undefined) window.localStorage.setItem('mode-time', 60);
@@ -165,7 +165,7 @@ setInputText(prev => prev = textInput);
 setCountLenght(prev => prev = textInput.length);
 
 
-if(changeTextNew === false) {
+if(!changeTextNew) {
     setKlava(prev => prev = false);
     setTimeout(()=>{    
         setKlava(prev => prev = true);
@@ -322,8 +322,9 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
             }
             <div ref={inputBlock} className={Style.inputMain}>
             <div className={Style.inputBlock}>
-                <p className={Style.inputText}>{inputText}</p>
+                <p translate="no" className={Style.inputText}>{inputText}</p>
                 <textarea
+                translate="no"
                 ref={inputArea}
                 onKeyDown={inputBackspace}
                 onChange={inputCheck}
