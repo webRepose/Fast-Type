@@ -4,6 +4,7 @@ import Style from '../../../styles/Home/Guids/Guids.module.css';
 
 const Guids = () => {
     alert('in progress');
+    
     return (
         <main>
             <Section>

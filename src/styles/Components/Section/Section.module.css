@@ -27,6 +27,9 @@
   .Block h3 {
     font-size: var(--font21);
   }
+  .Block {
+    margin-bottom: 15px;
+  }
 }
 @media (max-width: 912px) {
   .Block h3 {

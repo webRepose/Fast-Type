@@ -204,6 +204,8 @@ ul a p {
   .navBar svg, .translateIcon {
     width: 15px;
     height: 15px;
+    position: relative;
+    top: 2px;
   }
   .navBarActive:last-child {
     margin-bottom: 5px;

@@ -78,6 +78,9 @@
   .homeWelcome h2, .homeWelcome h3 {
     font-size: var(--font18) !important;
   }
+  .homeTest {
+    margin-bottom: 15px;
+  }
 }
 @media (max-width: 1600px) {
   .homeStatsImg {
