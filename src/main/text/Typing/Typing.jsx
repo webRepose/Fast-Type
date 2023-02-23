@@ -66,6 +66,10 @@ const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
 };
 
+
+// console.log(inputArea.current + inputText[1]);
+// console.log(inputArea.current)
+
 const inputCheck = (event) => {
     if(localStorage.getItem('mode') === 't-time') {
         if(event.target.value.length === 1) setIsType(prev => prev = true);
@@ -85,8 +89,7 @@ const inputCheck = (event) => {
         } 
     }
 
-
-    if(!/Android|HarmonyOS|/i.test(navigator.userAgent) === false) {
+    if(!/Android|HarmonyOS/i.test(navigator.userAgent)) {
         if(inputText[i] === event.nativeEvent.data) {
             if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
                if(localStorage.getItem('lange') === 'en-US') {
@@ -117,7 +120,14 @@ const inputCheck = (event) => {
             }
     }
     } else {
-        alert('ban');
+        if(inputArea.current + inputText[i] === event.nativeEvent.data) {
+            setI(prev => prev+1);
+            console.log(inputArea + inputText[i]);
+            setSimbols(prev => prev+1);
+            if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
+                setWords(prev => prev + 1);
+            }
+        }
     };
 
 
