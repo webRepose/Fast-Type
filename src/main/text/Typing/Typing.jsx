@@ -60,12 +60,13 @@ textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
 [secTimerWords, setSecTimerWords] = useState(0),
 [textsRu] = useState(textLangs);
 
+document.title = t('TI-title');
 
 const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
 };
 
-const inputCheck = (event)=> {
+const inputCheck = (event) => {
     if(localStorage.getItem('mode') === 't-time') {
         if(event.target.value.length === 1) setIsType(prev => prev = true);
     } else {
@@ -85,34 +86,38 @@ const inputCheck = (event)=> {
     }
 
 
-    if(inputText[i] === event.nativeEvent.data) {
-        if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
-           if(localStorage.getItem('lange') === 'en-US') {
-            klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
-           }
-        } 
-
-        setI(prev => prev+1);
-        setSimbols(prev => prev+1);
-        if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
-            setWords(prev => prev+1);
-        }
-    }
-    else {
-        backSpace();
-        if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
-            if(localStorage.getItem('lange') === 'en-US') {
+    if(!/Android|HarmonyOS|/i.test(navigator.userAgent) === false) {
+        if(inputText[i] === event.nativeEvent.data) {
+            if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
+               if(localStorage.getItem('lange') === 'en-US') {
                 klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+               }
+            } 
+    
+            setI(prev => prev+1);
+            setSimbols(prev => prev+1);
+            if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
+                setWords(prev => prev + 1);
             }
         }
-        inputBlock.current.style.border = '1px solid red'
-        setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)
-        setErrorCount(prev => prev+1);
-
-        if(document.getElementById('Backspace') !== null || undefined) {
-        document.getElementById('Backspace').classList.add(Style.onKeyClickBackspace);
-        setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClickBackspace)},300)
-        }
+        else {
+            backSpace();
+            if(document.getElementById(inputText[i].toUpperCase()) !== undefined || null) {
+                if(localStorage.getItem('lange') === 'en-US') {
+                    klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+                }
+            }
+            inputBlock.current.style.border = '1px solid red'
+            setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)
+            setErrorCount(prev => prev+1);
+    
+            if(document.getElementById('Backspace') !== null || undefined) {
+            document.getElementById('Backspace').classList.add(Style.onKeyClickBackspace);
+            setTimeout(()=>{document.getElementById('Backspace').classList.remove(Style.onKeyClickBackspace)},300)
+            }
+    }
+    } else {
+        alert('ban');
     };
 
 
@@ -136,7 +141,6 @@ const inputCheck = (event)=> {
     const sharePc = ()=>{
         setShare(prev => !prev);
     };
-document.title = t('TI-title');
 
 
 const Restart = () => {
@@ -146,7 +150,7 @@ const Restart = () => {
     },1)
     
     document.querySelector('html').style.overflow = '';
-    inputArea.current.focus()
+    inputArea.current.focus();
     setI(prev => prev = 0);
     inputArea.current.value = '';
     setSimbols(prev => prev = 0);
@@ -279,9 +283,8 @@ useEffect(()=>{
         }
     }, 1000)
 
-    return () => {
-        clearInterval(intervalTimer);
-    }
+    return () => clearInterval(intervalTimer);
+    
 },[ourCountWords, secTimerWords, isTypeWords])
 
 
