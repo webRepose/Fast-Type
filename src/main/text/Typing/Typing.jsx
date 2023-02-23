@@ -120,7 +120,7 @@ const inputCheck = (event) => {
             }
     }
     } else if(/Android|HarmonyOS/i.test(navigator.userAgent)) {
-        if(inputArea.current.value + inputText[i] === event.nativeEvent.data) {
+        if(inputText[i] === event.nativeEvent.data) {
             setI(prev => prev+1);
             setSimbols(prev => prev+1);
             if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
@@ -129,6 +129,9 @@ const inputCheck = (event) => {
             setTimeout(() => {
                 console.log(inputArea.current.value + inputText[i+1]);
             }, 0);
+
+            alert(inputArea.current.value)
+            alert(inputText[i+1])
         }   else {
             backSpace();
             inputBlock.current.style.border = '1px solid red'
