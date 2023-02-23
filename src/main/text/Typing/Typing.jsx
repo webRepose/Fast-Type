@@ -69,7 +69,9 @@ const inputBackspace = (event) => {
 
 // console.log(inputArea.current + inputText[1]);
 // console.log(inputArea.current)
-let d = '';
+// let d = '';
+
+const [d, setD] = useState('');
 const inputCheck = (event) => {
     if(localStorage.getItem('mode') === 't-time') {
         if(event.target.value.length === 1) setIsType(prev => prev = true);
@@ -121,25 +123,23 @@ const inputCheck = (event) => {
     }
     } else if(/Android|HarmonyOS/i.test(navigator.userAgent)) {
         if(d + inputText[i] === event.nativeEvent.data) {
-            if(inputArea.current.value.length >= 1) d = inputArea.current.value;
+            if(inputArea.current.value.length >= 1) setD(prev => prev = inputArea.current.value)
 
             setI(prev => prev + 1);
             setSimbols(prev => prev + 1);
             if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
                 setWords(prev => prev + 1);
             }
-            setTimeout(() => {
-                console.log(inputArea.current.value + inputText[i+1]);
-            }, 0);
-            
 
-            console.log(inputArea.current.value.length)
+
+            setTimeout(() => {
+                console.log(inputArea.current.value);
+            }, 0);
             alert('value ' + d)
             console.log(d)
             alert('inp index' + inputText[i]);
             alert('nativeDate ' + event.nativeEvent.data)
-            // alert(inputArea.current.value)
-            // alert(inputText[i+1])
+
         }   else {
             backSpace();
             inputBlock.current.style.border = '1px solid red';
@@ -150,8 +150,6 @@ const inputCheck = (event) => {
             console.log(d)
             alert('inp index' + inputText[i]);
             alert('nativeDate ' + event.nativeEvent.data)
-            // alert(inputArea.current.value)
-            // alert(inputText[i+1])
     }
     };
 
