@@ -125,6 +125,7 @@ const inputCheck = (event) => {
             if(inputArea.current.value.length >= 1) d = inputArea.current.value;
             console.log(inputArea.current.value.length)
             console.log(d)
+            alert(d)
             setI(prev => prev + 1);
             setSimbols(prev => prev + 1);
             if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
@@ -138,8 +139,8 @@ const inputCheck = (event) => {
             alert(inputText[i+1])
         }   else {
             backSpace();
-            inputBlock.current.style.border = '1px solid red'
-            setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500)
+            inputBlock.current.style.border = '1px solid red';
+            setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500);
             setErrorCount(prev => prev+1);
 
             alert(inputArea.current.value)
