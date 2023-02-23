@@ -67,10 +67,6 @@ const inputBackspace = (event) => {
 };
 
 
-// console.log(inputArea.current + inputText[1]);
-// console.log(inputArea.current)
-// let d = '';
-
 const [d, setD] = useState('');
 const inputCheck = (event) => {
     if(localStorage.getItem('mode') === 't-time') {
@@ -98,7 +94,9 @@ const inputCheck = (event) => {
                 klava && document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
                }
             } 
-    
+            
+            // console.log(event)
+
             setI(prev => prev+1);
             setSimbols(prev => prev+1);
             if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
@@ -123,12 +121,10 @@ const inputCheck = (event) => {
     }
     } else if(/Android|HarmonyOS/i.test(navigator.userAgent)) {
         if(d + inputText[i] === event.nativeEvent.data) {
-
             if(event.nativeEvent.data === ' ') {
                 setD(prev => prev = '');
                 inputArea.current.value = ''
             }
-            
             if(inputArea.current.value.length >= 1) setD(prev => prev = inputArea.current.value)
 
             setI(prev => prev + 1);
@@ -138,13 +134,14 @@ const inputCheck = (event) => {
             }
 
 
-            setTimeout(() => {
-                console.log(inputArea.current.value);
-            }, 0);
-            alert('value ' + d)
-            console.log(d)
-            alert('inp index' + inputText[i]);
-            alert('nativeDate ' + event.nativeEvent.data)
+            // setTimeout(() => {
+            //     console.log(inputArea.current.value);
+            // }, 0);
+            // alert('value ' + d)
+            // console.log(d)
+            // alert('inp index' + inputText[i]);
+            // alert(event)
+            // alert('nativeDate ' + event.nativeEvent.data)
 
         }   else {
             backSpace();
@@ -152,10 +149,10 @@ const inputCheck = (event) => {
             setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500);
             setErrorCount(prev => prev+1);
 
-            alert('value ' + d)
-            console.log(d)
-            alert('inp index' + inputText[i]);
-            alert('nativeDate ' + event.nativeEvent.data)
+            // alert('value ' + d)
+            // console.log(d)
+            // alert('inp index' + inputText[i]);
+            // alert('nativeDate ' + event.nativeEvent.data)
     }
     };
 
