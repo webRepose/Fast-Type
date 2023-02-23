@@ -127,6 +127,7 @@ const inputCheck = (event) => {
             if(inputArea.current.value.length >= 1) setD(prev => prev = inputArea.current.value)
             if(event.nativeEvent.data === ' ') {
                 setD(prev => prev = '');
+                inputArea.current.value = ''
             }
 
             setI(prev => prev + 1);
