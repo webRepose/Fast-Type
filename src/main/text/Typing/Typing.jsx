@@ -121,12 +121,7 @@ const inputCheck = (event) => {
     }
     } else if(/Android|HarmonyOS/i.test(navigator.userAgent)) {
         if(d + inputText[i] === event.nativeEvent.data) {
-
-            console.log(inputArea.current.value.length)
-            alert('value ' + d)
-            console.log(d)
-            alert('inp index' + inputText[i]);
-            alert('nativeDate ' + event.nativeEvent.data)
+            if(inputArea.current.value.length >= 1) d = inputArea.current.value;
 
             setI(prev => prev + 1);
             setSimbols(prev => prev + 1);
@@ -137,8 +132,12 @@ const inputCheck = (event) => {
                 console.log(inputArea.current.value + inputText[i+1]);
             }, 0);
             
-            if(inputArea.current.value.length >= 1) d = inputArea.current.value;
 
+            console.log(inputArea.current.value.length)
+            alert('value ' + d)
+            console.log(d)
+            alert('inp index' + inputText[i]);
+            alert('nativeDate ' + event.nativeEvent.data)
             // alert(inputArea.current.value)
             // alert(inputText[i+1])
         }   else {
