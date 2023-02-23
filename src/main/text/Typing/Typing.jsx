@@ -122,10 +122,10 @@ const inputCheck = (event) => {
     } else if(/Android|HarmonyOS/i.test(navigator.userAgent)) {
         if(d + inputText[i] === event.nativeEvent.data) {
             console.log(inputArea.current.value.length)
-            alert('value', d)
+            alert('value ' + d)
             console.log(d)
-            alert('inp index', inputText[i]);
-            alert('nativeDate ',event.nativeEvent.data)
+            alert('inp index' + inputText[i]);
+            alert('nativeDate ' + event.nativeEvent.data)
             setI(prev => prev + 1);
             setSimbols(prev => prev + 1);
             if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
