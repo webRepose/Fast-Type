@@ -121,11 +121,13 @@ const inputCheck = (event) => {
     }
     } else if(/Android|HarmonyOS/i.test(navigator.userAgent)) {
         if(d + inputText[i] === event.nativeEvent.data) {
+
             console.log(inputArea.current.value.length)
             alert('value ' + d)
             console.log(d)
             alert('inp index' + inputText[i]);
             alert('nativeDate ' + event.nativeEvent.data)
+
             setI(prev => prev + 1);
             setSimbols(prev => prev + 1);
             if(event.nativeEvent.data === ' ' || event.nativeEvent.data === '-' ) {
@@ -145,6 +147,10 @@ const inputCheck = (event) => {
             setTimeout(()=>{inputBlock.current.style.border = '1px solid #707070'}, 500);
             setErrorCount(prev => prev+1);
 
+            alert('value ' + d)
+            console.log(d)
+            alert('inp index' + inputText[i]);
+            alert('nativeDate ' + event.nativeEvent.data)
             // alert(inputArea.current.value)
             // alert(inputText[i+1])
     }
