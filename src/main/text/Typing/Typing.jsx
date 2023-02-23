@@ -124,10 +124,10 @@ const inputCheck = (event) => {
     } else if(/Android|HarmonyOS/i.test(navigator.userAgent)) {
         if(d + inputText[i] === event.nativeEvent.data) {
 
+            if(inputArea.current.value.length >= 1) setD(prev => prev = inputArea.current.value)
             if(event.nativeEvent.data === ' ') {
                 setD(prev => prev = '');
             }
-            if(inputArea.current.value.length >= 1) setD(prev => prev = inputArea.current.value)
 
             setI(prev => prev + 1);
             setSimbols(prev => prev + 1);
