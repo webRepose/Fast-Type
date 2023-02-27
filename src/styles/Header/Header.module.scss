@@ -122,6 +122,11 @@ ul {
         position: relative;
         top: -3px;
     }
+
+    svg {
+        position: relative;
+        top: -2px;
+    }
 }
 
 .langChange {
@@ -194,6 +199,10 @@ ul {
     .navBar svg, .translateIcon  {
         width: 17px;
         height: 17px;
+    }
+
+    .lang svg {
+        top: 0;
     }
 }
 

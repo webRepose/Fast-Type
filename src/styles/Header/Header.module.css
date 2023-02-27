@@ -102,6 +102,10 @@ ul a p {
   position: relative;
   top: -3px;
 }
+.lang svg {
+  position: relative;
+  top: -2px;
+}
 
 .langChange {
   display: none;
@@ -166,6 +170,9 @@ ul a p {
   .navBar svg, .translateIcon {
     width: 17px;
     height: 17px;
+  }
+  .lang svg {
+    top: 0;
   }
 }
 @media (max-width: 1600px) {

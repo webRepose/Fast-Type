@@ -1,34 +1,98 @@
-P {
-  font-size: 18px;
-}
-
-.guidsAbout {
-  max-width: 700px;
+.guideAnswer {
+  padding: 15px 30px;
+  border-radius: 25px;
+  width: 100%;
   margin: 0 auto;
-  display: block;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: var(--aside-color);
-  text-align: center;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
-
-.guidsAboutSecond {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: var(--aside-color);
+.guideAnswer h4 {
+  font-size: var(--font18);
   text-align: center;
+  color: var(--textT-color);
+}
+.guideCream {
+  background-color: var(--ThemeButton-color);
+}
+.guideViolet {
+  background-color: #4B2279;
+}
+.guideRed {
+  background-color: #FF2E54;
+}
+.guideLazure {
+  background-color: #2EB7A7;
+}
+.guideBorde {
+  background-color: #773656;
+}
+.guideDarkBlue {
+  background-color: #3C3C56;
+}
+.guideCreamPurple {
+  background-color: #9DA2E8;
+}
+.guideClick {
+  animation: clickMeCream 1.4s linear infinite;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
   margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+.guideClick:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+.guideClick button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+  font-size: 21px;
+  padding: 15px 30px;
+  color: var(--textT-color);
+}
+.guideLeft {
+  animation: left 0.6s ease;
+}
+.guideRight {
+  animation: right 0.6s ease;
 }
 
-.guidsAboutPrint {
-  margin-bottom: 15px;
+@keyframes clickMeCream {
+  0% {
+    box-shadow: 0 0 0 0 var(--ThemeButton-color);
+  }
+  50% {
+    box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+  }
 }
-
-.guidsAboutTwo {
-  text-align: start;
-  margin-bottom: 5px;
+@keyframes left {
+  0% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes right {
+  0% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@media (max-width: 1366px) {
+  .guideAnswer h4, .guideQuestion h4 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 540px) {
+  .guideAnswer {
+    padding: 15px 10px;
+  }
 }/*# sourceMappingURL=Guids.module.css.map */
