@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import GreenButton from '../../../components/GreenButton/GreenButton';
 import Back from '../../../components/Back/Back';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 const History = () => {
     document.querySelector('html').style.overflow = '';
     const [t] = useTranslation();
-    document.title = t('H-Hist');
 
     const [checkHistory, setChechHistory] = useState(null);
     useEffect(()=>{
@@ -28,6 +28,21 @@ const History = () => {
 
     return (
         <main>
+            <HelmetProvider>
+                <Helmet>
+                    <title>{t('HH-title')}</title>
+                    <meta name="description" content={t('TI-description')}></meta>
+                    <link rel="canonical" href="https://fast-type-red.vercel.app/history"/>
+                    <meta name="author" content="https://fast-type-red.vercel.app/"></meta>
+                    <meta name="apple-mobile-web-app-title" content={t('HH-title')}></meta>
+                    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+                    <meta property="og:type" content="website"></meta>
+                    <meta property="og:title" content={t('HH-title')}></meta>
+                    <meta property="og:description" content={t('TI-description')}></meta>
+                    <meta property="og:image" content="../../../../public/img/logo.png"></meta>
+                    <meta property="og:url" content="https://fast-type-red.vercel.app/"></meta>
+                </Helmet>
+            </HelmetProvider>
             <Section>
             <Back/>
                 <h3>{t('H-Hist')}</h3>

@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Style from '../../../styles/Text/Typing/Typing.module.css';
 import {useEffect, useRef, useState} from "react";
 import Klava from "./Klava/Klava";
@@ -59,8 +60,6 @@ textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
 [minTimerWords, setMinTimerWords] = useState(0),
 [secTimerWords, setSecTimerWords] = useState(0),
 [textsRu] = useState(textLangs);
-
-document.title = t('TI-title');
 
 const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
@@ -319,6 +318,22 @@ return ()=> document.removeEventListener('mousedown', handler);
 const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
     return (
         <>
+            <HelmetProvider>
+                <Helmet>
+                    <title>{t('TI-title')}</title>
+                    <meta name="description" content={t('TI-description')}></meta>
+                    <link rel="canonical" href="https://fast-type-red.vercel.app/text/type"/>
+                    <meta name="author" content="https://fast-type-red.vercel.app/"></meta>
+                    <meta name="keywords" content="Тренажер слепой печати, Слепая печать, Уроки слепой печати, Тренинг печати, Тренинг слепой печати, Blind Print Trainer, Blind Print, Blind Print Lessons, Blind Print Training, Blind Print Training"></meta>
+                    <meta name="apple-mobile-web-app-title" content={t('TI-title')}></meta>
+                    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+                    <meta property="og:type" content="website"></meta>
+                    <meta property="og:title" content={t('TI-title')}></meta>
+                    <meta property="og:description" content={t('TI-description')}></meta>
+                    <meta property="og:image" content="../../../../../public/img/logo.png"></meta>
+                    <meta property="og:url" content="https://fast-type-red.vercel.app/"></meta>
+                </Helmet>
+            </HelmetProvider>
         <main>
         <Section>
         <Back/>

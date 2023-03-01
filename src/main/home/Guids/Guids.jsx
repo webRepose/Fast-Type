@@ -3,7 +3,7 @@ import Back from '../../../components/Back/Back';
 import Style from '../../../styles/Home/Guids/Guids.module.css';
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Guids = () => {
     const [blindTog, setBlindTog] = useState(false),
@@ -15,9 +15,24 @@ const Guids = () => {
     [speedTypeTog, setSpeedTypeTog] = useState(false),
     [t] = useTranslation();
 
-
     return (
         <main>
+            <HelmetProvider>
+                <Helmet>
+                    <title>{t('HG-title')}</title>
+                    <meta name="description" content={t('HG-description')}></meta>
+                    <link rel="canonical" href="https://fast-type-red.vercel.app/guids"/>
+                    <meta name="author" content="https://fast-type-red.vercel.app/"></meta>
+                    <meta name="keywords" content="Советы по слепой печати, Слепая печать, Что такое слепая печать, Лучшие способы слепой печати, Tips for blind typing, Blind typing, What is blind typing, The best ways to print blindly"></meta>
+                    <meta name="apple-mobile-web-app-title" content={t('HG-title')}></meta>
+                    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+                    <meta property="og:type" content="website"></meta>
+                    <meta property="og:title" content={t('HG-title')}></meta>
+                    <meta property="og:description" content={t('HG-description')}></meta>
+                    <meta property="og:image" content="../../../../public/img/logo.png"></meta>
+                    <meta property="og:url" content="https://fast-type-red.vercel.app/"></meta>
+                </Helmet>
+            </HelmetProvider>
             <Section>
             <Back/>
             <h3>{t('HG-answer')}</h3>

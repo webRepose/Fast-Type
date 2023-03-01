@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import Section from "../../components/Section/Section";
 import Back from '../../components/Back/Back';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Text = () => {
     if(window.localStorage.getItem('klava') === null) localStorage.klava = 'Qwerty';
@@ -41,7 +42,6 @@ const Text = () => {
     klavaClass = klava ?  flex : '',
     klavaClassText = klava ?  blockText : none,
     ourKlavaClass = [Style.paramsChoice, klavaClassAbsolute];
-    document.title = t('T-title');
     if(klava || lange || mode || time || words) document.querySelector('html').style.overflow= 'hidden';
     else document.querySelector('html').style.overflow= '';
 
@@ -81,6 +81,22 @@ const Text = () => {
 
     return (
         <main>
+            <HelmetProvider>
+                <Helmet>
+                    <title>{t('T-title')}</title>
+                    <meta name="description" content={t('TI-description')}></meta>
+                    <link rel="canonical" href="https://fast-type-red.vercel.app/text"/>
+                    <meta name="author" content="https://fast-type-red.vercel.app/"></meta>
+                    <meta name="keywords" content="Тренажер слепой печати, Слепая печать, Уроки слепой печати, Тренинг печати, Тренинг слепой печати, Blind Print Trainer, Blind Print, Blind Print Lessons, Blind Print Training, Blind Print Training"></meta>
+                    <meta name="apple-mobile-web-app-title" content={t('T-title')}></meta>
+                    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+                    <meta property="og:type" content="website"></meta>
+                    <meta property="og:title" content={t('T-title')}></meta>
+                    <meta property="og:description" content={t('TI-description')}></meta>
+                    <meta property="og:image" content="../../../../public/img/logo.png"></meta>
+                    <meta property="og:url" content="https://fast-type-red.vercel.app/"></meta>
+                </Helmet>
+            </HelmetProvider>
             <Section>
             <Back/>
             <h3>{t('T-options')}</h3>

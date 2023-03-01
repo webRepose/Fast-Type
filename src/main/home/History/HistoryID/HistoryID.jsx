@@ -1,3 +1,4 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useParams } from "react-router-dom";
 import Section from "../../../../components/Section/Section";
 import GreenButton from "../../../../components/GreenButton/GreenButton";
@@ -8,12 +9,24 @@ import Back from "../../../../components/Back/Back";
 
 const HistoryID = () => {
     const [t] = useTranslation();
-    document.title = t('HHH-title');
     const {id} = useParams();
     const res = JSON.parse(localStorage.getItem('HistoryData'));
 
     return (
         <main>
+            <HelmetProvider>
+                <Helmet>
+                    <title>{t('HHH-title')}</title>
+                    <link rel="canonical" href="https://fast-type-red.vercel.app/history/"/>
+                    <meta name="author" content="https://fast-type-red.vercel.app/"></meta>
+                    <meta name="apple-mobile-web-app-title" content={t('HHH-title')}></meta>
+                    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+                    <meta property="og:type" content="website"></meta>
+                    <meta property="og:title" content={t('HHH-title')}></meta>
+                    <meta property="og:image" content="../../../../public/img/logo.png"></meta>
+                    <meta property="og:url" content="https://fast-type-red.vercel.app/"></meta>
+                </Helmet>
+            </HelmetProvider>
             <Section>
             <Back/>
             <h3>{t('H-Stat')}</h3>

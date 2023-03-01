@@ -17,8 +17,9 @@
     "H-Work":"Work on errors",
     "H-Guid":"Questions",
     "H-Help":"Help",
+    "H-description":"Fast Type - Blind Type Trainer",
 
-    "T-title":"Input parameters",
+    "T-title":"Input parameters | Fast Type",
     "T-options":"Select options:",
     "T-klava":"Choose a keyboard layout:",
     "T-lang":"Select the input language:",
@@ -44,7 +45,8 @@
     "NF-home":"Back home",
     "NF-gohome":"Go home!",
 
-    "TI-title":"Typing text",
+    "TI-description":"The Blind Print Trainer, where you can practice your typing and learn to type quickly and blindly.",
+    "TI-title":"Typing text | Fast Type",
     "TI-myRes":"My typing results, You try it!",
     "TI-tyText":"Type the text",
     "TI-changeText":"Change the text",
@@ -80,6 +82,7 @@
     "TIS-or":"or",
     "TIS-back":"Back",
 
+    "HH-title":"History | Fast Type",
     "HH-clear":"Clear history",
     "HH-confirm":"Do you really want to delete the history?",
     "HH-tapTo":"Click to view detailed information",
@@ -90,7 +93,7 @@
     "HH-try":"Try",
 
     
-    "HHH-title":"History details",
+    "HHH-title":"History details | Fast Type",
     "HHH-data":"Date",
     "HHH-correct":"Correctly",
     "HHH-countWords":"Number of words",
@@ -98,6 +101,8 @@
     "HHH-countErrors":"Number of errors",
     "HHH-forTime":"During the",
 
+    "HG-title":"Answers to Questions - Blind Print | Fast Type",
+    "HG-description":"Here you will learn why blind printing is needed, how many fingers are involved in blind printing, the advantages of blind printing, the disadvantages of blind printing, how much typing with blind printing, professions where blind printing is needed.",
     "HG-answer":"Answers to Questions",
     "HG-whatsBlind":"What is blind printing?",
     "HG-clickTo":"Click to open",
