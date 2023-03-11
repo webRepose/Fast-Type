@@ -6,7 +6,7 @@
     margin-bottom: 20px;
     position: relative;
     animation: onLoad 0.3s ease-out;
-    h3 {
+    h1 {
         font-size: var(--font24);
         font-weight: bold;
         margin-bottom: 40px;
@@ -26,7 +26,7 @@
 }
 
 @media (max-width: 1760px) {
-    .Block h3 {
+    .Block h1 {
         font-size: var(--font21);
     }
 
@@ -37,7 +37,7 @@
 
 
 @media (max-width: 912px) {
-    .Block h3 {
+    .Block h1 {
         margin-bottom: 30px;
     }
 }

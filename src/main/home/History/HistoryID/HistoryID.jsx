@@ -29,7 +29,7 @@ const HistoryID = () => {
             </HelmetProvider>
             <Section>
             <Back/>
-            <h3>{t('H-Stat')}</h3>
+            <h1>{t('H-Stat')}</h1>
             <div className={Style.hisBlockDate}>
             <h4><img src='../img/home/History/HistoryID/date.svg' alt="icon"/> {t('HHH-data')}</h4>
             <p>{res[id].times} <span> || </span> {res[id].timesNow}</p>

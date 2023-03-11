@@ -29,7 +29,7 @@ import {
     FacebookMessengerShareButton
   } from "react-share";
 
-const Type = () => {
+const Type = () => {   
 if(window.localStorage.getItem('mode-time') === null || undefined) window.localStorage.setItem('mode-time', 60);
 if(window.localStorage.getItem('mode-words') === null || undefined) window.localStorage.setItem('mode-words', 50);
 if(window.localStorage.getItem('mode') === null || undefined) window.localStorage.setItem('mode', 't-time');
@@ -65,6 +65,13 @@ const inputBackspace = (event) => {
     if(event.keyCode === 8 || event.key ==='Backspace' || event.which === 8) event.preventDefault();
 };
 
+// let docTitle = document.title;
+// window.addEventListener('blur', () => {
+//     document.title = 'Come back please :('
+// })
+// window.addEventListener('focus', () => {
+//     document.title = docTitle;
+// })
 
 const [d, setD] = useState('');
 const inputCheck = (event) => {
@@ -337,7 +344,7 @@ const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors
         <main>
         <Section>
         <Back/>
-        <h3>{t('TI-tyText')}</h3>
+        <h1>{t('TI-tyText')}</h1>
            <div className={Style.part}>
             <div className={Style.partFirst}>
             {allResVsisible &&

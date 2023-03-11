@@ -45,7 +45,7 @@ const History = () => {
             </HelmetProvider>
             <Section>
             <Back/>
-                <h3>{t('H-Hist')}</h3>
+                <h1>{t('H-Hist')}</h1>
                 {checkHistory ? 
                 <>
                 <GreenButton onClick={clear}>{t('HH-clear')}</GreenButton>

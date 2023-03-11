@@ -13,7 +13,7 @@ const NF404 = () => {
             <Back/>
                 <div className={Style.notFoundMain}>
                 <div className={Style.notFound}>
-                <h3>{t('NF-lost')}</h3>
+                <h1>{t('NF-lost')}</h1>
                 <img src="../../../../../img/404/404.webp" alt="404"/>
                 <p>{t('NF-find')}</p>
                 <Link to='/'>

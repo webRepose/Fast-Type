@@ -16,7 +16,7 @@
     "H-Hist":"History",
     "H-Work":"Work on errors",
     "H-Guid":"Questions",
-    "H-Help":"Help",
+    "H-Help":"Tips",
     "H-description":"Fast Type - Blind Type Trainer",
 
     "T-title":"Input parameters | Fast Type",
@@ -133,6 +133,28 @@
     "HG-blindSpeed":"Average typing speed?",
     "HG-blindSpeedMiddleTwo":"1. The average typing speed for the standard two-finger method is 150-200 characters per minute.",
     "HG-blindSpeedMiddleTen":"2. The average speed of the ten-finger method is 350-400 characters per minute.",
+
+
+    "HT-description":"Basic tips for blind typing. How to write correctly using blind typing.",
+    "HT-title":"Tips for blind printing | Fast Type",
+    "HT-first":"You need a source of motivation",
+    "HT-second":"Develop discipline",
+    "HT-third":"Watch your hands and fingers",
+    "HT-four":"Type long, memorizing the button locations on a muscular level.",
+    "HT-five":"Don't look at the keyboard",
+    "HT-six":"Practice",
+    "HT-seven":"Patience",
+    "HT-firstAnswer":"Without motivation you will not pass the right way. You need to think about what the blind seal will give you and why you need it, if you do let go and find excuses you need to realize how much easier your life can be with the blind seal.",
+    "HT-secondAnswer":"Only with steady performance can you achieve something, this applies to all skills and blind typing is no exception. Take a certain amount of time a day for blind typing, even 20 minutes every day can change your life in a year. Sometimes it can even be through pain, but that's the way to succeed, you can't have it all at once.",
+    "HT-thirdAnswer1":"Blind printing uses a basic hand placement:",
+    "HT-thirdAnswer2":"The fingers of the left hand are on the ASDF.",
+    "HT-thirdAnswer3":"The fingers of the right hand are on the JKL; .",
+    "HT-thirdAnswer4":"Example:",
+    "HT-fourAnswer":"Do not get discouraged and take your time, at the beginning it is much more important not the speed of your typing but the correctness, get into the habit of correct characters so that you do not habitually press the wrong ones and thus take time to remove them. The more you practice, the better your results will be, the main thing is not to rush.",
+    "HT-fiveAnswer":"You can't look at the keyboard while typing, you have to wean yourself off this and look directly at the monitor, specially for this in our simulator there is a keyboard when you type. If you don't stop yourself from doing this, most likely your progress will slow down a lot or stop going at all.",
+    "HT-sixAnswer":"With the help of communication on social media or at work, you can try to practice in a more live environment where there are no cues, it will increase your confidence.",
+    "HT-sevenAnswer":"You need patience, it is impossible to master something quickly, but in the case of blind printing take your time and do not expect everything to work out from the first attempts, everyone makes mistakes, remember everything is possible and it is within your power.",
+
 
 
     "T-`":"`",

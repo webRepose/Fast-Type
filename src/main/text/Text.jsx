@@ -99,7 +99,7 @@ const Text = () => {
             </HelmetProvider>
             <Section>
             <Back/>
-            <h3>{t('T-options')}</h3>
+            <h1>{t('T-options')}</h1>
             <section className={Style.params}>
                 <div className={Style.paramsBlock}>
                     {window.innerWidth >= 920 &&

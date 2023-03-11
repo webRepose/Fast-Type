@@ -21,7 +21,7 @@ const Guids = () => {
                 <Helmet>
                     <title>{t('HG-title')}</title>
                     <meta name="description" content={t('HG-description')}></meta>
-                    <link rel="canonical" href="https://fast-type-red.vercel.app/guids"/>
+                    <link rel="canonical" href="https://fast-type-red.vercel.app/answers"/>
                     <meta name="author" content="https://fast-type-red.vercel.app/"></meta>
                     <meta name="keywords" content="Советы по слепой печати, Слепая печать, Что такое слепая печать, Лучшие способы слепой печати, Tips for blind typing, Blind typing, What is blind typing, The best ways to print blindly"></meta>
                     <meta name="apple-mobile-web-app-title" content={t('HG-title')}></meta>
@@ -35,7 +35,7 @@ const Guids = () => {
             </HelmetProvider>
             <Section>
             <Back/>
-            <h3>{t('HG-answer')}</h3>
+            <h1>{t('HG-answer')}</h1>
             <div className={`${Style.guideClick} ${Style.guideCream}`}>
                 <button onClick={()=>{
                     setBlindTog(prev => !prev)

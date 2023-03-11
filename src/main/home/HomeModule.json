@@ -22,13 +22,14 @@
         "img_src":"./img/home/guid.webp",
         "img_backColor":"guid-back",
         "text_translate": "H-Guid",
-        "link":"/guids"
+        "link":"/answers"
     },
 
     {
         "img_src":"./img/home/what.webp",
         "img_backColor":"help-back",
-        "text_translate": "H-Help"
+        "text_translate": "H-Help",
+        "link":"/tips"
     },
 
     {
