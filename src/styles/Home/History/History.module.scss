@@ -62,8 +62,6 @@
     }
 
     img {
-        display: block;
-        margin: 40px auto;
         width: 160px;
     }
 
@@ -76,4 +74,10 @@
     .historyBlockEmpty button {
         padding: 10px 60px;
     }
+}
+.imgpost {
+    width: 160px;
+    height: 225px;
+    display: block;
+    margin: 40px auto;
 }

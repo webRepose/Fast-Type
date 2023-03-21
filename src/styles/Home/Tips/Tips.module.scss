@@ -43,7 +43,6 @@
     &Answer {
         padding: 0 20px;
         font-size: 18px;
-        // font-style: italic;
         margin-bottom: 40px;
     }
 
@@ -52,6 +51,11 @@
         margin: 0 auto;
         user-select: none;
         margin-bottom: 40px;
+    }
+
+    .imgpost {
+        width: 600px;
+        height: 200px;
     }
 }
 
@@ -72,15 +76,11 @@
 @media (max-width: 640px) {
     .tips {
         &Klava {
-            width: 100%;
+            width: 90%;
+        }
+        .imgpost {
+            width: 337px;
+            height: 113px;
         }
     }
 }
-
-// @media (max-width: 440px) {
-//     .tips {
-//         &Klava {
-//             width: 300px;
-//         }
-//     }
-// }

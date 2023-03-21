@@ -1,11 +1,8 @@
-function Code() {
-    return (
-        <>
-        <main>
-        <h1>Code</h1>
-        </main>
-        </>
-    );
+import Soon from "../../components/Soon/Soon";
+
+const Code = () => {
+    document.title = 'Code | Fast Type';
+    return <Soon/>;
 };
 
 export default Code;

@@ -1,0 +1,40 @@
+.soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  min-height: 80vh;
+}
+.soon img {
+  display: block;
+  position: absolute;
+  width: 200px;
+  margin: 0 auto;
+}
+.soon button {
+  border: 0;
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: var(--radius25);
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, rgb(97, 87, 255), rgb(238, 73, 253));
+  padding: 10px 60px;
+  color: var(--textT-color);
+}
+.soon button:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.imgpost {
+  position: relative;
+  width: 200px;
+  height: 134px;
+}
+
+@media (max-width: 480px) {
+  .soon {
+    min-height: 70vh;
+  }
+}/*# sourceMappingURL=Soon.module.css.map */

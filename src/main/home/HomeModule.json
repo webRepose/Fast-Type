@@ -2,7 +2,8 @@
     {
         "img_src":"./img/home/statsLight.svg",
         "img_backColor":"stats-back",
-        "text_translate": "H-Stat"
+        "text_translate": "H-Stat",
+        "link":"/stats"
     },
 
     {
@@ -15,7 +16,8 @@
     {
         "img_src":"./img/home/work.webp",
         "img_backColor":"work-back",
-        "text_translate": "H-Work"
+        "text_translate": "H-Work",
+        "link":"/workon"
     },
 
     {
@@ -35,6 +37,7 @@
     {
         "img_src":"./img/home/course.webp",
         "img_backColor":"courses-back",
-        "text_translate": "Courses"
+        "text_translate": "Courses",
+        "link":"/course"
     }
 ]

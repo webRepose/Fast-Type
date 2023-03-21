@@ -44,7 +44,9 @@ const Tips = () => {
                 {t('HT-thirdAnswer3')} <br/>
                 <b>{t('HT-thirdAnswer4')}</b>
                 </p>
+                <div className={Style.imgpost}>
                 <img className={Style.tipsKlava} width={600} src='./img/home/Guids/keyboard.svg' alt="Keyboard place"/>
+                </div>
                 <div className={`${Style.tipsBlockTip} ${Style.tipsOrange}`}>
                     <h3>4. {t('HT-four')}</h3>
                 </div>

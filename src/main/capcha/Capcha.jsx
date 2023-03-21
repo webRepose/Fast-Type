@@ -1,12 +1,8 @@
-function Capcha() {
-    document.title = 'capcha';
-    return (
-        <>
-        <main>
-        <h1>Capcha</h1>
-        </main>
-        </>
-    );
+import Soon from "../../components/Soon/Soon";
+
+const Capcha = () => {
+    document.title = 'Capcha | Fast Type';
+    return <Soon/>
 };
 
 export default Capcha;

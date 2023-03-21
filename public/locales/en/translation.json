@@ -43,7 +43,7 @@
     "NF-lost":"You're lost in space",
     "NF-find":"We couldn't find the page are looking for..",
     "NF-home":"Back home",
-    "NF-gohome":"Go home!",
+    "NF-gohome":"Go home",
 
     "TI-description":"The Blind Print Trainer, where you can practice your typing and learn to type quickly and blindly.",
     "TI-title":"Typing text | Fast Type",
@@ -155,7 +155,7 @@
     "HT-sixAnswer":"With the help of communication on social media or at work, you can try to practice in a more live environment where there are no cues, it will increase your confidence.",
     "HT-sevenAnswer":"You need patience, it is impossible to master something quickly, but in the case of blind printing take your time and do not expect everything to work out from the first attempts, everyone makes mistakes, remember everything is possible and it is within your power.",
 
-
+    "CS-soon": "Coming soon",
 
     "T-`":"`",
     "T-~":"~",

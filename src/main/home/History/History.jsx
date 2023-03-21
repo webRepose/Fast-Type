@@ -72,7 +72,9 @@ const History = () => {
                 <div className={Style.historyBlockEmpty}>
                     <div>
                     <h4>{t('HH-empty')}</h4>
+                    <div className={Style.imgpost}>
                     <img src="./img/home/History/Empty1.png" alt='Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>' />
+                    </div>
                     <h4>{t('HH-tryNow')}</h4>
                     <Link to='/text/type'>
                     <GreenButton title={t('HH-try')}>{t('HH-try')}</GreenButton>

@@ -42,6 +42,10 @@
           user-select: none;
   margin-bottom: 40px;
 }
+.tips .imgpost {
+  width: 600px;
+  height: 200px;
+}
 
 @media (max-width: 1600px) {
   .tipsBlockTip {
@@ -56,6 +60,10 @@
 }
 @media (max-width: 640px) {
   .tipsKlava {
-    width: 100%;
+    width: 90%;
+  }
+  .tips .imgpost {
+    width: 337px;
+    height: 113px;
   }
 }/*# sourceMappingURL=Tips.module.css.map */
