@@ -30,18 +30,26 @@ import {
   } from "react-share";
 
 const Type = () => {   
-if(window.localStorage.getItem('mode-time') === null || undefined) window.localStorage.setItem('mode-time', 60);
-if(window.localStorage.getItem('mode-words') === null || undefined) window.localStorage.setItem('mode-words', 50);
-if(window.localStorage.getItem('mode') === null || undefined) window.localStorage.setItem('mode', 't-time');
-if(window.localStorage.getItem('klava') === null || undefined) window.localStorage.setItem('klava', 'Qwerty');
-if(window.localStorage.getItem('lange') === null || undefined) window.localStorage.setItem('lange', 'en-US');
+if(window.localStorage.getItem('mode-time') === null) window.localStorage.setItem('mode-time', 60);
+if(window.localStorage.getItem('mode-words') === null) window.localStorage.setItem('mode-words', 50);
+if(window.localStorage.getItem('mode') === null) window.localStorage.setItem('mode', 't-time');
+if(window.localStorage.getItem('klava') === null) window.localStorage.setItem('klava', 'Qwerty');
+if(window.localStorage.getItem('lange') === null) window.localStorage.setItem('lange', 'en-US');
 
-if(localStorage.getItem('mode-words') !== 50 || localStorage.getItem('mode-words') !== 70 || localStorage.getItem('mode-words') !== 100) {
-    window.localStorage.setItem('mode-words', 50);
+if(localStorage.getItem('mode-words') !== '50') {
+    if(localStorage.getItem('mode-words') !== '70' ) {
+        if(localStorage.getItem('mode-words') !== '100' ) {
+            localStorage.setItem('mode-words', 50);
+        }
+    }
 }
 
-if(localStorage.getItem('mode-time') !== 60 || localStorage.getItem('mode-time') !== 180 || localStorage.getItem('mode-time') !== 300) {
-    window.localStorage.setItem('mode-time', 60);
+if(localStorage.getItem('mode-time') !== '60') {
+    if(localStorage.getItem('mode-time') !== '180') {
+        if(localStorage.getItem('mode-time') !== '300') {
+            window.localStorage.setItem('mode-time', 60);
+        }
+    }
 }
 
 const [t] = useTranslation(),
@@ -186,7 +194,7 @@ const Restart = () => {
     setSecTimerWords(prev => prev = 0);
     setTime(prev => prev = window.localStorage.getItem('mode-time'));
     setOurCountWords(prev => prev = localStorage.getItem('mode-words'));
-}
+};
 
 useEffect(()=>{
 let textInput = textsRu[Math.floor(Math.random()*textsRu.length)];
