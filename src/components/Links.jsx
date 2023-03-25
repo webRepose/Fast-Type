@@ -1,5 +1,5 @@
 import { Routes, Route} from "react-router-dom";
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, memo, Suspense } from 'react';
 import Preloader from "./Preloader/Preloader";
 const Home = lazy(() => import('../main/home/Home')),
 History = lazy(() => import('../main/home/History/History')),
@@ -20,7 +20,7 @@ Type = lazy(() => import('../main/text/Typing/Typing')),
 ResultShare = lazy(()=> import('../main/text/Typing/ResultShare/ResultShare'));
 
 
-const Links = () => {
+const Links = memo(() => {
     return (
         <>
         <Routes>
@@ -45,6 +45,6 @@ const Links = () => {
       </Routes>
         </>
     );
-  }
+  })
   
   export default Links;
