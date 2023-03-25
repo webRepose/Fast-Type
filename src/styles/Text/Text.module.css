@@ -96,18 +96,27 @@
 }
 .params ul li {
   padding: 10px 30px;
-  margin: 0 0 5px 5px;
+  margin: 0 0 8px 8px;
   background-color: var(--choiceButton-color);
   border-radius: var(--radius15);
   cursor: pointer;
   color: var(--textT-color);
   transition: all 0.3 ease;
   font-size: var(--font21);
+  animation: clickMeCream 1.4s linear infinite;
 }
 .params ul li:hover {
   opacity: 0.9;
 }
 
+@keyframes clickMeCream {
+  0% {
+    box-shadow: 0 0 0 0 var(--ThemeButton-color);
+  }
+  50% {
+    box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+  }
+}
 @media (max-width: 1760px) {
   .paramsSelect {
     font-size: var(--font17);

@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-
 import Style from '../../styles/Components/Soon/Soon.module.css';
 import Back from "../../components/Back/Back";
 import Section from "../../components/Section/Section";

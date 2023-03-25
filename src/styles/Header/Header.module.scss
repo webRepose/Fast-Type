@@ -153,18 +153,32 @@ ul {
     display: flex;
     position: absolute;
     bottom: 40px;
+    width: 80%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 25px;
+
+    &:hover {
+        transform: translateY(-3px);
+        background-color: var(--active-color);
+    }
+    &:active {
+        opacity: 0.8;
+    }
+    &Icon {
+        border: 0;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        background-color: var(--account-color);
+    }
+
+    &Name {
+        margin: 10px 0 0 14px;
+    }
 }
 
-.accountIcon {
-    border: 0;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    background-color: var(--account-color);
-}
-.accountName {
-    margin: 10px 0 0 14px;
-}
 
 .menuMobile {
     display: none;
@@ -343,6 +357,7 @@ ul {
 
     .account {
         position: static;
+        width: auto;
         &Icon {
             width: 40px;
             height: 40px;

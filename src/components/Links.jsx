@@ -7,6 +7,7 @@ Stats = lazy(() => import('../main/home/Stats/Stats')),
 Course = lazy(() => import('../main/home/Course/Course')),
 Workon = lazy(() => import('../main/home/Workon/Workon')),
 Guids = lazy(() => import('../main/home/Guids/Guids')),
+User = lazy(() => import('../main/home/User/User')),
 HistoryID = lazy(() => import('../main/home/History/HistoryID/HistoryID')),
 Tips = lazy(() => import('../main/home/Tips/Tips')),
 Text = lazy(() => import('../main/text/Text')),
@@ -27,6 +28,7 @@ const Links = () => {
         <Route index element={<Suspense fallback={<Preloader/>}><Home/></Suspense>}></Route>
         <Route path='history' element={<Suspense fallback={<Preloader/>}><History/></Suspense>}></Route>
         <Route path='stats' element={<Suspense fallback={<Preloader/>}><Stats/></Suspense>}></Route>
+        <Route path='user' element={<Suspense fallback={<Preloader/>}><User/></Suspense>}></Route>
         <Route path='course' element={<Suspense fallback={<Preloader/>}><Course/></Suspense>}></Route>
         <Route path='workon' element={<Suspense fallback={<Preloader/>}><Workon/></Suspense>}></Route>
         <Route path='answers' element={<Suspense fallback={<Preloader/>}><Guids/></Suspense>}></Route>

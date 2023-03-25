@@ -63,6 +63,9 @@ button {
   font-size: var(--font21);
   cursor: pointer;
 }
+button:active {
+  opacity: 0.8;
+}
 
 main {
   margin-left: 244px;
