@@ -1,0 +1,76 @@
+[
+    {
+        "klavaOne": "T-tab",
+        "stBtn":"Backspace"
+    },
+
+    {
+        "klavaOne": "T-'",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-,",
+        "klavaTwo": "T-<",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-.",
+        "klavaTwo": "T->",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-p",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-y",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-f",
+        "stBtn":"Btn"
+    },
+    
+    {
+        "klavaOne": "T-g",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-c",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-r",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-l",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-?",
+        "klavaTwo": "T-/",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-=",
+        "klavaTwo":"T-+",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-/",
+        "klavaTwo":"T-|",
+        "stBtn":"Btn"
+    }
+]

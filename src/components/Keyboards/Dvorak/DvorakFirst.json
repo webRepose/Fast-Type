@@ -66,14 +66,14 @@
     },
 
     {
-        "klavaOne": "T--",
-        "klavaTwo":"T-_",
+        "klavaOne": "T-[",
+        "klavaTwo":"T-{",
         "stBtn":"Btn"
     },
 
     {
-        "klavaOne": "T-=",
-        "klavaTwo":"T-+",
+        "klavaOne": "T-]",
+        "klavaTwo":"T-}",
         "stBtn":"Btn"
     },
 

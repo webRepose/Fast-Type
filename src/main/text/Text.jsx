@@ -230,8 +230,8 @@ const Text = () => {
                             }}>Colemak</li>
                             <li title="Work-man" onClick={()=>{
                                 setKlava(prev => prev = false)
-                                window.localStorage.setItem('klava', 'Work-man');
-                            }}>Work-man</li>
+                                window.localStorage.setItem('klava', 'Dvorak');
+                            }}>Dvorak</li>
                             <li title="Qwerty" onClick={()=>{
                                 setKlava(prev => prev = false)
                                 window.localStorage.setItem('klava', 'Qwerty');

@@ -5,10 +5,14 @@ import QwertySecond from './Qwerty/QwertySecond.json';
 import QwertyThird from './Qwerty/QwertyThird.json';
 import QwertyFour from './Qwerty/QwertyFour.json';
 
-import ColemakFirst from './Colemak/ColemakFirst.json';
 import ColemakSecond from './Colemak/ColemakSecond.json';
 import ColemakThird from './Colemak/ColemakThird.json';
 import ColemakFour from './Colemak/ColemakFour.json';
+
+import DvorakFirst from './Dvorak/DvorakFirst.json';
+import DvorakSecond from './Dvorak/DvorakSecond.json';
+import DvorakThird from './Dvorak/DvorakThird.json';
+import DvorakFour from './Dvorak/DvorakFour.json';
 
 const Qwerty = () => {
     let QLocale = new LocalizedStrings({
@@ -222,7 +226,7 @@ const Qwerty = () => {
             {localStorage.getItem('klava') === 'Colemak' &&
                 <div className={Style.klava}>
                     <div className={Style.klavaLine}>
-                        {ColemakFirst.map((lan, i) => (
+                        {QwertyFirst.map((lan, i) => (
                             <div translate="no" id={QLocale[lan['klavaOne']]} className={`${lan['stBtn']}`} key={i}>
                                 <p translate="no"><sub>{QLocale[lan['klavaOne']]}</sub><sup>{QLocale[lan['klavaTwo']]}</sup></p>
                             </div>
@@ -244,6 +248,42 @@ const Qwerty = () => {
                     </div>
                     <div className={Style.klavaLine}>
                         {ColemakFour.map((lan, i) => (
+                            <div translate="no" id={QLocale[lan['klavaOne']]} className={`${lan['stBtn']}`} key={i}>
+                                <p translate="no"><sub>{QLocale[lan['klavaOne']]}</sub><sup>{QLocale[lan['klavaTwo']]}</sup></p>
+                            </div>
+                        ))}
+                    </div>
+                    <div translate="no" className={Style.klavaLine}>
+                        <div translate="no" id=" " className={Style.klavaSpace}></div>
+                    </div>
+                </div>
+            }
+
+            {localStorage.getItem('klava') === 'Dvorak' &&
+                <div className={Style.klava}>
+                    <div className={Style.klavaLine}>
+                        {DvorakFirst.map((lan, i) => (
+                            <div translate="no" id={QLocale[lan['klavaOne']]} className={`${lan['stBtn']}`} key={i}>
+                                <p translate="no"><sub>{QLocale[lan['klavaOne']]}</sub><sup>{QLocale[lan['klavaTwo']]}</sup></p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={Style.klavaLine}>
+                        {DvorakSecond.map((lan, i) => (
+                            <div translate="no" id={QLocale[lan['klavaOne']]} className={`${lan['stBtn']}`} key={i}>
+                                <p translate="no"><sub>{QLocale[lan['klavaOne']]}</sub><sup>{QLocale[lan['klavaTwo']]}</sup></p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={Style.klavaLine}>
+                        {DvorakThird.map((lan, i) => (
+                            <div translate="no" id={QLocale[lan['klavaOne']]} className={`${lan['stBtn']}`} key={i}>
+                                <p translate="no"><sub>{QLocale[lan['klavaOne']]}</sub><sup>{QLocale[lan['klavaTwo']]}</sup></p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={Style.klavaLine}>
+                        {DvorakFour.map((lan, i) => (
                             <div translate="no" id={QLocale[lan['klavaOne']]} className={`${lan['stBtn']}`} key={i}>
                                 <p translate="no"><sub>{QLocale[lan['klavaOne']]}</sub><sup>{QLocale[lan['klavaTwo']]}</sup></p>
                             </div>

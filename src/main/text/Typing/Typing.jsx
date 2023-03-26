@@ -62,16 +62,10 @@ const Type = () => {
         if (event.keyCode === 8 || event.key === 'Backspace' || event.which === 8) event.preventDefault();
     };
 
-    if (inputArea.current) {
+    if (inputText[i] !== undefined && inputArea.current) {
         if (document.getElementsByClassName(Style.onKeyClick).length > 1) {
-            klava && document.getElementById(inputText[i - 1].toUpperCase()).classList.remove(Style.onKeyClick);
-            klava && document.getElementById(inputText[i - 2].toUpperCase()).classList.remove(Style.onKeyClick);
-            klava && document.getElementById(inputText[i - 3].toUpperCase()).classList.remove(Style.onKeyClick);
-            if (document.getElementsByClassName(Style.onKeyClick).length > 1) {
-                klava && document.getElementById(inputText[i - 2].toUpperCase()).classList.remove(Style.onKeyClick);
-            }
-            if (document.getElementsByClassName(Style.onKeyClick).length > 1) {
-                klava && document.getElementById(inputText[i - 3].toUpperCase()).classList.remove(Style.onKeyClick);
+            for(let j = 1; j < 5; j++) {
+                klava && document.getElementById(inputText[i - j].toUpperCase()).classList.remove(Style.onKeyClick);   
             }
         }
     }
