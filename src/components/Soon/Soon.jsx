@@ -4,7 +4,6 @@ import Back from "../../components/Back/Back";
 import Section from "../../components/Section/Section";
 import { Link } from "react-router-dom";
 
-
 const Soon = () => {
     const [t] = useTranslation();
 

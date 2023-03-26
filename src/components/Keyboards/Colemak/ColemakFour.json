@@ -30,7 +30,7 @@
     },
 
     {
-        "klavaOne": "T-n",
+        "klavaOne": "T-k",
         "stBtn":"Btn"
     },
     
@@ -52,8 +52,8 @@
     },
 
     {
-        "klavaOne": "T-/",
-        "klavaTwo": "T-?",
+        "klavaOne": "T-?",
+        "klavaTwo": "T-/",
         "stBtn":"Btn"
     },
 

@@ -1,0 +1,84 @@
+[
+    {
+        "klavaOne": "T-`",
+        "klavaTwo": "T-~",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-1",
+        "klavaTwo": "T-!",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-2",
+        "klavaTwo": "T-@",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-3",
+        "klavaTwo": "T-#",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-4",
+        "klavaTwo": "T-$",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-5",
+        "klavaTwo": "T-%",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-6",
+        "klavaTwo": "T-^",
+        "stBtn":"Btn"
+    },
+    
+    {
+        "klavaOne": "T-7",
+        "klavaTwo": "T-&",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-8",
+        "klavaTwo": "T-*",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-9",
+        "klavaTwo": "T-(",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-0",
+        "klavaTwo": "T-)",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T--",
+        "klavaTwo":"T-_",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-=",
+        "klavaTwo":"T-+",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-backspace",
+        "stBtn":"Backspace"
+    }
+]

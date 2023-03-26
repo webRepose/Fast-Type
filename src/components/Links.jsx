@@ -34,8 +34,8 @@ const Links = memo(() => {
         <Route path='answers' element={<Suspense fallback={<Preloader/>}><Guids/></Suspense>}></Route>
         <Route path='tips' element={<Suspense fallback={<Preloader/>}><Tips/></Suspense>}></Route>
         <Route path='history/:id' element={<Suspense fallback={<Preloader/>}><HistoryID/></Suspense>}></Route>
-        <Route path='text' element={<Suspense fallback={<Preloader/>}><Text/></Suspense>}></Route>
-        <Route path='text/type' element={<Suspense fallback={<Preloader/>}><Type/></Suspense>}></Route>
+        <Route path='params' element={<Suspense fallback={<Preloader/>}><Text/></Suspense>}></Route>
+        <Route path='params/typing' element={<Suspense fallback={<Preloader/>}><Type/></Suspense>}></Route>
         <Route path="code" element={<Suspense fallback={<Preloader/>}><Code/></Suspense>}></Route>
         <Route path="symbols" element={<Suspense fallback={<Preloader/>}><Symbols/></Suspense>}></Route>
         <Route path="capcha" element={<Suspense fallback={<Preloader/>}><Capcha/></Suspense>}></Route>

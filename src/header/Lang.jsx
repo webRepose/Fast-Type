@@ -1,33 +1,30 @@
 import Style from '../styles/Header/Header.module.css';
 import { useTranslation } from 'react-i18next';
-import {useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Lang = () => {
     const htmlDOM = document.querySelector('html');
     htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'));
     const [t, i18n] = useTranslation();
-    function changeLanguage(language) {
-        i18n.changeLanguage(language);
-    }
-    let [lang, setLang] = useState(false);
+
+     const changeLanguage = language => {i18n.changeLanguage(language) 
+    console.log(language)};
+
+    const [lang, setLang] = useState(false);
     const changLang = lang ? 'block' : 'none';
     const langClass = [Style.langChange, changLang];
-    let langRefUl = useRef();
-    let langRefButton = useRef();
+    const langRefUl = useRef();
+    const langRefButton = useRef();
     useEffect(()=>{
-        let handler = (event)=>{
-        if(!langRefUl.current.contains(event.target) && !langRefButton.current.contains(event.target) ) {
-            setLang(prev => prev = false);
-        }
+        const handler = (event)=> {
+        if(!langRefUl.current.contains(event.target) && !langRefButton.current.contains(event.target)) setLang(prev => prev = false);
     }
         document.addEventListener('mousedown', handler);
-        return ()=>{
-            document.removeEventListener('mousedown', handler);
-        }
+        return () => document.removeEventListener('mousedown', handler);
     })
 
     return (
-        <>
+        <section>
         <button title={t('changLang')} className={Style.lang} ref={langRefButton} onClick={()=>{
             setLang(prev => !prev)
         }}>
@@ -48,7 +45,7 @@ const Lang = () => {
                 htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'))
             }}>Русский</li>
         </ul>
-        </>
+        </section>
     );
 };
 

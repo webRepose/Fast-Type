@@ -1,0 +1,66 @@
+[
+    {
+        "klavaOne": "T-caps",
+        "stBtn":"EntCap"
+    },
+
+    {
+        "klavaOne": "T-a",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-r",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-s",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-t",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-d",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-h",
+        "stBtn":"Btn"
+    },
+    
+    {
+        "klavaOne": "T-n",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-e",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-i",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-o",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-'",
+        "stBtn":"Btn"
+    },
+
+    {
+        "klavaOne": "T-enter",
+        "stBtn":"EntCap"
+    }
+]

@@ -17,7 +17,7 @@ const Menu = () => {
             </NavLink>
         </li>
         <li>
-            <NavLink title={t('Text')} to='/text' className={Style.navBarActive}>
+            <NavLink title={t('Text')} to='/params' className={Style.navBarActive}>
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
                 <path d="M8.2,18.828H9.775V16.859H8.2Zm0,3.938h9.45V20.8H8.2Zm11.025,0H20.8V20.8H19.225ZM11.35,18.828H20.8V16.859H11.35ZM5.575,29a1.385,1.385,0,0,1-1.1-.591A2.141,2.141,0,0,1,4,27.031V9.969a2.141,2.141,0,0,1,.472-1.378A1.385,1.385,0,0,1,5.575,8h17.85a1.385,1.385,0,0,1,1.1.591A2.141,2.141,0,0,1,25,9.969V27.031a2.141,2.141,0,0,1-.472,1.378,1.385,1.385,0,0,1-1.1.591Zm0-1.969h17.85V9.969H5.575Zm0,0v0Z" transform="translate(-4 -8)" fill="#33d74b"/>
             </svg>

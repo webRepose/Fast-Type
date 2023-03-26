@@ -295,6 +295,7 @@ ul a p {
     position: absolute;
     display: none;
     top: 65px;
+    margin-left: -80px;
     padding-left: 5px;
     padding-right: 5px;
     background-color: var(--langUlMob-color);
@@ -307,6 +308,7 @@ ul a p {
   .account {
     position: static;
     width: auto;
+    padding: 0;
   }
   .accountIcon {
     width: 40px;

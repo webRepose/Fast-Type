@@ -214,7 +214,7 @@ const Text = () => {
                             {window.localStorage.getItem('mode-words') + ' ' + t('T-counWord')}
                         </button>
                     </div>
-                    <Link to='./type'><button title={t('Ttitle-start')} className={Style.Start}>{t('T-start')}</button></Link>
+                    <Link to='./typing'><button title={t('Ttitle-start')} className={Style.Start}>{t('T-start')}</button></Link>
                 </div>
                 <div className={ourKlavaClass.join(' ')}>
                     <div ref={refKlavaUl} className={Style.paramsChoiceMobile}>
