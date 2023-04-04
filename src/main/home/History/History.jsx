@@ -54,6 +54,7 @@ const History = () => {
                     checkHistory !== null && checkHistory.map((result, index) =>
                     <Link key={index} to={'./'+ index}>
                     <div title={t('HH-tapTo')} key={index} className={Style.historyBlockSub}>
+                    <h4 style={{marginBottom: '10px'}}><img src='./img/home/History/section.svg' alt="icon"/> {result.section === 'text' ? t('HH-text') : t('HH-code')}</h4>
                             <h4><img src='./img/home/History/HistoryID/modeHis.svg' alt="icon"/> {t('HH-mode')}</h4>
                             <p>{result.mode}</p>
                             <h4><img src='./img/home/History/HistoryID/timeHis.svg' alt="icon"/> {t('HH-timeInput')}</h4>
@@ -76,7 +77,7 @@ const History = () => {
                         <img src="./img/home/History/Empty1.png" alt='Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>' />
                     </div>
                         <h4>{t('HH-tryNow')}</h4>
-                        <Link to='/text/type'>
+                        <Link to='/text/typing'>
                             <GreenButton title={t('HH-try')}>{t('HH-try')}</GreenButton>
                         </Link>
                     </div>

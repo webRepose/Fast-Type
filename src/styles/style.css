@@ -134,4 +134,8 @@ main {
 }
 .Shift p {
   font-size: 14px !important;
+}
+
+img {
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */

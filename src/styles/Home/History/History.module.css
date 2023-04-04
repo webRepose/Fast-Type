@@ -40,6 +40,7 @@
 }
 .historyBlockSubTime p {
   margin-right: 10px;
+  margin-bottom: 0;
 }
 
 .historyBlockEmpty {
@@ -58,6 +59,17 @@
   margin-top: 30px;
 }
 
+@media (max-width: 1366px) {
+  .historyBlockSub h4 {
+    font-size: 17px;
+  }
+  .historyBlockSub h4 img {
+    width: 16px;
+  }
+  .historyBlockSub p {
+    font-size: 16px;
+  }
+}
 @media (max-width: 920px) {
   .historyBlockEmpty button {
     padding: 10px 60px;

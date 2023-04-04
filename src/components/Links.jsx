@@ -12,12 +12,13 @@ HistoryID = lazy(() => import('../main/home/History/HistoryID/HistoryID')),
 Tips = lazy(() => import('../main/home/Tips/Tips')),
 Text = lazy(() => import('../main/text/Text')),
 Code = lazy(() => import('../main/code/Code')),
+TypingCode = lazy(() => import('../main/code/TypingCode/TypingCode')),
 Capcha = lazy(() => import('../main/capcha/Capcha')),
 Symbols = lazy(() => import('../main/symbols/Symbols')),
 NF404 = lazy(() => import('../main/NF404/404')),
 Header = lazy(() => import('../header/Header')),
-Type = lazy(() => import('../main/text/Typing/Typing')),
-ResultShare = lazy(()=> import('../main/text/Typing/ResultShare/ResultShare'));
+Type = lazy(() => import('../main/text/Typing/TypingText')),
+ResultShare = lazy(()=> import('../components/TypingBlock/ResultShare/ResultShare'));
 
 
 const Links = memo(() => {
@@ -34,8 +35,9 @@ const Links = memo(() => {
         <Route path='answers' element={<Suspense fallback={<Preloader/>}><Guids/></Suspense>}></Route>
         <Route path='tips' element={<Suspense fallback={<Preloader/>}><Tips/></Suspense>}></Route>
         <Route path='history/:id' element={<Suspense fallback={<Preloader/>}><HistoryID/></Suspense>}></Route>
-        <Route path='params' element={<Suspense fallback={<Preloader/>}><Text/></Suspense>}></Route>
-        <Route path='params/typing' element={<Suspense fallback={<Preloader/>}><Type/></Suspense>}></Route>
+        <Route path='text' element={<Suspense fallback={<Preloader/>}><Text/></Suspense>}></Route>
+        <Route path='text/typing' element={<Suspense fallback={<Preloader/>}><Type/></Suspense>}></Route>
+        <Route path='code/typing' element={<Suspense fallback={<Preloader/>}><TypingCode/></Suspense>}></Route>
         <Route path="code" element={<Suspense fallback={<Preloader/>}><Code/></Suspense>}></Route>
         <Route path="symbols" element={<Suspense fallback={<Preloader/>}><Symbols/></Suspense>}></Route>
         <Route path="capcha" element={<Suspense fallback={<Preloader/>}><Capcha/></Suspense>}></Route>

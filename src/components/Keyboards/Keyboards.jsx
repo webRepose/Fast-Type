@@ -14,7 +14,7 @@ import DvorakSecond from './Dvorak/DvorakSecond.json';
 import DvorakThird from './Dvorak/DvorakThird.json';
 import DvorakFour from './Dvorak/DvorakFour.json';
 
-const Qwerty = () => {
+const Qwerty = ({keyboard, lang}) => {
     let QLocale = new LocalizedStrings({
         en: {
             "T-`": "`",
@@ -174,20 +174,22 @@ const Qwerty = () => {
         }
     });
 
-    switch (localStorage.getItem('lange')) {
-        case "en-US":
+
+    switch (lang) {
+        case "English":
             QLocale.setLanguage('en');
             break;
-        case "ru":
+        case "Русский":
             QLocale.setLanguage('ru');
             break;
         default:
             QLocale.setLanguage('en');
     }
 
+
     return (
         <section>
-            {localStorage.getItem('klava') === 'Qwerty' &&
+            {keyboard === 'Qwerty' &&
                 <div className={Style.klava}>
                     <div className={Style.klavaLine}>
                         {QwertyFirst.map((lan, i) => (
@@ -223,7 +225,7 @@ const Qwerty = () => {
                 </div>
             }
 
-            {localStorage.getItem('klava') === 'Colemak' &&
+            {keyboard === 'Colemak' &&
                 <div className={Style.klava}>
                     <div className={Style.klavaLine}>
                         {QwertyFirst.map((lan, i) => (
@@ -259,7 +261,7 @@ const Qwerty = () => {
                 </div>
             }
 
-            {localStorage.getItem('klava') === 'Dvorak' &&
+            {keyboard === 'Dvorak' &&
                 <div className={Style.klava}>
                     <div className={Style.klavaLine}>
                         {DvorakFirst.map((lan, i) => (

@@ -2,10 +2,6 @@
     display: grid !important;
 }
 
-.none {
-    display: none !important;
-}
-
 .flex {
     display: flex !important;
     flex-wrap: wrap;
@@ -35,6 +31,9 @@
     &ChoiceMobile {
         button {
             display: none;
+        }
+        p {
+            font-weight: 600;
         }
     }
 
@@ -73,13 +72,8 @@
         color: var(--textT-color);
     }
 
-    &Choice {
-        width: 50%;
-        margin-left: auto;
-     }
-
     &Text {
-        padding: 10px 0px;
+        padding: 10px 0;
         width: 345px;
         border-radius: var(--radius17);
         background-color: var(--choiceText-color);
@@ -99,6 +93,10 @@
         }
     }
 
+    &Choice {
+        width: 50%;
+        margin-left: auto;
+    }
 
     ul {
         max-height: 300px;
@@ -177,7 +175,7 @@
         }
 
         &TextSub img {
-            margin-top: 0px;
+            margin-top: 0;
         }
     }
 }
@@ -212,10 +210,6 @@
     }
     .grid {
         place-items: center !important;
-    }
-
-    .none {
-        display: none;
     }
 
     .params {

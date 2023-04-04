@@ -1,39 +1,18 @@
 import { useTranslation } from "react-i18next";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Style from '../../../styles/Text/Typing/Typing.module.css';
+import Style from '../../styles/Components/TypingCode/TypingCode.module.css';
 import { useEffect, useRef, useState } from "react";
-import Keyboards from '../../../components/Keyboards/Keyboards';
+import Keyboards from '../Keyboards/Keyboards';
 import { Link } from "react-router-dom";
 import CopyToClipboard from "react-copy-to-clipboard";
-import localesRu from './localesText/localesRU.json';
-import localesEn from './localesText/localesEN.json';
-import Section from "../../../components/Section/Section";
-import GreenButton from "../../../components/GreenButton/GreenButton";
-import Back from "../../../components/Back/Back";
+import Section from "../Section/Section";
+import GreenButton from "../GreenButton/GreenButton";
+import Back from "../Back/Back";
 import SocialMedia from "./SocialMedia/SocialMedia";
 
-const Type = () => {
-    if (window.localStorage.getItem('mode') === null) window.localStorage.setItem('mode', 't-time');
-    if (window.localStorage.getItem('klava') === null) window.localStorage.setItem('klava', 'Qwerty');
-    if (window.localStorage.getItem('lange') === null) window.localStorage.setItem('lange', 'en-US');
+const Typing = ({localeText1,  parseMode, parseTime, parseWords, parseKeyboard, parseLang, section, historyLang}) => {
+    const [t] = useTranslation();
 
-    if (localStorage.getItem('mode-words') !== '50') {
-        if (localStorage.getItem('mode-words') !== '70') {
-            if (localStorage.getItem('mode-words') !== '100') {
-                localStorage.setItem('mode-words', 50);
-            }
-        }
-    }
-
-    if (localStorage.getItem('mode-time') !== '60') {
-        if (localStorage.getItem('mode-time') !== '180') {
-            if (localStorage.getItem('mode-time') !== '300') {
-                window.localStorage.setItem('mode-time', 60);
-            }
-        }
-    }
-
-    const [t] = useTranslation(),
+        const textsRu = localeText1,
         inputArea = useRef(),
         inputBlock = useRef(),
         blurCloseRef = useRef(),
@@ -51,21 +30,22 @@ const Type = () => {
         [textInputs, setTextInputs] = useState(),
         [countLength, setCountLenght] = useState(),
         [i, setI] = useState(0),
-        [time, setTime] = useState(window.localStorage.getItem('mode-time')),
-        textLangs = localStorage.getItem('lange') === 'ru' ? localesRu : localesEn,
-        [ourCountWords, setOurCountWords] = useState(localStorage.getItem('mode-words')),
+        [time, setTime] = useState(parseTime),
+        [ourCountWords, setOurCountWords] = useState(parseWords),
         [minTimerWords, setMinTimerWords] = useState(0),
-        [secTimerWords, setSecTimerWords] = useState(0),
-        [textsRu] = useState(textLangs);
+        [secTimerWords, setSecTimerWords] = useState(0);
+
 
     const inputBackspace = (event) => {
         if (event.keyCode === 8 || event.key === 'Backspace' || event.which === 8) event.preventDefault();
     };
 
     if (inputText[i] !== undefined && inputArea.current) {
-        if (document.getElementsByClassName(Style.onKeyClick).length > 1) {
-            for(let j = 1; j < 5; j++) {
-                klava && document.getElementById(inputText[i - j].toUpperCase()).classList.remove(Style.onKeyClick);   
+        if (document.getElementsByClassName(Style.onKeyClick) && document.getElementsByClassName(Style.onKeyClick).length > 1) {
+            if (klava) {
+                for (let j = 1; j < 3; j++) {
+                    document.getElementById(inputText[i - j].toUpperCase()) && document.getElementById(inputText[i - j].toUpperCase()).classList.remove(Style.onKeyClick);
+                }
             }
         }
     }
@@ -82,7 +62,7 @@ const Type = () => {
 
     const [reset, setReset] = useState('');
     const inputCheck = (event) => {
-        if (localStorage.getItem('mode') === 't-time') {
+        if (parseMode === 'toTime') {
             if (event.target.value.length === 1) setIsType(prev => prev = true);
         } else {
             if (event.target.value.length === 1) setIsTypeWords(prev => prev = true);
@@ -158,7 +138,7 @@ const Type = () => {
     const shareMob = () => {
         navigator.share({
             text: t('TI-myRes'),
-            url: `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
+            url: `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${parseTime}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
             title: t('TI-myRes')
         });
     };
@@ -184,8 +164,8 @@ const Type = () => {
         setIsType(prev => prev = false);
         setIsTypeWords(prev => prev = false);
         setSecTimerWords(prev => prev = 0);
-        setTime(prev => prev = window.localStorage.getItem('mode-time'));
-        setOurCountWords(prev => prev = localStorage.getItem('mode-words'));
+        setTime(prev => prev = parseTime);
+        setOurCountWords(prev => prev = parseWords);
     };
 
     useEffect(() => {
@@ -210,14 +190,14 @@ const Type = () => {
             setIsTypeWords(prev => prev = false);
             setSecTimerWords(prev => prev = 0);
             setMinTimerWords(prev => prev = 0);
-            setTime(prev => prev = window.localStorage.getItem('mode-time'));
-            setOurCountWords(prev => prev = localStorage.getItem('mode-words'));
+            setTime(prev => prev = parseTime);
+            setOurCountWords(prev => prev = parseWords);
         }
 
         changeTextNew &&
             setTextInputs(textsRu[Math.floor(Math.random() * textsRu.length)]);
-        setChangeTextNew(prev => prev = false);
-    }, [changeTextNew, textInputs, textsRu]);
+            setChangeTextNew(prev => prev = false);
+    }, [changeTextNew, textInputs, textsRu, parseTime, parseWords]);
 
 
     const getTime = (times) => times.toString().padStart(2, "0"),
@@ -238,8 +218,8 @@ const Type = () => {
     useEffect(() => {
         if (time === 0 || ourCountWords === 0) {
             let historyMode;
-            if (window.localStorage.getItem('mode') === 't-time') historyMode = 'Entering text by time';
-            else if (window.localStorage.getItem('mode') === 't-word') historyMode = 'Entering text by words';
+            if (parseMode === 'toTime') historyMode = 'Entering text by time';
+            else historyMode = 'Entering text by words';
             const offset = new Date().toLocaleDateString(),
                 offsetNow = new Date().toLocaleTimeString(),
                 check = JSON.parse(localStorage.getItem('HistoryData'));
@@ -248,13 +228,14 @@ const Type = () => {
             else historyArray = [];
 
             let resTimer;
-            if (localStorage.getItem('mode') === 't-time') resTimer = localStorage.getItem('mode-time') / 60 + ':00';
+            if (parseMode === 'toTime') resTimer = parseTime / 60 + ':00';
             else resTimer = `${minTimerWords < 10 ? minTimerWords.toString().padStart(2, '0') : minTimerWords} : ${secTimerWords < 10 ? secTimerWords.toString().padStart(2, '0') : secTimerWords}`;
             const correct = simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0;
 
-
-            let historyData =
+            const historyData =
             {
+                lang: historyLang,
+                section: section,
                 mode: historyMode,
                 timer: resTimer,
                 words: words,
@@ -272,7 +253,7 @@ const Type = () => {
             document.querySelector('html').style.overflow = 'hidden';
         }
 
-    }, [errorCount, simbols, time, words, t, ourCountWords, secTimerWords, minTimerWords, sec, min]);
+    }, [errorCount, simbols, time, words, t, ourCountWords, secTimerWords, minTimerWords, sec, min, parseMode, parseTime, section, historyLang]);
 
     const backSpace = () => {
         let backFun = inputArea.current.value;
@@ -286,7 +267,7 @@ const Type = () => {
             if (isTypeWords) {
                 if (ourCountWords === 0) {
                     setIsTypeWords(prev => prev = false);
-                    return false
+                    return false;
                 }
 
                 setSecTimerWords(prev => prev + 1);
@@ -312,25 +293,9 @@ const Type = () => {
         return () => document.removeEventListener('mousedown', handler);
     });
 
-    const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${localStorage.getItem('mode-time')}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
+    const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${parseTime}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
     return (
         <>
-            <HelmetProvider>
-                <Helmet>
-                    <title>{t('TI-title')}</title>
-                    <meta name="description" content={t('TI-description')}></meta>
-                    <link rel="canonical" href="https://fast-type-red.vercel.app/text/type" />
-                    <meta name="author" content="https://fast-type-red.vercel.app/"></meta>
-                    <meta name="keywords" content="Тренажер слепой печати, Слепая печать, Уроки слепой печати, Тренинг печати, Тренинг слепой печати, Blind Print Trainer, Blind Print, Blind Print Lessons, Blind Print Training, Blind Print Training"></meta>
-                    <meta name="apple-mobile-web-app-title" content={t('TI-title')}></meta>
-                    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
-                    <meta property="og:type" content="website"></meta>
-                    <meta property="og:title" content={t('TI-title')}></meta>
-                    <meta property="og:description" content={t('TI-description')}></meta>
-                    <meta property="og:image" content="../../../../../public/img/logo.png"></meta>
-                    <meta property="og:url" content="https://fast-type-red.vercel.app/"></meta>
-                </Helmet>
-            </HelmetProvider>
             <main>
                 <Section>
                     <Back />
@@ -340,10 +305,15 @@ const Type = () => {
                             {allResVsisible &&
                                 <div className={Style.countAll}>
                                     <div><img src="../img/text-type/chat.svg" alt="words" />
-                                        {localStorage.getItem('mode') === 't-time'
+                                        {parseMode === 'toTime'
                                             ? words + ' ' + t('T-counWord')
 
-                                            : `${minTimerWords < 10 ? minTimerWords.toString().padStart(2, '0') : minTimerWords} : ${secTimerWords < 10 ? secTimerWords.toString().padStart(2, '0') : secTimerWords} ${t('TI-TimerUp')}`}
+                                            : `${minTimerWords < 10
+                                                ? minTimerWords.toString().padStart(2, '0')
+                                                : minTimerWords} : ${secTimerWords < 10
+                                                    ? secTimerWords.toString().padStart(2, '0')
+                                                    : secTimerWords} ${t('TI-TimerUp')}`
+                                        }
                                     </div>
                                     <div> <img src="../img/text-type/type.svg" alt="words" />{simbols} <p>{t('TR-sym')}</p></div>
                                     <div><img src="../img/text-type/problem_.svg" alt="words" /> {errorCount} <p>{t('TR-err')}</p></div>
@@ -351,7 +321,7 @@ const Type = () => {
                             }
                             {timerVisible &&
                                 <div className={Style.timer}>
-                                    {localStorage.getItem('mode') === 't-time'
+                                    {parseMode === 'toTime'
                                         ? <samp><img src='../img/text-type/timer3.0.svg' alt="words" /> {min + ':' + sec}</samp>
                                         : <samp><img src='../img/text-type/timer3.0.svg' alt="words" /> {ourCountWords + ' ' + t('T-counWord')}</samp>}
                                 </div>
@@ -377,12 +347,14 @@ const Type = () => {
                                     </textarea>
                                 </div>
                             </div>
-                            {klava && <Keyboards/>}
+                            {klava && <Keyboards keyboard={parseKeyboard} lang={parseLang}/>}
                             <GreenButton title={t('TI-changeText')} onClick={() => { setChangeTextNew(prev => !prev) }} className={Style.changeText}>{t('TI-changeText')}</GreenButton>
                         </div>
                         <div className={Style.partTwo}>
                             <div className={Style.closeAll}>
-                                <button onClick={() => { setKlava(prev => !prev) }} title={klava ? t('TI-hideKlava') : t('TI-showKlava')} className={Style.closeBlock}>
+                                <button onClick={() => {
+                                    setKlava(prev => !prev)
+                                }} title={klava ? t('TI-hideKlava') : t('TI-showKlava')} className={Style.closeBlock}>
                                     {klava
                                         ? <img src="../img/text-type/keyboard_off.svg" alt={t('TI-hideKlava')} />
                                         : <img src="../img/text-type/keyboard.svg" alt={t('TI-showKlava')} />}
@@ -407,10 +379,10 @@ const Type = () => {
                                     <>
                                         <h3>{t('TI-yoRes')}</h3>
                                         <h2>
-                                            {window.localStorage.getItem('mode') === 't-time'
-                                                ? t('TR-for') + ' ' + localStorage.getItem('mode-time') / 60 + ' ' + t('TR-min') + ' ' + t('TI-yoType')
-                                                : t('TI-typed') + localStorage.getItem('mode-words') + ' ' + t('T-counWord-min')}</h2>
-                                        <h2>{window.localStorage.getItem('mode') === 't-time'
+                                            {parseMode === 'toTime'
+                                                ? t('TR-for') + ' ' + parseTime / 60 + ' ' + t('TR-min') + ' ' + t('TI-yoType')
+                                                : t('TI-typed') + parseWords + ' ' + t('T-counWord-min')}</h2>
+                                        <h2>{parseMode === 'toTime'
                                             ? t('T-counWord') + ': ' + words
                                             : t('TI-laterTime') + `${minTimerWords < 10 ? minTimerWords.toString().padStart(2, '0') : minTimerWords} : ${secTimerWords < 10 ? secTimerWords.toString().padStart(2, '0') : secTimerWords}`}</h2>
                                         <h2>{t('TR-sym')}: {simbols}</h2>
@@ -485,4 +457,4 @@ const Type = () => {
     );
 };
 
-export default Type;
+export default Typing;

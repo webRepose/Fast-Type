@@ -19,7 +19,7 @@
     "H-Help":"Tips",
     "H-description":"Fast Type - Blind Type Trainer",
 
-    "T-title":"Input parameters | Fast Type",
+    "T-title":"Typing options | Fast Type",
     "T-options":"Select options:",
     "T-klava":"Choose a keyboard layout:",
     "T-lang":"Select the input language:",
@@ -33,12 +33,19 @@
     "T-counWord-min":"words",
     "T-close":"Close",
 
+    "C-LP":"Select LP:",
+    "C-forTime":"For a time",
+    "C-forWords":"Per word count",
+    "C-title":"Code dialing options | Fast Type",
+    "C-description":"",
+
     "Ttitle-mode":"Change the mode",
     "Ttitle-lang":"Change the input language",
     "Ttitle-time":"Change the input time",
     "Ttitle-words":"Change the number of words",
     "Ttitle-klava":"Change the keyboard layout",
     "Ttitle-start":"Start",
+    "Ctitle-plang":"Changing the programming language",
 
     "NF-lost":"You're lost in space",
     "NF-find":"We couldn't find the page are looking for..",
@@ -91,6 +98,11 @@
     "HH-empty":"It's empty here!",
     "HH-tryNow":"But don't worry, it can be fixed!",
     "HH-try":"Try",
+    "HH-text":"Text section",
+    "HH-code":"Code section",
+    "HH-section":"Section",
+    "HH-lang":"Language",
+    "HH-lp":"Programming language",
 
     
     "HHH-title":"History details | Fast Type",

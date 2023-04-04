@@ -46,6 +46,7 @@
             
             p {
                 margin-right: 10px;
+                margin-bottom: 0;
             }
         }
     }
@@ -67,6 +68,22 @@
 
     button {
         margin-top: 30px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .historyBlockSub {
+        h4 {
+            font-size: 17px;
+
+            img {
+                width: 16px;
+            }
+        }
+
+        p {
+            font-size: 16px;
+        }
     }
 }
 
