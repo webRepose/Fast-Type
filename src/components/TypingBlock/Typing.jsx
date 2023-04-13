@@ -9,10 +9,10 @@ import GreenButton from "../GreenButton/GreenButton";
 import Back from "../Back/Back";
 import SocialMedia from "./SocialMedia/SocialMedia";
 
-const Typing = ({localeText1,  parseMode, parseTime, parseWords, parseKeyboard, parseLang, section, historyLang}) => {
+const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, parseLang, section, historyLang }) => {
     const [t] = useTranslation();
 
-        const textsRu = localeText1,
+    const textsRu = localeText1,
         inputArea = useRef(),
         inputBlock = useRef(),
         blurCloseRef = useRef(),
@@ -196,7 +196,7 @@ const Typing = ({localeText1,  parseMode, parseTime, parseWords, parseKeyboard, 
 
         changeTextNew &&
             setTextInputs(textsRu[Math.floor(Math.random() * textsRu.length)]);
-            setChangeTextNew(prev => prev = false);
+        setChangeTextNew(prev => prev = false);
     }, [changeTextNew, textInputs, textsRu, parseTime, parseWords]);
 
 
@@ -213,7 +213,6 @@ const Typing = ({localeText1,  parseMode, parseTime, parseWords, parseKeyboard, 
             clearInterval(interval);
         };
     }, [isType]);
-
 
     useEffect(() => {
         if (time === 0 || ourCountWords === 0) {
@@ -347,7 +346,7 @@ const Typing = ({localeText1,  parseMode, parseTime, parseWords, parseKeyboard, 
                                     </textarea>
                                 </div>
                             </div>
-                            {klava && <Keyboards keyboard={parseKeyboard} lang={parseLang}/>}
+                            {klava && <Keyboards keyboard={parseKeyboard} lang={parseLang} />}
                             <GreenButton title={t('TI-changeText')} onClick={() => { setChangeTextNew(prev => !prev) }} className={Style.changeText}>{t('TI-changeText')}</GreenButton>
                         </div>
                         <div className={Style.partTwo}>

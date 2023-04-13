@@ -1,4 +1,4 @@
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Style from '../../styles/NF404/NF404.module.css';
 import { useTranslation } from "react-i18next";
 import Section from "../../components/Section/Section";

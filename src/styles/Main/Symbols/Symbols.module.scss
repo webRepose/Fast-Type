@@ -1,0 +1,97 @@
+.onKeyClick {
+    background: var(--gradient1-color);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+}
+
+.onKeyClickBackspace {
+    background: var(--gradient1-color);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+}
+
+
+.symbol {
+    &Block {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        // background-color: purple;
+        border: 3px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    
+        p {
+            font-size: 35px;
+        }
+    }
+
+    &Info {
+        width: 250px;
+        margin: 20px auto 0 auto;
+        display: flex;
+        height: 45px;
+    }
+
+    &Example {
+        position: relative;
+        background-color: var(--ThemeButton-color);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        color: var(--textT-color);
+        margin: 0 auto;
+        height: 100%;
+        width: min-content;
+
+        p {
+            font-variant-numeric: tabular-nums;
+        }
+    }
+
+    &Key {
+        width: 122.5px;
+        height: 100%;
+    }
+
+    &Slesh {
+        width: 2px;
+        background-color: var(--text-color);
+        border-radius: 25px;
+        margin: 0 10px;
+        height: 70%;
+        margin-top: 7px;
+        border: 0;
+    }
+    &Restart {
+        div {
+            border: 0;
+            background-color: transparent;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            img {
+                width: 30px;
+                margin-top: 7px;
+                margin-left: 10px;
+            }
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+    }
+}

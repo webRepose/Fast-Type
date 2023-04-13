@@ -2,16 +2,16 @@ import Section from "../../components/Section/Section";
 import Back from "../../components/Back/Back";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Style from '../../styles/Text/Text.module.css';
 import { Link } from "react-router-dom";
+import Meta from "../../components/Meta/Meta";
 
 const Text = () => {
     const [t] = useTranslation();
 
     const text = {
         modeID: 'toTime',
-        mode: t('C-forTime'),
+        mode: 'C-forTime',
         keyboard: 'Qwerty',
         time: 60,
         words: 50,
@@ -115,22 +115,7 @@ const Text = () => {
     return (
         <>
             <main>
-                <HelmetProvider>
-                    <Helmet>
-                        <title>{t('T-title')}</title>
-                        <meta name="description" content={t('TI-description')}></meta>
-                        <link rel="canonical" href="https://fast-type-red.vercel.app/text" />
-                        <meta name="author" content="https://fast-type-red.vercel.app/"></meta>
-                        <meta name="keywords" content="Тренажер слепой печати, Слепая печать, Уроки слепой печати, Тренинг печати, Тренинг слепой печати, Blind Print Trainer, Blind Print, Blind Print Lessons, Blind Print Training, Blind Print Training"></meta>
-                        <meta name="apple-mobile-web-app-title" content={t('T-title')}></meta>
-                        <meta name="apple-mobile-web-app-capable" content="yes"></meta>
-                        <meta property="og:type" content="website"></meta>
-                        <meta property="og:title" content={t('T-title')}></meta>
-                        <meta property="og:description" content={t('TI-description')}></meta>
-                        <meta property="og:image" content="../../../../public/img/logo.png"></meta>
-                        <meta property="og:url" content="https://fast-type-red.vercel.app/"></meta>
-                    </Helmet>
-                </HelmetProvider>
+            <Meta title={t('T-title')} canon={'text'} description={t('Ti-description')} keywords={'Тренажер слепой печати, Слепая печать, Уроки слепой печати, Тренинг печати, Тренинг слепой печати, Blind Print Trainer, Blind Print, Blind Print Lessons, Blind Print Training, Blind Print Training'}/>
                 <Section>
                     <Back />
                     <h1>Выберите параметры:</h1>
@@ -168,10 +153,10 @@ const Text = () => {
                                     </div>
                                 </article>
                                 <div>
-                                    <button title={t('Ttitle-mode')} onClick={modeFunc} className={Style.paramsSelect}>{parse.mode}</button>
+                                    <button title={t('Ttitle-mode')} onClick={modeFunc} className={Style.paramsSelect}>{t(parse.mode)}</button>
                                 </div>
                             </div>
-                            {mode === t('C-forTime') ?
+                            {mode === 'C-forTime' ?
                                 <div className={Style.paramsSub}>
                                     <article className={Style.paramsText}>
                                         <div className={Style.paramsTextSub}>
@@ -240,10 +225,10 @@ const Text = () => {
                                         <p className={Style.blockText}>{t('T-mode')}</p>
                                         <ul className={Style.flex}>
                                             <li title={t('C-forTime')} onClick={() => {
-                                                modeMenu(t('C-forTime'), 'toTime');
+                                                modeMenu('C-forTime', 'toTime');
                                             }}>{t('C-forTime')}</li>
                                             <li title={t('C-forWords')} onClick={() => {
-                                                modeMenu(t('C-forWords'), 'toWords');
+                                                modeMenu('C-forWords', 'toWords');
                                             }}>{t('C-forWords')}</li>
                                         </ul>
                                     </>

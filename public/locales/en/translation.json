@@ -167,5 +167,12 @@
     "HT-sixAnswer":"With the help of communication on social media or at work, you can try to practice in a more live environment where there are no cues, it will increase your confidence.",
     "HT-sevenAnswer":"You need patience, it is impossible to master something quickly, but in the case of blind printing take your time and do not expect everything to work out from the first attempts, everyone makes mistakes, remember everything is possible and it is within your power.",
 
-    "CS-soon": "Coming soon"
+    "CS-soon": "Coming soon",
+
+    "TS-enter":"Enter!",
+    "TS-restart":"Restart",
+    "TS-setting":"Character set options | Fast Type",
+    "TS-title":"Typing symbols | Fast Type",
+    "TS-desc":"Blind print simulator, muscle memory training",
+    "TC-title":"Typing code | Fast Type"
 }
