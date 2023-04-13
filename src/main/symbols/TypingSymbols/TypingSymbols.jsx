@@ -34,9 +34,9 @@ const TypingSymbols = () => {
 
 
     
-    if (document.getElementsByClassName(Style.onKeyClick).length > 1) {
-        document.getElementById(arr[arr.length - 1].toUpperCase()) &&
-        document.getElementById(arr[arr.length - 1].toUpperCase())
+    if (document.getElementsByClassName(Style.onKeyClick)) {
+        document.getElementById(arr[arr.length - 2].toUpperCase()) &&
+        document.getElementById(arr[arr.length - 2].toUpperCase())
         .classList.remove(Style.onKeyClick);
     }
 
