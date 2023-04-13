@@ -34,7 +34,7 @@ const TypingSymbols = () => {
 
 
     
-    if (document.getElementsByClassName(Style.onKeyClick)) {
+    if (document.getElementsByClassName(Style.onKeyClick).length > 1) {
         document.getElementById(arr[arr.length - 2].toUpperCase()) &&
         document.getElementById(arr[arr.length - 2].toUpperCase())
         .classList.remove(Style.onKeyClick);
