@@ -7,8 +7,7 @@ const Lang = () => {
     htmlDOM.setAttribute('lang', localStorage.getItem('i18nextLng'));
     const [t, i18n] = useTranslation();
 
-     const changeLanguage = language => {i18n.changeLanguage(language) 
-    console.log(language)};
+     const changeLanguage = language => i18n.changeLanguage(language);
 
     const [lang, setLang] = useState(false);
     const changLang = lang ? 'block' : 'none';

@@ -12,6 +12,11 @@ import SocialMedia from "./SocialMedia/SocialMedia";
 const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, parseLang, section, historyLang }) => {
     const [t] = useTranslation();
 
+    if(parseTime === 60 || parseTime === 180 || parseTime === 300) {
+    } else parseTime = 60;
+    if(parseWords === 50 || parseWords === 70 || parseWords === 100) {
+    } else parseWords = 60;
+
     const textsRu = localeText1,
         inputArea = useRef(),
         inputBlock = useRef(),
@@ -40,16 +45,15 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
         if (event.keyCode === 8 || event.key === 'Backspace' || event.which === 8) event.preventDefault();
     };
 
-    if (inputText[i] !== undefined && inputArea.current) {
-        if (document.getElementsByClassName(Style.onKeyClick) && document.getElementsByClassName(Style.onKeyClick).length > 1) {
-            if (klava) {
-                for (let j = 1; j < 3; j++) {
-                    document.getElementById(inputText[i - j].toUpperCase()) && document.getElementById(inputText[i - j].toUpperCase()).classList.remove(Style.onKeyClick);
-                }
-            }
+
+    if(inputText[i] !== undefined) {
+    if (document.getElementsByClassName(Style.onKeyClick).length >= 1) {
+        if (klava) {
+            document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
         }
     }
-
+    }
+    
     setTimeout(() => {
         if (inputText[i] !== undefined) {
             if (klava && document.getElementById(inputText[i].toUpperCase())) {
@@ -217,8 +221,8 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
     useEffect(() => {
         if (time === 0 || ourCountWords === 0) {
             let historyMode;
-            if (parseMode === 'toTime') historyMode = 'Entering text by time';
-            else historyMode = 'Entering text by words';
+            if (parseMode === 'toTime') historyMode = 'C-forTime';
+            else historyMode = 'C-forWords';
             const offset = new Date().toLocaleDateString(),
                 offsetNow = new Date().toLocaleTimeString(),
                 check = JSON.parse(localStorage.getItem('HistoryData'));
@@ -227,7 +231,7 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
             else historyArray = [];
 
             let resTimer;
-            if (parseMode === 'toTime') resTimer = parseTime / 60 + ':00';
+            if (parseMode === 'toTime') resTimer = parseTime / 60 + ' : 00';
             else resTimer = `${minTimerWords < 10 ? minTimerWords.toString().padStart(2, '0') : minTimerWords} : ${secTimerWords < 10 ? secTimerWords.toString().padStart(2, '0') : secTimerWords}`;
             const correct = simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0;
 

@@ -73,4 +73,10 @@
 }
 .symbolRestart div:hover {
   transform: translateY(-3px);
+}
+
+.pc {
+  display: grid;
+  height: 65vh;
+  place-items: center;
 }/*# sourceMappingURL=Symbols.module.css.map */

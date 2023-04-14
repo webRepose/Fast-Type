@@ -7,6 +7,12 @@
   flex-wrap: wrap;
 }
 
+.pc {
+  display: grid;
+  height: 65vh;
+  place-items: center;
+}
+
 .Start {
   padding: 10px 88px;
   margin: 0 auto;

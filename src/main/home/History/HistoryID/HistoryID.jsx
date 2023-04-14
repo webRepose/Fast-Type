@@ -39,7 +39,7 @@ const HistoryID = () => {
 
                     <div className={Style.hisDataBlock}>
                         <h4><img src='../img/home/History/HistoryID/modeHis.svg' alt="icon" /> {t('HH-mode')}</h4>
-                        <p>{res[id].mode}</p>
+                        <p>{t(res[id].mode)}</p>
                     </div>
 
                     <div className={Style.hisDataBlock}>
@@ -64,7 +64,7 @@ const HistoryID = () => {
 
                     <div className={Style.hisDataBlock}>
                         <h4><img src='../img/home/History/HistoryID/timeHis.svg' alt="icon" /> {t('HHH-forTime')}</h4>
-                        <p>{res[id].timer} {t('TR-min')}</p>
+                        <p>{res[id].timer}</p>
                     </div>
                 </div>
                 <Link title={t('TIS-back')} to='/history'><GreenButton>{t('TIS-back')}</GreenButton></Link>

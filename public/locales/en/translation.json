@@ -174,5 +174,6 @@
     "TS-setting":"Character set options | Fast Type",
     "TS-title":"Typing symbols | Fast Type",
     "TS-desc":"Blind print simulator, muscle memory training",
-    "TC-title":"Typing code | Fast Type"
+    "TC-title":"Typing code | Fast Type",
+    "TC-only":"Only available on PC"
 }

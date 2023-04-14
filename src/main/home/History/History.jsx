@@ -42,9 +42,9 @@ const History = () => {
                                         <div title={t('HH-tapTo')} key={index} className={Style.historyBlockSub}>
                                             <h4 style={{ marginBottom: '10px' }}><img src='./img/home/History/section.svg' alt="icon" /> {result.section === 'text' ? t('HH-text') : t('HH-code')}</h4>
                                             <h4><img src='./img/home/History/HistoryID/modeHis.svg' alt="icon" /> {t('HH-mode')}</h4>
-                                            <p>{result.mode}</p>
+                                            <p>{t(result.mode)}</p>
                                             <h4><img src='./img/home/History/HistoryID/timeHis.svg' alt="icon" /> {t('HH-timeInput')}</h4>
-                                            <p>{result.timer + t('TR-min')}</p>
+                                            <p>{result.mode === 'C-forWords' ? result.timer : '0' + result.timer }</p>
                                             <div className={Style.historyBlockSubTime}>
                                                 <p>{result.times}</p>
                                                 <p>{result.timesNow}</p>
