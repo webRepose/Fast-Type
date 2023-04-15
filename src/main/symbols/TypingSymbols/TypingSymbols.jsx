@@ -61,18 +61,18 @@ const TypingSymbols = () => {
                     {window.innerWidth > 967
                         ? <>
                             <h1>{t('TI-tyText')}</h1>
-                            <div className={Style.symbolBlock}>
-                                <p>{arr[arr.length - 1] === ' ' ? '_' : arr[arr.length - 1]}</p>
-                            </div>
+                            <article className={Style.symbolBlock}>
+                                <h2>{arr[arr.length - 1] === ' ' ? '_' : arr[arr.length - 1]}</h2>
+                            </article>
                             <article className={Style.symbolInfo}>
                                 <div className={Style.symbolKey}>
-                                    <div className={Style.symbolExample}>
+                                    <article className={Style.symbolExample}>
                                         <p>{check === ' ' ? '_' : check}</p>
-                                    </div>
+                                    </article>
                                 </div>
                                 <div className={Style.symbolSlesh}></div>
                                 <div className={Style.symbolRestart}>
-                                    <div title={t('TS-restart')} onClick={() => {
+                                    <div role='button' title={t('TS-restart')} onClick={() => {
                                         if (document.getElementsByClassName(Style.onKeyClick)) {
                                             document.getElementById(arr[arr.length - 1].toUpperCase()) &&
                                                 document.getElementById(arr[arr.length - 1].toUpperCase())
@@ -89,7 +89,9 @@ const TypingSymbols = () => {
                         : <div className={Style.pc}>
                             <div>
                                 <h1>Доступно только на ПК</h1>
-                                <img src="../img/main/symbols/pc.png" alt="" />
+                                <figure className={Style.pcImg}>
+                                    <img src="../img/main/symbols/pc.png" alt="no avilable" />
+                                </figure>
                                 <Link title={t('NF-gohome')} to={'/'}>
                                     <GreenButton>
                                         {t('NF-gohome')}

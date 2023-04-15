@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Style from '../../styles/Components/TypingCode/TypingCode.module.css';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Keyboards from '../Keyboards/Keyboards';
 import { Link } from "react-router-dom";
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -46,13 +46,17 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
     };
 
 
-    if(inputText[i] !== undefined) {
-    if (document.getElementsByClassName(Style.onKeyClick).length >= 1) {
-        if (klava) {
-            document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
-        }
-    }
-    }
+    useMemo(()=>{
+        if(inputText[i] !== undefined) {
+            if (document.getElementsByClassName(Style.onKeyClick).length >= 1) {
+                if (klava) {
+                    document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+                    document.getElementById(inputText[i-1].toUpperCase()).classList.remove(Style.onKeyClick);
+                    document.getElementById(inputText[i-2].toUpperCase()).classList.remove(Style.onKeyClick);
+                }
+            }
+            }
+    },[i, inputText, klava])
     
     setTimeout(() => {
         if (inputText[i] !== undefined) {
@@ -109,10 +113,10 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
             }
         } else if (/Android|HarmonyOS/i.test(navigator.userAgent)) {
             if (reset + inputText[i] === event.nativeEvent.data) {
-                if (event.nativeEvent.data === ' ') {
-                    setReset(prev => prev = '');
-                    inputArea.current.value = '';
-                }
+                // if (event.nativeEvent.data === ' ') {
+                //     setReset(prev => prev = '');
+                //     inputArea.current.value = '';
+                // }
                 if (inputArea.current.value.length >= 1) setReset(prev => prev = inputArea.current.value)
 
                 setI(prev => prev + 1);

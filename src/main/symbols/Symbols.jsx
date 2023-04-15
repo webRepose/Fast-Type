@@ -136,7 +136,9 @@ const Symbols = () => {
                         : <div className={Style.pc}>
                             <div>
                                 <h1>{t('TC-only')}</h1>
-                                <img src="../img/main/symbols/pc.png" alt="" />
+                               <figure className={Style.pcImg}>
+                                    <img src="../img/main/symbols/pc.png" alt="no avilable"/>
+                               </figure>
                                 <Link title={t('NF-gohome')} to={'/'}>
                                     <GreenButton>
                                         {t('NF-gohome')}

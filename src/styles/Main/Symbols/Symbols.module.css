@@ -20,7 +20,7 @@
   align-items: center;
   margin: 0 auto;
 }
-.symbolBlock p {
+.symbolBlock h2 {
   font-size: 35px;
 }
 .symbolInfo {
@@ -79,4 +79,14 @@
   display: grid;
   height: 65vh;
   place-items: center;
+}
+.pcImg {
+  width: 256px;
+  height: 171px;
+  position: relative;
+}
+.pcImg img {
+  width: 256px;
+  height: 171px;
+  position: absolute;
 }/*# sourceMappingURL=Symbols.module.css.map */

@@ -24,14 +24,13 @@
         width: 170px;
         height: 170px;
         border-radius: 50%;
-        // background-color: purple;
         border: 3px solid;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
     
-        p {
+        h2 {
             font-size: 35px;
         }
     }
@@ -100,4 +99,16 @@
     display: grid;
     height: 65vh;
     place-items: center;
+
+    &Img {
+       width: 256px;
+       height: 171px;
+       position: relative; 
+
+       img {
+        width: 256px;
+        height: 171px;
+        position: absolute; 
+       }
+    }
 }

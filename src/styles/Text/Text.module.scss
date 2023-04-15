@@ -12,6 +12,18 @@
     display: grid;
     height: 65vh;
     place-items: center;
+
+    &Img {
+        width: 256px;
+        height: 171px;
+        position: relative; 
+ 
+        img {
+         width: 256px;
+         height: 171px;
+         position: absolute; 
+        }
+    }
 }
 
 .Start {
