@@ -1,8 +1,8 @@
 import Style from '../../../styles/Home/Tips/Tips.module.css';
 import { useTranslation } from "react-i18next";
-import Section from '../../../components/Section/Section';
-import Back from '../../../components/Back/Back';
-import Meta from "../../../components/Meta/Meta";
+import Section from '../../../components/Section';
+import Back from '../../../components/Back';
+import Meta from "../../../components/Meta";
 
 const Tips = () => {
     const [t] = useTranslation();

@@ -1,9 +1,9 @@
+import Style from '../../../styles/Components/TypingCode/ResultShare/ResultShare.module.css';
+import Section from "../../Section";
 import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
-import Style from '../../../styles/Components/TypingCode/ResultShare/ResultShare.module.css';
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Section from "../../Section/Section";
 
 const ResultShare = () => {
     const [t] = useTranslation();

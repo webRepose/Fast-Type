@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Style from '../styles/Header/Header.module.css';
 import { useTranslation } from 'react-i18next';
 

@@ -1,11 +1,11 @@
 import Style from '../../styles/Text/Text.module.css';
-import Section from "../../components/Section/Section";
-import Back from "../../components/Back/Back";
+import Section from "../../components/Section";
+import Back from "../../components/Back";
+import Meta from "../../components/Meta";
+import GreenButton from '../../components/UI/Buttons/GreenButton';
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
-import Meta from "../../components/Meta/Meta";
 import { Link } from "react-router-dom";
-import GreenButton from '../../components/GreenButton/GreenButton';
 
 const Symbols = () => {
     const [t] = useTranslation();
@@ -136,9 +136,9 @@ const Symbols = () => {
                         : <div className={Style.pc}>
                             <div>
                                 <h1>{t('TC-only')}</h1>
-                               <figure className={Style.pcImg}>
-                                    <img src="../img/main/symbols/pc.png" alt="no avilable"/>
-                               </figure>
+                                <figure className={Style.pcImg}>
+                                    <img src="../img/main/symbols/pc.png" alt="no avilable" />
+                                </figure>
                                 <Link title={t('NF-gohome')} to={'/'}>
                                     <GreenButton>
                                         {t('NF-gohome')}

@@ -1,21 +1,25 @@
-import { useTranslation } from "react-i18next";
 import Style from '../../styles/Components/TypingCode/TypingCode.module.css';
-import { useEffect, useMemo, useRef, useState } from "react";
 import Keyboards from '../Keyboards/Keyboards';
-import { Link } from "react-router-dom";
 import CopyToClipboard from "react-copy-to-clipboard";
-import Section from "../Section/Section";
-import GreenButton from "../GreenButton/GreenButton";
-import Back from "../Back/Back";
+import Section from './../Section';
+import GreenButton from '../UI/Buttons/GreenButton';
+import Back from "../Back";
 import SocialMedia from "./SocialMedia/SocialMedia";
+import { useTranslation } from "react-i18next";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
+const inputBackspace = (event) => {
+    if (event.keyCode === 8 || event.key === 'Backspace' || event.which === 8) event.preventDefault();
+};
 
 const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, parseLang, section, historyLang }) => {
     const [t] = useTranslation();
 
-    if(parseTime === 60 || parseTime === 180 || parseTime === 300) {
+    if (parseTime === 60 || parseTime === 180 || parseTime === 300) {
     } else parseTime = 60;
-    if(parseWords === 50 || parseWords === 70 || parseWords === 100) {
-    } else parseWords = 60;
+    if (parseWords === 50 || parseWords === 70 || parseWords === 100) {
+    } else parseWords = 50;
 
     const textsRu = localeText1,
         inputArea = useRef(),
@@ -40,24 +44,20 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
         [minTimerWords, setMinTimerWords] = useState(0),
         [secTimerWords, setSecTimerWords] = useState(0);
 
-
-    const inputBackspace = (event) => {
-        if (event.keyCode === 8 || event.key === 'Backspace' || event.which === 8) event.preventDefault();
-    };
-
-
-    useMemo(()=>{
-        if(inputText[i] !== undefined) {
+    useMemo(() => {
+        if (inputText[i] !== undefined) {
             if (document.getElementsByClassName(Style.onKeyClick).length >= 1) {
                 if (klava) {
                     document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
-                    document.getElementById(inputText[i-1].toUpperCase()).classList.remove(Style.onKeyClick);
-                    document.getElementById(inputText[i-2].toUpperCase()).classList.remove(Style.onKeyClick);
+                    if(inputText[i - 2] !== undefined) {
+                        document.getElementById(inputText[i - 1].toUpperCase()).classList.remove(Style.onKeyClick);
+                        document.getElementById(inputText[i - 2].toUpperCase()).classList.remove(Style.onKeyClick);
+                    }
                 }
             }
-            }
-    },[i, inputText, klava])
-    
+        }
+    }, [i, inputText, klava])
+
     setTimeout(() => {
         if (inputText[i] !== undefined) {
             if (klava && document.getElementById(inputText[i].toUpperCase())) {
@@ -114,8 +114,8 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
         } else if (/Android|HarmonyOS/i.test(navigator.userAgent)) {
             if (reset + inputText[i] === event.nativeEvent.data) {
                 if (event.nativeEvent.data === ' ') {
-                    // setReset(prev => prev = '');
-                    // inputArea.current.value = '';
+                    setReset(prev => prev = '');
+                    inputArea.current.value = '';
                     alert('this sinputtext ', inputText[i])
                     alert('this reset ', reset)
                     alert('event native', event.nativeEvent.data)
@@ -317,10 +317,9 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
                                 <div className={Style.countAll}>
                                     <div><img src="../img/text-type/chat.svg" alt="words" />
                                         {parseMode === 'toTime'
-                                            ? words + ' ' + t('T-counWord')
-
+                                            ? (words + ' ' + t('T-counWord'))
                                             : `${minTimerWords < 10
-                                                ? minTimerWords.toString().padStart(2, '0')
+                                                ? (minTimerWords.toString().padStart(2, '0'))
                                                 : minTimerWords} : ${secTimerWords < 10
                                                     ? secTimerWords.toString().padStart(2, '0')
                                                     : secTimerWords} ${t('TI-TimerUp')}`

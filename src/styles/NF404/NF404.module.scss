@@ -8,14 +8,13 @@
     p {
         text-align: center;
         font-size: 18px;
-        margin-top: 40px;
         margin-bottom: 30px;
     }
 
     img {
         display: block;
         margin: 0 auto;
-        width: 150px;
+        width: 250px;
         height: auto;
     }
 }
@@ -23,5 +22,11 @@
 @media (max-width: 800px) {     
     .notFoundMain {
         height: 60vh !important;
+    }
+}
+
+@media (max-height: 719px) {
+    .notFoundMain {
+        height: 70vh !important;
     }
 }

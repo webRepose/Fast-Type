@@ -1,11 +1,11 @@
 import Style from '../../../styles/Home/History/History.module.css';
-import { useEffect, useState } from 'react';
-import Section from '../../../components/Section/Section';
+import Section from '../../../components/Section';
+import GreenButton from '../../../components/UI/Buttons/GreenButton';
+import Back from '../../../components/Back';
+import Meta from '../../../components/Meta';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import GreenButton from '../../../components/GreenButton/GreenButton';
-import Back from '../../../components/Back/Back';
-import Meta from '../../../components/Meta/Meta';
+import { useEffect, useState } from 'react';
 
 
 const History = () => {
@@ -44,7 +44,7 @@ const History = () => {
                                             <h4><img src='./img/home/History/HistoryID/modeHis.svg' alt="icon" /> {t('HH-mode')}</h4>
                                             <p>{t(result.mode)}</p>
                                             <h4><img src='./img/home/History/HistoryID/timeHis.svg' alt="icon" /> {t('HH-timeInput')}</h4>
-                                            <p>{result.mode === 'C-forWords' ? result.timer : '0' + result.timer }</p>
+                                            <p>{result.mode === 'C-forWords' ? result.timer : '0' + result.timer}</p>
                                             <div className={Style.historyBlockSubTime}>
                                                 <p>{result.times}</p>
                                                 <p>{result.timesNow}</p>

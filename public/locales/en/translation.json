@@ -175,5 +175,12 @@
     "TS-title":"Typing symbols | Fast Type",
     "TS-desc":"Blind print simulator, muscle memory training",
     "TC-title":"Typing code | Fast Type",
-    "TC-only":"Only available on PC"
+    "TC-only":"Only available on PC",
+
+    "CE-no":"Oh no..",
+    "CE-somet":"Somethings",
+    "CE-gone":"gone",
+    "CE-wrong":"wrong...",
+    "CE-sorry":"We apologize, please reload the page.",
+    "CE-reload":"Reload the page"
 }

@@ -1,12 +1,12 @@
 import Style from '../../../styles/Main/Symbols/Symbols.module.css';
-import Meta from '../../../components/Meta/Meta';
-import Back from "../../../components/Back/Back";
-import Section from "../../../components/Section/Section";
-import { useMemo, useState } from 'react';
+import Meta from '../../../components/Meta';
+import Back from "../../../components/Back";
+import Section from "../../../components/Section";
+import GreenButton from '../../../components/UI/Buttons/GreenButton';
 import Keyboards from '../../../components/Keyboards/Keyboards';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import GreenButton from '../../../components/GreenButton/GreenButton';
 
 const TypingSymbols = () => {
     const [t] = useTranslation();

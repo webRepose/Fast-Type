@@ -3,7 +3,7 @@ import Typing from "../../../components/TypingBlock/Typing";
 import JavaScript from '../../code/TypingCode/localesText/JavaScript.json';
 import secondFile from '../../code/TypingCode/localesText/CSS.json';
 import thirdFile from '../../code/TypingCode/localesText/HTML.json';
-import Meta from "../../../components/Meta/Meta";
+import Meta from "../../../components/Meta";
 
 const TypeCode = () => {
     const [t] = useTranslation();

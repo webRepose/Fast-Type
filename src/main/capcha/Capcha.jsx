@@ -1,4 +1,4 @@
-import Soon from "../../components/Soon/Soon";
+import Soon from "../../components/Soon";
 
 const Capcha = () => {
     document.title = 'Capcha | Fast Type';

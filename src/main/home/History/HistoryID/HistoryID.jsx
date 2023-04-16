@@ -1,11 +1,11 @@
 import Style from '../../../../styles/Home/History/HistoryID/HistoryID.module.css';
-import Meta from '../../../../components/Meta/Meta';
-import { useParams } from "react-router-dom";
-import Section from "../../../../components/Section/Section";
-import GreenButton from "../../../../components/GreenButton/GreenButton";
+import Meta from '../../../../components/Meta';
+import Section from "../../../../components/Section";
+import GreenButton from "../../../../components/UI/Buttons/GreenButton";
+import Back from "../../../../components/Back";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
-import Back from "../../../../components/Back/Back";
+import { useParams } from "react-router-dom";
 
 const HistoryID = () => {
     const [t] = useTranslation();

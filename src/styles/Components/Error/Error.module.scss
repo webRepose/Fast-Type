@@ -1,0 +1,119 @@
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88vh;
+
+    img {
+        width: 350px;
+    }
+    &Text {
+        margin-right: 200px;
+        &Wow {
+            display: block;
+            font-weight: 600;
+            font-style: italic;
+            font-size: 18px;
+            opacity: 0.7;
+            text-decoration: underline 0.5px solid;
+        }
+
+        &Sorry {
+            font-style: italic;
+            font-size: 20px;
+            margin-top: 30px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            width: 400px;
+        }
+
+        h2 {
+            font-size: 50px;
+            letter-spacing: 2px;
+            font-weight: 600;
+
+            b {
+                font-weight: 600;
+                text-decoration: underline 3px;
+                font-style: oblique;
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .errorText {
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 970px) {
+    .error {
+        flex-wrap: wrap-reverse;
+        height: 70vh;
+
+        img {
+            width: 300px;
+        }
+    }
+}
+
+@media (max-width: 725px) {
+    .error {
+        height: auto;
+
+        &MobileCenter {
+            height: 90vh;
+            display: grid;
+            place-items: center;
+        }
+
+        &TextWow {
+            margin: 20px 0 5px 0;
+            font-size: 20px;
+        }
+        
+        p, h2 {
+            text-align: center;
+        }
+
+        button {
+            margin: 0 auto;
+            padding: 12px 80px;
+        }
+
+        img {
+            width: 300px;
+        }
+    }
+}
+
+@media (max-width: 670px) {
+    .errorText {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .error {
+        &MobileCenter {
+            height: 75vh;
+        }
+        &TextSorry {
+            width: auto;
+        }
+        img {
+            width: 200px;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+}
+
+@media (max-height: 670px) {
+    .errorMobileCenter {
+            height: 85vh;
+        }
+}

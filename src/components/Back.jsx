@@ -1,5 +1,5 @@
+import Style from '../styles/Components/Back/Back.module.css';
 import { Link } from 'react-router-dom';
-import Style from '../../styles/Components/Back/Back.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 

@@ -1,4 +1,4 @@
-import Style from '../../styles/Components/Section/Section.module.css';
+import Style from '../styles/Components/Section/Section.module.css';
 
 const Section = (props) => {
     return (

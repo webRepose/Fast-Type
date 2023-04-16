@@ -1,14 +1,14 @@
 import Typing from "../../../components/TypingBlock/Typing";
-import { useTranslation } from "react-i18next";
 import localesEn from './localesText/localesEN.json';
 import localesRu from './localesText/localesRU.json';
-import Meta from "../../../components/Meta/Meta";
+import Meta from "../../../components/Meta";
+import { useTranslation } from "react-i18next";
 
 const Type = () => {
     const [t] = useTranslation();
     const text = {
         modeID: 'toTime',
-        mode: t('C-forTime'),
+        mode: 'C-forTime',
         keyboard: 'Qwerty',
         time: 60,
         words: 50,
