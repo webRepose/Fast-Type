@@ -125,7 +125,6 @@
 .params ul li:hover {
   opacity: 0.9;
 }
-
 @keyframes clickMeCream {
   0% {
     box-shadow: 0 0 0 0 var(--ThemeButton-color);
@@ -217,7 +216,7 @@
     max-height: 100%;
     position: fixed;
     -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     display: none;
     top: 0;
     left: 0;

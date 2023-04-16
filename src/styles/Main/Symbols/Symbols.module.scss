@@ -2,20 +2,26 @@
     background: var(--gradient1-color);
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
     -webkit-transform: translateY(-5px);
         -ms-transform: translateY(-5px);
-            transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+              -o-transform: translateY(-5px);
+         transform: translateY(-5px);
 }
 
 .onKeyClickBackspace {
     background: var(--gradient1-color);
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
     -webkit-transform: translateY(-5px);
         -ms-transform: translateY(-5px);
-            transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+              -o-transform: translateY(-5px);
+         transform: translateY(-5px);
 }
 
 
@@ -23,11 +29,25 @@
     &Block {
         width: 170px;
         height: 170px;
-        border-radius: 50%;
+        -webkit-border-radius: var(--radius50p);
+           -moz-border-radius: var(--radius50p);
+                border-radius: var(--radius50p);
         border: 3px solid;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+           -moz-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+           -moz-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         margin: 0 auto;
     
         h2 {
@@ -38,6 +58,10 @@
     &Info {
         width: 250px;
         margin: 20px auto 0 auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
         height: 45px;
     }
@@ -45,14 +69,30 @@
     &Example {
         position: relative;
         background-color: var(--ThemeButton-color);
-        border-radius: 8px;
+        -webkit-border-radius: 8px;
+           -moz-border-radius: 8px;
+                border-radius: 8px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+           -moz-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+           -moz-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding: 0 20px;
         color: var(--textT-color);
         margin: 0 auto;
         height: 100%;
+        width: -webkit-min-content;
+        width: -moz-min-content;
         width: min-content;
 
         p {
@@ -68,7 +108,9 @@
     &Slesh {
         width: 2px;
         background-color: var(--text-color);
-        border-radius: 25px;
+        -webkit-border-radius: var(--radius25);
+           -moz-border-radius: var(--radius25);
+                border-radius: var(--radius25);
         margin: 0 10px;
         height: 70%;
         margin-top: 7px;
@@ -80,6 +122,9 @@
             background-color: transparent;
             outline: none;
             cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
             transition: all 0.3s ease;
 
             img {
@@ -89,13 +134,18 @@
             }
 
             &:hover {
-                transform: translateY(-3px);
+                -webkit-transform: translateY(-3px);
+                   -moz-transform: translateY(-3px);
+                    -ms-transform: translateY(-3px);
+                     -o-transform: translateY(-3px);
+                        transform: translateY(-3px);
             }
         }
     }
 }
 
 .pc {
+    display: -ms-grid;
     display: grid;
     height: 65vh;
     place-items: center;

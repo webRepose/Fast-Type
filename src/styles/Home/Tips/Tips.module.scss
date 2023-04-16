@@ -2,7 +2,9 @@
     &BlockTip {
         width: 100%;
         margin: 0 auto;
-        border-radius: var(--radius25);
+        -webkit-border-radius: var(--radius25);
+           -moz-border-radius: var(--radius25);
+                border-radius: var(--radius25);
         margin-bottom: 10px;
         padding: 10px 20px;
 
@@ -42,14 +44,17 @@
     
     &Answer {
         padding: 0 20px;
-        font-size: 18px;
+        font-size: var(--font18);
         margin-bottom: 40px;
     }
 
     &Klava {
         display: block;
         margin: 0 auto;
-        user-select: none;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
         margin-bottom: 40px;
     }
 
@@ -64,11 +69,11 @@
         &BlockTip {
             padding: 10px 20px;
             h3 {
-                font-size: 17px;
+                font-size: var(--font17);
             }
         }
         &Answer {
-            font-size: 16px;
+            font-size: var(--font16);
         }
     }
 }

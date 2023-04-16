@@ -13,7 +13,6 @@
   margin-bottom: 40px;
   text-align: center;
 }
-
 @keyframes onLoad {
   0% {
     transform: translateY(5px);

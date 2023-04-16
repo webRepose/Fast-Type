@@ -7,7 +7,7 @@
 }
 .historyBlockSub {
   background-color: var(--body-color);
-  border-radius: 15px;
+  border-radius: var(--radius15);
   padding: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -18,14 +18,14 @@
 }
 .historyBlockSub p {
   text-align: center;
-  font-size: 19px;
+  font-size: var(--font19);
   margin-bottom: 10px;
   margin-top: 5px;
 }
 .historyBlockSub h4 {
   text-align: center;
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--font20);
 }
 .historyBlockSub h4 img {
   position: relative;
@@ -49,7 +49,7 @@
   height: 69vh !important;
 }
 .historyBlockEmpty h4 {
-  font-size: 21px;
+  font-size: var(--font21);
   text-align: center;
 }
 .historyBlockEmpty img {
@@ -61,13 +61,13 @@
 
 @media (max-width: 1366px) {
   .historyBlockSub h4 {
-    font-size: 17px;
+    font-size: var(--font17);
   }
   .historyBlockSub h4 img {
     width: 16px;
   }
   .historyBlockSub p {
-    font-size: 16px;
+    font-size: var(--font16);
   }
 }
 @media (max-width: 920px) {

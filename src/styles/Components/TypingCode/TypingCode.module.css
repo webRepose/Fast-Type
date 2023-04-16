@@ -149,7 +149,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  font-size: 24px;
+  font-size: var(--font24);
   font-weight: 400;
   font-family: sans-serif;
   background-color: transparent;
@@ -203,9 +203,9 @@
   width: 45px;
   height: 45px;
   border: 0;
-  border-radius: 50%;
+  border-radius: var(--radius50p);
   position: absolute;
-  left: 20PX;
+  left: 20px;
   transition: all 0.3s ease;
   background: linear-gradient(45deg, #8e4a9a, #552aff);
   opacity: 0.8;
@@ -249,7 +249,7 @@
   place-items: center;
 }
 .sharePcCopyLink {
-  border-radius: 50%;
+  border-radius: var(--radius50p);
   border: 0;
   width: 40px;
   height: 40px;
@@ -295,7 +295,7 @@
   justify-content: space-between;
 }
 .sharePcOther button svg {
-  border-radius: 10px;
+  border-radius: var(--radius10);
   width: 65px;
   height: 65px;
 }
@@ -342,7 +342,7 @@
     margin-top: 30px;
   }
   .inputArea, .inputText {
-    font-size: 19px;
+    font-size: var(--font19);
   }
 }
 @media (max-width: 912px) {

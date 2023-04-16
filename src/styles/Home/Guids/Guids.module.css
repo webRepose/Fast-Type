@@ -61,7 +61,6 @@
 .guideRight {
   animation: right 0.6s ease;
 }
-
 @keyframes clickMeCream {
   0% {
     box-shadow: 0 0 0 0 var(--ThemeButton-color);
@@ -88,7 +87,7 @@
 }
 @media (max-width: 1366px) {
   .guideAnswer h4, .guideQuestion h4 {
-    font-size: 16px;
+    font-size: var(--font16);
   }
 }
 @media (max-width: 540px) {

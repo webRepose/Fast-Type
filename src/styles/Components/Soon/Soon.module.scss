@@ -1,8 +1,33 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 100 version
+*/
+
 .soon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
     min-height: 80vh;
 
     img {
@@ -17,13 +42,25 @@
         display: block;
         margin: 0 auto;
         margin-top: 40px;
-        border-radius: var(--radius25);
+        -webkit-border-radius: var(--radius25);
+           -moz-border-radius: var(--radius25);
+                border-radius: var(--radius25);
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
         transition: all 0.3s ease;
+        background: -webkit-linear-gradient(45deg,rgb(97, 87, 255), rgb(238, 73, 253));
+        background: -moz-linear-gradient(45deg,rgb(97, 87, 255), rgb(238, 73, 253));
+        background: -o-linear-gradient(45deg,rgb(97, 87, 255), rgb(238, 73, 253));
         background: linear-gradient(45deg,rgb(97, 87, 255), rgb(238, 73, 253));
         padding: 10px 60px;
         color: var(--textT-color);
         &:hover {
-            transform: translateY(-3px);
+            -webkit-transform: translateY(-3px);
+               -moz-transform: translateY(-3px);
+                -ms-transform: translateY(-3px);
+                 -o-transform: translateY(-3px);
+                    transform: translateY(-3px);
             opacity: 0.9;   
         }
     }

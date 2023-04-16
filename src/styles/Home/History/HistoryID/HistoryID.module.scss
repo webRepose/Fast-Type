@@ -1,19 +1,26 @@
 .hisData {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: auto auto;
     grid-template-columns: auto auto;
     color: var(--textT-color);
 
     &Block {
         width: 400px;
         padding: 10px;
+        background: -webkit-linear-gradient(20deg, rgb(97, 87, 255), rgb(238, 73, 253));
+        background: -moz-linear-gradient(20deg, rgb(97, 87, 255), rgb(238, 73, 253));
+        background: -o-linear-gradient(20deg, rgb(97, 87, 255), rgb(238, 73, 253));
         background: linear-gradient(70deg, rgb(97, 87, 255), rgb(238, 73, 253));
-        border-radius: 15px;
+        -webkit-border-radius: var(--radius15);
+           -moz-border-radius: var(--radius15);
+                border-radius: var(--radius15);
         margin: 0 auto 20px auto;
     }
 
     h4 {
         text-align: center;
-        font-size: 21px;
+        font-size: var(--font21);
         margin-bottom: 7px;
         line-height: 30px;
 
@@ -27,7 +34,7 @@
     
     p {
         text-align: center;
-        font-size: 18px;
+        font-size: var(--font18);
     }
 }
 
@@ -37,7 +44,7 @@
     margin-bottom: 15px;
     h4 {
         text-align: center;
-        font-size: 21px;
+        font-size: var(--font21);
         margin-bottom: 7px;
 
         img {
@@ -49,9 +56,17 @@
     }
     
     p {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        font-size: 18px;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+           -moz-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        font-size: var(--font18);
 
         span {
             margin-left: 7px;
@@ -64,6 +79,7 @@
 
 @media (max-width: 1050px) {
     .hisData {
+        -ms-grid-columns: auto;
         grid-template-columns: auto;
     }
 }

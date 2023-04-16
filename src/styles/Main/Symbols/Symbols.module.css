@@ -13,7 +13,7 @@
 .symbolBlock {
   width: 170px;
   height: 170px;
-  border-radius: 50%;
+  border-radius: var(--radius50p);
   border: 3px solid;
   display: flex;
   justify-content: center;
@@ -53,7 +53,7 @@
 .symbolSlesh {
   width: 2px;
   background-color: var(--text-color);
-  border-radius: 25px;
+  border-radius: var(--radius25);
   margin: 0 10px;
   height: 70%;
   margin-top: 7px;

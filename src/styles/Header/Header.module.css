@@ -133,7 +133,7 @@ ul a p {
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 5px;
-  border-radius: 25px;
+  border-radius: var(--radius25);
 }
 .account:hover {
   transform: translateY(-3px);
@@ -144,7 +144,7 @@ ul a p {
 }
 .accountIcon {
   border: 0;
-  border-radius: 50%;
+  border-radius: var(--radius50p);
   width: 45px;
   height: 45px;
   background-color: var(--account-color);
@@ -264,7 +264,7 @@ ul a p {
     padding-right: 10px;
   }
   .logo h2 {
-    font-size: 20px;
+    font-size: var(--font20);
   }
 }
 @media (max-width: 912px) {

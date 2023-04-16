@@ -1,13 +1,25 @@
 .rainbow {
     border: 0;
     display: block;
-    border-radius: var(--radius25);
+    -webkit-border-radius: var(--radius25);
+       -moz-border-radius: var(--radius25);
+            border-radius: var(--radius25);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    background: -webkit-linear-gradient(45deg,rgb(97, 87, 255), rgb(238, 73, 253));
+    background: -moz-linear-gradient(45deg,rgb(97, 87, 255), rgb(238, 73, 253));
+    background: -o-linear-gradient(45deg,rgb(97, 87, 255), rgb(238, 73, 253));
     background: linear-gradient(45deg,rgb(97, 87, 255), rgb(238, 73, 253));
     padding: 10px 60px;
     color: var(--textT-color);
     &:hover {
-        transform: translateY(-3px);
+        -webkit-transform: translateY(-3px);
+           -moz-transform: translateY(-3px);
+            -ms-transform: translateY(-3px);
+             -o-transform: translateY(-3px);
+                transform: translateY(-3px);
         opacity: 0.9;   
     }
 }

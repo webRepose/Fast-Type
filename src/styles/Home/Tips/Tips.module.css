@@ -31,15 +31,15 @@
 }
 .tipsAnswer {
   padding: 0 20px;
-  font-size: 18px;
+  font-size: var(--font18);
   margin-bottom: 40px;
 }
 .tipsKlava {
   display: block;
   margin: 0 auto;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   margin-bottom: 40px;
 }
 .tips .imgpost {
@@ -52,10 +52,10 @@
     padding: 10px 20px;
   }
   .tipsBlockTip h3 {
-    font-size: 17px;
+    font-size: var(--font17);
   }
   .tipsAnswer {
-    font-size: 16px;
+    font-size: var(--font16);
   }
 }
 @media (max-width: 640px) {

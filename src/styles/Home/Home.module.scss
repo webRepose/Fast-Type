@@ -18,7 +18,9 @@
     margin: 0 auto;
     width: 90%;
     background-color: var(--block-color);
-    border-radius: var(--radius15);
+    -webkit-border-radius: var(--radius15);
+       -moz-border-radius: var(--radius15);
+            border-radius: var(--radius15);
     padding:var(--paddingHome);
     margin-bottom: 20px;
     
@@ -45,7 +47,8 @@
             font-size: var(--font21);
             overflow: hidden;
             white-space: nowrap;
-            text-overflow: ellipsis;   
+            -o-text-overflow: ellipsis;
+               text-overflow: ellipsis;   
         }
     }
 
@@ -53,27 +56,36 @@
         margin-right: 20px;
         -webkit-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
         transition: all 0.3s ease;
         &:hover {
             opacity: 0.8;
             -webkit-transform: translateY(-10px);
                 -ms-transform: translateY(-10px);
-                    transform: translateY(-10px);
+                    -moz-transform: translateY(-10px);
+                      -o-transform: translateY(-10px);
+                 transform: translateY(-10px);
         }
     }
 
     &Skeleton {
         width: 160px;
         height: 160px;
-        border-radius: var(--radius15);
+        -webkit-border-radius: var(--radius15);
+           -moz-border-radius: var(--radius15);
+                border-radius: var(--radius15);
         background-color: blanchedalmond;
     }
 
     &Img {
         width: 160px;
         height: 160px;
-        border-radius: var(--radius15);
-        box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+        -webkit-border-radius: var(--radius15);
+           -moz-border-radius: var(--radius15);
+                border-radius: var(--radius15);
+        -webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+           -moz-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+                box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
 
         img {
             position:relative;
@@ -81,7 +93,9 @@
             top: 50%;
             -webkit-transform: translateY(-50%);
                 -ms-transform: translateY(-50%);
-                    transform: translateY(-50%);
+                    -moz-transform: translateY(-50%);
+                      -o-transform: translateY(-50%);
+                 transform: translateY(-50%);
             margin: 0 auto;
             -webkit-user-select: none;
                -moz-user-select: none;

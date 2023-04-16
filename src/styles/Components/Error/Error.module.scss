@@ -1,7 +1,19 @@
 .error {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 88vh;
 
     img {
@@ -15,12 +27,14 @@
             font-style: italic;
             font-size: 18px;
             opacity: 0.7;
-            text-decoration: underline 0.5px solid;
+            -webkit-text-decoration: underline 0.5px solid;
+               -moz-text-decoration: underline 0.5px solid;
+                    text-decoration: underline 0.5px solid;
         }
 
         &Sorry {
             font-style: italic;
-            font-size: 20px;
+            font-size: var(--font20);
             margin-top: 30px;
             font-weight: 500;
             margin-bottom: 30px;
@@ -34,7 +48,9 @@
 
             b {
                 font-weight: 600;
-                text-decoration: underline 3px;
+                -webkit-text-decoration: underline 3px;
+                   -moz-text-decoration: underline 3px;
+                        text-decoration: underline 3px;
                 font-style: oblique;
             }
         }
@@ -49,7 +65,9 @@
 
 @media (max-width: 970px) {
     .error {
-        flex-wrap: wrap-reverse;
+        -webkit-flex-wrap: wrap-reverse;
+            -ms-flex-wrap: wrap-reverse;
+                flex-wrap: wrap-reverse;
         height: 70vh;
 
         img {
@@ -64,13 +82,14 @@
 
         &MobileCenter {
             height: 90vh;
+            display: -ms-grid;
             display: grid;
             place-items: center;
         }
 
         &TextWow {
             margin: 20px 0 5px 0;
-            font-size: 20px;
+            font-size: var(--font20);
         }
         
         p, h2 {

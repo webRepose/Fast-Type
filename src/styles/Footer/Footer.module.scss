@@ -5,6 +5,8 @@ footer {
     position: fixed;
     bottom: 0;
     z-index: 100;
-    border-radius: var(--radius15) var(--radius15) 0 0;
+    -webkit-border-radius: var(--radius15) var(--radius15) 0 0;
+       -moz-border-radius: var(--radius15) var(--radius15) 0 0;
+            border-radius: var(--radius15) var(--radius15) 0 0;
     background-color: var(--aside-color);
 }

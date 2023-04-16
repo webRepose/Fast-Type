@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: transparent;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 :root {
@@ -11,9 +13,11 @@
     --radius17: 17px;
     --radius20: 20px;
     --radius25: 25px;
+    --radius50p: 50%;
     --font24: 24px;
     --font21: 21px;
     --font20: 20px;
+    --font19: 19px;
     --font18: 18px;
     --font17: 17px;
     --font16: 16px;
@@ -28,7 +32,8 @@
 
 ::-webkit-scrollbar-thumb {
     background: #686868;
-    border-radius: 1.17vw;
+    -webkit-border-radius: 1.17vw;
+            border-radius: 1.17vw;
 }
 
 ::-webkit-scrollbar-track {
@@ -77,7 +82,9 @@ main {
 }
 
 .active {
-    border-radius: var(--radius15);
+    -webkit-border-radius: var(--radius15);
+       -moz-border-radius: var(--radius15);
+            border-radius: var(--radius15);
     background-color: var(--active-color);
     padding: 12px 14px 6px 14px;
 }

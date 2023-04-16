@@ -39,7 +39,7 @@ const ResultShare = () => {
                 </div>
                 <div className={Style.choiceParams}>
                     <h2>{t('TR-canMore')}</h2>
-                    <Link to='/text/type'>
+                    <Link to='/text/typing'>
                         <button title={t('TR-try')}>{t('TR-try')}</button>
                     </Link>
                     <h2>{t('TR-noTrust')}</h2>

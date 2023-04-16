@@ -6,7 +6,7 @@
 
 .notFound p {
   text-align: center;
-  font-size: 18px;
+  font-size: var(--font18);
   margin-bottom: 30px;
 }
 .notFound img {

@@ -1,14 +1,22 @@
 .grid {
+    display: -ms-grid !important;
     display: grid !important;
 }
 
 .flex {
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
     display: flex !important;
-    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
 } 
 
 
 .pc {
+    display: -ms-grid;
     display: grid;
     height: 65vh;
     place-items: center;
@@ -31,7 +39,9 @@
     margin: 0 auto;
     margin-top: 10px;
     border: 0;
-    border-radius: 25px;
+    -webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 25px;
     background-color: var(--startButton-color);
 }
 
@@ -41,6 +51,10 @@
 }
 
 .params {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
     &Block {
         font-size: var(--font21);
@@ -57,6 +71,10 @@
     }
 
     &Sub {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
         margin-bottom: 20px;
     }
@@ -66,10 +84,15 @@
         background-color: var(--choiceButton-color) ;
         outline: none;
         border: 0;
-        border-radius: var(--radius15);
+        -webkit-border-radius: var(--radius15);
+           -moz-border-radius: var(--radius15);
+                border-radius: var(--radius15);
         color: var(--textT-color);
         font-size: var(--font21);
         margin-left: 28px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
         transition: all 0.3s ease;
         &:hover {
             opacity: 0.7;
@@ -94,10 +117,16 @@
     &Text {
         padding: 10px 0;
         width: 345px;
-        border-radius: var(--radius17);
+        -webkit-border-radius: var(--radius17);
+           -moz-border-radius: var(--radius17);
+                border-radius: var(--radius17);
         background-color: var(--choiceText-color);
 
         &Sub {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
             display: flex;
             img {
                 margin-left: 30px;
@@ -122,17 +151,27 @@
         overflow-y: auto;
         overflow-x: hidden;
         display: none;
-        border-radius: var(--radius25);
+        -webkit-border-radius: var(--radius25);
+           -moz-border-radius: var(--radius25);
+                border-radius: var(--radius25);
         li {
             padding: 10px 30px;
             margin: 0 0 8px 8px;
             background-color: var(--choiceButton-color);
-            border-radius: var(--radius15);
+            -webkit-border-radius: var(--radius15);
+               -moz-border-radius: var(--radius15);
+                    border-radius: var(--radius15);
             cursor: pointer;
             color: var(--textT-color);
+            -webkit-transition: all 0.3 ease;
+            -o-transition: all 0.3 ease;
+            -moz-transition: all 0.3 ease;
             transition: all 0.3 ease;
             font-size: var(--font21);
-            animation: clickMeCream 1.4s linear infinite;
+            -webkit-animation: clickMeCream 1.4s linear infinite;
+               -moz-animation: clickMeCream 1.4s linear infinite;
+                 -o-animation: clickMeCream 1.4s linear infinite;
+                    animation: clickMeCream 1.4s linear infinite;
             &:hover {
                 opacity: 0.9;
             }
@@ -142,12 +181,50 @@
 }
 
 
-@keyframes clickMeCream {
+@-webkit-keyframes clickMeCream {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 var(--ThemeButton-color);
+                box-shadow: 0 0 0 0 var(--ThemeButton-color);
+    }
+    50% {
+        -webkit-box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+                box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+    }
+}
+
+
+@-moz-keyframes clickMeCream {
+    0% {
+        -moz-box-shadow: 0 0 0 0 var(--ThemeButton-color);
+             box-shadow: 0 0 0 0 var(--ThemeButton-color);
+    }
+    50% {
+        -moz-box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+             box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+    }
+}
+
+
+@-o-keyframes clickMeCream {
     0% {
         box-shadow: 0 0 0 0 var(--ThemeButton-color);
     }
     50% {
         box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+    }
+}
+
+
+@keyframes clickMeCream {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 var(--ThemeButton-color);
+           -moz-box-shadow: 0 0 0 0 var(--ThemeButton-color);
+                box-shadow: 0 0 0 0 var(--ThemeButton-color);
+    }
+    50% {
+        -webkit-box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+           -moz-box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+                box-shadow: 0 0 10px 0 var(--ThemeButton-color);
     }
 }
 
@@ -239,7 +316,11 @@
 
         ul {
             background-color: var(--chageText-color);
-            justify-content: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             margin-top: 20px;
             width: 80%;
         }
@@ -253,20 +334,25 @@
             height: 100%;
             max-height: 100%;
             position: fixed;
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
             display: none;
             top: 0;
             left: 0;
             bottom: 0;
             right: 0;
-            border-radius: var(--radius25);
+            -webkit-border-radius: var(--radius25);
+               -moz-border-radius: var(--radius25);
+                    border-radius: var(--radius25);
             margin: auto;
             
             button {
                 background-color: var(--ThemeButton-color);
                 margin: 0 auto;
                 border: 0;
-                border-radius: var(--radius15);
+                -webkit-border-radius: var(--radius15);
+                   -moz-border-radius: var(--radius15);
+                        border-radius: var(--radius15);
                 padding: 10px 44px;
                 margin-top: 20px;
                 margin-bottom: 20px;
@@ -277,7 +363,9 @@
         &ChoiceMobile {
             width: 80%;
             background-color: var(--chageText-color);
-            border-radius: var(--radius25);
+            -webkit-border-radius: var(--radius25);
+               -moz-border-radius: var(--radius25);
+                    border-radius: var(--radius25);
         }
 
         &Sub {
@@ -301,7 +389,11 @@
             margin: 0 auto;
             width: 70%;
             &Sub {
-                justify-content: center;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                   -moz-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
                 img {
                     margin-left: 0;
                     margin-top: 1px;

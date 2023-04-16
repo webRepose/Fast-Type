@@ -1,7 +1,7 @@
 .Back {
   width: 45px;
   height: 45px;
-  border-radius: 50%;
+  border-radius: var(--radius50p);
   border: 0;
   background-color: var(--body-color);
   display: grid;

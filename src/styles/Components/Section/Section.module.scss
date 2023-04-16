@@ -1,11 +1,16 @@
 .Block {
     width: 100%;
     padding: var(--paddingHome);
-    border-radius: var(--radius15);
+    -webkit-border-radius: var(--radius15);
+       -moz-border-radius: var(--radius15);
+            border-radius: var(--radius15);
     background-color: var(--block-color);
     margin-bottom: 20px;
     position: relative;
-    animation: onLoad 0.3s ease-out;
+    -webkit-animation: onLoad 0.3s ease-out;
+       -moz-animation: onLoad 0.3s ease-out;
+         -o-animation: onLoad 0.3s ease-out;
+            animation: onLoad 0.3s ease-out;
     h1 {
         font-size: var(--font24);
         font-weight: bold;
@@ -14,13 +19,58 @@
     }
 }
 
-@keyframes onLoad {
+@-webkit-keyframes onLoad {
     0% {
-        transform: translateY(5px);
+        -webkit-transform: translateY(5px);
+                transform: translateY(5px);
         opacity: 0.8;
     }
     100% {
-        transform: translateY(-0px);
+        -webkit-transform: translateY(-0px);
+                transform: translateY(-0px);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes onLoad {
+    0% {
+        -moz-transform: translateY(5px);
+             transform: translateY(5px);
+        opacity: 0.8;
+    }
+    100% {
+        -moz-transform: translateY(-0px);
+             transform: translateY(-0px);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes onLoad {
+    0% {
+        -o-transform: translateY(5px);
+           transform: translateY(5px);
+        opacity: 0.8;
+    }
+    100% {
+        -o-transform: translateY(-0px);
+           transform: translateY(-0px);
+        opacity: 1;
+    }
+}
+
+@keyframes onLoad {
+    0% {
+        -webkit-transform: translateY(5px);
+           -moz-transform: translateY(5px);
+             -o-transform: translateY(5px);
+                transform: translateY(5px);
+        opacity: 0.8;
+    }
+    100% {
+        -webkit-transform: translateY(-0px);
+           -moz-transform: translateY(-0px);
+             -o-transform: translateY(-0px);
+                transform: translateY(-0px);
         opacity: 1;
     }
 }

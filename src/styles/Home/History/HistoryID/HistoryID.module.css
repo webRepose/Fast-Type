@@ -7,12 +7,12 @@
   width: 400px;
   padding: 10px;
   background: linear-gradient(70deg, rgb(97, 87, 255), rgb(238, 73, 253));
-  border-radius: 15px;
+  border-radius: var(--radius15);
   margin: 0 auto 20px auto;
 }
 .hisData h4 {
   text-align: center;
-  font-size: 21px;
+  font-size: var(--font21);
   margin-bottom: 7px;
   line-height: 30px;
 }
@@ -24,7 +24,7 @@
 }
 .hisData p {
   text-align: center;
-  font-size: 18px;
+  font-size: var(--font18);
 }
 
 .hisBlockDate {
@@ -32,7 +32,7 @@
 }
 .hisBlockDate h4 {
   text-align: center;
-  font-size: 21px;
+  font-size: var(--font21);
   margin-bottom: 7px;
 }
 .hisBlockDate h4 img {
@@ -44,7 +44,7 @@
 .hisBlockDate p {
   display: flex;
   justify-content: center;
-  font-size: 18px;
+  font-size: var(--font18);
 }
 .hisBlockDate p span {
   margin-left: 7px;
