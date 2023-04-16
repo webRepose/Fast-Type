@@ -48,7 +48,9 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
         if (inputText[i] !== undefined) {
             if (document.getElementsByClassName(Style.onKeyClick).length >= 1) {
                 if (klava) {
-                    document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+                    if(document.getElementById(inputText[i].toUpperCase())) {
+                        document.getElementById(inputText[i].toUpperCase()).classList.remove(Style.onKeyClick);
+                    }
                     if(inputText[i - 2] !== undefined) {
                         document.getElementById(inputText[i - 1].toUpperCase()).classList.remove(Style.onKeyClick);
                         document.getElementById(inputText[i - 2].toUpperCase()).classList.remove(Style.onKeyClick);
