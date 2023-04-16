@@ -1,4 +1,4 @@
-import Style from '../../../styles/Components/GreenButton/GreenButton.module.css'
+import Style from '../../../styles/Components/UI/Buttons/GreenButton/GreenButton.module.css'
 
 const GreenButton = (props) => {
     return (
