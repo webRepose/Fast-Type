@@ -128,9 +128,9 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
                     setWords(prev => prev + 1);
                 }
 
-                alert('this inputtext ', inputText[i])
-                alert('this reset ', reset)
-                alert('event native', event.nativeEvent.data)
+                alert('this inputtext ' + inputText[i])
+                alert('this reset ' + reset)
+                alert('event native' + event.nativeEvent.data)
 
             } else {
                 backSpace();
