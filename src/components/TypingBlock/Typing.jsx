@@ -120,10 +120,6 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
                     inputArea.current.value = '';
                 }
 
-                alert('this sinputtext ', inputText[i])
-                alert('this reset ', reset)
-                alert('event native', event.nativeEvent.data)
-                
                 if (inputArea.current.value.length >= 1) setReset(prev => prev = inputArea.current.value)
 
                 setI(prev => prev + 1);
@@ -131,6 +127,10 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
                 if (event.nativeEvent.data === ' ' || event.nativeEvent.data === '-') {
                     setWords(prev => prev + 1);
                 }
+
+                alert('this inputtext ', inputText[i])
+                alert('this reset ', reset)
+                alert('event native', event.nativeEvent.data)
 
             } else {
                 backSpace();
