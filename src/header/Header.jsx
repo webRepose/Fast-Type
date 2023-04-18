@@ -7,6 +7,9 @@ import Theme from './Theme';
 import Account from './Account';
 
 const Header = () => {
+//     chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
+//     sendResponse({damn: true});
+//   });
     return (
         <>
             <header>

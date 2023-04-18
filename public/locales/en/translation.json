@@ -18,6 +18,7 @@
     "H-Guid":"Questions",
     "H-Help":"Tips",
     "H-description":"Fast Type - Blind Type Trainer",
+    "H-title":"Fast Type - Blind typing training",
 
     "T-title":"Typing options | Fast Type",
     "T-options":"Select options:",
@@ -26,7 +27,7 @@
     "T-mode":"Select mode:",
     "T-time":"Select time:",
     "T-words":"Select number of words:",
-    "T-start":"Start",
+    "T-start":"Start the typing",
     "T-onTime":"For a while",
     "T-onWords":"On the number of words",
     "T-counWord":"Words",

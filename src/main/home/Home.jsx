@@ -12,7 +12,7 @@ const Home = () => {
 
     return (
         <main>
-            <Meta title={'Fast Type'} canon={''} description={t('H-description')} keywords={'Fast Type, fast type, Фаст тайп, фаст тайп, слепая печать, Слепая печать, Тренажер слепой печати, Слепая печать учить, Тренажер быстрой печати, набор текстов, Blind typing, Blind typing, Blind typing trainer, Blind typing learn, Fast typing trainer, typesetting'} />
+            <Meta title={t('H-title')} canon={''} description={t('H-description')} keywords={'Fast Type, fast type, Фаст тайп, фаст тайп, слепая печать, Слепая печать, Тренажер слепой печати, Слепая печать учить, Тренажер быстрой печати, набор текстов, Blind typing, Blind typing, Blind typing trainer, Blind typing learn, Fast typing trainer, typesetting'} />
             <Section>
                 <div className={Style.homeWelcome}>
                     <h2>{t('H-Welcome')}</h2>

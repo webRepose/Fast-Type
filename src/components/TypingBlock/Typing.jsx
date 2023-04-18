@@ -118,11 +118,12 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
                 if (event.nativeEvent.data === ' ') {
                     setReset(prev => prev = '');
                     inputArea.current.value = '';
-                    alert('this sinputtext ', inputText[i])
-                    alert('this reset ', reset)
-                    alert('event native', event.nativeEvent.data)
                 }
 
+                alert('this sinputtext ', inputText[i])
+                alert('this reset ', reset)
+                alert('event native', event.nativeEvent.data)
+                
                 if (inputArea.current.value.length >= 1) setReset(prev => prev = inputArea.current.value)
 
                 setI(prev => prev + 1);
