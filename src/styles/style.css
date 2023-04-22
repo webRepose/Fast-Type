@@ -49,6 +49,7 @@ body {
   overflow-y: overlay;
   scroll-behavior: smooth;
   position: relative;
+  height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,7 +67,7 @@ p {
 
 button {
   color: var(--text-color);
-  font-size: var(--font21);
+  font-size: var(--font18);
   cursor: pointer;
 }
 button:active {
@@ -74,12 +75,13 @@ button:active {
 }
 
 main {
-  margin-left: 244px;
+  margin-left: 220px;
+  width: 100%;
   padding: 20px 24px 0 24px;
 }
 
 .active {
-  border-radius: var(--radius15);
+  border-radius: var(--radius25);
   background-color: var(--active-color);
   padding: 12px 14px 6px 14px;
 }
@@ -91,6 +93,17 @@ main {
 @media (max-width: 1600px) {
   :root {
     --paddingHome:25px 20px !important;
+  }
+}
+@media (max-width: 912px) {
+  main {
+    margin-left: 0;
+    padding: 20px 0 0 0;
+  }
+}
+@media (max-width: 479px) {
+  .active {
+    border-radius: var(--radius20);
   }
 }
 .courses-back {

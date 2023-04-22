@@ -44,26 +44,26 @@ html.light {
   --back-icon: url(/public/img/Components/Back/undoLight.svg);
 }
 
-@media (max-width: 1279px) {
-  main {
-    margin-left: 150px !important;
-  }
-}
-@media (max-width: 1600px) {
-  main {
-    margin-left: 180px;
-  }
-}
+// @media (max-width: 1279px) {
+//   main {
+//     margin-left: 150px !important;
+//   }
+// }
+// @media (max-width: 1600px) {
+//   main {
+//     margin-left: 180px;
+//   }
+// }
 
-@media (max-width: 1440px) {
-  main {
-    padding: 10px 10px 0 10px;
-  }
-}
+// @media (max-width: 1440px) {
+//   main {
+//     padding: 10px 10px 0 10px;
+//   }
+// }
 
-@media (max-width: 912px) {
-  main {
-    margin-left: 0 !important;
-    padding: 15px 0 0 0;
-  }
-}
+// @media (max-width: 912px) {
+//   main {
+//     margin-left: 0 !important;
+//     padding: 15px 0 0 0;
+//   }
+// }

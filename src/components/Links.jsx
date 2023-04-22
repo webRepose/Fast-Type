@@ -15,6 +15,7 @@ const Home = lazy(() => import('../main/home/Home')),
   Code = lazy(() => import('../main/code/Code')),
   TypingCode = lazy(() => import('../main/code/TypingCode/TypingCode')),
   Capcha = lazy(() => import('../main/capcha/Capcha')),
+  TypingCapcha = lazy(() => import('../main/capcha/TypingCapcha/TypingCapcha')),
   Symbols = lazy(() => import('../main/symbols/Symbols')),
   TypingSymbols = lazy(() => import('../main/symbols/TypingSymbols/TypingSymbols')),
   NF404 = lazy(() => import('../main/NF404/404')),
@@ -40,10 +41,11 @@ const Links = memo(() => {
           <Route path='text' element={<Suspense fallback={<Preloader />}><ErrorBoundary><Text /></ErrorBoundary></Suspense>}></Route>
           <Route path='text/typing' element={<Suspense fallback={<Preloader />}><ErrorBoundary><Type /></ErrorBoundary></Suspense>}></Route>
           <Route path='code/typing' element={<Suspense fallback={<Preloader />}><ErrorBoundary><TypingCode /></ErrorBoundary></Suspense>}></Route>
+          <Route path='captcha/typing' element={<Suspense fallback={<Preloader />}><ErrorBoundary><TypingCapcha /></ErrorBoundary></Suspense>}></Route>
           <Route path='symbols/typing' element={<Suspense fallback={<Preloader />}><ErrorBoundary><TypingSymbols /></ErrorBoundary></Suspense>}></Route>
           <Route path="code" element={<Suspense fallback={<Preloader />}><ErrorBoundary><Code /></ErrorBoundary></Suspense>}></Route>
           <Route path="symbols" element={<Suspense fallback={<Preloader />}><ErrorBoundary><Symbols /></ErrorBoundary></Suspense>}></Route>
-          <Route path="capcha" element={<Suspense fallback={<Preloader />}><ErrorBoundary><Capcha /></ErrorBoundary></Suspense>}></Route>
+          <Route path="captcha" element={<Suspense fallback={<Preloader />}><ErrorBoundary><Capcha /></ErrorBoundary></Suspense>}></Route>
           <Route path="*" element={<Suspense fallback={<Preloader />}><ErrorBoundary><NF404 /></ErrorBoundary></Suspense>}></Route>
           <Route path="result" element={<Suspense fallback={<Preloader />}><ErrorBoundary><ResultShare /></ErrorBoundary></Suspense>}></Route>
         </Route>

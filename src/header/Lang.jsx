@@ -23,7 +23,7 @@ const Lang = () => {
     })
 
     return (
-        <section>
+        <section className={Style.outLang}>
         <button title={t('changLang')} className={Style.lang} ref={langRefButton} onClick={()=>{
             setLang(prev => !prev)
         }}>

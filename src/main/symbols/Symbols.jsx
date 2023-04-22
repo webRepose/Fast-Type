@@ -64,7 +64,7 @@ const Symbols = () => {
                     <Back />
                     {window.innerWidth > 967 ?
                         <>
-                            <h1>Выберите параметры:</h1>
+                            <h1>{t('T-options')}</h1>
                             <div className={Style.params}>
                                 <div className={Style.paramsBlock}>
                                     {window.innerWidth >= 920 &&

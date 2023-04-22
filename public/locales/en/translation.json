@@ -7,6 +7,7 @@
     "Symbols": "Symbols",
     "Courses": "Courses",
     "changLang": "Change language",
+    "changTheme":"Change theme color",
 
     "H-Welcome":"Welcome to Fast Type!",
     "H-Traning":"Here you can practice touch typing and improve your typing speed.",
@@ -105,7 +106,6 @@
     "HH-lang":"Language",
     "HH-lp":"Programming language",
 
-    
     "HHH-title":"History details | Fast Type",
     "HHH-data":"Date",
     "HHH-correct":"Correctly",
@@ -183,5 +183,11 @@
     "CE-gone":"gone",
     "CE-wrong":"wrong...",
     "CE-sorry":"We apologize, please reload the page.",
-    "CE-reload":"Reload the page"
+    "CE-reload":"Reload the page",
+
+    "TCP-title":"Captcha set options",
+    "CP-title":"Typing captcha | Fast Type",
+    "CP-zag":"Type the captcha",
+    "CP-input":"Enter",
+    "CP-change":"Change the captcha"
 }

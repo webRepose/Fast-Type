@@ -1,0 +1,42 @@
+.account {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: none;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 5px;
+  border-radius: var(--radius25);
+}
+.account:hover {
+  transform: translateY(-3px);
+  background-color: var(--active-color);
+}
+.account:active {
+  opacity: 0.8;
+}
+.accountIcon {
+  border: 0;
+  border-radius: var(--radius50p);
+  width: 45px;
+  height: 45px;
+  background-color: var(--account-color);
+}
+.accountName {
+  margin: 10px 0 0 14px;
+}
+
+@media (max-width: 912px) {
+  .account {
+    position: static;
+    width: auto;
+    padding: 0;
+  }
+  .accountIcon {
+    width: 40px;
+    height: 40px;
+  }
+  .accountName {
+    display: none;
+  }
+}/*# sourceMappingURL=Account.module.css.map */

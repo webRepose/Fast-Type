@@ -1,0 +1,110 @@
+.onKeyClick {
+    background: var(--gradient1-color);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+              -o-transform: translateY(-5px);
+         transform: translateY(-5px);
+}
+
+.onKeyClickBackspace {
+    background: var(--gradient1-color);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+              -o-transform: translateY(-5px);
+         transform: translateY(-5px);
+}
+
+.captcha {
+    width: 265px;
+    height: 141px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    user-select: none;
+
+    &Input {
+        display: block;
+        margin: 0 auto;
+        max-width: 190px;
+        background-color: #f5f5f5;
+        color: #242424;
+        padding: .15rem .5rem;
+        min-height: 30px;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+        line-height: 1.15;
+        box-shadow: 0px 10px 20px -18px;
+        margin-top: 20px;
+        border-bottom: 2px solid #5b5fc7;
+        border-radius: 4px 4px 2px 2px;
+    }
+
+    &Change {
+        margin-top: 30px;
+    }
+
+    img {
+        position: absolute;
+        border: 0;
+    }
+
+    span {
+        position: relative;
+        z-index: 10;
+        font-size: 45px;
+        opacity: 0.9;
+        display: flex;
+        color: #f5f5f5;
+
+        p {
+            margin-right: 10px;
+        }
+    }
+
+    &FirstLetter {
+        font-weight: 600;
+        font-style: italic;
+        position: relative;
+        top: 10px;
+    }
+
+    &SecondLetter {
+        font-weight: 300;
+        font-style: normal;
+        position: relative;
+        top: -10px;
+        font-size: 50px;
+        transform: rotate(-20deg);
+    }
+
+    &ThirdLetter {
+        font-weight: 600;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    &FourLetter {
+        transform: translateX(-5px);
+        text-decoration: underline;
+    }
+
+    &FifthLetter {
+        font-weight: 700;
+    }
+
+    &SixLetter {
+        transform: rotate(5deg);
+    }
+}
+

@@ -1,11 +1,11 @@
 .homeWelcome h2 {
   text-align: center;
-  font-size: var(--font24);
+  font-size: var(--font21);
   margin-bottom: 10px;
 }
 .homeWelcome h3 {
   text-align: center;
-  font-size: var(--font21);
+  font-size: var(--font20);
   margin-bottom: 10px;
   font-weight: 400 !important;
   margin-bottom: 0 !important;
@@ -21,7 +21,7 @@
 }
 .homeTest h3 {
   text-align: center;
-  font-size: var(--font21);
+  font-size: var(--font20);
   margin-bottom: 24px;
 }
 
@@ -36,7 +36,7 @@
 .homeStatsBlock p {
   margin-top: 5px;
   text-align: center;
-  font-size: var(--font21);
+  font-size: var(--font20);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -103,7 +103,7 @@
     width: 130px;
   }
 }
-@media (max-width: 1110px) {
+@media (max-width: 1180px) {
   .homeStatsBlock {
     width: 100%;
     margin: 0 auto;

@@ -7,11 +7,10 @@ import Theme from './Theme';
 import Account from './Account';
 
 const Header = () => {
-//     chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
-//     sendResponse({damn: true});
-//   });
+
     return (
         <>
+            <div className={Style.basement}>
             <header>
                 <aside className={Style.menu}>
                     <Logo />
@@ -31,6 +30,7 @@ const Header = () => {
                 </div>
             </header>
             <Outlet />
+            </div>
         </>
     );
 };

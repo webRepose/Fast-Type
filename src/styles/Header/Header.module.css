@@ -1,60 +1,33 @@
-.menu {
-  width: 244px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: var(--aside-color);
-  border-radius: 0 var(--radius25) var(--radius25) 0;
-  padding: 50px 31px 0 24px;
+.basement {
+  display: flex;
 }
 
-.activeThemeIcon {
-  background: var(--theme-icon) 50% 100% no-repeat;
-  height: 30px;
+.menu {
+  height: 100%;
+  position: fixed;
+  background-color: var(--aside-color);
+  border-radius: 0 var(--radius25) var(--radius25) 0;
+  padding: 25px 50px 0 20px;
 }
 
 .logo {
   display: flex;
+  margin-bottom: 40px;
 }
 .logo h2 {
-  font-size: 30px;
   margin-left: 10px;
   position: relative;
-  top: -2px;
-}
-
-.menuTheme {
-  background-color: transparent;
-  border: 0;
-  border-radius: var(--radius15);
-  width: 100%;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  margin-top: 48px;
-  background-color: var(--ThemeButton-color);
-  transition: all 0.3s ease;
-}
-.menuTheme:hover {
-  transform: translateY(-5px);
-  opacity: 0.8;
-}
-
-.menuThemeActive {
-  width: 100%;
-  height: 100%;
-  padding: 4px;
-  border-radius: var(--radius15);
+  font-size: 24px;
+  top: 3px;
 }
 
 .navBar {
-  margin-top: 40px;
+  margin-top: 30px;
+  width: 150px;
 }
 
 .navBarActive {
-  border-radius: var(--radius15);
+  border-radius: var(--radius25);
   background-color: transparent;
   padding: 12px 14px 6px 14px;
   transition: all 0.25s ease;
@@ -71,12 +44,13 @@ ul {
 }
 ul a {
   display: flex;
-  font-size: var(--font21);
+  font-size: 20px;
+  font-weight: 600;
 }
 ul a p {
   margin-left: 14px;
   position: relative;
-  top: -5px;
+  top: -4px;
 }
 
 .stick {
@@ -100,7 +74,9 @@ ul a p {
 .lang p {
   margin-left: 14px;
   position: relative;
-  top: -3px;
+  font-size: 18px;
+  font-weight: 600;
+  top: -1px;
 }
 .lang svg {
   position: relative;
@@ -111,7 +87,6 @@ ul a p {
   display: none;
   width: 100%;
   margin-top: 10px;
-  padding: 12px 14px 6px 14px;
   border-radius: var(--radius15);
   background-color: var(--langUl-color);
 }
@@ -119,155 +94,22 @@ ul a p {
   background-color: var(--langUl-color);
   border-radius: var(--radius10);
   padding: 5px 10px;
-  margin-bottom: 10px;
-  font-size: var(--font21);
+  font-size: var(--font18);
   cursor: pointer;
   text-align: center;
-}
-
-.account {
-  display: flex;
-  position: absolute;
-  bottom: 40px;
-  width: 80%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 5px;
-  border-radius: var(--radius25);
-}
-.account:hover {
-  transform: translateY(-3px);
-  background-color: var(--active-color);
-}
-.account:active {
-  opacity: 0.8;
-}
-.accountIcon {
-  border: 0;
-  border-radius: var(--radius50p);
-  width: 45px;
-  height: 45px;
-  background-color: var(--account-color);
-}
-.accountName {
-  margin: 10px 0 0 14px;
 }
 
 .menuMobile {
   display: none;
 }
 
-@media (max-width: 1760px) {
-  .accountIcon {
-    width: 40px;
-    height: 40px;
-  }
-  .navBarActive:last-child {
-    margin-bottom: 10px;
-  }
-  ul a, button, .langChange li {
-    font-size: var(--font17) !important;
-  }
-  ul a p {
-    top: -4px;
-  }
-  .lang p {
-    top: -1px;
-  }
-  .navBar {
-    margin-top: 30px;
-  }
-  .navBar svg, .translateIcon {
-    width: 17px;
-    height: 17px;
-  }
-  .lang svg {
-    top: 0;
-  }
-}
-@media (max-width: 1600px) {
-  .activeThemeIcon {
-    background: var(--theme-icon) 50% 10% no-repeat;
-  }
-  .menu {
-    padding: 40px 15px 0 15px;
-    border-radius: 0 var(--radius15) var(--radius15) 0;
-    width: 180px;
-  }
-  .logo img {
-    width: 37px;
-    height: 37px;
-  }
-  .logo h2 {
-    font-size: var(--font24);
-    top: 1.5px;
-  }
-  .menuTheme {
-    margin-top: 28px;
-    height: 35px;
-  }
-  .langChange {
-    padding: 9px 14px 1px 14px;
-  }
-  .langChange li {
-    padding: 3px 10px;
-    margin-bottom: 5px;
-  }
-}
-@media (max-width: 1366px) {
-  ul a, button, .langChange li {
-    font-size: var(--font15) !important;
-  }
-  .navBar svg, .translateIcon {
-    width: 15px;
-    height: 15px;
-    position: relative;
-    top: 2px;
-  }
-  .navBarActive:last-child {
-    margin-bottom: 5px;
-  }
-  .navBar {
-    margin-top: 20px;
-  }
-  .menuTheme {
-    margin-top: 25px;
-    height: 35px;
-  }
-  .activeThemeIcon {
-    background: var(--theme-icon) 50% 0% no-repeat;
-  }
-  .accountIcon {
-    width: 30px;
-    height: 30px;
-  }
-  .accountName {
-    margin-top: 3px;
-  }
-  .lang {
-    margin-top: 10px;
-    padding-top: 8px;
-  }
-  .langChange {
-    margin-top: 7px;
-  }
-}
-@media (max-width: 1280px) {
-  .account {
-    bottom: 20px;
-  }
-}
-@media (max-width: 1279px) {
-  .menu {
-    width: 150px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .logo h2 {
-    font-size: var(--font20);
-  }
-}
 @media (max-width: 912px) {
+  .outLang {
+    margin-right: 15px;
+  }
+  .basement {
+    display: block;
+  }
   .logo {
     align-items: center;
   }
@@ -280,13 +122,9 @@ ul a p {
     display: flex;
   }
   .lang {
-    width: 118px;
     margin-top: 0;
     margin-right: 17px;
     height: 40px;
-  }
-  .lang svg, .lang p {
-    margin-top: 3px;
   }
   .langChange {
     width: 150px;
@@ -305,33 +143,8 @@ ul a p {
     font-size: var(--font24) !important;
     margin-bottom: 10px;
   }
-  .account {
-    position: static;
-    width: auto;
-    padding: 0;
-  }
-  .accountIcon {
-    width: 40px;
-    height: 40px;
-  }
-  .accountName {
-    display: none;
-  }
-  .menuTheme {
-    width: 50px;
-    margin-top: 0;
-    border: 0;
-    margin-right: 17px;
-    height: 40px;
-  }
-  .activeThemeIcon {
-    background: var(--theme-icon) 50% 100% no-repeat;
-  }
-  .menuThemeActive {
-    width: 100%;
-  }
   .active, .navBarActive {
-    padding: 15px 14px 13px 14px !important;
+    padding: 10px !important;
   }
   footer {
     display: flex !important;
@@ -344,7 +157,7 @@ ul a p {
   }
   .navBar {
     margin-top: 0;
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
   }
   .navBar ul {
@@ -360,13 +173,14 @@ ul a p {
   .navBar ul a svg {
     display: block;
     margin: 0 auto;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
   .navBar ul a p {
     text-align: center;
-    top: 5px;
+    top: 3px;
     margin-left: 0;
+    font-size: 15px;
   }
   header {
     width: 100%;
@@ -379,7 +193,7 @@ ul a p {
 }
 @media (max-width: 620px) {
   .navBar {
-    width: 90%;
+    width: 70%;
   }
 }
 @media (max-width: 479px) {
@@ -396,10 +210,12 @@ ul a p {
     width: 25px;
     height: 25px;
   }
-}
-@media (max-width: 430px) {
+  .outLang {
+    margin-right: 0;
+  }
   .lang {
     width: auto;
+    margin-right: 0;
   }
   .lang svg {
     width: 20px;
@@ -407,5 +223,8 @@ ul a p {
   }
   .lang p {
     display: none;
+  }
+  .langChange {
+    margin-left: -110px;
   }
 }/*# sourceMappingURL=Header.module.css.map */

@@ -119,7 +119,7 @@ const Code = () => {
                 <Meta title={t('C-title')} canon={'code'} description={t('TI-description')} keywords={'Тренажер слепой печати, Слепая печать, Уроки слепой печати, Тренинг печати, Тренинг слепой печати, Blind Print Trainer, Blind Print, Blind Print Lessons, Blind Print Training, Blind Print Training'} />
                 <Section>
                     <Back />
-                    <h1>Выберите параметры:</h1>
+                    <h1>{t('T-options')}</h1>
                     <div className={Style.params}>
                         <div className={Style.paramsBlock}>
                             {window.innerWidth >= 920 &&
