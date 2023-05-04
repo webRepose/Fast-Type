@@ -16,8 +16,6 @@ html.dark {
   --choiceText-color: #303030;
   --account-color: #f6f6f6;
   --gradient1-color: linear-gradient(45deg,#5534cc, #883c91, #403468);
-  --theme-icon: url(/public/img/theme/dark_mode.svg);
-  --theme-iconMin: url(/public/img/theme/dark_modeMin.svg);
   --back-icon: url(/public/img/Components/Back/undoBlack.svg);
 }
 
@@ -39,8 +37,6 @@ html.light {
   --choiceText-color: #ede9e9;
   --account-color: #2E2E2E;
   --gradient1-color: linear-gradient(45deg, #4b3497, #ba84c2, #7b6da5);
-  --theme-icon: url(/public/img/theme/light_mode.svg);
-  --theme-iconMin: url(/public/img/theme/light_modeMin.svg);
   --back-icon: url(/public/img/Components/Back/undoLight.svg);
 }
 

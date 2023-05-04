@@ -9,10 +9,7 @@ const urlToCache = [
 self.addEventListener('install', (event)=>{
     event.waitUntil(
         caches.open(CACHE_NAME)
-        .then((cache)=>{
-            console.log('cache open');
-            return cache.addAll(urlToCache)
-        })
+        .then(cache => {return cache.addAll(urlToCache)})
     )
 })
 
