@@ -8,6 +8,7 @@ import SocialMedia from "./SocialMedia/SocialMedia";
 import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useCallback } from 'react';
 
 const inputBackspace = (event) => {
     if (event.keyCode === 8 || event.key === 'Backspace' || event.which === 8) event.preventDefault();
@@ -43,6 +44,7 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
         [ourCountWords, setOurCountWords] = useState(parseWords),
         [minTimerWords, setMinTimerWords] = useState(0),
         [secTimerWords, setSecTimerWords] = useState(0);
+
 
     useMemo(() => {
         if (inputText[i] !== undefined) {
@@ -81,7 +83,7 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
                 setOurCountWords(prev => prev - 1);
             }
         }
-
+        
         if (!/Android|HarmonyOS/i.test(navigator.userAgent)) {
             if (inputText[i] === event.nativeEvent.data) {
                 if (document.getElementById(inputText[i].toUpperCase())) {
@@ -153,7 +155,7 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
     const shareMob = () => {
         navigator.share({
             text: t('TI-myRes'),
-            url: `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${parseTime}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
+            url: `https://fasttyping.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${parseTime}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`,
             title: t('TI-myRes')
         });
     };
@@ -163,7 +165,7 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
     };
 
 
-    const Restart = () => {
+    const Restart = useCallback(() => {
         setKlava(prev => prev = false);
         setTimeout(() => {
             setKlava(prev => prev = true);
@@ -181,7 +183,7 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
         setSecTimerWords(prev => prev = 0);
         setTime(prev => prev = parseTime);
         setOurCountWords(prev => prev = parseWords);
-    };
+    },[parseTime, parseWords])
 
     useEffect(() => {
         let textInput = textsRu[Math.floor(Math.random() * textsRu.length)];
@@ -265,9 +267,13 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
             inputArea.current.blur();
             inputArea.current.value = '';
             document.querySelector('html').style.overflow = 'hidden';
+
+            window.addEventListener('keydown', e => {
+                if(e.key === 'Escape' || e.code === 'Escape') Restart();
+            })
         }
 
-    }, [errorCount, simbols, time, words, t, ourCountWords, secTimerWords, minTimerWords, sec, min, parseMode, parseTime, section, historyLang]);
+    }, [Restart, errorCount, simbols, time, words, t, ourCountWords, secTimerWords, minTimerWords, sec, min, parseMode, parseTime, section, historyLang]);
 
     const backSpace = () => {
         let backFun = inputArea.current.value;
@@ -307,7 +313,7 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
         return () => document.removeEventListener('mousedown', handler);
     });
 
-    const shareRes = `https://fast-type-red.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${parseTime}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
+    const shareRes = `https://fasttyping.vercel.app/result?words=${words}&&errors=${errorCount}&&symbols=${simbols}&&time=${parseTime}&&timeSelf=${minTimerWords + ':' + secTimerWords}&&precent=${simbols ? Math.round(simbols * (100 / simbols) - errorCount * (100 / simbols)) : 0}`;
     return (
         <>
             <main>
@@ -388,7 +394,7 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
                     {(time && ourCountWords) ? '' :
                         <div className={Style.inputBlur}>
                             <div ref={blurCloseRef} className={Style.inputBlurModals}>
-                                {share ? '' :
+                                {!share && 
                                     <>
                                         <h3>{t('TI-yoRes')}</h3>
                                         <h2>
@@ -437,29 +443,29 @@ const Typing = ({ localeText1, parseMode, parseTime, parseWords, parseKeyboard, 
                                 }
                                 {share &&
                                     <div className={Style.sharePc}>
-                                        <button title={t('TIS-back')} onClick={() => { setShare(prev => !prev) }} className={Style.Back}>
-                                            <img src="../img/text-type/arrow_back.svg" alt="back" />
-                                        </button>
-                                        <h1>{t('TIS-share')}</h1>
-                                        <CopyToClipboard onCopy={() => { alert('You copied') }} text={shareRes}>
-                                            <button className={Style.sharePcCopy}>
-                                                <div title={t('TIS-copy')} className={Style.sharePcCopyText}>
-                                                    <p>{t('TIS-copy')}</p>
-                                                    <div className={Style.sharePcCopyLink}>
-                                                        <img src="../img/text-type/content_copy.svg" alt="copy" />
-                                                    </div>
+                                    <button title={t('TIS-back')} onClick={() => { setShare(prev => !prev) }} className={Style.Back}>
+                                        <img src="../img/text-type/arrow_back.svg" alt="back" />
+                                    </button>
+                                    <h1>{t('TIS-share')}</h1>
+                                    <CopyToClipboard onCopy={() => { alert('You copied') }} text={shareRes}>
+                                        <button className={Style.sharePcCopy}>
+                                            <div title={t('TIS-copy')} className={Style.sharePcCopyText}>
+                                                <p>{t('TIS-copy')}</p>
+                                                <div className={Style.sharePcCopyLink}>
+                                                    <img src="../img/text-type/content_copy.svg" alt="copy" />
                                                 </div>
-                                            </button>
-                                        </CopyToClipboard>
-                                        <div className={Style.sharePcOr}>
-                                            <div></div>
-                                            <p>{t('TIS-or')}</p>
-                                            <div></div>
-                                        </div>
-                                        <div className={Style.sharePcOther}>
-                                            <SocialMedia shareRes={shareRes} />
-                                        </div>
+                                            </div>
+                                        </button>
+                                    </CopyToClipboard>
+                                    <div className={Style.sharePcOr}>
+                                        <div></div>
+                                        <p>{t('TIS-or')}</p>
+                                        <div></div>
                                     </div>
+                                    <div className={Style.sharePcOther}>
+                                        <SocialMedia shareRes={shareRes} />
+                                    </div>
+                                </div>
                                 }
                             </div>
                         </div>
