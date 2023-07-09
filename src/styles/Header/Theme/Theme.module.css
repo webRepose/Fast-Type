@@ -49,7 +49,7 @@
 
 .checkbox:checked ~ .slider::before {
   transform: translateX(50px);
-  background-color: var(--dark);
+  background-color: #fdd017;
   box-shadow: none;
 }
 

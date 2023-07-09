@@ -21,7 +21,8 @@ const Home = lazy(() => import('../main/home/Home')),
   NF404 = lazy(() => import('../main/NF404/404')),
   Header = lazy(() => import('../header/Header')),
   Type = lazy(() => import('../main/text/Typing/TypingText')),
-  ResultShare = lazy(() => import('../components/TypingBlock/ResultShare/ResultShare'));
+  ResultShare = lazy(() => import('../components/TypingBlock/ResultShare/ResultShare')),
+  TEST = lazy(() => import('../components/TEST'));
 
 
 const Links = memo(() => {
@@ -46,6 +47,7 @@ const Links = memo(() => {
           <Route path="code" element={<Suspense fallback={<Preloader />}><ErrorBoundary><Code /></ErrorBoundary></Suspense>}></Route>
           <Route path="symbols" element={<Suspense fallback={<Preloader />}><ErrorBoundary><Symbols /></ErrorBoundary></Suspense>}></Route>
           <Route path="captcha" element={<Suspense fallback={<Preloader />}><ErrorBoundary><Capcha /></ErrorBoundary></Suspense>}></Route>
+          <Route path="test" element={<Suspense fallback={<Preloader />}><ErrorBoundary><TEST/></ErrorBoundary></Suspense>}></Route>
           <Route path="*" element={<Suspense fallback={<Preloader />}><ErrorBoundary><NF404 /></ErrorBoundary></Suspense>}></Route>
           <Route path="result" element={<Suspense fallback={<Preloader />}><ErrorBoundary><ResultShare /></ErrorBoundary></Suspense>}></Route>
         </Route>
