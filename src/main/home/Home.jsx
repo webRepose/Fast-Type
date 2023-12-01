@@ -5,6 +5,7 @@ import Section from "../../components/Section";
 import GreenButton from '../../components/UI/Buttons/GreenButton';
 import Meta from '../../components/Meta';
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
     const [t] = useTranslation();
@@ -21,7 +22,9 @@ const Home = () => {
             </Section>
             <section className={Style.homeTest}>
                 <h3>{t('H-Test')}</h3>
-                <GreenButton title={t('H-Pass')}>{t('H-Pass')}</GreenButton>
+                <NavLink to={'/check-self'}>
+                    <GreenButton title={t('H-Pass')}>{t('H-Pass')}</GreenButton>
+                </NavLink>
             </section>
             <Section className={Style.homeStats}>
                 <div className={Style.homeStatsBlock}>
