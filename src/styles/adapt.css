@@ -1,27 +1,28 @@
 html.dark {
-  --shareT-color: #35373B;
-  --aside-color:#2C2D31;
+  --shareT-color: #35373b;
+  --aside-color: #2c2d31;
   --body-color: #242627;
   --text-color: #f2f2f2;
   --textT-color: #f2f2f2;
   --border-color: #707070;
-  --block-color: #35373B;
-  --active-color: #35373B;
+  --block-color: #35373b;
+  --active-color: #35373b;
   --chageText-color: #2e2e2e;
-  --ThemeButton-color: #5161F9;
-  --langUl-color: #35373B;
-  --langUlMob-color: #2C2D31;
-  --startButton-color: #33D74B;
-  --choiceButton-color: #6300F1;
+  --ThemeButton-color: #5161f9;
+  --langUl-color: #35373b;
+  --langUlMob-color: #2c2d31;
+  --startButton-color: #33d74b;
+  --choiceButton-color: #6300f1;
   --choiceText-color: #303030;
   --account-color: #f6f6f6;
-  --gradient1-color: linear-gradient(45deg,#5534cc, #883c91, #403468);
+  --gradient1-color: linear-gradient(45deg, #5534cc, #883c91, #403468);
   --back-icon: url(/public/img/Components/Back/undoBlack.svg);
+  --modal-color: #333232;
 }
 
 html.light {
   --shareT-color: #9270fb;
-  --aside-color:#F2F3F5;
+  --aside-color: #f2f3f5;
   --body-color: #f0eaea;
   --text-color: #5e4f66;
   --textT-color: #f6f6f6;
@@ -29,13 +30,14 @@ html.light {
   --block-color: #f6f6f6;
   --active-color: #e5e5e5;
   --chageText-color: #e0d8d8;
-  --ThemeButton-color: #5161F9;
+  --ThemeButton-color: #5161f9;
   --langUl-color: #dfe0e2;
   --langUlMob-color: #dfe0e2;
-  --startButton-color: #33D74B;
+  --startButton-color: #33d74b;
   --choiceButton-color: #9652f7;
   --choiceText-color: #ede9e9;
-  --account-color: #2E2E2E;
+  --account-color: #2e2e2e;
   --gradient1-color: linear-gradient(45deg, #4b3497, #ba84c2, #7b6da5);
   --back-icon: url(/public/img/Components/Back/undoLight.svg);
+  --modal-color: cornflowerblue;
 }/*# sourceMappingURL=adapt.css.map */

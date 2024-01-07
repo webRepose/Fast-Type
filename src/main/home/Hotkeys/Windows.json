@@ -1,0 +1,38 @@
+[
+  {
+    "combine": "Ctrl + C",
+    "text": " — Копировать."
+  },
+  {
+    "combine": "Ctrl + N",
+    "text": " — Создать новый документ."
+  },
+  {
+    "combine": "Ctrl + O",
+    "text": " — Открыть."
+  },
+  {
+    "combine": "Ctrl + S",
+    "text": " — Сохранить."
+  },
+  {
+    "combine": "Ctrl + V",
+    "text": " — Вставить."
+  },
+  {
+    "combine": "Ctrl + W",
+    "text": " — Закрыть окно."
+  },
+  {
+    "combine": "Ctrl + X",
+    "text": " — Вырезать."
+  },
+  {
+    "combine": "Ctrl + Z",
+    "text": " — Отменить последнее изменение."
+  },
+  {
+    "combine": "Ctrl + Y",
+    "text": " — Повторить действие."
+  }
+]

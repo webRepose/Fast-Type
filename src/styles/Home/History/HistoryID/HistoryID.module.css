@@ -53,7 +53,7 @@
   top: -1.5px;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1160px) {
   .hisData {
     grid-template-columns: auto;
   }

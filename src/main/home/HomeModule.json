@@ -1,23 +1,9 @@
 [
     {
-        "img_src":"./img/home/statsLight.svg",
-        "img_backColor":"stats-back",
-        "text_translate": "H-Stat",
-        "link":"/stats"
-    },
-
-    {
         "img_src":"./img/home/history.webp",
         "img_backColor":"history-back",
         "text_translate": "H-Hist",
         "link":"/history"
-    },
-
-    {
-        "img_src":"./img/home/work.webp",
-        "img_backColor":"work-back",
-        "text_translate": "H-Work",
-        "link":"/workon"
     },
 
     {
@@ -32,6 +18,27 @@
         "img_backColor":"help-back",
         "text_translate": "H-Help",
         "link":"/tips"
+    },
+
+    {
+        "img_src":"./img/home/keys1.webp",
+        "img_backColor":"hotkeys-back",
+        "text_translate": "Hotkeys",
+        "link":"/hotkeys"
+    },
+
+    {
+        "img_src":"./img/home/statsLight.svg",
+        "img_backColor":"stats-back",
+        "text_translate": "H-Stat",
+        "link":"/stats"
+    },
+
+    {
+        "img_src":"./img/home/work.webp",
+        "img_backColor":"work-back",
+        "text_translate": "H-Work",
+        "link":"/workon"
     },
 
     {

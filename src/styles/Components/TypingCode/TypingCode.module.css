@@ -154,6 +154,7 @@
   font-family: sans-serif;
   background-color: transparent;
   color: var(--text-color);
+  pointer-events: none;
 }
 
 .timer {
@@ -253,7 +254,7 @@
   border: 0;
   width: 40px;
   height: 40px;
-  background: linear-gradient(45deg, #6157FF, #EE49FD);
+  background: linear-gradient(45deg, #6157ff, #ee49fd);
   display: grid;
   place-items: center;
 }
@@ -341,7 +342,8 @@
   .changeText {
     margin-top: 30px;
   }
-  .inputArea, .inputText {
+  .inputArea,
+  .inputText {
     font-size: var(--font19);
   }
 }
@@ -453,7 +455,9 @@
     height: var(--font21);
     top: 4px;
   }
-  .inputArea, .inputText, .inputBlock {
+  .inputArea,
+  .inputText,
+  .inputBlock {
     font-size: 4vw;
     width: 100%;
   }
@@ -486,7 +490,9 @@
   .inputBlurModals {
     width: 90.25vw;
   }
-  .inputArea, .inputText, .inputBlock {
+  .inputArea,
+  .inputText,
+  .inputBlock {
     font-size: 5vw;
   }
   .inputMain {

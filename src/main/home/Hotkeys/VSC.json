@@ -1,0 +1,38 @@
+[
+    {
+        "combine": "Ctrl + `",
+        "text": " — Открыть или закрыть терминал."
+    },
+    {
+        "combine": "Ctrl + Shift + P",
+        "text": " — Открыть палитру команд."
+    },
+    {
+        "combine": "Ctrl + Shift + N",
+        "text": " — Открыть новое окно."
+    },
+    {
+        "combine": "Ctrl + N",
+        "text": " — Открыть новый файл."
+    },
+    {
+        "combine": "Ctrl + O",
+        "text": " — Открыть существующий файл."
+    },
+    {
+        "combine": "Ctrl + S",
+        "text": " — Сохранить файл."
+    },
+    {
+        "combine": "Ctrl + Shift + S",
+        "text": " — Сохранить все файлы."
+    },
+    {
+        "combine": "Ctrl + F",
+        "text": " — Поиск в файле."
+    },
+    {
+        "combine": "Ctrl + H",
+        "text": " — Замена в файле."
+    }
+]

@@ -1,9 +1,7 @@
-import Soon from '../../../components/Soon';
+import Soon from "../../../components/Soon";
 
 const CheckSelf = () => {
-    return (
-        <Soon/>
-    );
+  return <Soon />;
 };
 
 export default CheckSelf;

@@ -48,6 +48,7 @@
 .homeStatsSub:hover {
   opacity: 0.8;
   transform: translateY(-10px);
+  transform: scale(1.04);
 }
 .homeStatsSkeleton {
   width: 160px;
@@ -73,10 +74,13 @@
 }
 
 @media (max-width: 1760px) {
-  .homeStatsBlock p, .homeTest h3, .homeWelcome h3 {
+  .homeStatsBlock p,
+  .homeTest h3,
+  .homeWelcome h3 {
     font-size: var(--font17);
   }
-  .homeWelcome h2, .homeWelcome h3 {
+  .homeWelcome h2,
+  .homeWelcome h3 {
     font-size: var(--font18) !important;
   }
   .homeTest {

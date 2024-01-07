@@ -4,8 +4,8 @@ import Footer from "./footer/Footer";
 const App = () => {
   return (
     <>
-    <Links/>
-    <Footer/>
+      <Links />
+      <Footer />
     </>
   );
 };
