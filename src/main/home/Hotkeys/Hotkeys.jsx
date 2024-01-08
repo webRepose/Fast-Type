@@ -100,7 +100,7 @@ const Hotkeys = () => {
         setWord((prev) => (prev = false));
         setVsc((prev) => (prev = false));
         setExel((prev) => (prev = false));
-        document.querySelector("body").style.overflow = "auto"
+        // document.querySelector("body").style.overflow = "auto";
       }
     };
 
@@ -118,13 +118,13 @@ const Hotkeys = () => {
               {data.state && (
                 <div className={Style.hotkeys_modal}>
                   {closeModal(data.state, data.setState)}
-                  {(document.querySelector("body").style.overflow = "hidden")}
+                  {/* {(document.querySelector("body").style.overflow = "hidden")} */}
                   <div ref={spoilerRef} className={Style.hotkeys_modal_block}>
                     <button
                       className={Style.hotkeys_modal_block_close}
                       onClick={() => {
                         data.setState((prev) => !prev);
-                        document.querySelector("body").style.overflow = "auto";
+                        // document.querySelector("body").style.overflow = "auto";
                       }}
                     >
                       <img
