@@ -100,6 +100,7 @@ const Hotkeys = () => {
         setWord((prev) => (prev = false));
         setVsc((prev) => (prev = false));
         setExel((prev) => (prev = false));
+        document.querySelector("body").style.overflow = "hidden"
       }
     };
 
