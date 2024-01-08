@@ -148,7 +148,7 @@ const Typing = ({
           setWords((prev) => prev + 1);
         }
       } else {
-        backSpace();
+        backSpaceEffect();
         if (document.getElementById(inputText[i].toUpperCase())) {
           if (
             document.getElementById(inputText[i].toUpperCase()) !== undefined
@@ -159,12 +159,6 @@ const Typing = ({
                 .classList.remove(Style.onKeyClick);
           }
         }
-
-        inputBlock.current.style.border = "1px solid red";
-        setTimeout(() => {
-          inputBlock.current.style.border = "1px solid #707070";
-        }, 500);
-        setErrorCount((prev) => prev + 1);
 
         if (document.getElementById("Backspace") !== null || undefined) {
           document
@@ -193,12 +187,7 @@ const Typing = ({
           setWords((prev) => prev + 1);
         }
       } else {
-        backSpace();
-        inputBlock.current.style.border = "1px solid red";
-        setTimeout(() => {
-          inputBlock.current.style.border = "1px solid #707070";
-        }, 500);
-        setErrorCount((prev) => prev + 1);
+        backSpaceEffect();
       }
     }
 
@@ -362,6 +351,15 @@ const Typing = ({
     let backFun = inputArea.current.value;
     backFun = backFun.substr(0, backFun.length - 1);
     inputArea.current.value = backFun;
+  };
+
+  const backSpaceEffect = () => {
+    backSpace();
+    inputBlock.current.style.border = "1px solid red";
+    setTimeout(() => {
+      inputBlock.current.style.border = "1px solid #707070";
+    }, 500);
+    setErrorCount((prev) => prev + 1);
   };
 
   useEffect(() => {

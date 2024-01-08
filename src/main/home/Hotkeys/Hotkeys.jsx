@@ -4,16 +4,18 @@ import Style from "../../../styles/Home/Hotkeys/Hotkeys.module.css";
 import Back from "../../../components/Back";
 import Section from "../../../components/Section";
 import Meta from "../../../components/Meta";
-import Browsers from "./Browsers.json";
-import Browsers2 from "./Browsers2.json";
-import Windows from "./Windows.json";
-import Windows2 from "./Windows2.json";
-import M_Word from "./M_Word.json";
-import M_Word2 from "./M_Word2.json";
-import M_Exel from "./M_Exel.json";
-import M_Exel2 from "./M_Exel2.json";
-import VSC from "./VSC.json";
-import VSC2 from "./VSC2.json";
+import Browsers from "./Browsers/Browsers.json";
+import Browsers2 from "./Browsers/Browsers2.json";
+import Windows from "./Windows/Windows.json";
+import Windows2 from "./Windows/Windows2.json";
+import M_Word from "./M_Word/M_Word.json";
+import M_Word2 from "./M_Word/M_Word2.json";
+import M_Exel from "./M_Exel/M_Exel.json";
+import M_Exel2 from "./M_Exel/M_Exel2.json";
+import VSC from "./VSC/VSC.json";
+import VSC2 from "./VSC/VSC2.json";
+
+import Preloader from "../../../components/Preloader";
 
 const Hotkeys = () => {
   const [t] = useTranslation();
@@ -100,7 +102,6 @@ const Hotkeys = () => {
         setWord((prev) => (prev = false));
         setVsc((prev) => (prev = false));
         setExel((prev) => (prev = false));
-        // document.querySelector("body").style.overflow = "auto";
       }
     };
 
@@ -110,6 +111,7 @@ const Hotkeys = () => {
 
   return (
     <>
+    <Preloader/>
       <Meta description={""} title={""} canon={""} keywords={""} />
       <main>
         {spoilerCards &&
@@ -118,13 +120,11 @@ const Hotkeys = () => {
               {data.state && (
                 <div className={Style.hotkeys_modal}>
                   {closeModal(data.state, data.setState)}
-                  {/* {(document.querySelector("body").style.overflow = "hidden")} */}
                   <div ref={spoilerRef} className={Style.hotkeys_modal_block}>
                     <button
                       className={Style.hotkeys_modal_block_close}
                       onClick={() => {
                         data.setState((prev) => !prev);
-                        // document.querySelector("body").style.overflow = "auto";
                       }}
                     >
                       <img
