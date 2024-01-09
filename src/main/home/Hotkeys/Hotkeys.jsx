@@ -15,8 +15,6 @@ import M_Exel2 from "./M_Exel/M_Exel2.json";
 import VSC from "./VSC/VSC.json";
 import VSC2 from "./VSC/VSC2.json";
 
-import Preloader from "../../../components/Preloader";
-
 const Hotkeys = () => {
   const [t] = useTranslation();
   const [window, setWindow] = useState(false);
@@ -111,7 +109,6 @@ const Hotkeys = () => {
 
   return (
     <>
-    <Preloader/>
       <Meta description={""} title={""} canon={""} keywords={""} />
       <main>
         {spoilerCards &&
