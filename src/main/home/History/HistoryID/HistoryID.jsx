@@ -12,7 +12,6 @@ const HistoryID = () => {
   const { id } = useParams();
   const res = JSON.parse(localStorage.getItem("HistoryData"));
   const dataArray = Object.values(res[id]);
-
   dataArray.splice(7, 2);
   dataArray.push(dataArray[3]);
   dataArray.splice(3, 1);
@@ -69,7 +68,9 @@ const HistoryID = () => {
               </h4>
               <p>
                 {t(data) !== "text"
-                  ? t(data)
+                  ? id === 6
+                    ? t(data) + "%"
+                    : t(data)
                   : t(data)
                   ? t("HH-text")
                   : t("HH-code")}
