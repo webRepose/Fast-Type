@@ -1,70 +1,70 @@
 [
   {
     "combine": "Ctrl + +",
-    "text": " — Увеличивает масштаб страницы."
+    "text": "HHkB2-Ctrl + +"
   },
   {
     "combine": "Ctrl + -",
-    "text": " — Уменьшает масштаб страницы."
+    "text": "HHkB2-Ctrl + -"
   },
   {
     "combine": "Ctrl + 0",
-    "text": " — Возвращает стандартный масштаб страницы."
+    "text": "HHkB2-Ctrl + 0"
   },
   {
     "combine": "Ctrl + 1",
-    "text": " — Переход на вкладку с соответствующим порядковым номером."
+    "text": "HHkB2-Ctrl + 1"
   },
   {
     "combine": "Ctrl + 9",
-    "text": " — Переход на последнюю вкладку; поиск в установленном по умолчанию поисковике."
+    "text": "HHkB2-Ctrl + 9"
   },
   {
     "combine": "Ctrl + D",
-    "text": " — Сохраняет текущую страницу как закладку."
+    "text": "HHkB2-Ctrl + D"
   },
   {
     "combine": "Ctrl + F, Ctrl + G",
-    "text": " — Вызывает окно поиска текста."
+    "text": "HHkB2-Ctrl + F, Ctrl + G"
   },
   {
     "combine": "Ctrl + H",
-    "text": " — Открывает страницу истории."
+    "text": "HHkB2-Ctrl + H"
   },
   {
     "combine": "Ctrl + J",
-    "text": " — Открывает страницу загрузок."
+    "text": "HHkB2-Ctrl + J"
   },
   {
     "combine": "Ctrl + K, Ctrl + E",
-    "text": " — Перемещает в адресную строку."
+    "text": "HHkB2-Ctrl + K, Ctrl + E"
   },
   {
     "combine": "Ctrl + N",
-    "text": " — Открывает новое окно."
+    "text": "HHkB2-Ctrl + N"
   },
   {
     "combine": "Ctrl + O",
-    "text": " — Вызывает окно открытия файла."
+    "text": "HHkB2-Ctrl + O"
   },
   {
     "combine": "Ctrl + P",
-    "text": " — Запускает печать текущей страницы."
+    "text": "HHkB2-Ctrl + P"
   },
   {
     "combine": "Ctrl + R, F5",
-    "text": " — Обновляет текущую страницу."
+    "text": "HHkB2-Ctrl + R, F5"
   },
   {
     "combine": "Ctrl + S",
-    "text": " — Сохраняет текущую страницу."
+    "text": "HHkB2-Ctrl + S"
   },
   {
     "combine": "Ctrl + T",
-    "text": " — Открывает новую вкладку."
+    "text": "HHkB2-Ctrl + T"
   },
   {
     "combine": "Ctrl + U",
-    "text": " — Открывает страницу с ее исходным кодом."
+    "text": "HHkB2-Ctrl + U"
   }
 ]

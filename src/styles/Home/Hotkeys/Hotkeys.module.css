@@ -10,6 +10,7 @@
 .hotkeys_need p {
   font-size: var(--font18);
   text-rendering: auto;
+  text-align: center;
 }
 .hotkeys_blocks {
   display: flex;
@@ -67,8 +68,6 @@
   height: 100%;
 }
 .hotkeys_modal_block {
-  overflow-y: auto;
-  overflow-x: hidden;
   width: 80%;
   height: 90%;
   border-radius: var(--radius25);
@@ -101,6 +100,9 @@
 .hotkeys_modal_block_content {
   display: flex;
   padding: 20px;
+  overflow: auto;
+  height: 85%;
+  margin-top: 10px;
 }
 .hotkeys_modal_block_content div {
   width: 50%;

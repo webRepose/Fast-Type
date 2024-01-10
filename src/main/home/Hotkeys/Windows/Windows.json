@@ -1,38 +1,38 @@
 [
   {
     "combine": "Ctrl + C",
-    "text": " — Копировать."
+    "text": "HHkW1-Ctrl + C"
   },
   {
     "combine": "Ctrl + N",
-    "text": " — Создать новый документ."
+    "text": "HHkW1-Ctrl + N"
   },
   {
     "combine": "Ctrl + O",
-    "text": " — Открыть."
+    "text": "HHkW1-Ctrl + O"
   },
   {
     "combine": "Ctrl + S",
-    "text": " — Сохранить."
+    "text": "HHkW1-Ctrl + S"
   },
   {
     "combine": "Ctrl + V",
-    "text": " — Вставить."
+    "text": "HHkW1-Ctrl + V"
   },
   {
     "combine": "Ctrl + W",
-    "text": " — Закрыть окно."
+    "text": "HHkW1-Ctrl + W"
   },
   {
     "combine": "Ctrl + X",
-    "text": " — Вырезать."
+    "text": "HHkW1-Ctrl + X"
   },
   {
     "combine": "Ctrl + Z",
-    "text": " — Отменить последнее изменение."
+    "text": "HHkW1-Ctrl + Z"
   },
   {
     "combine": "Ctrl + Y",
-    "text": " — Повторить действие."
+    "text": "HHkW1-Ctrl + Y"
   }
 ]

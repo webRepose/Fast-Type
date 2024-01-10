@@ -1,66 +1,66 @@
 [
   {
     "combine": "F6, Ctrl + L, Alt + D",
-    "text": " — Перемещает на доступную для ввода с клавиатуры область и выделяет ее содержимое, например, в адресную строку."
+    "text": "HHkB1-F6"
   },
   {
     "combine": "F11",
-    "text": " — Открывает текущую страницу в полноэкранном режиме. Для выхода из этого режима нужно снова нажать F11."
+    "text": "HHkB1-F11"
   },
   {
     "combine": "Alt + Home",
-    "text": " — Открывает домашнюю страницу в текущей вкладке."
+    "text": "HHkB1-Alt + Home"
   },
   {
     "combine": "Backspace, Alt + LeftArrow",
-    "text": " — Возвращает на предыдущую страницу в истории."
+    "text": "HHkB1-Backspace"
   },
   {
     "combine": "Shift + Backspace, Alt + RightArrow",
-    "text": " — Переходит на следующую страницу в истории."
+    "text": "HHkB1-Shift + Backspace"
   },
   {
     "combine": "Ctrl + Shift + Delete",
-    "text": " — Вызывает диалоговое окно «Очистить историю»."
+    "text": "HHkB1-Ctrl + Shift + Delete"
   },
   {
     "combine": "Ctrl + Enter",
-    "text": " — Добавляет www. перед введенным в адресную строку и .com после (например, google становится www.google.com)."
+    "text": "HHkB1-Ctrl + Enter"
   },
   {
     "combine": "Ctrl + Shift + N",
-    "text": " — Открывает новое окно в режиме инкогнито."
+    "text": "HHkB1-Ctrl + Shift + N"
   },
   {
     "combine": "Ctrl + Tab, Ctrl + PageDown",
-    "text": " — Переходит на следующую вкладку."
+    "text": "HHkB1-Ctrl + Tab"
   },
   {
     "combine": "Ctrl + Shift + Tab, Ctrl + PageUp",
-    "text": " — Переходит на предыдущую вкладку."
+    "text": "HHkB1-Ctrl + Shift + Tab"
   },
   {
     "combine": "Ctrl + Shift + T",
-    "text": " — Заново открывает последнюю закрытую вкладку."
+    "text": "HHkB1-Ctrl + Shift + T"
   },
   {
     "combine": "Ctrl + Shift + J",
-    "text": " — Открывает инструмент разработчика."
+    "text": "HHkB1-Ctrl + Shift + J"
   },
   {
     "combine": "Shift + Alt + T",
-    "text": " — Переход к инструментам браузера; стрелки — перемещение между инструментами, Enter — выбор инструмента."
+    "text": "HHkB1-Shift + Alt + T"
   },
   {
     "combine": "Ctrl + W, Ctrl + F4",
-    "text": " — Закрывает всплывающее окно или текущую вкладку."
+    "text": "HHkB1-Ctrl + W, Ctrl + F4"
   },
   {
     "combine": "Ctrl + Shift + Esc",
-    "text": " — Вызывает диспетчер задач."
+    "text": "HHkB1-Ctrl + Shift + Esc"
   },
   {
     "combine": "Shift + Esc",
-    "text": " — Открывает «Диспетчер задач»."
+    "text": "HHkB1-Shift + Esc"
   }
 ]

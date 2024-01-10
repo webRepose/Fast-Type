@@ -1,62 +1,62 @@
 [
   {
-    "combine": "CTRL + O",
-    "text": " — Открытие документа."
+    "combine": "Ctrl + O",
+    "text": "HHkWw1-CTRL + O"
   },
   {
     "combine": "Ctrl + Space",
-    "text": " — Отменить оформление выделенного фрагмента. Изменяет оформление последующего вводимого текста."
+    "text": "HHkWw1-Ctrl + Space"
   },
   {
     "combine": "Ctrl + 0",
-    "text": " — Регулирует интервал между абзацами."
+    "text": "HHkWw1-Ctrl + 0"
   },
   {
     "combine": "Ctrl + 1",
-    "text": " — Устанавливает одинарный промежуток между строками."
+    "text": "HHkWw1-Ctrl + 1"
   },
   {
     "combine": "Ctrl + 2",
-    "text": " — Устанавливает двойной промежуток между строками."
+    "text": "HHkWw1-Ctrl + 2"
   },
   {
     "combine": "Ctrl + 5",
-    "text": " — Устанавливает полуторный промежуток между строками."
+    "text": "HHkWw1-Ctrl + 5"
   },
   {
     "combine": "Alt + Shift + D",
-    "text": " — Вставляет текущую дату."
+    "text": "HHkWw1-Alt + Shift + D"
   },
   {
     "combine": "Alt + Shift + T",
-    "text": " — Вставляет текущее время."
+    "text": "HHkWw1-Alt + Shift + T"
   },
   {
-    "combine": "CTRL + N",
-    "text": " — Создание документа."
+    "combine": "Ctrl + N",
+    "text": "HHkWw1-CTRL + N"
   },
   {
-    "combine": "CTRL + S",
-    "text": " — Сохраните документ."
+    "combine": "Ctrl + S",
+    "text": "HHkWw1-CTRL + S"
   },
   {
-    "combine": "CTRL + W",
-    "text": " — Закройте документ."
+    "combine": "Ctrl + W",
+    "text": "HHkWw1-CTRL + W"
   },
   {
-    "combine": "CTRL + X",
-    "text": " — Вырезать выбранный контент в буфер обмена."
+    "combine": "Ctrl + X",
+    "text": "HHkWw1-CTRL + X"
   },
   {
-    "combine": "CTRL + ALT + S",
-    "text": " — Разделение окна документа."
+    "combine": "Ctrl + ALT + S",
+    "text": "HHkWw1-CTRL + ALT + S"
   },
   {
     "combine": "Alt + Shift + C, Ctrl + Alt + S",
-    "text": " — Снятие разделения окна документа."
+    "text": "HHkWw1-Alt + Shift + C, Ctrl + Alt + S"
   },
   {
-    "combine": "CTRL + C",
-    "text": " — Скопируйте выбранный контент в буфер обмена."
+    "combine": "Ctrl + C",
+    "text": "HHkWw1-CTRL + C"
   }
 ]

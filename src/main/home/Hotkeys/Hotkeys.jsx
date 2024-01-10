@@ -22,8 +22,8 @@ const Hotkeys = () => {
   const [vsc, setVsc] = useState(false);
   const [word, setWord] = useState(false);
   const [exel, setExel] = useState(false);
-  const spoilerRef = useRef();
-  const buttonRef = useRef();
+  const spoilerRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const openCard = (value) => {
     if (value === 0) setWindow((prev) => (prev = true));
@@ -140,7 +140,7 @@ const Hotkeys = () => {
                           data.hotkeys1.map((data, i) => (
                             <article key={i}>
                               <p>
-                                <b>{data.combine}</b> {data.text}
+                                <b>{data.combine}</b> — {t(data.text)}
                               </p>
                             </article>
                           ))}
@@ -150,7 +150,7 @@ const Hotkeys = () => {
                           data.hotkeys2.map((data, i) => (
                             <article key={i}>
                               <p>
-                                <b>{data.combine}</b> {data.text}
+                                <b>{data.combine}</b> — {t(data.text)}
                               </p>
                             </article>
                           ))}
@@ -163,14 +163,10 @@ const Hotkeys = () => {
           ))}
         <Section>
           <Back />
-          <h1>Горячие клавиши</h1>
+          <h1>{t("Hotkeys")}</h1>
           <div className={Style.hotkeys}>
             <div className={Style.hotkeys_need}>
-              <p>
-                Горячие клавиши нужны для более удобного и быстрого
-                использования ОС или других приложений, они сокращают время
-                нашей работы и упрощают повседневные процессы.
-              </p>
+              <p>{t("HHk-desc")}</p>
             </div>
             <div ref={buttonRef} className={Style.hotkeys_blocks}>
               {cards &&
@@ -182,7 +178,7 @@ const Hotkeys = () => {
                     }}
                   >
                     <h2 className={Style.hotkeys_blocks_title}>{data}</h2>
-                    <p>Нажмите что бы открыть!</p>
+                    <p>{t("HHk-toOpen")}</p>
                   </div>
                 ))}
             </div>

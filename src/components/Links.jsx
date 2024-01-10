@@ -28,7 +28,7 @@ const Home = lazy(() => import("../main/home/Home")),
   ),
   TEST = lazy(() => import("../components/TEST")),
   CheckSelf = lazy(() => import("../main/home/CheckSelf/CheckSelf")),
-  Hotkeys = lazy(() => import('../main/home/Hotkeys/Hotkeys'));
+  Hotkeys = lazy(() => import("../main/home/Hotkeys/Hotkeys"));
 
 const Routed = [
   { path: "/history", component: <History /> },

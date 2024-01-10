@@ -1,66 +1,66 @@
 [
-    {
-        "combine": "CTRL + S",
-        "text": " — Сохранить книгу."
-    },
-    {
-        "combine": "CTRL + C",
-        "text": " — Копировать выделенный фрагмент."
-    },
-    {
-        "combine": "CTRL + V",
-        "text": " — Вставить выделенный фрагмент."
-    },
-    {
-        "combine": "CTRL + Z",
-        "text": " — Отменить последнее действие."
-    },
-    {
-        "combine": "ALT + Р, 1",
-        "text": " — Выбрать цвет заливки."
-    },
-    {
-        "combine": "CTRL + X",
-        "text": " — Вырезать выделенный фрагмент."
-    },
-    {
-        "combine": "ALT + N",
-        "text": " — Перейти на вкладку Вставка."
-    },
-    {
-        "combine": "CTRL + B",
-        "text": " — Применение полужирного начертания."
-    },
-    {
-        "combine": "Alt + A, C",
-        "text": " — Выровнять содержимое ячеек по центру."
-    },
-    {
-        "combine": "ALT + P",
-        "text": " — Перейти на вкладку Разметка страницы."
-    },
-    {
-        "combine": "ALT + A",
-        "text": " — Перейти на вкладку Данные."
-    },
-    {
-        "combine": "ALT + W",
-        "text": " — Перейти на вкладку Вид."
-    },
-    {
-        "combine": "SHIFT + F10, Windows.",
-        "text": " — Открыть контекстное меню."
-    },
-    {
-        "combine": "Alt + D, C",
-        "text": " — Удалить столбец."
-    },
-    {
-        "combine": "ALT + M",
-        "text": " — Перейти на вкладку Формула."
-    },
-    {
-        "combine": "CTRL + 9",
-        "text": " — Скрытие выделенных строк."
-    }
+  {
+    "combine": "Ctrl + S",
+    "text": "HHkE2-Ctrl + S"
+  },
+  {
+    "combine": "Ctrl + C",
+    "text": "HHkE2-Ctrl + C"
+  },
+  {
+    "combine": "Ctrl + V",
+    "text": "HHkE2-Ctrl + V"
+  },
+  {
+    "combine": "Ctrl + Z",
+    "text": "HHkE2-Ctrl + Z"
+  },
+  {
+    "combine": "Alt + Р, 1",
+    "text": "HHkE2-Alt + P, 1"
+  },
+  {
+    "combine": "Ctrl + X",
+    "text": "HHkE2-Ctrl + X"
+  },
+  {
+    "combine": "Alt + N",
+    "text": "HHkE2-Alt + N"
+  },
+  {
+    "combine": "Ctrl + B",
+    "text": "HHkE2-Ctrl + B"
+  },
+  {
+    "combine": "Alt + A, C",
+    "text": "HHkE2-Alt + A, C"
+  },
+  {
+    "combine": "Alt + P",
+    "text": "HHkE2-Alt + P"
+  },
+  {
+    "combine": "Alt + A",
+    "text": "HHkE2-Alt + A"
+  },
+  {
+    "combine": "Alt + W",
+    "text": "HHkE2-Alt + W"
+  },
+  {
+    "combine": "Shift + F10, Windows",
+    "text": "HHkE2-Shift + F10, Windows"
+  },
+  {
+    "combine": "Alt + D, C",
+    "text": "HHkE2-Alt + D, C"
+  },
+  {
+    "combine": "Alt + M",
+    "text": "HHkE2-Alt + M"
+  },
+  {
+    "combine": "Ctrl + 9",
+    "text": "HHkE2-Ctrl + 9"
+  }
 ]

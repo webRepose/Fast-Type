@@ -1,38 +1,38 @@
 [
   {
     "combine": "Ctrl + Home (Home)",
-    "text": " — Перейти в начало документа."
+    "text": "HHkW2-Ctrl + Home (Home)"
   },
   {
     "combine": "Ctrl + End (End)",
-    "text": " — Перейти в конец."
+    "text": "HHkW2-Ctrl + End (End)"
   },
   {
     "combine": "Windows + E",
-    "text": " — Открыть Проводник Windows."
+    "text": "HHkW2-Windows + E"
   },
   {
     "combine": "Windows + D",
-    "text": " — Свернуть все окна и перейти на рабочий стол, или восстановить окна."
+    "text": "HHkW2-Windows + D"
   },
   {
     "combine": "Windows + U",
-    "text": " — Выключить компьютер."
+    "text": "HHkW2-Windows + U"
   },
   {
     "combine": "Alt + Tab",
-    "text": " — Переключиться между открытыми окнами. Удерживай Alt и нажимай несколько раз Tab, чтобы выбрать окно, затем отпусти клавиши."
+    "text": "HHkW2-Alt + Tab"
   },
   {
     "combine": "Alt + Tab + Shift",
-    "text": " — Прокручивают окна в обратном порядке."
+    "text": "HHkW2-Alt + Tab + Shift"
   },
   {
     "combine": "Shift + F10",
-    "text": " — Открыть контекстное меню текущего объекта и выбрать раздел с помощью стрелок Вверх/Вниз."
+    "text": "HHkW2-Shift + F10"
   },
   {
     "combine": "Ctrl + Shift + Esc",
-    "text": " — Вызвать диспетчер задач."
+    "text": "HHkW2-Ctrl + Shift + Esc"
   }
 ]

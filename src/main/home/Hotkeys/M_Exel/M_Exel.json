@@ -1,66 +1,66 @@
 [
   {
     "combine": "F2",
-    "text": " — Открывает ячейку для редактирования."
+    "text": "HHkE1-F2"
   },
   {
     "combine": "Ctrl + Space",
-    "text": " — Выбирает столбец."
+    "text": "HHkE1-Ctrl + Space"
   },
   {
     "combine": "Ctrl + Enter",
-    "text": " — Заполняет выделенные ячейки одинаковыми данными."
+    "text": "HHkE1-Ctrl + Enter"
   },
   {
     "combine": "Shift + Space",
-    "text": " — Выбирает строку."
+    "text": "HHkE1-Shift + Space"
   },
   {
     "combine": "Ctrl + Home",
-    "text": " — Перемещает курсор в начало документа, активируя ячейку A1."
+    "text": "HHkE1-Ctrl + Home"
   },
   {
     "combine": "Ctrl + Page Up",
-    "text": " — Переходит на следующий лист книги."
+    "text": "HHkE1-Ctrl + Page Up"
   },
   {
     "combine": "Ctrl + Page Down",
-    "text": " — Переходит на предыдущий лист книги."
+    "text": "HHkE1-Ctrl + Page Down"
   },
   {
     "combine": "Ctrl + 1",
-    "text": " — Открывает окно форматирования ячеек."
+    "text": "HHkE1-Ctrl + 1"
   },
   {
     "combine": "Ctrl + Shift + 4 (Ctrl + $)",
-    "text": " — Применяет денежный формат с двумя знаками после запятой."
+    "text": "HHkE1-Ctrl + Shift + 4 (Ctrl + $)"
   },
   {
     "combine": "Ctrl + Shift + 5 (Ctrl + %)",
-    "text": " — Применяет процентный формат."
+    "text": "HHkE1-Ctrl + Shift + 5 (Ctrl + %)"
   },
   {
     "combine": "Ctrl + :",
-    "text": " — Вставляет текущее время."
+    "text": "HHkE1-Ctrl + :"
   },
   {
     "combine": "Ctrl + ;",
-    "text": " — Вставляет текущую дату."
+    "text": "HHkE1-Ctrl + ;"
   },
   {
-    "combine": "CTRL + W",
-    "text": " — Закрыть книгу."
-},
-{
-    "combine": "CTRL + O",
-    "text": " — Открыть книгу Excel."
-},
-{
+    "combine": "Ctrl + W",
+    "text": "HHkE1-Ctrl + W"
+  },
+  {
+    "combine": "Ctrl + O",
+    "text": "HHkE1-Ctrl + O"
+  },
+  {
     "combine": "ALT + H",
-    "text": " — Перейти на вкладку Главная."
-},
-{
-  "combine": "CTRL + 0",
-  "text": " — Скрытие выделенных столбцов."
-}
+    "text": "HHkE1-ALT + H"
+  },
+  {
+    "combine": "Ctrl + 0",
+    "text": "HHkE1-Ctrl + 0"
+  }
 ]

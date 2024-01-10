@@ -1,58 +1,54 @@
 [
   {
-    "combine": "CTRL + V",
-    "text": " — Вставить содержимое буфера обмена."
+    "combine": "Ctrl + V",
+    "text": "HHkWw2-Ctrl + V"
   },
   {
-    "combine": "CTRL + A",
-    "text": " — Выберите все содержимое документа."
+    "combine": "Ctrl + A",
+    "text": "HHkWw2-Ctrl + A"
   },
   {
-    "combine": "CTRL + B",
-    "text": " — Примените полужирное форматирование к тексту."
+    "combine": "Ctrl + B",
+    "text": "HHkWw2-Ctrl + B"
   },
   {
-    "combine": "CTRL + I",
-    "text": " — Применение курсивного форматирования к тексту."
+    "combine": "Ctrl + I",
+    "text": "HHkWw2-Ctrl + I"
   },
   {
-    "combine": "CTRL + U",
-    "text": " — Применение форматирования подчеркивания к тексту."
+    "combine": "Ctrl + U",
+    "text": "HHkWw2-Ctrl + U"
   },
   {
-    "combine": "Ctrl + Левая скобка [",
-    "text": " — Уменьшение размера шрифта на один пункт."
+    "combine": "Ctrl + [",
+    "text": "HHkWw2-Ctrl + ["
   },
   {
-    "combine": "Ctrl + Правая скобка ]",
-    "text": " — Увеличение размера шрифта на один пункт."
+    "combine": "Ctrl + ]",
+    "text": "HHkWw2-Ctrl + ]"
   },
   {
-    "combine": "CTRL + E",
-    "text": " — Выровняйте текст по центру"
+    "combine": "Ctrl + E",
+    "text": "HHkWw2-Ctrl + E"
   },
   {
-    "combine": "CTRL + L",
-    "text": " — Выровняйте текст по левому краю."
+    "combine": "Ctrl + L",
+    "text": "HHkWw2-Ctrl + L"
   },
   {
-    "combine": "CTRL + R",
-    "text": " — Выровняйте текст по правому краю."
+    "combine": "Ctrl + R",
+    "text": "HHkWw2-Ctrl + R"
   },
   {
     "combine": "ESC",
-    "text": " — Отменить команду."
+    "text": "HHkWw2-ESC"
   },
   {
-    "combine": "CTRL + Z",
-    "text": " — Отменить предыдущее действие."
+    "combine": "Ctrl + Z",
+    "text": "HHkWw2-Ctrl + Z"
   },
   {
-    "combine": "CTRL + Y",
-    "text": " — Повторите предыдущее действие, если это возможно."
-  },
-  {
-    "combine": "Alt + W, Q, затем используйте клавишу Tab в диалоговом окне Масштаб, чтобы перейти к нужному значению.",
-    "text": " — Отрегулируйте увеличение масштаба."
+    "combine": "Ctrl + Y",
+    "text": "HHkWw2-Ctrl + Y"
   }
 ]
