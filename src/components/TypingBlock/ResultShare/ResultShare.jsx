@@ -70,7 +70,7 @@ const ResultShare = () => {
             <button title={t("TR-try")}>{t("TR-try")}</button>
           </Link>
           <h2>{t("TR-noTrust")}</h2>
-          <Link to="/">
+          <Link to="/course">
             <button
               title={t("TR-tryCourse")}
               style={{ background: "linear-gradient(#6157FF, #EE49FD)" }}

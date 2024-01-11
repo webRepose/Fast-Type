@@ -84,22 +84,6 @@ ul a p {
   top: -2px;
 }
 
-.langChange {
-  display: none;
-  width: 100%;
-  margin-top: 10px;
-  border-radius: var(--radius15);
-  background-color: var(--langUl-color);
-}
-.langChange li {
-  background-color: var(--langUl-color);
-  border-radius: var(--radius10);
-  padding: 5px 10px;
-  font-size: var(--font18);
-  cursor: pointer;
-  text-align: center;
-}
-
 .menuMobile {
   display: none;
 }
@@ -126,23 +110,6 @@ ul a p {
     margin-top: 0;
     margin-right: 17px;
     height: 40px;
-  }
-  .langChange {
-    width: 150px;
-    height: auto;
-    border-radius: var(--radius15);
-    position: absolute;
-    display: none;
-    top: 65px;
-    margin-left: -80px;
-    padding-left: 5px;
-    padding-right: 5px;
-    background-color: var(--langUlMob-color);
-  }
-  .langChange li {
-    background-color: var(--langUlMob-color);
-    font-size: var(--font24) !important;
-    margin-bottom: 10px;
   }
   .active, .navBarActive {
     padding: 10px !important;

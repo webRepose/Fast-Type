@@ -115,26 +115,6 @@ ul {
     }
 }
 
-.langChange {
-    display: none;
-    width: 100%;
-    margin-top: 10px;
-    -webkit-border-radius: var(--radius15);
-       -moz-border-radius: var(--radius15);
-            border-radius: var(--radius15);
-    background-color: var(--langUl-color);
-    li {
-        background-color: var(--langUl-color);
-        -webkit-border-radius: var(--radius10);
-           -moz-border-radius: var(--radius10);
-                border-radius: var(--radius10);
-        padding: 5px 10px;
-        font-size: var(--font18);
-        cursor: pointer;
-        text-align: center;
-    }
-}
-
 
 .menuMobile {
     display: none;
@@ -172,26 +152,6 @@ ul {
         margin-top: 0;
         margin-right: 17px;
         height: 40px;
-    }
-
-    .langChange {
-        width: 150px;
-        height: auto;
-        -webkit-border-radius: var(--radius15);
-           -moz-border-radius: var(--radius15);
-                border-radius: var(--radius15);
-        position: absolute;
-        display: none;
-        top: 65px;
-        margin-left: -80px;
-        padding-left: 5px;
-        padding-right: 5px;
-        background-color: var(--langUlMob-color);
-        li {
-            background-color: var(--langUlMob-color);
-            font-size: var(--font24) !important;
-            margin-bottom: 10px;
-        }
     }
 
     .active, .navBarActive {

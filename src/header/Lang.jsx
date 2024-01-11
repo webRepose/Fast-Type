@@ -1,42 +1,13 @@
 import Style from "../styles/Header/Header.module.css";
 import { useTranslation } from "react-i18next";
-import { useEffect, useRef, useState } from "react";
 
-const Lang = () => {
-  const htmlDOM = document.querySelector("html");
-  htmlDOM.setAttribute("lang", localStorage.getItem("i18nextLng"));
-  const [t, i18n] = useTranslation();
-  const changeLanguage = (language) => i18n.changeLanguage(language);
-  const [lang, setLang] = useState(false);
-  const changLang = lang ? "block" : "none";
-  const langClass = [Style.langChange, changLang];
-  const langRefUl = useRef(null);
-  const langRefButton = useRef(null);
-
-  useEffect(() => {
-    const handler = (event) => {
-      if (
-        !langRefUl.current.contains(event.target) &&
-        !langRefButton.current.contains(event.target)
-      )
-        setLang((prev) => (prev = false));
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  });
-
-  const langCollecton = [
-    { title: "English", langKey: "en" },
-    { title: "Русский", langKey: "ru" },
-    { title: "Қазақ", langKey: "kz" },
-  ];
-
+const Lang = ({ setLang }) => {
+  const [t] = useTranslation();
   return (
     <section className={Style.outLang}>
       <button
         title={t("changLang")}
         className={Style.lang}
-        ref={langRefButton}
         onClick={() => {
           setLang((prev) => !prev);
         }}
@@ -56,25 +27,6 @@ const Lang = () => {
         </svg>
         <p>{t("English")}</p>
       </button>
-      <ul ref={langRefUl} className={langClass.join(" ")}>
-        {langCollecton &&
-          langCollecton.map((data, id) => (
-            <li
-              key={id}
-              title={data.title}
-              onClick={() => {
-                setLang((prev) => (prev = false));
-                changeLanguage(data.langKey);
-                htmlDOM.setAttribute(
-                  "lang",
-                  localStorage.getItem("i18nextLng")
-                );
-              }}
-            >
-              {data.title}
-            </li>
-          ))}
-      </ul>
     </section>
   );
 };
