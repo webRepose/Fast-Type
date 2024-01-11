@@ -6,14 +6,12 @@ const Lang = () => {
   const htmlDOM = document.querySelector("html");
   htmlDOM.setAttribute("lang", localStorage.getItem("i18nextLng"));
   const [t, i18n] = useTranslation();
-
   const changeLanguage = (language) => i18n.changeLanguage(language);
-
   const [lang, setLang] = useState(false);
   const changLang = lang ? "block" : "none";
   const langClass = [Style.langChange, changLang];
-  const langRefUl = useRef();
-  const langRefButton = useRef();
+  const langRefUl = useRef(null);
+  const langRefButton = useRef(null);
 
   useEffect(() => {
     const handler = (event) => {
@@ -26,6 +24,12 @@ const Lang = () => {
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   });
+
+  const langCollecton = [
+    { title: "English", langKey: "en" },
+    { title: "Русский", langKey: "ru" },
+    { title: "Қазақ", langKey: "kz" },
+  ];
 
   return (
     <section className={Style.outLang}>
@@ -53,26 +57,23 @@ const Lang = () => {
         <p>{t("English")}</p>
       </button>
       <ul ref={langRefUl} className={langClass.join(" ")}>
-        <li
-          title="English"
-          onClick={() => {
-            setLang((prev) => (prev = false));
-            changeLanguage("en");
-            htmlDOM.setAttribute("lang", localStorage.getItem("i18nextLng"));
-          }}
-        >
-          English
-        </li>
-        <li
-          title="Русский"
-          onClick={() => {
-            setLang((prev) => (prev = false));
-            changeLanguage("ru");
-            htmlDOM.setAttribute("lang", localStorage.getItem("i18nextLng"));
-          }}
-        >
-          Русский
-        </li>
+        {langCollecton &&
+          langCollecton.map((data, id) => (
+            <li
+              key={id}
+              title={data.title}
+              onClick={() => {
+                setLang((prev) => (prev = false));
+                changeLanguage(data.langKey);
+                htmlDOM.setAttribute(
+                  "lang",
+                  localStorage.getItem("i18nextLng")
+                );
+              }}
+            >
+              {data.title}
+            </li>
+          ))}
       </ul>
     </section>
   );
