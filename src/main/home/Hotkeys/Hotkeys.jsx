@@ -109,7 +109,14 @@ const Hotkeys = () => {
 
   return (
     <>
-      <Meta description={""} title={""} canon={""} keywords={""} />
+      <Meta
+        description={""}
+        title={t("Hotkeys") + " | Fast Type"}
+        canon={"hotkeys"}
+        keywords={
+          "Fast Type, Hotkeys, Hotkey, hot key, keys, fast type hotkeys, Горячие клавиши, горяч клавиши, Клаваши быстрого набора"
+        }
+      />
       <main>
         {spoilerCards &&
           spoilerCards.map((data, id) => (
