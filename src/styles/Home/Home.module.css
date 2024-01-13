@@ -42,7 +42,7 @@
   text-overflow: ellipsis;
 }
 .homeStatsSub {
-  margin-right: 20px;
+  margin: 0 auto;
   transition: all 0.3s ease;
 }
 .homeStatsSub:hover {

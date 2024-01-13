@@ -6,7 +6,7 @@
   height: 100%;
   position: fixed;
   background-color: var(--aside-color);
-  border-radius: 0 var(--radius25) var(--radius25) 0;
+  border-radius: 0 var(--radius20) var(--radius20) 0;
   padding: 25px 50px 0 20px;
   z-index: 15;
 }
