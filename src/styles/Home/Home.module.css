@@ -34,6 +34,7 @@
   gap: 16px;
 }
 .homeStatsBlock p {
+  width: 160px;
   margin-top: 5px;
   text-align: center;
   font-size: var(--font20);
@@ -88,6 +89,9 @@
   }
 }
 @media (max-width: 1600px) {
+  .homeStatsSub p {
+    width: 130px;
+  }
   .homeStatsImg {
     width: 130px;
     height: 130px;

@@ -46,9 +46,9 @@ const Typing = ({
   }
 
   const textsRu = localeText1,
-    inputArea = useRef(),
-    inputBlock = useRef(),
-    blurCloseRef = useRef(),
+    inputArea = useRef(null),
+    inputBlock = useRef(null),
+    blurCloseRef = useRef(null),
     [share, setShare] = useState(false),
     [isType, setIsType] = useState(false),
     [isTypeWords, setIsTypeWords] = useState(false),
@@ -264,9 +264,9 @@ const Typing = ({
     setChangeTextNew((prev) => (prev = false));
   }, [changeTextNew, textInputs, textsRu, parseTime, parseWords]);
 
-  const getTime = (times) => times.toString().padStart(2, "0"),
-    min = getTime(Math.floor(time / 60)),
-    sec = getTime(time - min * 60);
+  const getTime = (times) => times.toString().padStart(2, "0");
+  const min = getTime(Math.floor(time / 60));
+  const sec = getTime(time - min * 60);
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -50,6 +50,28 @@ const Capcha = () => {
     },
     mobMenu = keyboardBool || langBool ? Style.grid : "";
 
+  const KeyboardsNames = ["Colemak", "Dvorak", "Qwerty"];
+  const LangNames = ["English", "Русский"];
+
+  const sectionChoice = [
+    {
+      img: "./img/text/keyboard.svg",
+      alt: "Keyboard",
+      name: "T-klava",
+      buttonTitle: "Ttitle-klava",
+      func: keyboardFunc,
+      text: parse.keyboard,
+    },
+    {
+      img: "./img/text/language.svg",
+      alt: "Lang",
+      name: "T-lang",
+      buttonTitle: "Ttitle-lang",
+      func: langFunc,
+      text: parse.lang,
+    },
+  ];
+
   return (
     <>
       <main>
@@ -68,52 +90,31 @@ const Capcha = () => {
               <h1>{t("T-options")}</h1>
               <div className={Style.params}>
                 <div className={Style.paramsBlock}>
-                  {window.innerWidth >= 920 && (
-                    <div className={Style.paramsSub}>
-                      <article className={Style.paramsText}>
-                        <div className={Style.paramsTextSub}>
-                          <img
-                            width="21px"
-                            height="21px"
-                            src="./img/text/keyboard.svg"
-                            alt="keyboard"
-                          />
-                          <p>{t("T-klava")}</p>
+                  {sectionChoice &&
+                    sectionChoice.map((data, id) => (
+                      <div key={id} className={Style.paramsSub}>
+                        <article className={Style.paramsText}>
+                          <div className={Style.paramsTextSub}>
+                            <img
+                              width="21px"
+                              height="21px"
+                              src={data.img}
+                              alt={data.alt}
+                            />
+                            <p>{t(data.name)}</p>
+                          </div>
+                        </article>
+                        <div>
+                          <button
+                            title={t(data.buttonTitle)}
+                            onClick={data.func}
+                            className={Style.paramsSelect}
+                          >
+                            {t(data.text)}
+                          </button>
                         </div>
-                      </article>
-                      <div>
-                        <button
-                          title={t("Ttitle-klava")}
-                          onClick={keyboardFunc}
-                          className={Style.paramsSelect}
-                        >
-                          {parse.keyboard}
-                        </button>
                       </div>
-                    </div>
-                  )}
-                  <div className={Style.paramsSub}>
-                    <article className={Style.paramsText}>
-                      <div className={Style.paramsTextSub}>
-                        <img
-                          width="21px"
-                          height="21px"
-                          src="./img/text/language.svg"
-                          alt="lang"
-                        />
-                        <p>{t("T-lang")}</p>
-                      </div>
-                    </article>
-                    <div>
-                      <button
-                        title={t("Ttitle-lang")}
-                        onClick={langFunc}
-                        className={Style.paramsSelect}
-                      >
-                        {parse.lang}
-                      </button>
-                    </div>
-                  </div>
+                    ))}
                   <Link to="./typing">
                     <button title={t("Ttitle-start")} className={Style.Start}>
                       {t("T-start")}
@@ -126,30 +127,18 @@ const Capcha = () => {
                       <>
                         <p className={Style.blockText}>{t("T-klava")}</p>
                         <ul className={Style.flex}>
-                          <li
-                            title="Colemak"
-                            onClick={() => {
-                              keyboardMenu("Colemak");
-                            }}
-                          >
-                            Colemak
-                          </li>
-                          <li
-                            title="Dvorak"
-                            onClick={() => {
-                              keyboardMenu("Dvorak");
-                            }}
-                          >
-                            Dvorak
-                          </li>
-                          <li
-                            title="Qwerty"
-                            onClick={() => {
-                              keyboardMenu("Qwerty");
-                            }}
-                          >
-                            Qwerty
-                          </li>
+                          {KeyboardsNames &&
+                            KeyboardsNames.map((data, id) => (
+                              <li
+                                key={id}
+                                title={data}
+                                onClick={() => {
+                                  keyboardMenu(data);
+                                }}
+                              >
+                                {data}
+                              </li>
+                            ))}
                         </ul>
                       </>
                     )}
@@ -158,22 +147,18 @@ const Capcha = () => {
                       <>
                         <p className={Style.blockText}>{t("T-lang")}</p>
                         <ul className={Style.flex}>
-                          <li
-                            title="English"
-                            onClick={() => {
-                              langMenu("English");
-                            }}
-                          >
-                            English
-                          </li>
-                          <li
-                            title="Русский"
-                            onClick={() => {
-                              langMenu("Русский");
-                            }}
-                          >
-                            Русский
-                          </li>
+                          {LangNames &&
+                            LangNames.map((data, id) => (
+                              <li
+                                key={id}
+                                title={data}
+                                onClick={() => {
+                                  langMenu(data);
+                                }}
+                              >
+                                {data}
+                              </li>
+                            ))}
                         </ul>
                       </>
                     )}

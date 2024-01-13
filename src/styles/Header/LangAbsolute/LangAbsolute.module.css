@@ -42,6 +42,8 @@
 }
 .langChange li p {
   margin-left: 5px;
+  margin-top: -3px;
+  font-size: var(--font24);
 }
 
 @media (max-width: 912px) {

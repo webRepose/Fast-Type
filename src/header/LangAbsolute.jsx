@@ -10,9 +10,9 @@ const LangAbsolute = ({ setLang }) => {
   const langRefUl = useRef(null);
 
   const langCollecton = [
-    { title: "English", langKey: "en", flag: "./img/Header/usa.png" },
-    { title: "Русский", langKey: "ru", flag: "./img/Header/russia.png" },
-    { title: "Қазақ", langKey: "kz", flag: "./img/Header/kazakhstan.png" },
+    { title: "English", langKey: "en", flag: "../../../../img/Header/usa.png" },
+    { title: "Русский", langKey: "ru", flag: "../../../../img/Header/russia.png" },
+    { title: "Қазақ", langKey: "kz", flag: "../../../../img/Header/kazakhstan.png" },
   ];
 
   document.addEventListener("keydown", (e) => {

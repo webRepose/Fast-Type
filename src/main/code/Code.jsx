@@ -103,6 +103,37 @@ const Code = () => {
         ? Style.grid
         : "";
 
+  const LangNames = ["JavaScript", "CSS", "HTML"];
+  const KeyboardsNames = ["Colemak", "Dvorak", "Qwerty"];
+  const modsName = [
+    { trans: "C-forTime", mode: "toTime" },
+    { trans: "C-forWords", mode: "toWords" },
+  ];
+  const secondsName = [
+    { trans: "1:00", mode: 60 },
+    { trans: "3:00", mode: 180 },
+    { trans: "5:00", mode: 300 },
+  ];
+  const wordsName = [50, 70, 100];
+  const sectionChoice = [
+    {
+      img: "./img/code/terminal.svg",
+      alt: "PL",
+      name: "C-LP",
+      buttonTitle: "Ctitle-plang",
+      func: langProgFunc,
+      text: parse.codeProgLang,
+    },
+    {
+      img: "./img/text/mode.svg",
+      alt: "Mode",
+      name: "T-mode",
+      buttonTitle: "Ttitle-mode",
+      func: modeFunc,
+      text: parse.mode,
+    },
+  ];
+
   return (
     <>
       <main>
@@ -143,50 +174,31 @@ const Code = () => {
                   </div>
                 </div>
               )}
-              <div className={Style.paramsSub}>
-                <article className={Style.paramsText}>
-                  <div className={Style.paramsTextSub}>
-                    <img
-                      width="21px"
-                      height="21px"
-                      src="./img/code/terminal.svg"
-                      alt="programming lang"
-                    />
-                    <p>{t("C-LP")}</p>
+              {sectionChoice &&
+                sectionChoice.map((data, id) => (
+                  <div key={id} className={Style.paramsSub}>
+                    <article className={Style.paramsText}>
+                      <div className={Style.paramsTextSub}>
+                        <img
+                          width="21px"
+                          height="21px"
+                          src={data.img}
+                          alt={data.alt}
+                        />
+                        <p>{t(data.name)}</p>
+                      </div>
+                    </article>
+                    <div>
+                      <button
+                        title={t(data.buttonTitle)}
+                        onClick={data.func}
+                        className={Style.paramsSelect}
+                      >
+                        {t(data.text)}
+                      </button>
+                    </div>
                   </div>
-                </article>
-                <div>
-                  <button
-                    title={t("Ctitle-plang")}
-                    onClick={langProgFunc}
-                    className={Style.paramsSelect}
-                  >
-                    {parse.codeProgLang}
-                  </button>
-                </div>
-              </div>
-              <div className={Style.paramsSub}>
-                <article className={Style.paramsText}>
-                  <div className={Style.paramsTextSub}>
-                    <img
-                      width="21px"
-                      height="21px"
-                      src="./img/text/mode.svg"
-                      alt="mode"
-                    />
-                    <p>{t("T-mode")}</p>
-                  </div>
-                </article>
-                <div>
-                  <button
-                    title={t("Ttitle-mode")}
-                    onClick={modeFunc}
-                    className={Style.paramsSelect}
-                  >
-                    {t(parse.mode)}
-                  </button>
-                </div>
-              </div>
+                ))}
               {mode === "C-forTime" ? (
                 <div className={Style.paramsSub}>
                   <article className={Style.paramsText}>
@@ -246,30 +258,18 @@ const Code = () => {
                   <>
                     <p className={Style.blockText}>{t("T-klava")}</p>
                     <ul className={Style.flex}>
-                      <li
-                        title="Colemak"
-                        onClick={() => {
-                          keyboardMenu("Colemak");
-                        }}
-                      >
-                        Colemak
-                      </li>
-                      <li
-                        title="Dvorak"
-                        onClick={() => {
-                          keyboardMenu("Dvorak");
-                        }}
-                      >
-                        Dvorak
-                      </li>
-                      <li
-                        title="Qwerty"
-                        onClick={() => {
-                          keyboardMenu("Qwerty");
-                        }}
-                      >
-                        Qwerty
-                      </li>
+                      {KeyboardsNames &&
+                        KeyboardsNames.map((data, id) => (
+                          <li
+                            key={id}
+                            title={data}
+                            onClick={() => {
+                              keyboardMenu(data);
+                            }}
+                          >
+                            {data}
+                          </li>
+                        ))}
                     </ul>
                   </>
                 )}
@@ -278,30 +278,18 @@ const Code = () => {
                   <>
                     <p className={Style.blockText}>{t("C-LP")}</p>
                     <ul className={Style.flex}>
-                      <li
-                        title="JavaScript"
-                        onClick={() => {
-                          plMenu("JavaScript");
-                        }}
-                      >
-                        JavaScript
-                      </li>
-                      <li
-                        title="CSS"
-                        onClick={() => {
-                          plMenu("CSS");
-                        }}
-                      >
-                        CSS
-                      </li>
-                      <li
-                        title="HTML"
-                        onClick={() => {
-                          plMenu("HTML");
-                        }}
-                      >
-                        HTML
-                      </li>
+                      {LangNames &&
+                        LangNames.map((data, id) => (
+                          <li
+                            key={id}
+                            title={data}
+                            onClick={() => {
+                              plMenu(data);
+                            }}
+                          >
+                            {data}
+                          </li>
+                        ))}
                     </ul>
                   </>
                 )}
@@ -310,22 +298,18 @@ const Code = () => {
                   <>
                     <p className={Style.blockText}>{t("T-mode")}</p>
                     <ul className={Style.flex}>
-                      <li
-                        title={t("C-forTime")}
-                        onClick={() => {
-                          modeMenu("C-forTime", "toTime");
-                        }}
-                      >
-                        {t("C-forTime")}
-                      </li>
-                      <li
-                        title={t("C-forWords")}
-                        onClick={() => {
-                          modeMenu("C-forWords", "toWords");
-                        }}
-                      >
-                        {t("C-forWords")}
-                      </li>
+                      {modsName &&
+                        modsName.map((data, id) => (
+                          <li
+                            key={id}
+                            title={t(data.trans)}
+                            onClick={() => {
+                              modeMenu(data.trans, data.mode);
+                            }}
+                          >
+                            {t(data.trans)}
+                          </li>
+                        ))}
                     </ul>
                   </>
                 )}
@@ -334,30 +318,18 @@ const Code = () => {
                   <>
                     <p className={Style.blockText}>{t("T-time")}</p>
                     <ul className={Style.flex}>
-                      <li
-                        title="1:00"
-                        onClick={() => {
-                          timeMenu(60);
-                        }}
-                      >
-                        1:00
-                      </li>
-                      <li
-                        title="3:00"
-                        onClick={() => {
-                          timeMenu(180);
-                        }}
-                      >
-                        3:00
-                      </li>
-                      <li
-                        title="5:00"
-                        onClick={() => {
-                          timeMenu(300);
-                        }}
-                      >
-                        5:00
-                      </li>
+                      {secondsName &&
+                        secondsName.map((data, id) => (
+                          <li
+                            key={id}
+                            title={data.trans}
+                            onClick={() => {
+                              timeMenu(data.mode);
+                            }}
+                          >
+                            {data.trans}
+                          </li>
+                        ))}
                     </ul>
                   </>
                 )}
@@ -366,30 +338,18 @@ const Code = () => {
                   <>
                     <p className={Style.blockText}>{t("T-words")}</p>
                     <ul className={Style.flex}>
-                      <li
-                        title={50 + " " + t("T-counWord")}
-                        onClick={() => {
-                          wordsMenu(50);
-                        }}
-                      >
-                        {50 + " " + t("T-counWord")}
-                      </li>
-                      <li
-                        title={70 + " " + t("T-counWord")}
-                        onClick={() => {
-                          wordsMenu(70);
-                        }}
-                      >
-                        {70 + " " + t("T-counWord")}
-                      </li>
-                      <li
-                        title={100 + " " + t("T-counWord")}
-                        onClick={() => {
-                          wordsMenu(100);
-                        }}
-                      >
-                        {100 + " " + t("T-counWord")}
-                      </li>
+                      {wordsName &&
+                        wordsName.map((data, id) => (
+                          <li
+                            key={id}
+                            title={data + " " + t("T-counWord")}
+                            onClick={() => {
+                              wordsMenu(data);
+                            }}
+                          >
+                            {data + " " + t("T-counWord")}
+                          </li>
+                        ))}
                     </ul>
                   </>
                 )}

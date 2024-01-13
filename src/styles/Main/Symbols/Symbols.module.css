@@ -59,6 +59,10 @@
   margin-top: 7px;
   border: 0;
 }
+.symbolRestart {
+  background-color: transparent;
+  border: 0;
+}
 .symbolRestart div {
   border: 0;
   background-color: transparent;

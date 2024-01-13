@@ -25,7 +25,7 @@ const Lang = ({ setLang }) => {
             fill="#33d74b"
           />
         </svg>
-        <p>{t("English")}</p>
+        <p>{t("Lang")}</p>
       </button>
     </section>
   );

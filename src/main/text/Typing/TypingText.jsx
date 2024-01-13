@@ -1,6 +1,7 @@
 import Typing from "../../../components/TypingBlock/Typing";
 import localesEn from "./localesText/localesEN.json";
 import localesRu from "./localesText/localesRU.json";
+import localesKz from './localesText/localesKZ.json';
 import Meta from "../../../components/Meta";
 import { useTranslation } from "react-i18next";
 
@@ -33,6 +34,9 @@ const Type = () => {
   }
   if (parse.lang === "Русский") {
     ourContent = localesRu;
+  }
+  if (parse.lang === "Қазақ") {
+    ourContent = localesKz;
   }
 
   return (

@@ -109,7 +109,7 @@ const TypingSymbols = () => {
                   </article>
                 </div>
                 <div className={Style.symbolSlesh}></div>
-                <div className={Style.symbolRestart}>
+                <button className={Style.symbolRestart}>
                   <div
                     role="button"
                     title={t("TS-restart")}
@@ -127,7 +127,7 @@ const TypingSymbols = () => {
                   >
                     <img src="../img/main/symbols/restart.svg" alt="restart" />
                   </div>
-                </div>
+                </button>
               </article>
               <Keyboards keyboard={parse.keyboard} lang={parse.lang} />
             </>

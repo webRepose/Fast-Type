@@ -41,6 +41,7 @@
     gap: 16px;
 
     p {
+      width: 160px;
       margin-top: 5px;
       text-align: center;
       font-size: var(--font20);
@@ -67,7 +68,7 @@
       transform: scale(1.04);
     }
   }
-
+  
   &Skeleton {
     width: 160px;
     height: 160px;
@@ -126,6 +127,10 @@
 
 @media (max-width: 1600px) {
   .homeStats {
+    &Sub p {
+      width: 130px;
+    }
+
     &Img {
       width: 130px;
       height: 130px;

@@ -1,23 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/logo.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="./img/AppleTouchIcon/apple-touch-icon-iphone-60x60.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./img/AppleTouchIcon/apple-touch-icon-ipad-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./img/AppleTouchIcon/apple-touch-icon-iphone-retina-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./img/AppleTouchIcon/apple-touch-icon-ipad-retina-152x152.png">
-    <link rel="manifest" crossorigin="use-credentials" href="%PUBLIC_URL%/manifest.json">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/logo.png" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      href="./img/AppleTouchIcon/apple-touch-icon-iphone-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./img/AppleTouchIcon/apple-touch-icon-ipad-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./img/AppleTouchIcon/apple-touch-icon-iphone-retina-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./img/AppleTouchIcon/apple-touch-icon-ipad-retina-152x152.png"
+    />
+    <link
+      rel="manifest"
+      crossorigin="use-credentials"
+      href="%PUBLIC_URL%/manifest.json"
+    />
     <title>You are offline</title>
-</head>
-<body style="background-color: #242627;">
-    <div style="display: flex; height: 100vh; align-items: center; justify-content: center;">
-        <div style="display: block;">
-            <img src="/img/offline/offline.webp" alt="offline">
-            <h1 style="color: #F6F6F6; text-align: center; margin-top: 20px;">You in offline go back</h1>
-        </div>
-    </div>
-</body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+      body {
+        background-color: #242627;
+        height: 98svh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        place-content: center;
+      }
+
+      button {
+        cursor: pointer;
+        border: 0;
+        border-radius: 15px;
+        padding: 10px 40px;
+        background-color: slateblue;
+        color: #fff;
+        display: block;
+        margin: 18px auto 0 auto;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      button:hover {
+        transition: all 0.3s ease;
+        opacity: 0.8;
+      }
+
+      p {
+        font-size: 16px;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="center">
+      <h1>Oh no..</h1>
+      <h2>You'are lost connect.</h2>
+      <button onclick="location.reload();">Reload</button>
+      <p>Automatic page reload via: <b id="reload"></b></p>
+    </section>
+
+    <script>
+      let ml = 5;
+      document.getElementById("reload").innerHTML = ml;
+
+      inter = setInterval(() => {
+        ml--;
+        document.querySelector("#reload").innerHTML = ml;
+        if (ml === 0) {
+          location.reload();
+        }
+      }, 1000);
+    </script>
+  </body>
 </html>

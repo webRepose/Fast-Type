@@ -216,6 +216,7 @@ const TypingCapcha = () => {
                 onPaste={(e) => {
                   e.preventDefault();
                 }}
+                autoFocus
                 formNoValidate
                 ref={inputRef}
                 className={Style.captchaInput}

@@ -14,7 +14,7 @@ import DvorakSecond from "./Dvorak/DvorakSecond.json";
 import DvorakThird from "./Dvorak/DvorakThird.json";
 import DvorakFour from "./Dvorak/DvorakFour.json";
 
-const Qwerty = ({ keyboard, lang }) => {
+const Keyboards = ({ keyboard, lang }) => {
   let QLocale = new LocalizedStrings({
     en: {
       "T-`": "`",
@@ -172,6 +172,84 @@ const Qwerty = ({ keyboard, lang }) => {
       "T-//": ".",
       "T-?": ",",
     },
+    kz: {
+      "T-`": "Ё",
+      "T-~": "~",
+      "T-1": "1",
+      "T-!": "!",
+      "T-2": "Ә",
+      "T-@": "@",
+      "T-3": "І",
+      "T-#": "#",
+      "T-4": "Ң",
+      "T-$": "$",
+      "T-5": "Ғ",
+      "T-%": "%",
+      "T-6": "6",
+      "T-^": "^",
+      "T-7": "7",
+      "T-&": "&",
+      "T-8": "Ү",
+      "T-*": "*",
+      "T-9": "Ұ",
+      "T-(": "(",
+      "T-0": "Қ",
+      "T-)": ")",
+      "T--": "Ө",
+      "T-_": "_",
+      "T-=": "Һ",
+      "T-+": "+",
+      "T-backspace": "Backspace",
+
+      "T-tab": "Tab",
+      "T-q": "Й",
+      "T-w": "Ц",
+      "T-e": "У",
+      "T-r": "К",
+      "T-t": "Е",
+      "T-y": "Н",
+      "T-u": "Г",
+      "T-i": "Ш",
+      "T-o": "Щ",
+      "T-p": "З",
+      "T-[": "Х",
+      "T-{": "{",
+      "T-]": "Ъ",
+      "T-}": "}",
+      "T-/": "/",
+      "T-|": "|",
+
+      "T-caps": "CapsLock",
+      "T-a": "Ф",
+      "T-s": "Ы",
+      "T-d": "В",
+      "T-f": "А",
+      "T-g": "П",
+      "T-h": "Р",
+      "T-j": "О",
+      "T-k": "Л",
+      "T-l": "Д",
+      "T-;": "Ж",
+      "T-;;": "",
+      "T-'": "Э",
+      "T-enter": "Enter",
+
+      "T-shift": "Shift",
+      "T-z": "Я",
+      "T-x": "Ч",
+      "T-c": "С",
+      "T-v": "М",
+      "T-b": "И",
+      "T-n": "Т",
+      "T-m": "Ь",
+
+      "T-,": "Б",
+      "T-<": "",
+      "T-.": "Ю",
+      "T->": "",
+      "T-//": ".",
+      "T-?": ",",
+    },
   });
 
   switch (lang) {
@@ -181,217 +259,113 @@ const Qwerty = ({ keyboard, lang }) => {
     case "Русский":
       QLocale.setLanguage("ru");
       break;
+    case "Қазақ":
+      QLocale.setLanguage("kz");
+      break;
     default:
       QLocale.setLanguage("en");
   }
 
+  const KeyboardsList = [
+    {
+      name: "Qwerty",
+      list1: QwertyFirst,
+      list2: QwertySecond,
+      list3: QwertyThird,
+      list4: QwertyFour,
+    },
+    {
+      name: "Colemak",
+      list1: QwertyFirst,
+      list2: ColemakSecond,
+      list3: ColemakThird,
+      list4: ColemakFour,
+    },
+    {
+      name: "Dvorak",
+      list1: DvorakFirst,
+      list2: DvorakSecond,
+      list3: DvorakThird,
+      list4: DvorakFour,
+    },
+  ];
+
   return (
     <section>
-      {keyboard === "Qwerty" && (
-        <div className={Style.klava}>
-          <div className={Style.klavaLine}>
-            {QwertyFirst.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
+      {KeyboardsList &&
+        KeyboardsList.map((data, id) => (
+          <div key={id}>
+            {keyboard === data.name && (
+              <div className={Style.klava}>
+                <div className={Style.klavaLine}>
+                  {data.list1.map((lan, i) => (
+                    <div
+                      translate="no"
+                      id={QLocale[lan["klavaOne"]]}
+                      className={`${lan["stBtn"]}`}
+                      key={i}
+                    >
+                      <p translate="no">
+                        <sub>{QLocale[lan["klavaOne"]]}</sub>
+                        <sup>{QLocale[lan["klavaTwo"]]}</sup>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className={Style.klavaLine}>
+                  {data.list2.map((lan, i) => (
+                    <div
+                      translate="no"
+                      id={QLocale[lan["klavaOne"]]}
+                      className={`${lan["stBtn"]}`}
+                      key={i}
+                    >
+                      <p translate="no">
+                        <sub>{QLocale[lan["klavaOne"]]}</sub>
+                        <sup>{QLocale[lan["klavaTwo"]]}</sup>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className={Style.klavaLine}>
+                  {data.list3.map((lan, i) => (
+                    <div
+                      translate="no"
+                      id={QLocale[lan["klavaOne"]]}
+                      className={`${lan["stBtn"]}`}
+                      key={i}
+                    >
+                      <p translate="no">
+                        <sub>{QLocale[lan["klavaOne"]]}</sub>
+                        <sup>{QLocale[lan["klavaTwo"]]}</sup>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className={Style.klavaLine}>
+                  {data.list4.map((lan, i) => (
+                    <div
+                      translate="no"
+                      id={QLocale[lan["klavaOne"]]}
+                      className={`${lan["stBtn"]}`}
+                      key={i}
+                    >
+                      <p translate="no">
+                        <sub>{QLocale[lan["klavaOne"]]}</sub>
+                        <sup>{QLocale[lan["klavaTwo"]]}</sup>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div translate="no" className={Style.klavaLine}>
+                  <div translate="no" id=" " className={Style.klavaSpace}></div>
+                </div>
               </div>
-            ))}
+            )}
           </div>
-          <div className={Style.klavaLine}>
-            {QwertySecond.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className={Style.klavaLine}>
-            {QwertyThird.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className={Style.klavaLine}>
-            {QwertyFour.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div translate="no" className={Style.klavaLine}>
-            <div translate="no" id=" " className={Style.klavaSpace}></div>
-          </div>
-        </div>
-      )}
-
-      {keyboard === "Colemak" && (
-        <div className={Style.klava}>
-          <div className={Style.klavaLine}>
-            {QwertyFirst.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className={Style.klavaLine}>
-            {ColemakSecond.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className={Style.klavaLine}>
-            {ColemakThird.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className={Style.klavaLine}>
-            {ColemakFour.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div translate="no" className={Style.klavaLine}>
-            <div translate="no" id=" " className={Style.klavaSpace}></div>
-          </div>
-        </div>
-      )}
-
-      {keyboard === "Dvorak" && (
-        <div className={Style.klava}>
-          <div className={Style.klavaLine}>
-            {DvorakFirst.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className={Style.klavaLine}>
-            {DvorakSecond.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className={Style.klavaLine}>
-            {DvorakThird.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className={Style.klavaLine}>
-            {DvorakFour.map((lan, i) => (
-              <div
-                translate="no"
-                id={QLocale[lan["klavaOne"]]}
-                className={`${lan["stBtn"]}`}
-                key={i}
-              >
-                <p translate="no">
-                  <sub>{QLocale[lan["klavaOne"]]}</sub>
-                  <sup>{QLocale[lan["klavaTwo"]]}</sup>
-                </p>
-              </div>
-            ))}
-          </div>
-          <div translate="no" className={Style.klavaLine}>
-            <div translate="no" id=" " className={Style.klavaSpace}></div>
-          </div>
-        </div>
-      )}
+        ))}
     </section>
   );
 };
 
-export default Qwerty;
+export default Keyboards;

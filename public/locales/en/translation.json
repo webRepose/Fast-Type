@@ -1,5 +1,5 @@
 {
-  "English": "English",
+  "Lang": "English",
   "Home": "Home",
   "Text": "Text",
   "Code": "Code",
@@ -36,7 +36,7 @@
   "T-counWord-min": "words",
   "T-close": "Close",
 
-  "C-LP": "Select LP:",
+  "C-LP": "Select PL:",
   "C-forTime": "For a time",
   "C-forWords": "Per word count",
   "C-title": "Code dialing options | Fast Type",
