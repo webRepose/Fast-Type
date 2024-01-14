@@ -1,118 +1,118 @@
 .historyBlock {
-    display: -ms-grid;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
-    grid-gap: 16px;
-    margin-top: 30px;
-    gap: 16px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 16px;
+  margin-top: 30px;
+  gap: 16px;
 
+  &Sub {
+    background-color: var(--body-color);
+    -webkit-border-radius: var(--radius15);
+    -moz-border-radius: var(--radius15);
+    border-radius: var(--radius15);
+    padding: 15px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 
-    &Sub {
-        background-color:var(--body-color);
-        -webkit-border-radius: var(--radius15);
-           -moz-border-radius: var(--radius15);
-                border-radius: var(--radius15);
-        padding: 15px;
-        cursor: pointer;
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        transition: all 0.3s ease;
-
-        &:hover {
-            opacity: 0.8;
-            -webkit-transform: translateY(-7px);
-               -moz-transform: translateY(-7px);
-                -ms-transform: translateY(-7px);
-                 -o-transform: translateY(-7px);
-                    transform: translateY(-7px);
-        }
-        
-        p {
-            text-align: center;
-            font-size: var(--font19);
-            margin-bottom: 10px;
-            margin-top: 5px;
-        }
-
-        h4 {
-            text-align: center;
-            font-weight: 600;
-            font-size: var(--font20);
-
-            img {
-                position: relative;
-                top: 2px;
-                margin-right: 3px;
-                width: 18px;
-            }
-        }
-
-        &Time {
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -webkit-justify-content: center;
-               -moz-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
-            margin-top: 20px;
-            
-            p {
-                margin-right: 10px;
-                margin-bottom: 0;
-            }
-        }
+    &:hover {
+      opacity: 0.8;
+      -webkit-transform: translateY(-7px);
+      -moz-transform: translateY(-7px);
+      -ms-transform: translateY(-7px);
+      -o-transform: translateY(-7px);
+      transform: translateY(-7px);
     }
+
+    p {
+      text-align: center;
+      font-size: var(--font19);
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
+
+    h4 {
+      text-align: center;
+      font-weight: 600;
+      font-size: var(--font20);
+
+      img {
+        position: relative;
+        top: 2px;
+        margin-right: 3px;
+        width: 18px;
+      }
+    }
+
+    &Time {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -moz-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-top: 20px;
+
+      p {
+        margin-right: 10px;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .historyBlockEmpty {
-    display: -ms-grid;
-    display: grid;
-    place-items: center;
-    height: 69vh !important;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 69vh !important;
 
-    h4 {
-        font-size: var(--font21);
-        text-align: center;
-    }
+  h4 {
+    font-size: var(--font21);
+    text-align: center;
+  }
 
-    img {
-        width: 160px;
-    }
+  img {
+    width: 160px;
+  }
 
-    button {
-        margin-top: 30px;
-    }
+  button {
+    margin-top: 30px;
+  }
+}
+
+.imgpost {
+  width: 160px;
+  height: 225px;
+  display: block;
+  margin: 40px auto;
 }
 
 @media (max-width: 1366px) {
-    .historyBlockSub {
-        h4 {
-            font-size: var(--font17);
+  .historyBlockSub {
+    h4 {
+      font-size: var(--font17);
 
-            img {
-                width: 16px;
-            }
-        }
-
-        p {
-            font-size: var(--font16);
-        }
+      img {
+        width: 16px;
+      }
     }
+
+    p {
+      font-size: var(--font16);
+    }
+  }
 }
 
 @media (max-width: 920px) {
-    .historyBlockEmpty button {
-        padding: 10px 60px;
-    }
-}
-.imgpost {
-    width: 160px;
-    height: 225px;
-    display: block;
-    margin: 40px auto;
+  .historyBlockEmpty button {
+    padding: 10px 60px;
+  }
 }

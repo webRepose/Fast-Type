@@ -140,6 +140,10 @@ main {
   background-color: rgba(27, 27, 27, 0.7411764706);
 }
 
+.feedback-back {
+  background-color: #0f9f63;
+}
+
 .Btn {
   width: 48px;
 }

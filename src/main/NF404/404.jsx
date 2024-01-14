@@ -15,8 +15,8 @@ const NF404 = () => {
           <div className={Style.notFound}>
             <h1>{t("NF-lost")}</h1>
             <img
-              src="../../../../../../img/404/404.png"
-              alt='Illustration by <a href="https://icons8.com/illustrations/author/lZpGtGw5182N">Elisabet Guba</a> from <a href="https://icons8.com/illustrations">Ouch!</a>'
+              src="../../../../../../img/404/404-error.png"
+              alt='<a href="https://www.flaticon.com/free-icons/404-error" title="404 error icons">404 error icons created by Freepik - Flaticon</a>'
             />
             <p>{t("NF-find")}</p>
             <Link to="/">

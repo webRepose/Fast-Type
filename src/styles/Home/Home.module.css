@@ -97,7 +97,7 @@
     height: 130px;
   }
   .homeStatsImg img {
-    width: 110px;
+    width: 80px;
   }
   .homeStatsSkeleton {
     width: 130px;
@@ -127,6 +127,9 @@
   .homeStatsSub {
     width: 160px;
   }
+  .homeStatsSub p {
+    width: 160px;
+  }
   .homeStatsSkeleton {
     width: 160px;
     height: 160px;
@@ -136,7 +139,7 @@
     height: 160px;
   }
   .homeStatsImg img {
-    width: auto;
+    width: 100px;
   }
 }
 @media (max-width: 380px) {

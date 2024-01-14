@@ -59,6 +59,13 @@
   margin-top: 30px;
 }
 
+.imgpost {
+  width: 160px;
+  height: 225px;
+  display: block;
+  margin: 40px auto;
+}
+
 @media (max-width: 1366px) {
   .historyBlockSub h4 {
     font-size: var(--font17);
@@ -74,10 +81,4 @@
   .historyBlockEmpty button {
     padding: 10px 60px;
   }
-}
-.imgpost {
-  width: 160px;
-  height: 225px;
-  display: block;
-  margin: 40px auto;
 }/*# sourceMappingURL=History.module.css.map */

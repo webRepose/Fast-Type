@@ -1,50 +1,57 @@
 [
-    {
-        "img_src":"./img/home/history.webp",
-        "img_backColor":"history-back",
-        "text_translate": "H-Hist",
-        "link":"/history"
-    },
+  {
+    "img_src": "./img/home/Home/history.webp",
+    "img_backColor": "history-back",
+    "text_translate": "H-Hist",
+    "link": "/history"
+  },
 
-    {
-        "img_src":"./img/home/guid.webp",
-        "img_backColor":"guid-back",
-        "text_translate": "H-Guid",
-        "link":"/answers"
-    },
+  {
+    "img_src": "./img/home/Home/question.webp",
+    "img_backColor": "guid-back",
+    "text_translate": "H-Guid",
+    "link": "/answers"
+  },
 
-    {
-        "img_src":"./img/home/what.webp",
-        "img_backColor":"help-back",
-        "text_translate": "H-Help",
-        "link":"/tips"
-    },
+  {
+    "img_src": "./img/home/Home/tips.webp",
+    "img_backColor": "help-back",
+    "text_translate": "H-Help",
+    "link": "/tips"
+  },
 
-    {
-        "img_src":"./img/home/keys1.webp",
-        "img_backColor":"hotkeys-back",
-        "text_translate": "Hotkeys",
-        "link":"/hotkeys"
-    },
+  {
+    "img_src": "./img/home/Home/keyboard.webp",
+    "img_backColor": "hotkeys-back",
+    "text_translate": "Hotkeys",
+    "link": "/hotkeys"
+  },
 
-    {
-        "img_src":"./img/home/statsLight.svg",
-        "img_backColor":"stats-back",
-        "text_translate": "H-Stat",
-        "link":"/stats"
-    },
+  {
+    "img_src": "./img/home/Home/stats.webp",
+    "img_backColor": "stats-back",
+    "text_translate": "H-Stat",
+    "link": "/stats"
+  },
 
-    {
-        "img_src":"./img/home/work.webp",
-        "img_backColor":"work-back",
-        "text_translate": "H-Work",
-        "link":"/workon"
-    },
+  {
+    "img_src": "./img/home/Home/onerr.webp",
+    "img_backColor": "work-back",
+    "text_translate": "H-Work",
+    "link": "/workon"
+  },
 
-    {
-        "img_src":"./img/home/course.webp",
-        "img_backColor":"courses-back",
-        "text_translate": "Courses",
-        "link":"/course"
-    }
+  {
+    "img_src": "./img/home/Home/course.webp",
+    "img_backColor": "courses-back",
+    "text_translate": "Courses",
+    "link": "/course"
+  },
+
+  {
+    "img_src": "./img/home/Home/feedback.webp",
+    "img_backColor": "feedback-back",
+    "text_translate": "Feedback",
+    "link": "/feedback"
+  }
 ]

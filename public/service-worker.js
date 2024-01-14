@@ -1,8 +1,7 @@
-const CACHE_NAME = 'v1';
+const CACHE_NAME = 'v2';
 const urlToCache = [
     'index.html',
     'offline.html',
-    'img/offline/offline.webp',
 ];
 
 // install

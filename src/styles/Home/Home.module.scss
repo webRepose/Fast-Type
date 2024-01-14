@@ -68,7 +68,7 @@
       transform: scale(1.04);
     }
   }
-  
+
   &Skeleton {
     width: 160px;
     height: 160px;
@@ -136,7 +136,7 @@
       height: 130px;
 
       img {
-        width: 110px;
+        width: 80px;
       }
     }
     &Skeleton {
@@ -170,6 +170,10 @@
     }
     &Sub {
       width: 160px;
+
+      p {
+        width: 160px;
+      }
     }
     &Skeleton {
       width: 160px;
@@ -180,7 +184,7 @@
       height: 160px;
 
       img {
-        width: auto;
+        width: 100px;
       }
     }
   }

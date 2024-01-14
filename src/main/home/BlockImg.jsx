@@ -14,8 +14,9 @@ const ImgBlock = ({ imageUrl, name_homeBlock, back_color, linked }) => {
         <div className={`${Style.homeStatsImg} ${back_color}`}>
           {inView ? (
             <img
+              width={100}
               src={imageUrl}
-              alt='Illustration by <a href="https://icons8.com/illustrations/author/CkHJmwURlxnt">Olha Khomich</a> from <a href="https://icons8.com/illustrations">Ouch!</a>'
+              alt='<a href="https://www.flaticon.com/free-icons/" title="icons">icons created by Freepik - Flaticon</a>'
             />
           ) : (
             <div className={Style.homeStatsSkeleton}></div>

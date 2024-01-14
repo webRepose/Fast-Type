@@ -28,7 +28,8 @@ const Home = lazy(() => import("../main/home/Home")),
   ),
   TEST = lazy(() => import("../components/TEST")),
   CheckSelf = lazy(() => import("../main/home/CheckSelf/CheckSelf")),
-  Hotkeys = lazy(() => import("../main/home/Hotkeys/Hotkeys"));
+  Hotkeys = lazy(() => import("../main/home/Hotkeys/Hotkeys")),
+  Feedback = lazy(() => import("../main/home/Feedback/Feedback"));
 
 const Routed = [
   { path: "/history", component: <History /> },
@@ -49,9 +50,10 @@ const Routed = [
   { path: "/captcha", component: <Capcha /> },
   { path: "/test", component: <TEST /> },
   { path: "/check-self", component: <CheckSelf /> },
-  { path: "*", component: <NF404 /> },
   { path: "/result", component: <ResultShare /> },
   { path: "/hotkeys", component: <Hotkeys /> },
+  { path: "/feedback", component: <Feedback /> },
+  { path: "*", component: <NF404 /> },
 ];
 
 const Links = memo(() => {
