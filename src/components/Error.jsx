@@ -1,7 +1,7 @@
+import { useTranslation } from "react-i18next";
 import Style from "../styles/Components/Error/Error.module.css";
 import Section from "./Section";
 import RainbowButton from "./UI/Buttons/RainbowButton";
-import { useTranslation } from "react-i18next";
 
 const Error = () => {
   const [t] = useTranslation();
@@ -27,7 +27,7 @@ const Error = () => {
             </div>
             <div>
               <img
-                src="../../../../../../../img/Components/Error/error1.png"
+                src="../../../../../../../img/Components/Error/error.webp"
                 alt='Illustration by <a href="https://icons8.com/illustrations/author/lZpGtGw5182N">Elisabet Guba</a> from <a href="https://icons8.com/illustrations">Ouch!</a>'
               />
             </div>

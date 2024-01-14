@@ -6,9 +6,8 @@ import { useTranslation } from "react-i18next";
 const Back = () => {
   const [t] = useTranslation();
   const navigate = useNavigate();
-  const Back = () => {
-    navigate(-1);
-  };
+  const Back = () => navigate(-1);
+
   return (
     <Link onClick={Back} title={t("TIS-back")}>
       <button className={Style.Back}>
