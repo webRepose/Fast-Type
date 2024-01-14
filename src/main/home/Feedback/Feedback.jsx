@@ -10,7 +10,7 @@ const Feedback = () => {
   return (
     <main>
       <Meta
-        title={t("Feedback")}
+        title={t("Feedback") + ' | Fast Type'}
         canon={"feedback"}
         description={""}
         keywords={""}
