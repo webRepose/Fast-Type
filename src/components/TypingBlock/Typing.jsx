@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import CopyToClipboard from "react-copy-to-clipboard";
 import Style from "../../styles/Components/TypingCode/TypingCode.module.css";
 import Keyboards from "../Keyboards/Keyboards";
 import Section from "../Section";
@@ -712,27 +711,26 @@ const Typing = ({
                       <img src="../img/text-type/arrow_back.svg" alt="back" />
                     </button>
                     <h1>{t("TIS-share")}</h1>
-                    <CopyToClipboard
-                      onCopy={() => {
-                        alert("You copied");
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(shareRes);
+                        alert("You copied!");
                       }}
-                      text={shareRes}
+                      className={Style.sharePcCopy}
                     >
-                      <button className={Style.sharePcCopy}>
-                        <div
-                          title={t("TIS-copy")}
-                          className={Style.sharePcCopyText}
-                        >
-                          <p>{t("TIS-copy")}</p>
-                          <div className={Style.sharePcCopyLink}>
-                            <img
-                              src="../img/text-type/content_copy.svg"
-                              alt="copy"
-                            />
-                          </div>
+                      <div
+                        title={t("TIS-copy")}
+                        className={Style.sharePcCopyText}
+                      >
+                        <p>{t("TIS-copy")}</p>
+                        <div className={Style.sharePcCopyLink}>
+                          <img
+                            src="../img/text-type/content_copy.svg"
+                            alt="copy"
+                          />
                         </div>
-                      </button>
-                    </CopyToClipboard>
+                      </div>
+                    </button>
                     <div className={Style.sharePcOr}>
                       <div></div>
                       <p>{t("TIS-or")}</p>

@@ -51,7 +51,7 @@ const Symbols = () => {
     mobMenu = keyboardBool || langBool ? Style.grid : "";
 
   const KeyboardsNames = ["Colemak", "Dvorak", "Qwerty"];
-  const LangNames = ["English", "Русский"];
+  const LangNames = ["English", "Русский", 'Қазақ'];
 
   const sectionChoice = [
     {

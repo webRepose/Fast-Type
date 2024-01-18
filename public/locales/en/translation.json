@@ -334,5 +334,12 @@
   "HHk-desc": "Hotkeys are used for more convenient and faster use of the OS or other applications; they reduce the time of our work and simplify everyday processes.",
   "HHk-toOpen": "Press to open!",
 
-  "HHl-change": "Change language"
+  "HHl-change": "Change language",
+
+  "HF-sup": "Technical support",
+  "HF-prob": "Your problem",
+  "HF-send": "Send",
+  "HF-social": "Our social networks",
+  "HF-correct": "Enter the exact data",
+  "HF-succes": "You've submitted the form!"
 }
