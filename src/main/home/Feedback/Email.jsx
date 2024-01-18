@@ -69,6 +69,8 @@ const Email = () => {
     },
   ];
 
+  // console.log()
+
   return (
     <div className={Style.form}>
       <h3>{t("HF-sup")}</h3>
@@ -95,6 +97,7 @@ const Email = () => {
           style={{ margin: "15px auto" }}
           ref={recaptchaRef}
           hl={t('HF-capLang')}
+          theme={document.querySelector('html').getAttribute('class')}
           sitekey={
             window.location.hostname === "localhost"
               ? "6Lf6_1QpAAAAAP-wzRPvOHFYVwGBh3muzty92r4F"
