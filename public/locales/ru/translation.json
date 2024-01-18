@@ -343,5 +343,6 @@
   "HF-correct": "Введите точные данные.",
   "HF-succes": "Вы отправили форму!",
   "HF-less": "Введите менее 250 символов.",
-  "HF-pass": "Вы не прошли reCaptcha."
+  "HF-pass": "Вы не прошли reCaptcha.",
+  "HF-capLang": "ru"
 }

@@ -94,6 +94,7 @@ const Email = () => {
         <ReCAPTCHA
           style={{ margin: "15px auto" }}
           ref={recaptchaRef}
+          hl={t('HF-capLang')}
           sitekey={
             window.location.hostname === "localhost"
               ? "6Lf6_1QpAAAAAP-wzRPvOHFYVwGBh3muzty92r4F"
