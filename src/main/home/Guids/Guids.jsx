@@ -15,6 +15,30 @@ const Guids = () => {
     [speedTypeTog, setSpeedTypeTog] = useState(false),
     [t] = useTranslation();
 
+  const lazureAns = [
+    { translate: "HG-disadvantagesFirst", class: Style.guideLeft },
+    { translate: "HG-disadvantagesSecond", class: Style.guideRight },
+    { translate: "HG-disadvantagesThird", class: Style.guideLeft },
+    { translate: "HG-disadvantagesFour", class: Style.guideRight },
+  ];
+
+  const purpleAns = [
+    { translate: "HG-advantagesFirst", class: Style.guideLeft },
+    { translate: "HG-advantagesSecond", class: Style.guideRight },
+    { translate: "HG-advantagesThird", class: Style.guideLeft },
+    { translate: "HG-advantagesFour", class: Style.guideRight },
+    { translate: "HG-advantagesFive", class: Style.guideLeft },
+  ];
+
+  const DarkBlueAns = [
+    { translate: "HG-blindNeedFirst", class: Style.guideLeft },
+    { translate: "HG-blindNeedSecond", class: Style.guideRight },
+    { translate: "HG-blindNeedThird", class: Style.guideLeft },
+    { translate: "HG-blindNeedFour", class: Style.guideRight },
+    { translate: "HG-blindNeedFive", class: Style.guideLeft },
+    { translate: "HG-blindNeedSix", class: Style.guideRight },
+  ];
+
   return (
     <main>
       <Meta
@@ -76,31 +100,15 @@ const Guids = () => {
         </div>
         {forneedTog && (
           <>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideViolet}`}
-            >
-              <h4>{t("HG-advantagesFirst")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideRight} ${Style.guideViolet}`}
-            >
-              <h4>{t("HG-advantagesSecond")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideViolet}`}
-            >
-              <h4>{t("HG-advantagesThird")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideRight} ${Style.guideViolet}`}
-            >
-              <h4>{t("HG-advantagesFour")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideViolet}`}
-            >
-              <h4>{t("HG-advantagesFive")}</h4>
-            </div>
+            {purpleAns &&
+              purpleAns.map((data, id) => (
+                <div
+                  key={id}
+                  className={`${Style.guideAnswer} ${data.class} ${Style.guideViolet}`}
+                >
+                  <h4>{t(data.translate)}</h4>
+                </div>
+              ))}
           </>
         )}
 
@@ -116,31 +124,15 @@ const Guids = () => {
         </div>
         {noforneedTog && (
           <>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideLazure}`}
-            >
-              <h4>{t("HG-disadvantagesFirst")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideRight} ${Style.guideLazure}`}
-            >
-              <h4>{t("HG-disadvantagesSecond")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideLazure}`}
-            >
-              <h4>{t("HG-disadvantagesThird")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideRight} ${Style.guideLazure}`}
-            >
-              <h4>{t("HG-disadvantagesFour")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideLazure}`}
-            >
-              <h4>{t("HG-disadvantagesFive")}</h4>
-            </div>
+            {lazureAns &&
+              lazureAns.map((data, id) => (
+                <div
+                  key={id}
+                  className={`${Style.guideAnswer} ${data.class} ${Style.guideLazure}`}
+                >
+                  <h4>{t(data.translate)}</h4>
+                </div>
+              ))}
           </>
         )}
 
@@ -176,36 +168,15 @@ const Guids = () => {
         </div>
         {someNeedTog && (
           <>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideDarkBlue}`}
-            >
-              <h4>{t("HG-blindNeedFirst")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideRight} ${Style.guideDarkBlue}`}
-            >
-              <h4>{t("HG-blindNeedSecond")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideDarkBlue}`}
-            >
-              <h4>{t("HG-blindNeedThird")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideRight} ${Style.guideDarkBlue}`}
-            >
-              <h4>{t("HG-blindNeedFour")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideLeft} ${Style.guideDarkBlue}`}
-            >
-              <h4>{t("HG-blindNeedFive")}</h4>
-            </div>
-            <div
-              className={`${Style.guideAnswer} ${Style.guideRight} ${Style.guideDarkBlue}`}
-            >
-              <h4>{t("HG-blindNeedSix")}</h4>
-            </div>
+            {DarkBlueAns &&
+              DarkBlueAns.map((data, id) => (
+                <div
+                  key={id}
+                  className={`${Style.guideAnswer} ${data.class} ${Style.guideDarkBlue}`}
+                >
+                  <h4>{t(data.translate)}</h4>
+                </div>
+              ))}
           </>
         )}
 

@@ -69,8 +69,6 @@ const Email = () => {
     },
   ];
 
-  // console.log()
-
   return (
     <div className={Style.form}>
       <h3>{t("HF-sup")}</h3>

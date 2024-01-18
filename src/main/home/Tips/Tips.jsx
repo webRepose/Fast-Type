@@ -6,6 +6,16 @@ import Meta from "../../../components/Meta";
 
 const Tips = () => {
   const [t] = useTranslation();
+
+  const tipsList = [
+    { translate: 'HT-first', backColor: Style.tipsRed, answer: 'HT-firstAnswer' },
+    { translate: 'HT-second', backColor: Style.tipsCreamPurple, answer: 'HT-secondAnswer' },
+    { translate: 'HT-four', backColor: Style.tipsOrange, answer: 'HT-fourAnswer' },
+    { translate: 'HT-five', backColor: Style.tipsCream, answer: 'HT-fiveAnswer' },
+    { translate: 'HT-six', backColor: Style.tipsYellow, answer: 'HT-sixAnswer' },
+    { translate: 'HT-seven', backColor: Style.tipsBlue, answer: 'HT-sevenAnswer' },
+  ]
+  
   return (
     <main>
       <Meta
@@ -19,16 +29,8 @@ const Tips = () => {
       <Section>
         <Back />
         <h1>{t("H-Help")}</h1>
-        <div className={`${Style.tipsBlockTip} ${Style.tipsRed}`}>
-          <h3>1. {t("HT-first")}</h3>
-        </div>
-        <p className={Style.tipsAnswer}>{t("HT-firstAnswer")}</p>
-        <div className={`${Style.tipsBlockTip} ${Style.tipsCreamPurple}`}>
-          <h3>2. {t("HT-second")}</h3>
-        </div>
-        <p className={Style.tipsAnswer}>{t("HT-secondAnswer")}</p>
         <div className={`${Style.tipsBlockTip} ${Style.tipsViolet}`}>
-          <h3>3. {t("HT-third")}</h3>
+          <h3>1. {t("HT-third")}</h3>
         </div>
         <p className={Style.tipsAnswer}>
           {t("HT-thirdAnswer1")} <br />
@@ -44,22 +46,15 @@ const Tips = () => {
             alt="Keyboard place"
           />
         </div>
-        <div className={`${Style.tipsBlockTip} ${Style.tipsOrange}`}>
-          <h3>4. {t("HT-four")}</h3>
-        </div>
-        <p className={Style.tipsAnswer}>{t("HT-fourAnswer")}</p>
-        <div className={`${Style.tipsBlockTip} ${Style.tipsCream}`}>
-          <h3>5. {t("HT-five")}</h3>
-        </div>
-        <p className={Style.tipsAnswer}>{t("HT-fiveAnswer")}</p>
-        <div className={`${Style.tipsBlockTip} ${Style.tipsYellow}`}>
-          <h3>6. {t("HT-six")}</h3>
-        </div>
-        <p className={Style.tipsAnswer}>{t("HT-sixAnswer")}</p>
-        <div className={`${Style.tipsBlockTip} ${Style.tipsBlue}`}>
-          <h3>7. {t("HT-seven")}</h3>
-        </div>
-        <p className={Style.tipsAnswer}>{t("HT-sevenAnswer")}</p>
+        { tipsList && tipsList.map((data, id) => (
+          <div key={id} >
+            <div className={`${Style.tipsBlockTip} ${data.backColor}`}>
+              <h3>{id+2}. {t(data.translate)}</h3>
+            </div>
+            <p className={Style.tipsAnswer}>{t(data.answer)}</p>
+          </div>
+        ))
+        }
       </Section>
     </main>
   );
