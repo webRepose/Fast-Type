@@ -340,6 +340,8 @@
   "HF-prob": "Your problem",
   "HF-send": "Send",
   "HF-social": "Our social networks",
-  "HF-correct": "Enter the exact data",
-  "HF-succes": "You've submitted the form!"
+  "HF-correct": "Enter the exact data.",
+  "HF-succes": "You've submitted the form!",
+  "HF-less": "Please enter fewer than 250 characters.",
+  "HF-pass": "You did not pass the reCaptcha."
 }

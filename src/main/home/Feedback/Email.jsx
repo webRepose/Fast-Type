@@ -1,3 +1,4 @@
+import ReCAPTCHA from "react-google-recaptcha";
 import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
@@ -5,9 +6,22 @@ import Style from "../../../styles/Home/Feedback/Email/Email.module.css";
 
 const Email = () => {
   const [t] = useTranslation();
-  const form = useRef();
+  const form = useRef(null);
+  const recaptchaRef = useRef(null);
   const [valueEmail, setValueEmail] = useState("");
   const [valueMess, setValueMess] = useState("");
+  const [recaptchaValue, setRecaptchaValue] = useState("");
+
+  const Reset = (e) => {
+    e.target.reset();
+    setValueEmail((prev) => (prev = ""));
+    setValueMess((prev) => (prev = ""));
+    recaptchaRef.current.reset();
+  };
+
+  const handleRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -15,27 +29,24 @@ const Email = () => {
     if ((valueEmail.length && valueMess.length) < 5) {
       alert(t("HF-correct"));
       return false;
+    } else if ((valueEmail.length && valueMess.length) > 250) {
+      alert(t("HF-less"));
+      return false;
     }
 
-    emailjs
-      .sendForm(
-        "service_6feivtr",
-        "template_xhw062h",
-        form.current,
-        "udzDPA5E8nVcIKj4H"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    if (recaptchaValue.length <= 0) {
+      alert(t("HF-pass"));
+      return false;
+    }
 
-    e.target.reset();
-    setValueEmail((prev) => (prev = ""));
-    setValueMess((prev) => (prev = ""));
+    emailjs.sendForm(
+      "service_6feivtr",
+      "template_xhw062h",
+      form.current,
+      "udzDPA5E8nVcIKj4H"
+    );
+
+    Reset(e);
     alert(t("HF-succes"));
   };
 
@@ -80,6 +91,16 @@ const Email = () => {
               />
             </div>
           ))}
+        <ReCAPTCHA
+          style={{ margin: "15px auto" }}
+          ref={recaptchaRef}
+          sitekey={
+            window.location.hostname === "localhost"
+              ? "6Lf6_1QpAAAAAP-wzRPvOHFYVwGBh3muzty92r4F"
+              : "6Ldg-1QpAAAAANGEcEAwxf6gJ-8umjQsoffAAZIp"
+          }
+          onChange={handleRecaptchaChange}
+        />
         <button title={t("HF-send")} type="submit">
           {t("HF-send")}
         </button>
