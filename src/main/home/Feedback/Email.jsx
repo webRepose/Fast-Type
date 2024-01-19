@@ -6,6 +6,8 @@ import Style from "../../../styles/Home/Feedback/Email/Email.module.css";
 
 const Email = () => {
   const [t] = useTranslation();
+  const captchaLocal = process.env.REACT_APP_API_RECAPTCHA_KEY_LOCAL;
+  const captchaOutside = process.env.REACT_APP_API_RECAPTCHA_KEY_OUTSIDE;
   const form = useRef(null);
   const recaptchaRef = useRef(null);
   const [valueEmail, setValueEmail] = useState("");
@@ -40,10 +42,10 @@ const Email = () => {
     }
 
     emailjs.sendForm(
-      "service_6feivtr",
-      "template_xhw062h",
+      process.env.REACT_APP_EMAILJS_SERVICE,
+      process.env.REACT_APP_EMAILJS_TEMPLATE,
       form.current,
-      "udzDPA5E8nVcIKj4H"
+      process.env.REACT_APP_EMAILJS_KEY
     );
 
     Reset(e);
@@ -98,8 +100,8 @@ const Email = () => {
           theme={document.querySelector('html').getAttribute('class')}
           sitekey={
             window.location.hostname === "localhost"
-              ? "6Lf6_1QpAAAAAP-wzRPvOHFYVwGBh3muzty92r4F"
-              : "6Ldg-1QpAAAAANGEcEAwxf6gJ-8umjQsoffAAZIp"
+              ? captchaLocal
+              : captchaOutside
           }
           onChange={handleRecaptchaChange}
         />
