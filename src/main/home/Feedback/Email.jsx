@@ -5,6 +5,8 @@ import emailjs from "@emailjs/browser";
 import Style from "../../../styles/Home/Feedback/Email/Email.module.css";
 
 const Email = () => {
+  console.log(process.env.REACT_APP_API_RECAPTCHA_KEY_LOCAL)
+  console.log(process.env.REACT_APP_API_RECAPTCHA_KEY_OUTSIDE)
   const [t] = useTranslation();
   const captchaLocal = process.env.REACT_APP_API_RECAPTCHA_KEY_LOCAL;
   const captchaOutside = process.env.REACT_APP_API_RECAPTCHA_KEY_OUTSIDE;
@@ -100,8 +102,8 @@ const Email = () => {
           theme={document.querySelector('html').getAttribute('class')}
           sitekey={
             window.location.hostname === "localhost"
-              ? captchaLocal
-              : captchaOutside
+              ? process.env.REACT_APP_API_RECAPTCHA_KEY_LOCAL
+              : process.env.REACT_APP_API_RECAPTCHA_KEY_OUTSIDE
           }
           onChange={handleRecaptchaChange}
         />
