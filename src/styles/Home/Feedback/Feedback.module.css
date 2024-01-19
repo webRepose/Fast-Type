@@ -51,4 +51,9 @@
     height: 45px;
     width: 100%;
   }
+  .social h4 {
+    margin: 0 auto;
+    position: relative;
+    left: -22px;
+  }
 }/*# sourceMappingURL=Feedback.module.css.map */

@@ -24,7 +24,8 @@
   
   .slider {
     position: absolute;
-    width: 100%;
+    width: 102%;
+    left: -1px;
     height: 100%;
     border-radius: 25px;
     -webkit-transition: 0.3s;

@@ -51,12 +51,20 @@
 }
 
 @media (max-width: 500px) {
-  .social_display {
-    grid-template-columns: 100%;
-  }
+  .social {
+    &_display {
+      grid-template-columns: 100%;
+    }
+  
+    &_block {
+      height: 45px;
+      width: 100%;
+    }
 
-  .social_block {
-    height: 45px;
-    width: 100%;
+    h4 {
+      margin: 0 auto;
+      position: relative;
+      left: -22px;
+    }
   }
 }

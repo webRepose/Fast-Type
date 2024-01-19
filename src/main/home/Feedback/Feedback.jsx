@@ -12,22 +12,22 @@ const Feedback = () => {
   const socialList = [
     {
       to: "https://t.me/just_a_machine",
-      img: "./img/home/Feedback/telegram.png",
+      img: "./img/home/Feedback/telegram.webp",
       name: "Telegram",
     },
     {
       to: "https://wa.me/77075775124?text=",
-      img: "./img/home/Feedback/whatsapp.png",
+      img: "./img/home/Feedback/whatsapp.webp",
       name: "Whatsapp",
     },
     {
       to: "https://vk.com/mnmmmh",
-      img: "./img/home/Feedback/vk.png",
+      img: "./img/home/Feedback/vk.webp",
       name: "VKontakte",
     },
     {
       to: "tel:+7 707 577 51 24",
-      img: "./img/home/Feedback/phones.png",
+      img: "./img/home/Feedback/phones.webp",
       name: "+7 707 577 51 24",
     },
   ];
