@@ -102,8 +102,8 @@ const Email = () => {
           theme={document.querySelector('html').getAttribute('class')}
           sitekey={
             window.location.hostname === "localhost"
-              ? process.env.REACT_APP_API_RECAPTCHA_KEY_LOCAL
-              : process.env.REACT_APP_API_RECAPTCHA_KEY_OUTSIDE
+              ? '6Lf6_1QpAAAAAP-wzRPvOHFYVwGBh3muzty92r4F'
+              : '6Ldg-1QpAAAAANGEcEAwxf6gJ-8umjQsoffAAZIp'
           }
           onChange={handleRecaptchaChange}
         />
