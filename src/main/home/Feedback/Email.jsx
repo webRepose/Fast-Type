@@ -5,11 +5,7 @@ import emailjs from "@emailjs/browser";
 import Style from "../../../styles/Home/Feedback/Email/Email.module.css";
 
 const Email = () => {
-  console.log(process.env.REACT_APP_API_RECAPTCHA_KEY_LOCAL)
-  console.log(process.env.REACT_APP_API_RECAPTCHA_KEY_OUTSIDE)
   const [t] = useTranslation();
-  const captchaLocal = process.env.REACT_APP_API_RECAPTCHA_KEY_LOCAL;
-  const captchaOutside = process.env.REACT_APP_API_RECAPTCHA_KEY_OUTSIDE;
   const form = useRef(null);
   const recaptchaRef = useRef(null);
   const [valueEmail, setValueEmail] = useState("");
@@ -44,10 +40,10 @@ const Email = () => {
     }
 
     emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE,
-      process.env.REACT_APP_EMAILJS_TEMPLATE,
+      "service_6feivtr",
+      "template_xhw062h",
       form.current,
-      process.env.REACT_APP_EMAILJS_KEY
+      "udzDPA5E8nVcIKj4H"
     );
 
     Reset(e);
@@ -98,12 +94,12 @@ const Email = () => {
         <ReCAPTCHA
           style={{ margin: "15px auto" }}
           ref={recaptchaRef}
-          hl={t('HF-capLang')}
-          theme={document.querySelector('html').getAttribute('class')}
+          hl={t("HF-capLang")}
+          theme={document.querySelector("html").getAttribute("class")}
           sitekey={
             window.location.hostname === "localhost"
-              ? '6Lf6_1QpAAAAAP-wzRPvOHFYVwGBh3muzty92r4F'
-              : '6Ldg-1QpAAAAANGEcEAwxf6gJ-8umjQsoffAAZIp'
+              ? "6Lf6_1QpAAAAAP-wzRPvOHFYVwGBh3muzty92r4F"
+              : "6Ldg-1QpAAAAANGEcEAwxf6gJ-8umjQsoffAAZIp"
           }
           onChange={handleRecaptchaChange}
         />
