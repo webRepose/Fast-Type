@@ -26,6 +26,27 @@
     "text_translate": "Hotkeys",
     "link": "/hotkeys"
   },
+  
+  {
+    "img_src": "./img/home/Home/stats.webp",
+    "img_backColor": "stats-back",
+    "text_translate": "H-Stat",
+    "link": "/stats"
+  },
+
+  {
+    "img_src": "./img/home/Home/onerr.webp",
+    "img_backColor": "work-back",
+    "text_translate": "H-Work",
+    "link": "/workon"
+  },
+
+  {
+    "img_src": "./img/home/Home/course.webp",
+    "img_backColor": "courses-back",
+    "text_translate": "Courses",
+    "link": "/course"
+  },
 
   {
     "img_src": "./img/home/Home/feedback.webp",

@@ -33,7 +33,7 @@ const Home = () => {
       </Section>
       <section className={Style.homeTest}>
         <h3>{t("H-Test")}</h3>
-        <Link to={"/text/typing"}>
+        <Link to={"/сheck-self"}>
           <GreenButton title={t("H-Pass")}>{t("H-Pass")}</GreenButton>
         </Link>
       </section>
