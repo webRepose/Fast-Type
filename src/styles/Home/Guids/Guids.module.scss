@@ -1,0 +1,262 @@
+.guide {
+    &Answer {
+        padding: 15px 30px;
+        -webkit-border-radius: var(--radius25);
+           -moz-border-radius: var(--radius25);
+                border-radius: var(--radius25);
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+    
+        h4 {
+            font-size: var(--font18);
+            text-align: center;
+            color: var(--textT-color);
+        }
+    }
+
+    &Cream {
+        background-color: var(--ThemeButton-color);
+    }
+
+    &Violet {
+        background-color: #4B2279;
+    }
+    
+    &Red {
+        background-color: #FF2E54;
+    }
+    
+    &Lazure {
+        background-color: #2EB7A7;
+    }
+    
+    &Borde {
+        background-color: #773656;
+    }
+    
+    &DarkBlue {
+        background-color: #3C3C56;
+    }
+
+    &CreamPurple {
+        background-color: #9DA2E8;
+    }
+
+    &Click {
+        -webkit-animation: clickMeCream 1.4s linear infinite;
+           -moz-animation: clickMeCream 1.4s linear infinite;
+             -o-animation: clickMeCream 1.4s linear infinite;
+                animation: clickMeCream 1.4s linear infinite;
+        width: 100%;
+        margin: 0 auto;
+        -webkit-border-radius: var(--radius25);
+           -moz-border-radius: var(--radius25);
+                border-radius: var(--radius25);
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 20px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        &:hover {
+            opacity: 0.8;
+            -webkit-transform: translateY(-2px);
+               -moz-transform: translateY(-2px);
+                -ms-transform: translateY(-2px);
+                 -o-transform: translateY(-2px);
+                    transform: translateY(-2px);
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: 0;
+            font-size: var(--font21);
+            padding: 15px 30px;
+            color: var(--textT-color);
+        }
+    }
+
+    &Left {
+        -webkit-animation: left 0.6s ease;
+           -moz-animation: left 0.6s ease;
+             -o-animation: left 0.6s ease;
+                animation: left 0.6s ease;
+    }
+
+    &Right {
+        -webkit-animation: right 0.6s ease;
+           -moz-animation: right 0.6s ease;
+             -o-animation: right 0.6s ease;
+                animation: right 0.6s ease;
+    }
+}
+
+
+@-webkit-keyframes clickMeCream {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 var(--ThemeButton-color);
+                box-shadow: 0 0 0 0 var(--ThemeButton-color);
+    }
+    50% {
+        -webkit-box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+                box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+    }
+}
+
+
+@-moz-keyframes clickMeCream {
+    0% {
+        -moz-box-shadow: 0 0 0 0 var(--ThemeButton-color);
+             box-shadow: 0 0 0 0 var(--ThemeButton-color);
+    }
+    50% {
+        -moz-box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+             box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+    }
+}
+
+
+@-o-keyframes clickMeCream {
+    0% {
+        box-shadow: 0 0 0 0 var(--ThemeButton-color);
+    }
+    50% {
+        box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+    }
+}
+
+
+@keyframes clickMeCream {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 var(--ThemeButton-color);
+           -moz-box-shadow: 0 0 0 0 var(--ThemeButton-color);
+                box-shadow: 0 0 0 0 var(--ThemeButton-color);
+    }
+    50% {
+        -webkit-box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+           -moz-box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+                box-shadow: 0 0 10px 0 var(--ThemeButton-color);
+    }
+}
+
+
+@-webkit-keyframes left {
+    0% {
+        -webkit-transform: translateX(-5%);
+                transform: translateX(-5%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+}
+
+
+@-moz-keyframes left {
+    0% {
+        -moz-transform: translateX(-5%);
+             transform: translateX(-5%);
+    }
+    100% {
+        -moz-transform: translateX(0%);
+             transform: translateX(0%);
+    }
+}
+
+
+@-o-keyframes left {
+    0% {
+        -o-transform: translateX(-5%);
+           transform: translateX(-5%);
+    }
+    100% {
+        -o-transform: translateX(0%);
+           transform: translateX(0%);
+    }
+}
+
+
+@keyframes left {
+    0% {
+        -webkit-transform: translateX(-5%);
+           -moz-transform: translateX(-5%);
+             -o-transform: translateX(-5%);
+                transform: translateX(-5%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+           -moz-transform: translateX(0%);
+             -o-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes right {
+    0% {
+        -webkit-transform: translateX(5%);
+                transform: translateX(5%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+}
+
+@-moz-keyframes right {
+    0% {
+        -moz-transform: translateX(5%);
+             transform: translateX(5%);
+    }
+    100% {
+        -moz-transform: translateX(0%);
+             transform: translateX(0%);
+    }
+}
+
+@-o-keyframes right {
+    0% {
+        -o-transform: translateX(5%);
+           transform: translateX(5%);
+    }
+    100% {
+        -o-transform: translateX(0%);
+           transform: translateX(0%);
+    }
+}
+
+@keyframes right {
+    0% {
+        -webkit-transform: translateX(5%);
+           -moz-transform: translateX(5%);
+             -o-transform: translateX(5%);
+                transform: translateX(5%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+           -moz-transform: translateX(0%);
+             -o-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+}
+
+@media (max-width: 1366px) {
+    .guide {
+        &Answer h4, &Question h4 {
+            font-size: var(--font16);
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .guide {
+        &Answer {
+           padding: 15px 10px;
+        }
+    }
+}

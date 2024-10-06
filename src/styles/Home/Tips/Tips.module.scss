@@ -1,0 +1,91 @@
+.tips {
+    &BlockTip {
+        width: 100%;
+        margin: 0 auto;
+        -webkit-border-radius: var(--radius25);
+           -moz-border-radius: var(--radius25);
+                border-radius: var(--radius25);
+        margin-bottom: 10px;
+        padding: 10px 20px;
+
+        h3 {
+            color: var(--textT-color);
+        }
+    }
+
+    &CreamPurple {
+        background-color: #9DA2E8;
+    }
+
+    &Red {
+        background-color: #FF2E54;
+    }
+
+    &Orange {
+        background-color: #E74141;
+    }
+
+    &Violet {
+        background-color: #8936A1;
+    }
+
+    &Cream {
+        background-color: var(--ThemeButton-color);
+    }
+
+    &Yellow {
+        background-color:#F1B90C;
+    }
+
+    &Blue {
+        background-color:#1A73E8;
+    }
+
+    
+    &Answer {
+        padding: 0 20px;
+        font-size: var(--font18);
+        margin-bottom: 40px;
+    }
+
+    &Klava {
+        display: block;
+        margin: 0 auto;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        margin-bottom: 40px;
+    }
+
+    .imgpost {
+        width: 600px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .tips {
+        &BlockTip {
+            padding: 10px 20px;
+            h3 {
+                font-size: var(--font17);
+            }
+        }
+        &Answer {
+            font-size: var(--font16);
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .tips {
+        &Klava {
+            width: 90%;
+        }
+        .imgpost {
+            width: 337px;
+            height: 113px;
+        }
+    }
+}

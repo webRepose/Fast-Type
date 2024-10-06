@@ -1,0 +1,38 @@
+[
+  {
+    "combine": "Ctrl + `",
+    "text": "HHkV1-Ctrl + `"
+  },
+  {
+    "combine": "Ctrl + Shift + P",
+    "text": "HHkV1-Ctrl + Shift + P"
+  },
+  {
+    "combine": "Ctrl + Shift + N",
+    "text": "HHkV1-Ctrl + Shift + N"
+  },
+  {
+    "combine": "Ctrl + N",
+    "text": "HHkV1-Ctrl + N"
+  },
+  {
+    "combine": "Ctrl + O",
+    "text": "HHkV1-Ctrl + O"
+  },
+  {
+    "combine": "Ctrl + S",
+    "text": "HHkV1-Ctrl + S"
+  },
+  {
+    "combine": "Ctrl + Shift + S",
+    "text": "HHkV1-Ctrl + Shift + S"
+  },
+  {
+    "combine": "Ctrl + F",
+    "text": "HHkV1-Ctrl + F"
+  },
+  {
+    "combine": "Ctrl + H",
+    "text": "HHkV1-Ctrl + H"
+  }
+]

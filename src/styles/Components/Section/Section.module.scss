@@ -1,0 +1,83 @@
+.Block {
+  width: 100%;
+  padding: var(--paddingHome);
+  -webkit-border-radius: var(--radius15);
+  -moz-border-radius: var(--radius15);
+  border-radius: var(--radius15);
+  background-color: var(--block-color);
+  margin-bottom: 20px;
+  position: relative;
+  -webkit-animation: onLoad 0.3s ease-out;
+  -moz-animation: onLoad 0.3s ease-out;
+  -o-animation: onLoad 0.3s ease-out;
+  animation: onLoad 0.3s ease-out;
+  border: 1px solid #757171;
+  
+  h1 {
+    font-size: var(--font24);
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+@-webkit-keyframes onLoad {
+    0% {
+      -webkit-transform: scale(0.981);
+              transform: scale(0.981);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @-moz-keyframes onLoad {
+    0% {
+      -moz-transform: scale(0.981);
+           transform: scale(0.981);
+    }
+    100% {
+      -moz-transform: scale(1);
+           transform: scale(1);
+    }
+  }
+  @-o-keyframes onLoad {
+    0% {
+      -o-transform: scale(0.981);
+         transform: scale(0.981);
+    }
+    100% {
+      -o-transform: scale(1);
+         transform: scale(1);
+    }
+  }
+  @keyframes onLoad {
+    0% {
+      -webkit-transform: scale(0.981);
+         -moz-transform: scale(0.981);
+           -o-transform: scale(0.981);
+              transform: scale(0.981);
+    }
+    100% {
+      -webkit-transform: scale(1);
+         -moz-transform: scale(1);
+           -o-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+
+@media (max-width: 1760px) {
+  .Block h1 {
+    font-size: var(--font21);
+  }
+
+  .Block {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 912px) {
+  .Block h1 {
+    margin-bottom: 30px;
+  }
+}

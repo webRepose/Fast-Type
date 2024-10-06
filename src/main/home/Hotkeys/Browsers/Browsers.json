@@ -1,0 +1,66 @@
+[
+  {
+    "combine": "F6, Ctrl + L, Alt + D",
+    "text": "HHkB1-F6"
+  },
+  {
+    "combine": "F11",
+    "text": "HHkB1-F11"
+  },
+  {
+    "combine": "Alt + Home",
+    "text": "HHkB1-Alt + Home"
+  },
+  {
+    "combine": "Backspace, Alt + LeftArrow",
+    "text": "HHkB1-Backspace"
+  },
+  {
+    "combine": "Shift + Backspace, Alt + RightArrow",
+    "text": "HHkB1-Shift + Backspace"
+  },
+  {
+    "combine": "Ctrl + Shift + Delete",
+    "text": "HHkB1-Ctrl + Shift + Delete"
+  },
+  {
+    "combine": "Ctrl + Enter",
+    "text": "HHkB1-Ctrl + Enter"
+  },
+  {
+    "combine": "Ctrl + Shift + N",
+    "text": "HHkB1-Ctrl + Shift + N"
+  },
+  {
+    "combine": "Ctrl + Tab, Ctrl + PageDown",
+    "text": "HHkB1-Ctrl + Tab"
+  },
+  {
+    "combine": "Ctrl + Shift + Tab, Ctrl + PageUp",
+    "text": "HHkB1-Ctrl + Shift + Tab"
+  },
+  {
+    "combine": "Ctrl + Shift + T",
+    "text": "HHkB1-Ctrl + Shift + T"
+  },
+  {
+    "combine": "Ctrl + Shift + J",
+    "text": "HHkB1-Ctrl + Shift + J"
+  },
+  {
+    "combine": "Shift + Alt + T",
+    "text": "HHkB1-Shift + Alt + T"
+  },
+  {
+    "combine": "Ctrl + W, Ctrl + F4",
+    "text": "HHkB1-Ctrl + W, Ctrl + F4"
+  },
+  {
+    "combine": "Ctrl + Shift + Esc",
+    "text": "HHkB1-Ctrl + Shift + Esc"
+  },
+  {
+    "combine": "Shift + Esc",
+    "text": "HHkB1-Shift + Esc"
+  }
+]

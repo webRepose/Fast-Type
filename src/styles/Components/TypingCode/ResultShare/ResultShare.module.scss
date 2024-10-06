@@ -1,0 +1,100 @@
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.choiceParams {
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+        color: var(--textT-color);
+        padding: 8px 50px;
+        -webkit-border-radius: var(--radius25);
+           -moz-border-radius: var(--radius25);
+                border-radius: var(--radius25);
+        border: 0;
+        font-size: var(--font20);
+        background-color: var(--startButton-color);
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+
+
+        &:hover {
+            opacity: 0.8;
+            -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                    -moz-transform: translateY(-5px);
+                      -o-transform: translateY(-5px);
+                 transform: translateY(-5px);
+        }
+    }
+}
+
+.center {
+    display: -ms-grid;
+    display: grid;;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    div {
+        width: 90%;
+        -webkit-border-radius: var(--radius10);
+           -moz-border-radius: var(--radius10);
+                border-radius: var(--radius10);
+        padding: 10px;
+        margin: 0 auto;
+        color: var(--textT-color);
+
+        div {
+            background: var(--gradient1-color);
+            margin-top: 15px;
+        }
+
+        p {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    -webkit-justify-content: center;
+                       -moz-box-pack: center;
+                    justify-content: center;
+            font-size:var(--font20);
+
+            p {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 920px) {
+    .center div {
+        width: 100%;
+    }
+    .choiceParams button {
+        padding: 12px 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .center {
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+        div {
+            padding: 0;
+            div {
+                padding: 10px;
+            }
+        }
+    }
+}

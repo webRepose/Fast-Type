@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="640" viewBox="0 0 800 640">
+  <path id="mess" d="M160-160q-33,0-56.5-23.5T80-240V-720q0-33,23.5-56.5T160-800H800q33,0,56.5,23.5T880-720v480q0,33-23.5,56.5T800-160ZM480-440,160-640v400H800V-640Zm0-80L800-720H160ZM160-640v0Z" transform="translate(-80 800)" fill="#33d74b"/>
+</svg>

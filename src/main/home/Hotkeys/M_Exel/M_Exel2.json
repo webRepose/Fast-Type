@@ -1,0 +1,66 @@
+[
+  {
+    "combine": "Ctrl + S",
+    "text": "HHkE2-Ctrl + S"
+  },
+  {
+    "combine": "Ctrl + C",
+    "text": "HHkE2-Ctrl + C"
+  },
+  {
+    "combine": "Ctrl + V",
+    "text": "HHkE2-Ctrl + V"
+  },
+  {
+    "combine": "Ctrl + Z",
+    "text": "HHkE2-Ctrl + Z"
+  },
+  {
+    "combine": "Alt + Р, 1",
+    "text": "HHkE2-Alt + P, 1"
+  },
+  {
+    "combine": "Ctrl + X",
+    "text": "HHkE2-Ctrl + X"
+  },
+  {
+    "combine": "Alt + N",
+    "text": "HHkE2-Alt + N"
+  },
+  {
+    "combine": "Ctrl + B",
+    "text": "HHkE2-Ctrl + B"
+  },
+  {
+    "combine": "Alt + A, C",
+    "text": "HHkE2-Alt + A, C"
+  },
+  {
+    "combine": "Alt + P",
+    "text": "HHkE2-Alt + P"
+  },
+  {
+    "combine": "Alt + A",
+    "text": "HHkE2-Alt + A"
+  },
+  {
+    "combine": "Alt + W",
+    "text": "HHkE2-Alt + W"
+  },
+  {
+    "combine": "Shift + F10, Windows",
+    "text": "HHkE2-Shift + F10, Windows"
+  },
+  {
+    "combine": "Alt + D, C",
+    "text": "HHkE2-Alt + D, C"
+  },
+  {
+    "combine": "Alt + M",
+    "text": "HHkE2-Alt + M"
+  },
+  {
+    "combine": "Ctrl + 9",
+    "text": "HHkE2-Ctrl + 9"
+  }
+]

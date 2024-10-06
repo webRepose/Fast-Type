@@ -1,0 +1,38 @@
+[
+  {
+    "combine": "Ctrl + Home (Home)",
+    "text": "HHkW2-Ctrl + Home (Home)"
+  },
+  {
+    "combine": "Ctrl + End (End)",
+    "text": "HHkW2-Ctrl + End (End)"
+  },
+  {
+    "combine": "Windows + E",
+    "text": "HHkW2-Windows + E"
+  },
+  {
+    "combine": "Windows + D",
+    "text": "HHkW2-Windows + D"
+  },
+  {
+    "combine": "Windows + U",
+    "text": "HHkW2-Windows + U"
+  },
+  {
+    "combine": "Alt + Tab",
+    "text": "HHkW2-Alt + Tab"
+  },
+  {
+    "combine": "Alt + Tab + Shift",
+    "text": "HHkW2-Alt + Tab + Shift"
+  },
+  {
+    "combine": "Shift + F10",
+    "text": "HHkW2-Shift + F10"
+  },
+  {
+    "combine": "Ctrl + Shift + Esc",
+    "text": "HHkW2-Ctrl + Shift + Esc"
+  }
+]
