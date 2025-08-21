@@ -11,7 +11,7 @@ const Feedback = () => {
 
   const socialList = [
     {
-      to: "https://t.me/just_a_machine",
+      to: "https://t.me/RK803",
       img: "./img/home/Feedback/telegram.webp",
       name: "Telegram",
     },

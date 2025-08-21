@@ -26,8 +26,13 @@ const TypingSymbols = () => {
   const parse = JSON.parse(localStorage.getItem(localObject));
 
   const [arr, setArr] = useState([t("TS-enter")]);
+  const [capsIndcator, setCapsIndiactor] = useState(false);
+  console.log(capsIndcator)
   useMemo(() => {
     document.addEventListener("keydown", (e) => {
+      const on = e.getModifierState && e.getModifierState("CapsLock");
+      setCapsIndiactor(prev => prev = on);
+
       if (
         e.key === "Meta" ||
         e.key === "Backspace" ||
@@ -42,7 +47,7 @@ const TypingSymbols = () => {
       }
       setArr((current) => [...current, e.key]);
     });
-  }, []);
+  }, [setCapsIndiactor]);
 
   if (document.getElementsByClassName(Style.onKeyClick).length >= 1) {
     document.getElementById(arr[arr.length - 2].toUpperCase()) &&
@@ -129,7 +134,7 @@ const TypingSymbols = () => {
                   </div>
                 </button>
               </article>
-              <Keyboards keyboard={parse.keyboard} lang={parse.lang} />
+              <Keyboards keyboard={parse.keyboard} lang={parse.lang} caps={capsIndcator}/>
             </>
           ) : (
             <ForPC />

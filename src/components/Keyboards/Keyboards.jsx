@@ -14,7 +14,7 @@ import DvorakSecond from "./Dvorak/DvorakSecond.json";
 import DvorakThird from "./Dvorak/DvorakThird.json";
 import DvorakFour from "./Dvorak/DvorakFour.json";
 
-const Keyboards = ({ keyboard, lang }) => {
+const Keyboards = ({ keyboard, lang, caps }) => {
   let QLocale = new LocalizedStrings({
     en: {
       "T-`": "`",
@@ -329,6 +329,22 @@ const Keyboards = ({ keyboard, lang }) => {
                 </div>
                 <div className={Style.klavaLine}>
                   {data.list3.map((lan, i) => (
+                    QLocale[lan["klavaOne"]] === "CapsLock" ? 
+                    <div
+                      translate="no"
+                      id={QLocale[lan["klavaOne"]]}
+                      className={`${lan["stBtn"]}`}
+                      key={i}
+                    >
+                      <div className={`${Style.klava_caps} ${caps ? Style.klava_caps_active : Style.klava_caps_disable}`}>
+                        
+                      </div>
+                      <p translate="no">
+                        <sub>{QLocale[lan["klavaOne"]]}</sub>
+                        <sup>{QLocale[lan["klavaTwo"]]}</sup>
+                      </p>
+                    </div>
+                    :
                     <div
                       translate="no"
                       id={QLocale[lan["klavaOne"]]}

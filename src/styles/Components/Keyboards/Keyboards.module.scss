@@ -9,6 +9,23 @@
         margin: 0 auto !important;
     }
 
+    &_caps {
+        width: 10px;
+        height: 10px !important;
+        border-radius: --radius50p;
+        position: relative;
+        top: 10%;
+        left: 75%;
+
+        &_active {
+            background-color: red !important;
+        }
+
+        &_disable {
+            background-color: white !important;
+        }
+    }
+
     &Line {
         display: -webkit-box;
         display: -ms-flexbox;
