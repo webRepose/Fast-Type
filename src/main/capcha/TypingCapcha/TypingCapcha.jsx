@@ -8,10 +8,6 @@ import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
 import ForPC from "../../../components/ForPC";
 
-const inputBackspace = (event) => {
-  if (event.keyCode === 8 || event.key === "Backspace" || event.which === 8)
-    event.preventDefault();
-};
 
 const classArray = [
   Style.captchaFirstLetter,
@@ -42,12 +38,20 @@ const TypingCapcha = () => {
     [iteration, setIteration] = useState(0),
     [captchaText, setCaptchaText] = useState(generateCaptcha(6)),
     [ran, setRan] = useState(Math.floor(Math.random() * 19)),
+    [capsIndicator, setCapsIndicator] = useState(),
     captcha = {
       keyboard: "Qwerty",
       lang: "English",
     },
     localObject = "captcha";
 
+const inputBackspace = (event) => {
+  if (event.keyCode === 8 || event.key === "Backspace" || event.which === 8)
+    event.preventDefault();
+
+    const on = event.getModifierState && event.getModifierState("CapsLock");
+    setCapsIndicator(prev => prev = on);
+};
   if (
     localStorage.getItem(localObject) === null ||
     localStorage.getItem(localObject) === "{}"
@@ -231,7 +235,7 @@ const TypingCapcha = () => {
                 onChange={inputCheckOut}
               ></input>
               {parse.keyboard && (
-                <Keyboards keyboard={parse.keyboard} lang={parse.lang} />
+                <Keyboards caps={capsIndicator} keyboard={parse.keyboard} lang={parse.lang} />
               )}
               <div className={Style.captchaChange}>
                 <GreenButton onClick={capchaChange}>

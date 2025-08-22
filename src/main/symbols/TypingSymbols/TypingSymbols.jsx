@@ -26,8 +26,8 @@ const TypingSymbols = () => {
   const parse = JSON.parse(localStorage.getItem(localObject));
 
   const [arr, setArr] = useState([t("TS-enter")]);
-  const [capsIndcator, setCapsIndiactor] = useState(false);
-  console.log(capsIndcator)
+  const [capsIndcator, setCapsIndiactor] = useState();
+
   useMemo(() => {
     document.addEventListener("keydown", (e) => {
       const on = e.getModifierState && e.getModifierState("CapsLock");

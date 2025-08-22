@@ -65,11 +65,16 @@ const Typing = ({
     [time, setTime] = useState(parseTime),
     [ourCountWords, setOurCountWords] = useState(parseWords),
     [minTimerWords, setMinTimerWords] = useState(0),
-    [secTimerWords, setSecTimerWords] = useState(0);
+    [secTimerWords, setSecTimerWords] = useState(0),
+    [capsIndicator, setCapsIndicator] = useState();
+
 
   const inputBackspace = (event) => {
     if (event.keyCode === 8 || event.key === "Backspace" || event.which === 8)
       event.preventDefault();
+
+        const on = event.getModifierState && event.getModifierState("CapsLock");
+        setCapsIndicator(prev => prev = on);
   };
 
   useMemo(() => {
@@ -484,7 +489,7 @@ const Typing = ({
                   ></textarea>
                 </div>
               </div>
-              {klava && <Keyboards keyboard={parseKeyboard} lang={parseLang} />}
+              {klava && <Keyboards keyboard={parseKeyboard} lang={parseLang} caps={capsIndicator}/>}
               <GreenButton
                 title={t("TI-changeText")}
                 onClick={() => {

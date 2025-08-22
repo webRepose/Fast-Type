@@ -14,8 +14,9 @@
         height: 10px !important;
         border-radius: --radius50p;
         position: relative;
-        top: 10%;
-        left: 75%;
+        background-color: grey !important;
+        top: 30%;
+        left: 85%;
 
         &_active {
             background-color: red !important;
