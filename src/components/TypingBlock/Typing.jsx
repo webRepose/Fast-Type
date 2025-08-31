@@ -73,8 +73,8 @@ const Typing = ({
     if (event.keyCode === 8 || event.key === "Backspace" || event.which === 8)
       event.preventDefault();
 
-        const on = event.getModifierState && event.getModifierState("CapsLock");
-        setCapsIndicator(prev => prev = on);
+        // const on = event.getModifierState && event.getModifierState("CapsLock");
+        // setCapsIndicator(prev => prev = on);
   };
 
   useMemo(() => {
