@@ -99,7 +99,8 @@ const Email = () => {
           sitekey={
             window.location.hostname === "localhost"
               ? "6Lf6_1QpAAAAAP-wzRPvOHFYVwGBh3muzty92r4F"
-              : "6Ldg-1QpAAAAANGEcEAwxf6gJ-8umjQsoffAAZIp"
+              : "6LfYbAktAAAAABeA6v9HNsCILUC-gBTZLCWBJe16"
+              // : "6Ldg-1QpAAAAANGEcEAwxf6gJ-8umjQsoffAAZIp"
           }
           onChange={handleRecaptchaChange}
         />
