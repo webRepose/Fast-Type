@@ -66,7 +66,7 @@ const Typing = ({
     [ourCountWords, setOurCountWords] = useState(parseWords),
     [minTimerWords, setMinTimerWords] = useState(0),
     [secTimerWords, setSecTimerWords] = useState(0),
-    [capsIndicator, setCapsIndicator] = useState();
+    [capsIndicator] = useState();
 
 
   const inputBackspace = (event) => {
